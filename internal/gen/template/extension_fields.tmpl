@@ -1,0 +1,29 @@
+{{ template "header" $ }}
+
+import "net"
+
+type extensionFields struct{
+{{- range . }}
+// {{ .Meaning }}
+{{ .CEFKeyName | unexported | trimAllSpaces }} {{ typeMapping .DataType }}
+{{- end }}
+}
+
+{{ range . }}
+func (f *extensionFields) Set{{ .CEFKeyName | trimAllSpaces | title }}(v {{ typeMapping .DataType }}) *extensionFields {
+{{- if not .Length }}
+{{- else if eq .Length "N/A" }}
+{{- else }}
+    if len(v) > {{ .Length }} {
+        v = v[:{{ .Length }}]
+    }
+{{ end }}
+    f.{{ .CEFKeyName | unexported | trimAllSpaces }} = v
+
+    return f
+}
+{{ end }}
+
+{{ range . }}
+func (f *extensionFields) {{ .CEFKeyName | trimAllSpaces | title }}() {{ typeMapping .DataType }} { return f.{{ .CEFKeyName | unexported | trimAllSpaces }} }
+{{- end }}

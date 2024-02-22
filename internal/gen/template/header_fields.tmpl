@@ -1,0 +1,27 @@
+{{ template "header" $ }}
+
+const headerFieldsNum = {{ .FieldsNum }}
+
+type headerFields struct{
+{{- range .Fields }}
+// {{ .Description }}
+{{ .FieldName | unexported }} {{ typeMapping .Typ }}
+{{- end }}
+}
+
+{{ range .Fields }}
+func (f *headerFields) Set{{ .FieldName | trimAllSpaces | title }}(v {{ typeMapping .Typ }}) *headerFields {
+{{- if ne .Size "N/A" }}
+    if len(v) > {{ .Size }} {
+        v = v[:{{ .Size }}]
+    }
+{{ end }}
+    f.{{ .FieldName | unexported }} = v
+
+    return f
+}
+{{ end }}
+
+{{ range .Fields }}
+func (f *headerFields) {{ .FieldName | trimAllSpaces | title }}() {{ typeMapping .Typ }} { return f.{{ .FieldName | unexported }} }
+{{- end }}
