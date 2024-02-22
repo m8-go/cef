@@ -83,30 +83,37 @@ func (f *headerFields) SetName(v string) *headerFields {
 	return f
 }
 
+// CEF Version is an integer and identifies the version of the CEF format. Event consumers use this information to determine what the following fields represent. The current CEF format versions are: l 0 (CEF:0) - for CEF Specification version 0.1 l 1 (CEF:1)- for CEF Specification version 1.x For example, for CEF Specification version 1.2, the value of the CEF Version header field will be "1".
 func (f *headerFields) CEFVersion() int {
 	return f.cefVersion
 }
 
+// agentSeverity is a string or integer and it reflects the importance of the event. l The valid string values are: Unknown, Low, Medium, High, and Very-High. l The valid integer values are: 0-3=Low, 4-6=Medium, 7- 8=High, and 9- 10=Very-High
 func (f *headerFields) AgentSeverity() AgentSeverity {
 	return f.agentSeverity
 }
 
+// deviceEventClassId is a unique identifier for each event-type. This can be a string or an integer. deviceEventClassId identifies the type of event reported. In the intrusion detection system (IDS) world, each signature or rule that detects certain activity has a unique deviceEventClassId assigned. This is a requirement for other types of devices as well, and helps correlation engines process the events. It is also known as Signature ID. Note: The ‘=’, ‘%’ , and ‘#’characters must be escaped in the vulnerability string that are mapped to deviceEventClassId , and if they are present in the description or name of the vulnerability. However, these characters must not be escaped when used as a delimiter
 func (f *headerFields) DeviceEventClassId() string {
 	return f.deviceEventClassId
 }
 
+// deviceProduct, deviceVendor, and deviceVersion are strings that uniquely identify the type of device that sent the message. No two products might use the same deviceVendor and deviceProduct pair. There is no central authority managing these pairs. Event producers must ensure that they assign unique name pairs.
 func (f *headerFields) DeviceProduct() string {
 	return f.deviceProduct
 }
 
+// deviceProduct, deviceVendor, and deviceVersion are strings that uniquely identify the type of device that sent the message. No two products might use the same deviceVendor and deviceProduct pair. There is no central authority managing these pairs. Event producers must ensure that they assign unique name pairs.
 func (f *headerFields) DeviceVendor() string {
 	return f.deviceVendor
 }
 
+// deviceProduct, deviceVendor, and deviceVersion are strings that uniquely identify the type of device that sent the message. No two products might use the same deviceVendor and deviceProduct pair. There is no central authority managing these pairs. Event producers must ensure that they assign unique name pairs.
 func (f *headerFields) DeviceVersion() string {
 	return f.deviceVersion
 }
 
+// name is a string representing a human- readable and understandable description of the event. The event name must not contain information that is specifically mentioned in other fields. For example: "Port scan from 10.0.0.1 targeting 20.1.1.1" is not a good event name. It must be: "Port scan". The other information is redundant and can be picked up from the rest of the fields
 func (f *headerFields) Name() string {
 	return f.name
 }

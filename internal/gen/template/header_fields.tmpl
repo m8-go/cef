@@ -23,6 +23,7 @@ func (f *headerFields) Set{{ .FieldName | trimAllSpaces | title }}(v {{ typeMapp
 {{ end }}
 
 {{ range .Fields }}
+// {{ .Description }}
 func (f *headerFields) {{ .FieldName | trimAllSpaces | title }}() {{ typeMapping .Typ }} {
     return f.{{ .FieldName | unexported }}
 }

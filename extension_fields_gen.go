@@ -683,254 +683,317 @@ func (f *extensionFields) SetDuid(v string) *extensionFields {
 	return f
 }
 
+// Action taken by the device.
 func (f *extensionFields) Act() string {
 	return f.act
 }
 
+// Application level protocol, example: HTTP, HTTPS, SSHv2, Telnet, POP, IMPA, IMAPS, and so on.
 func (f *extensionFields) App() string {
 	return f.app
 }
 
+// One of the four IPv6 address fields available to map fields that do not apply to any other in this dictionary. TIP: For tips on using these fields, see the guidelines defined under User-Defined Extensions.
 func (f *extensionFields) C6a1() net.IP {
 	return f.c6a1
 }
 
+// All custom fields have a corresponding label field. Each of these fields is a string and describes the purpose of the custom field.
 func (f *extensionFields) C6a1Label() string {
 	return f.c6a1Label
 }
 
+// One of the four IPv6 address fields available to map fields that do not apply to any other in this dictionary. TIP: For tips on using these fields, see the guidelines defined under User-Defined Extensions.
 func (f *extensionFields) C6a3() net.IP {
 	return f.c6a3
 }
 
+// All custom fields have a corresponding label field. Each of these fields is a string and describes the purpose of the custom field.
 func (f *extensionFields) C6a3Label() string {
 	return f.c6a3Label
 }
 
+// One of the four IPv6 address fields available to map fields that do not apply to any other in this dictionary. TIP: For tips on using these fields, see the guidelines defined under User-Defined Extensions.
 func (f *extensionFields) C6a4() net.IP {
 	return f.c6a4
 }
 
+// All custom fields have a corresponding label field. Each of these fields is a string and describes the purpose of the custom field.
 func (f *extensionFields) C6a4Label() string {
 	return f.c6a4Label
 }
 
+// Represents the category assigned by the originating device. Devices often use their own categorization schema to classify event. Example: “/Monitor/Disk/Read”
 func (f *extensionFields) Cat() string {
 	return f.cat
 }
 
+// One of our floating point fields available to map fields that do not apply to any other in this dictionary.
 func (f *extensionFields) Cfp1() float64 {
 	return f.cfp1
 }
 
+// All custom fields have a corresponding label field. Each of these fields is a string and describes the purpose of the custom field.
 func (f *extensionFields) Cfp1Label() string {
 	return f.cfp1Label
 }
 
+// One of the four floating point fields available to map fields that do not apply to any other in this dictionary.
 func (f *extensionFields) Cfp2() float64 {
 	return f.cfp2
 }
 
+// All custom fields have a corresponding label field. Each of these fields is a string and describes the purpose of the custom field.
 func (f *extensionFields) Cfp2Label() string {
 	return f.cfp2Label
 }
 
+// One of the four floating point fields available to map fields that do not apply to any other in this dictionary.
 func (f *extensionFields) Cfp3() float64 {
 	return f.cfp3
 }
 
+// All custom fields have a corresponding label field. Each of these fields is a string and describes the purpose of the custom field.
 func (f *extensionFields) Cfp3Label() string {
 	return f.cfp3Label
 }
 
+// One of the four floating point fields available to map fields that do not apply to any other in this dictionary.
 func (f *extensionFields) Cfp4() float64 {
 	return f.cfp4
 }
 
+// All custom fields have a corresponding label field. Each of these fields is a string and describes the purpose of the custom field.
 func (f *extensionFields) Cfp4Label() string {
 	return f.cfp4Label
 }
 
+// One of the three number fields available to map fields that do not apply to any other in this dictionary. Use sparingly and seek a more specific, dictionary supplied field when possible.
 func (f *extensionFields) Cn1() int64 {
 	return f.cn1
 }
 
+// All custom fields have a corresponding label field. Each of these fields is a string and describes the purpose of the custom field.
 func (f *extensionFields) Cn1Label() string {
 	return f.cn1Label
 }
 
+// One of the three number fields available to map fields that do not apply to any other in this dictionary. Use sparingly and seek a more specific, dictionary supplied field when possible.
 func (f *extensionFields) Cn2() int64 {
 	return f.cn2
 }
 
+// All custom fields have a corresponding label field. Each of these fields is a string and describes the purpose of the custom field. Implementing ArcSight Common Event Format (CEF) - Version 26 ArcS
 func (f *extensionFields) Cn2Label() string {
 	return f.cn2Label
 }
 
+// One of the three number fields available to map fields that do not apply to any other in this dictionary. Use sparingly and seek a more specific, dictionary supplied field when possible.
 func (f *extensionFields) Cn3() int64 {
 	return f.cn3
 }
 
+// All custom fields have a corresponding label field. Each of these fields is a string and describes the purpose of the custom field.
 func (f *extensionFields) Cn3Label() string {
 	return f.cn3Label
 }
 
+// A count associated with this event. How many times was this same event observed? Count can be omitted if it is 1.
 func (f *extensionFields) Cnt() int {
 	return f.cnt
 }
 
+// One of the six strings available to map fields that do not apply to any other in this dictionary. Use sparingly and seek a more specific, dictionary supplied field when possible. TIP : For tips on using these fields, see the guidelines defined under User- Defined Extensions
 func (f *extensionFields) Cs1() string {
 	return f.cs1
 }
 
+// All custom fields have a corresponding label field. Each of these fields is a string and describes the purpose of the custom field.
 func (f *extensionFields) Cs1Label() string {
 	return f.cs1Label
 }
 
+// One of the six strings available to map fields that do not apply to any other in this dictionary. Use sparingly and seek a more specific, dictionary supplied field when possible. TIP: For tips on using these fields, see the guidelines defined under User-Defined Extensions.
 func (f *extensionFields) Cs2() string {
 	return f.cs2
 }
 
+// All custom fields have a corresponding label field. Each of these fields is a string and describes the purpose of the custom field
 func (f *extensionFields) Cs2Label() string {
 	return f.cs2Label
 }
 
+// One of the six strings available to map fields that do not apply to any other in this dictionary. Use sparingly and seek a more specific, dictionary supplied field when possible. TIP: For tips on using these fields, see the guidelines defined under User-Defined Extensions.
 func (f *extensionFields) Cs3() string {
 	return f.cs3
 }
 
+// All custom fields have a corresponding label field. Each of these fields is a string and describes the purpose of the custom field.
 func (f *extensionFields) Cs3Label() string {
 	return f.cs3Label
 }
 
+// One of the six strings available to map fields that do not apply to any other in this dictionary. Use sparingly and seek a more specific, dictionary supplied field when possible. TIP : For tips on using these fields, see the guidelines defined under User- Defined Extensions
 func (f *extensionFields) Cs4() string {
 	return f.cs4
 }
 
+// All custom fields have a corresponding label field. Each of these fields is a string and describes the purpose of the custom field.
 func (f *extensionFields) Cs4Label() string {
 	return f.cs4Label
 }
 
+// One of six strings available to map fields that do not apply to any other in this dictionary. Use sparingly and seek a more specific, dictionary supplied field when possible. TIP : For tips on using these fields, see the guidelines defined under User- Defined Extensions.
 func (f *extensionFields) Cs5() string {
 	return f.cs5
 }
 
+// All custom fields have a corresponding label field. Each of these fields is a string and describes the purpose of the custom field
 func (f *extensionFields) Cs5Label() string {
 	return f.cs5Label
 }
 
+// One of six strings available to map fields that do not apply to any other in this dictionary. Use sparingly and seek a more specific, dictionary supplied field when possible. TIP : For tips on using these fields, see the guidelines defined under User- Defined Extensions.
 func (f *extensionFields) Cs6() string {
 	return f.cs6
 }
 
+// All custom fields have a corresponding label field. Each of these fields is a string and describes the purpose of the custom field.
 func (f *extensionFields) Cs6Label() string {
 	return f.cs6Label
 }
 
+// The DNS domain part of the complete fully qualified domain name (FQDN).
 func (f *extensionFields) DestinationDnsDomain() string {
 	return f.destinationDnsDomain
 }
 
+// The service targeted by this event. Example: “sshd”
 func (f *extensionFields) DestinationServiceName() string {
 	return f.destinationServiceName
 }
 
+// Identifies the translated destination that the event refers to in an IP network. The format is an IPv4 address. Example: “192.168.10.1”
 func (f *extensionFields) DestinationTranslatedAddress() net.IP {
 	return f.destinationTranslatedAddress
 }
 
+// Port after it was translated; for example, a firewall. Valid port numbers are 0 to 65535
 func (f *extensionFields) DestinationTranslatedPort() int {
 	return f.destinationTranslatedPort
 }
 
+// One of two timestamp fields available to map fields that do not apply to any other in this dictionary. Use sparingly and seek a more specific, dictionary supplied field when possible. TIP : For tips on using these fields, see the guidelines defined under User- Defined Extensions.
 func (f *extensionFields) DeviceCustomDate1() string {
 	return f.deviceCustomDate1
 }
 
+// All custom fields have a corresponding label field. Each of these fields is a string and describes the purpose of the custom field.
 func (f *extensionFields) DeviceCustomDate1Label() string {
 	return f.deviceCustomDate1Label
 }
 
+// One of the two timestamp fields available to map fields that do not apply to any other in this dictionary. Use sparingly and seek a more specific, dictionary supplied field when possible. TIP: For tips on using these fields, see the guidelines defined under User-Defined Extensions
 func (f *extensionFields) DeviceCustomDate2() string {
 	return f.deviceCustomDate2
 }
 
+// All custom fields have a corresponding label field. Each of these fields is a string and describes the purpose of the custom field.
 func (f *extensionFields) DeviceCustomDate2Label() string {
 	return f.deviceCustomDate2Label
 }
 
+// Any information about what direction the observed communication has taken. The following values are supported: “0” for inbound or “1” for outbound
 func (f *extensionFields) DeviceDirection() int {
 	return f.deviceDirection
 }
 
+// The DNS domain part of the complete fully qualified domain name (FQDN).
 func (f *extensionFields) DeviceDnsDomain() string {
 	return f.deviceDnsDomain
 }
 
+// A name that uniquely identifies the device generating this event.
 func (f *extensionFields) DeviceExternalId() string {
 	return f.deviceExternalId
 }
 
+// The facility generating this event. For example, Syslog has an explicit facility associated with every event.
 func (f *extensionFields) DeviceFacility() string {
 	return f.deviceFacility
 }
 
+// Interface on which the packet or data entered the device.
 func (f *extensionFields) DeviceInboundInterface() string {
 	return f.deviceInboundInterface
 }
 
+// The Windows domain name of the device address.
 func (f *extensionFields) DeviceNtDomain() string {
 	return f.deviceNtDomain
 }
 
+// Interface on which the packet or data left the device
 func (f *extensionFields) DeviceOutboundInterface() string {
 	return f.deviceOutboundInterface
 }
 
+// Unique identifier for the payload associated with the event.
 func (f *extensionFields) DevicePayloadId() string {
 	return f.devicepayloadid
 }
 
+// Process name associated with the event. An example might be the process generating the syslog entry in UNIX.
 func (f *extensionFields) DeviceProcessName() string {
 	return f.deviceProcessName
 }
 
+// Identifies the translated device address that the event refers to in an IP network. The format is an IPv4 address. Example: “192.168.10.1”
 func (f *extensionFields) DeviceTranslatedAddress() net.IP {
 	return f.deviceTranslatedAddress
 }
 
+// Identifies the destination that an event refers to in an IP network. The format must be a fully qualified domain name (FQDN) associated with the destination node, when a node is available. Examples: “host.domain.com” or “host”.
 func (f *extensionFields) Dhost() string {
 	return f.dhost
 }
 
+// The Windows domain name of the destination address.
 func (f *extensionFields) Dntdom() string {
 	return f.dntdom
 }
 
+// Provides the ID of the destination process associated with the event. For example, if an event contains process ID 105, “105” is the process ID
 func (f *extensionFields) Dpid() int {
 	return f.dpid
 }
 
+// The typical values are “Administrator”, “User”, and “Guest”. This identifies the destination user’s privileges. In UNIX, for example, activity executed on the root user would be identified with destinationUser Privileges of “Administrator”.
 func (f *extensionFields) Dpriv() string {
 	return f.dpriv
 }
 
+// The name of the event’s destination process. Example: “telnetd” or “sshd”.
 func (f *extensionFields) Dproc() string {
 	return f.dproc
 }
 
+// The valid port numbers are between 0 and 65535.
 func (f *extensionFields) Dpt() int {
 	return f.dpt
 }
 
+// Identifies the destination address that the event refers to in an IP network. The format is an IPv4 address. Example: “192.168.10.1”
 func (f *extensionFields) Dst() net.IP {
 	return f.dst
 }
 
+// The timezone for the device generating the event.
 func (f *extensionFields) Dtz() string {
 	return f.dtz
 }
 
+// Identifies the destination user by ID. For example, in UNIX, the root user is generally associated with user ID 0
 func (f *extensionFields) Duid() string {
 	return f.duid
 }
