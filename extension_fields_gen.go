@@ -24,19 +24,19 @@ type extensionFields struct {
 	// Represents the category assigned by the originating device. Devices often use their own categorization schema to classify event. Example: “/Monitor/Disk/Read”
 	cat string
 	// One of our floating point fields available to map fields that do not apply to any other in this dictionary.
-	cfp1 float64
+	cfp1 float32
 	// All custom fields have a corresponding label field. Each of these fields is a string and describes the purpose of the custom field.
 	cfp1Label string
 	// One of the four floating point fields available to map fields that do not apply to any other in this dictionary.
-	cfp2 float64
+	cfp2 float32
 	// All custom fields have a corresponding label field. Each of these fields is a string and describes the purpose of the custom field.
 	cfp2Label string
 	// One of the four floating point fields available to map fields that do not apply to any other in this dictionary.
-	cfp3 float64
+	cfp3 float32
 	// All custom fields have a corresponding label field. Each of these fields is a string and describes the purpose of the custom field.
 	cfp3Label string
 	// One of the four floating point fields available to map fields that do not apply to any other in this dictionary.
-	cfp4 float64
+	cfp4 float32
 	// All custom fields have a corresponding label field. Each of these fields is a string and describes the purpose of the custom field.
 	cfp4Label string
 	// One of the three number fields available to map fields that do not apply to any other in this dictionary. Use sparingly and seek a more specific, dictionary supplied field when possible.
@@ -141,6 +141,165 @@ type extensionFields struct {
 	dvcmac net.HardwareAddr
 	// Provides the ID of the process on the device generating the event.
 	dvcpid int
+	// The time at which the activity related to the event ended. The format is MMM dd yyyy HH:mm:ss or milliseconds since epoch (Jan 1st1970). An example would be reporting the end of a session.
+	end string
+	// The ID used by an originating device. They are usually increasing numbers, associated with events.
+	externalId string
+	// Time when the file was created.
+	fileCreateTime string
+	// Hash of a file.
+	fileHash string
+	// An ID associated with a file could be the inode.
+	fileId string
+	// Time when the file was last modified.
+	fileModificationTime string
+	// Full path to the file, including file name itself. Example: C:\Program Files \WindowsNT\Access ories\ wordpad.exe or /usr/bin/zip
+	filePath string
+	// Permissions of the file.
+	filePermission string
+	// Type of file (pipe, socket, etc.)
+	fileType string
+	// A timestamp field available to map a timestamp that does not apply to any other defined timestamp field in this dictionary. Use all flex fields sparingly and seek a more specific, dictionary supplied field when possible. These fields are typically reserved for customer use and should not be set by vendors unless necessary.
+	flexDate1 string
+	// The label field is a string and describes the purpose of the flex field.
+	flexDate1Label string
+	// One of four floating point fields available to map fields that do not apply to any other in this dictionary. Use sparingly and seek a more specific, dictionary supplied field when possible. These fields are typically reserved for customer use and should not be set by vendors unless necessary.
+	flexString1 string
+	// The label field is a string and describes the purpose of the flex field
+	flexString1Label string
+	// One of four floating point fields available to map fields that do not apply to any other in this dictionary. Use sparingly and seek a more specific, dictionary supplied field when possible. These fields are typically reserved for customer use and should not be set by vendors unless necessary.
+	flexString2 string
+	// The label field is a string and describes the purpose of the flex field.
+	flexString2Label string
+	// Name of the file only (without its path).
+	fname string
+	// Size of the file.
+	fsize int64
+	// Number of bytes transferred inbound, relative to the source to destination relationship, meaning that data was flowing from source to destination.
+	in int64
+	// An arbitrary message giving more details about the event. Multi-line entries can be produced by using \n as the new line separator.
+	msg string
+	// Time when old file was created.
+	oldFileCreateTime string
+	// Hash of the old file
+	oldFileHash string
+	// An ID associated with the old file could be the inode.
+	oldFileId string
+	// Time when old file was last modified.
+	oldFileModificationTime string
+	// Name of the old file.
+	oldFileName string
+	// Full path to the old file, including the file name itself. Examples: c:\Program Files\ WindowsNT\Accesso ries \wordpad.exe or /usr/bin/zip
+	oldFilePath string
+	// Permissions of the old file.
+	oldFilePermission string
+	// Size of the old file.
+	oldFileSize int64
+	// Type of the old file (pipe, socket, etc.)
+	oldFileType string
+	// Number of bytes transferred outbound relative to the source to destination relationship. For example, the byte number of data flowing from the destination to the source.
+	out int
+	// Displays the outcome, usually as ‘success’ or ‘failure’.
+	outcome string
+	// Identifies the Layer-4 protocol used. The possible values are protocols such as TCP or UDP
+	proto string
+	// The reason an audit event was generated. For example “badd password” or “unknown user”. This could also be an error or return code. Example: “0x1234”
+	reason string
+	// In the case of an HTTP request, this field contains the URL accessed. The URL should contain the protocol as well. Example: “http://www/secure. com”
+	request string
+	// The User-Agent associated with the request.
+	requestClientApplication string
+	// Description of the content from which the request originated (for example, HTTP Referrer)
+	requestContext string
+	// Cookies associated with the request.
+	requestCookies string
+	// The method used to access a URL. Possible values: “POST”, “GET”, etc.
+	requestMethod string
+	// The time at which the event related to the activity was received. The format is MMM dd yyyy HH:mm:ss or milliseconds since epoch (Jan 1st 1970)
+	rt string
+	// Identifies the source that an event refers to in an IP network. The format should be a fully qualified domain name (FQDN) associated with the source node, when a mode is available. Examples: “host” or “host.domain.com”.
+	shost string
+	// Six colon-separated hexadecimal numbers. Example: “00:0D:60:AF:1B:61”
+	smac net.HardwareAddr
+	// The Windows domain name for the source address.
+	sntdom string
+	// The DNS domain part of the complete fully qualified domain name (FQDN).
+	sourceDnsDomain string
+	// The service that is responsible for generating this event.
+	sourceServiceName string
+	// Identifies the translated source that the event refers to in an IP network. The format is an IPv4 address. Example: “192.168.10.1”.
+	sourceTranslatedAddress net.IP
+	// A port number after being translated by, for example, a firewall. Valid port numbers are 0 to 65535.
+	sourceTranslatedPort int
+	// The ID of the source process associated with the event
+	spid int
+	// The typical values are “Administrator”, “User”, and “Guest”. It identifies the source user’s privileges. In UNIX, for example, activity executed by the root user would be identified with “Administrator”.
+	spriv string
+	// The name of the event’s source process.
+	sproc string
+	// The valid port numbers are 0 to 65535.
+	spt int
+	// Identifies the source that an event refers to in an IP network. The format is an IPv4 address. Example: “192.168.10.1”.
+	src net.IP
+	// The time when the activity the event referred to started. The format is MMM dd yyyy HH:mm:ss or milliseconds since epoch (Jan 1st 1970)
+	start string
+	// Identifies the source user by ID. This is the user associated with the source of the event. For example, in UNIX, the root user is generally associated with user ID 0.
+	suid string
+	// Identifies the source user by name. Email addresses are also mapped into the UserName fields. The sender is a candidate to put into this field.
+	suser string
+	// 0 means base event, 1 means aggregated, 2 means correlation, and 3 means action. This field can be omitted for base events (type 0)
+	typ int
+	// The DNS domain name of the ArcSight connector that processed the event.
+	agentDnsDomain string
+	agentNtDomain string
+	agentTranslatedAddress net.IP
+	agentTranslatedZoneExternalID string
+	agentTranslatedZoneURI string
+	agentZoneExternalID string
+	agentZoneURI string
+	// The IP address of the ArcSight connector that processed the event.
+	agt net.IP
+	// The hostname of the ArcSight connector that processed the event.
+	ahost string
+	// The agent ID of the ArcSight connector that processed the event.
+	aid string
+	// The MAC address of the ArcSight connector that processed the event.
+	amac net.HardwareAddr
+	// The time at which information about the event was received by the ArcSight connector.
+	art string
+	// The agent type of the ArcSight connector that processed the event
+	at string
+	// The agent time zone of the ArcSight connector that processed the event.
+	atz string
+	// The version of the ArcSight connector that processed the event.
+	av string
+	customerExternalID string
+	customerURI string
+	destinatioTranslatedZoneExternalID string
+	// The URI for the Translated Zone that the destination asset has been assigned to in ArcSight.
+	destinationTranslatedZoneURI string
+	destinationZoneExternalID string
+	// The URI for the Zone that the destination asset has been assigned to in ArcSight.
+	destinationZoneURI string
+	deviceTranslatedZoneExternalID string
+	// The URI for the Translated Zone that the device asset has been assigned to in ArcSight.
+	deviceTranslatedZoneURI string
+	deviceZoneExternalID string
+	// Thee URI for the Zone that the device asset has been assigned to in ArcSight.
+	deviceZoneURI string
+	// The latitudinal value from which the destination’s IP address belongs.
+	dlat float64
+	// The longitudinal value from which the destination’s IP address belongs.
+	dlong float64
+	// This is a unique ID that ArcSight assigns to each event.
+	eventId int64
+	rawEvent string
+	slat float64
+	slong float64
+	sourceTranslatedZoneExternalID string
+	// The URI for the Translated Zone that the destination asset has been assigned to in ArcSight.
+	sourceTranslatedZoneURI string
+	sourceZoneExternalID string
 }
 
 func (f *extensionFields) SetAct(v string) *extensionFields {
@@ -221,7 +380,7 @@ func (f *extensionFields) SetCat(v string) *extensionFields {
 	return f
 }
 
-func (f *extensionFields) SetCfp1(v float64) *extensionFields {
+func (f *extensionFields) SetCfp1(v float32) *extensionFields {
 	f.cfp1 = v
 
 	return f
@@ -237,7 +396,7 @@ func (f *extensionFields) SetCfp1Label(v string) *extensionFields {
 	return f
 }
 
-func (f *extensionFields) SetCfp2(v float64) *extensionFields {
+func (f *extensionFields) SetCfp2(v float32) *extensionFields {
 	f.cfp2 = v
 
 	return f
@@ -253,7 +412,7 @@ func (f *extensionFields) SetCfp2Label(v string) *extensionFields {
 	return f
 }
 
-func (f *extensionFields) SetCfp3(v float64) *extensionFields {
+func (f *extensionFields) SetCfp3(v float32) *extensionFields {
 	f.cfp3 = v
 
 	return f
@@ -269,7 +428,7 @@ func (f *extensionFields) SetCfp3Label(v string) *extensionFields {
 	return f
 }
 
-func (f *extensionFields) SetCfp4(v float64) *extensionFields {
+func (f *extensionFields) SetCfp4(v float32) *extensionFields {
 	f.cfp4 = v
 
 	return f
@@ -731,6 +890,774 @@ func (f *extensionFields) SetDvcpid(v int) *extensionFields {
 	return f
 }
 
+func (f *extensionFields) SetEnd(v string) *extensionFields {
+	f.end = v
+
+	return f
+}
+
+func (f *extensionFields) SetExternalId(v string) *extensionFields {
+	if len(v) > 40 {
+		v = v[:40]
+	}
+
+	f.externalId = v
+
+	return f
+}
+
+func (f *extensionFields) SetFileCreateTime(v string) *extensionFields {
+	f.fileCreateTime = v
+
+	return f
+}
+
+func (f *extensionFields) SetFileHash(v string) *extensionFields {
+	if len(v) > 255 {
+		v = v[:255]
+	}
+
+	f.fileHash = v
+
+	return f
+}
+
+func (f *extensionFields) SetFileId(v string) *extensionFields {
+	if len(v) > 1023 {
+		v = v[:1023]
+	}
+
+	f.fileId = v
+
+	return f
+}
+
+func (f *extensionFields) SetFileModificationTime(v string) *extensionFields {
+	f.fileModificationTime = v
+
+	return f
+}
+
+func (f *extensionFields) SetFilePath(v string) *extensionFields {
+	if len(v) > 1023 {
+		v = v[:1023]
+	}
+
+	f.filePath = v
+
+	return f
+}
+
+func (f *extensionFields) SetFilePermission(v string) *extensionFields {
+	if len(v) > 1023 {
+		v = v[:1023]
+	}
+
+	f.filePermission = v
+
+	return f
+}
+
+func (f *extensionFields) SetFileType(v string) *extensionFields {
+	if len(v) > 1023 {
+		v = v[:1023]
+	}
+
+	f.fileType = v
+
+	return f
+}
+
+func (f *extensionFields) SetFlexDate1(v string) *extensionFields {
+	f.flexDate1 = v
+
+	return f
+}
+
+func (f *extensionFields) SetFlexDate1Label(v string) *extensionFields {
+	if len(v) > 128 {
+		v = v[:128]
+	}
+
+	f.flexDate1Label = v
+
+	return f
+}
+
+func (f *extensionFields) SetFlexString1(v string) *extensionFields {
+	if len(v) > 1023 {
+		v = v[:1023]
+	}
+
+	f.flexString1 = v
+
+	return f
+}
+
+func (f *extensionFields) SetFlexString1Label(v string) *extensionFields {
+	if len(v) > 128 {
+		v = v[:128]
+	}
+
+	f.flexString1Label = v
+
+	return f
+}
+
+func (f *extensionFields) SetFlexString2(v string) *extensionFields {
+	if len(v) > 1023 {
+		v = v[:1023]
+	}
+
+	f.flexString2 = v
+
+	return f
+}
+
+func (f *extensionFields) SetFlexString2Label(v string) *extensionFields {
+	if len(v) > 128 {
+		v = v[:128]
+	}
+
+	f.flexString2Label = v
+
+	return f
+}
+
+func (f *extensionFields) SetFname(v string) *extensionFields {
+	if len(v) > 1023 {
+		v = v[:1023]
+	}
+
+	f.fname = v
+
+	return f
+}
+
+func (f *extensionFields) SetFsize(v int64) *extensionFields {
+	f.fsize = v
+
+	return f
+}
+
+func (f *extensionFields) SetIn(v int64) *extensionFields {
+	f.in = v
+
+	return f
+}
+
+func (f *extensionFields) SetMsg(v string) *extensionFields {
+	if len(v) > 1023 {
+		v = v[:1023]
+	}
+
+	f.msg = v
+
+	return f
+}
+
+func (f *extensionFields) SetOldFileCreateTime(v string) *extensionFields {
+	f.oldFileCreateTime = v
+
+	return f
+}
+
+func (f *extensionFields) SetOldFileHash(v string) *extensionFields {
+	if len(v) > 255 {
+		v = v[:255]
+	}
+
+	f.oldFileHash = v
+
+	return f
+}
+
+func (f *extensionFields) SetOldFileId(v string) *extensionFields {
+	if len(v) > 1023 {
+		v = v[:1023]
+	}
+
+	f.oldFileId = v
+
+	return f
+}
+
+func (f *extensionFields) SetOldFileModificationTime(v string) *extensionFields {
+	f.oldFileModificationTime = v
+
+	return f
+}
+
+func (f *extensionFields) SetOldFileName(v string) *extensionFields {
+	if len(v) > 1023 {
+		v = v[:1023]
+	}
+
+	f.oldFileName = v
+
+	return f
+}
+
+func (f *extensionFields) SetOldFilePath(v string) *extensionFields {
+	if len(v) > 1023 {
+		v = v[:1023]
+	}
+
+	f.oldFilePath = v
+
+	return f
+}
+
+func (f *extensionFields) SetOldFilePermission(v string) *extensionFields {
+	if len(v) > 1023 {
+		v = v[:1023]
+	}
+
+	f.oldFilePermission = v
+
+	return f
+}
+
+func (f *extensionFields) SetOldFileSize(v int64) *extensionFields {
+	f.oldFileSize = v
+
+	return f
+}
+
+func (f *extensionFields) SetOldFileType(v string) *extensionFields {
+	if len(v) > 1023 {
+		v = v[:1023]
+	}
+
+	f.oldFileType = v
+
+	return f
+}
+
+func (f *extensionFields) SetOut(v int) *extensionFields {
+	f.out = v
+
+	return f
+}
+
+func (f *extensionFields) SetOutcome(v string) *extensionFields {
+	if len(v) > 63 {
+		v = v[:63]
+	}
+
+	f.outcome = v
+
+	return f
+}
+
+func (f *extensionFields) SetProto(v string) *extensionFields {
+	if len(v) > 31 {
+		v = v[:31]
+	}
+
+	f.proto = v
+
+	return f
+}
+
+func (f *extensionFields) SetReason(v string) *extensionFields {
+	if len(v) > 1023 {
+		v = v[:1023]
+	}
+
+	f.reason = v
+
+	return f
+}
+
+func (f *extensionFields) SetRequest(v string) *extensionFields {
+	if len(v) > 1023 {
+		v = v[:1023]
+	}
+
+	f.request = v
+
+	return f
+}
+
+func (f *extensionFields) SetRequestClientApplication(v string) *extensionFields {
+	if len(v) > 1023 {
+		v = v[:1023]
+	}
+
+	f.requestClientApplication = v
+
+	return f
+}
+
+func (f *extensionFields) SetRequestContext(v string) *extensionFields {
+	if len(v) > 2048 {
+		v = v[:2048]
+	}
+
+	f.requestContext = v
+
+	return f
+}
+
+func (f *extensionFields) SetRequestCookies(v string) *extensionFields {
+	if len(v) > 1023 {
+		v = v[:1023]
+	}
+
+	f.requestCookies = v
+
+	return f
+}
+
+func (f *extensionFields) SetRequestMethod(v string) *extensionFields {
+	if len(v) > 1023 {
+		v = v[:1023]
+	}
+
+	f.requestMethod = v
+
+	return f
+}
+
+func (f *extensionFields) SetRt(v string) *extensionFields {
+	f.rt = v
+
+	return f
+}
+
+func (f *extensionFields) SetShost(v string) *extensionFields {
+	if len(v) > 1023 {
+		v = v[:1023]
+	}
+
+	f.shost = v
+
+	return f
+}
+
+func (f *extensionFields) SetSmac(v net.HardwareAddr) *extensionFields {
+	f.smac = v
+
+	return f
+}
+
+func (f *extensionFields) SetSntdom(v string) *extensionFields {
+	if len(v) > 255 {
+		v = v[:255]
+	}
+
+	f.sntdom = v
+
+	return f
+}
+
+func (f *extensionFields) SetSourceDnsDomain(v string) *extensionFields {
+	if len(v) > 255 {
+		v = v[:255]
+	}
+
+	f.sourceDnsDomain = v
+
+	return f
+}
+
+func (f *extensionFields) SetSourceServiceName(v string) *extensionFields {
+	if len(v) > 1023 {
+		v = v[:1023]
+	}
+
+	f.sourceServiceName = v
+
+	return f
+}
+
+func (f *extensionFields) SetSourceTranslatedAddress(v net.IP) *extensionFields {
+	f.sourceTranslatedAddress = v
+
+	return f
+}
+
+func (f *extensionFields) SetSourceTranslatedPort(v int) *extensionFields {
+	f.sourceTranslatedPort = v
+
+	return f
+}
+
+func (f *extensionFields) SetSpid(v int) *extensionFields {
+	f.spid = v
+
+	return f
+}
+
+func (f *extensionFields) SetSpriv(v string) *extensionFields {
+	if len(v) > 1023 {
+		v = v[:1023]
+	}
+
+	f.spriv = v
+
+	return f
+}
+
+func (f *extensionFields) SetSproc(v string) *extensionFields {
+	if len(v) > 1023 {
+		v = v[:1023]
+	}
+
+	f.sproc = v
+
+	return f
+}
+
+func (f *extensionFields) SetSpt(v int) *extensionFields {
+	f.spt = v
+
+	return f
+}
+
+func (f *extensionFields) SetSrc(v net.IP) *extensionFields {
+	f.src = v
+
+	return f
+}
+
+func (f *extensionFields) SetStart(v string) *extensionFields {
+	f.start = v
+
+	return f
+}
+
+func (f *extensionFields) SetSuid(v string) *extensionFields {
+	if len(v) > 1023 {
+		v = v[:1023]
+	}
+
+	f.suid = v
+
+	return f
+}
+
+func (f *extensionFields) SetSuser(v string) *extensionFields {
+	if len(v) > 1023 {
+		v = v[:1023]
+	}
+
+	f.suser = v
+
+	return f
+}
+
+func (f *extensionFields) SetType(v int) *extensionFields {
+	f.typ = v
+
+	return f
+}
+
+func (f *extensionFields) SetAgentDnsDomain(v string) *extensionFields {
+	if len(v) > 255 {
+		v = v[:255]
+	}
+
+	f.agentDnsDomain = v
+
+	return f
+}
+
+func (f *extensionFields) SetAgentNtDomain(v string) *extensionFields {
+	if len(v) > 255 {
+		v = v[:255]
+	}
+
+	f.agentNtDomain = v
+
+	return f
+}
+
+func (f *extensionFields) SetAgentTranslatedAddress(v net.IP) *extensionFields {
+	f.agentTranslatedAddress = v
+
+	return f
+}
+
+func (f *extensionFields) SetAgentTranslatedZoneExternalID(v string) *extensionFields {
+	if len(v) > 200 {
+		v = v[:200]
+	}
+
+	f.agentTranslatedZoneExternalID = v
+
+	return f
+}
+
+func (f *extensionFields) SetAgentTranslatedZoneURI(v string) *extensionFields {
+	if len(v) > 2048 {
+		v = v[:2048]
+	}
+
+	f.agentTranslatedZoneURI = v
+
+	return f
+}
+
+func (f *extensionFields) SetAgentZoneExternalID(v string) *extensionFields {
+	if len(v) > 200 {
+		v = v[:200]
+	}
+
+	f.agentZoneExternalID = v
+
+	return f
+}
+
+func (f *extensionFields) SetAgentZoneURI(v string) *extensionFields {
+	if len(v) > 2048 {
+		v = v[:2048]
+	}
+
+	f.agentZoneURI = v
+
+	return f
+}
+
+func (f *extensionFields) SetAgt(v net.IP) *extensionFields {
+	f.agt = v
+
+	return f
+}
+
+func (f *extensionFields) SetAhost(v string) *extensionFields {
+	if len(v) > 1023 {
+		v = v[:1023]
+	}
+
+	f.ahost = v
+
+	return f
+}
+
+func (f *extensionFields) SetAid(v string) *extensionFields {
+	if len(v) > 40 {
+		v = v[:40]
+	}
+
+	f.aid = v
+
+	return f
+}
+
+func (f *extensionFields) SetAmac(v net.HardwareAddr) *extensionFields {
+	f.amac = v
+
+	return f
+}
+
+func (f *extensionFields) SetArt(v string) *extensionFields {
+	f.art = v
+
+	return f
+}
+
+func (f *extensionFields) SetAt(v string) *extensionFields {
+	if len(v) > 63 {
+		v = v[:63]
+	}
+
+	f.at = v
+
+	return f
+}
+
+func (f *extensionFields) SetAtz(v string) *extensionFields {
+	if len(v) > 255 {
+		v = v[:255]
+	}
+
+	f.atz = v
+
+	return f
+}
+
+func (f *extensionFields) SetAv(v string) *extensionFields {
+	if len(v) > 31 {
+		v = v[:31]
+	}
+
+	f.av = v
+
+	return f
+}
+
+func (f *extensionFields) SetCustomerExternalID(v string) *extensionFields {
+	if len(v) > 200 {
+		v = v[:200]
+	}
+
+	f.customerExternalID = v
+
+	return f
+}
+
+func (f *extensionFields) SetCustomerURI(v string) *extensionFields {
+	if len(v) > 2048 {
+		v = v[:2048]
+	}
+
+	f.customerURI = v
+
+	return f
+}
+
+func (f *extensionFields) SetDestinatioTranslatedZoneExternalID(v string) *extensionFields {
+	if len(v) > 200 {
+		v = v[:200]
+	}
+
+	f.destinatioTranslatedZoneExternalID = v
+
+	return f
+}
+
+func (f *extensionFields) SetDestinationTranslatedZoneURI(v string) *extensionFields {
+	if len(v) > 2048 {
+		v = v[:2048]
+	}
+
+	f.destinationTranslatedZoneURI = v
+
+	return f
+}
+
+func (f *extensionFields) SetDestinationZoneExternalID(v string) *extensionFields {
+	if len(v) > 200 {
+		v = v[:200]
+	}
+
+	f.destinationZoneExternalID = v
+
+	return f
+}
+
+func (f *extensionFields) SetDestinationZoneURI(v string) *extensionFields {
+	if len(v) > 2048 {
+		v = v[:2048]
+	}
+
+	f.destinationZoneURI = v
+
+	return f
+}
+
+func (f *extensionFields) SetDeviceTranslatedZoneExternalID(v string) *extensionFields {
+	if len(v) > 200 {
+		v = v[:200]
+	}
+
+	f.deviceTranslatedZoneExternalID = v
+
+	return f
+}
+
+func (f *extensionFields) SetDeviceTranslatedZoneURI(v string) *extensionFields {
+	if len(v) > 2048 {
+		v = v[:2048]
+	}
+
+	f.deviceTranslatedZoneURI = v
+
+	return f
+}
+
+func (f *extensionFields) SetDeviceZoneExternalID(v string) *extensionFields {
+	if len(v) > 200 {
+		v = v[:200]
+	}
+
+	f.deviceZoneExternalID = v
+
+	return f
+}
+
+func (f *extensionFields) SetDeviceZoneURI(v string) *extensionFields {
+	if len(v) > 2048 {
+		v = v[:2048]
+	}
+
+	f.deviceZoneURI = v
+
+	return f
+}
+
+func (f *extensionFields) SetDlat(v float64) *extensionFields {
+	f.dlat = v
+
+	return f
+}
+
+func (f *extensionFields) SetDlong(v float64) *extensionFields {
+	f.dlong = v
+
+	return f
+}
+
+func (f *extensionFields) SetEventId(v int64) *extensionFields {
+	f.eventId = v
+
+	return f
+}
+
+func (f *extensionFields) SetRawEvent(v string) *extensionFields {
+	if len(v) > 4000 {
+		v = v[:4000]
+	}
+
+	f.rawEvent = v
+
+	return f
+}
+
+func (f *extensionFields) SetSlat(v float64) *extensionFields {
+	f.slat = v
+
+	return f
+}
+
+func (f *extensionFields) SetSlong(v float64) *extensionFields {
+	f.slong = v
+
+	return f
+}
+
+func (f *extensionFields) SetSourceTranslatedZoneExternalID(v string) *extensionFields {
+	if len(v) > 200 {
+		v = v[:200]
+	}
+
+	f.sourceTranslatedZoneExternalID = v
+
+	return f
+}
+
+func (f *extensionFields) SetSourceTranslatedZoneURI(v string) *extensionFields {
+	if len(v) > 2048 {
+		v = v[:2048]
+	}
+
+	f.sourceTranslatedZoneURI = v
+
+	return f
+}
+
+func (f *extensionFields) SetSourceZoneExternalID(v string) *extensionFields {
+	if len(v) > 200 {
+		v = v[:200]
+	}
+
+	f.sourceZoneExternalID = v
+
+	return f
+}
+
 // Action taken by the device.
 func (f *extensionFields) Act() string {
 	return f.act
@@ -777,7 +1704,7 @@ func (f *extensionFields) Cat() string {
 }
 
 // One of our floating point fields available to map fields that do not apply to any other in this dictionary.
-func (f *extensionFields) Cfp1() float64 {
+func (f *extensionFields) Cfp1() float32 {
 	return f.cfp1
 }
 
@@ -787,7 +1714,7 @@ func (f *extensionFields) Cfp1Label() string {
 }
 
 // One of the four floating point fields available to map fields that do not apply to any other in this dictionary.
-func (f *extensionFields) Cfp2() float64 {
+func (f *extensionFields) Cfp2() float32 {
 	return f.cfp2
 }
 
@@ -797,7 +1724,7 @@ func (f *extensionFields) Cfp2Label() string {
 }
 
 // One of the four floating point fields available to map fields that do not apply to any other in this dictionary.
-func (f *extensionFields) Cfp3() float64 {
+func (f *extensionFields) Cfp3() float32 {
 	return f.cfp3
 }
 
@@ -807,7 +1734,7 @@ func (f *extensionFields) Cfp3Label() string {
 }
 
 // One of the four floating point fields available to map fields that do not apply to any other in this dictionary.
-func (f *extensionFields) Cfp4() float64 {
+func (f *extensionFields) Cfp4() float32 {
 	return f.cfp4
 }
 
@@ -1069,4 +1996,427 @@ func (f *extensionFields) Dvcmac() net.HardwareAddr {
 // Provides the ID of the process on the device generating the event.
 func (f *extensionFields) Dvcpid() int {
 	return f.dvcpid
+}
+
+// The time at which the activity related to the event ended. The format is MMM dd yyyy HH:mm:ss or milliseconds since epoch (Jan 1st1970). An example would be reporting the end of a session.
+func (f *extensionFields) End() string {
+	return f.end
+}
+
+// The ID used by an originating device. They are usually increasing numbers, associated with events.
+func (f *extensionFields) ExternalId() string {
+	return f.externalId
+}
+
+// Time when the file was created.
+func (f *extensionFields) FileCreateTime() string {
+	return f.fileCreateTime
+}
+
+// Hash of a file.
+func (f *extensionFields) FileHash() string {
+	return f.fileHash
+}
+
+// An ID associated with a file could be the inode.
+func (f *extensionFields) FileId() string {
+	return f.fileId
+}
+
+// Time when the file was last modified.
+func (f *extensionFields) FileModificationTime() string {
+	return f.fileModificationTime
+}
+
+// Full path to the file, including file name itself. Example: C:\Program Files \WindowsNT\Access ories\ wordpad.exe or /usr/bin/zip
+func (f *extensionFields) FilePath() string {
+	return f.filePath
+}
+
+// Permissions of the file.
+func (f *extensionFields) FilePermission() string {
+	return f.filePermission
+}
+
+// Type of file (pipe, socket, etc.)
+func (f *extensionFields) FileType() string {
+	return f.fileType
+}
+
+// A timestamp field available to map a timestamp that does not apply to any other defined timestamp field in this dictionary. Use all flex fields sparingly and seek a more specific, dictionary supplied field when possible. These fields are typically reserved for customer use and should not be set by vendors unless necessary.
+func (f *extensionFields) FlexDate1() string {
+	return f.flexDate1
+}
+
+// The label field is a string and describes the purpose of the flex field.
+func (f *extensionFields) FlexDate1Label() string {
+	return f.flexDate1Label
+}
+
+// One of four floating point fields available to map fields that do not apply to any other in this dictionary. Use sparingly and seek a more specific, dictionary supplied field when possible. These fields are typically reserved for customer use and should not be set by vendors unless necessary.
+func (f *extensionFields) FlexString1() string {
+	return f.flexString1
+}
+
+// The label field is a string and describes the purpose of the flex field
+func (f *extensionFields) FlexString1Label() string {
+	return f.flexString1Label
+}
+
+// One of four floating point fields available to map fields that do not apply to any other in this dictionary. Use sparingly and seek a more specific, dictionary supplied field when possible. These fields are typically reserved for customer use and should not be set by vendors unless necessary.
+func (f *extensionFields) FlexString2() string {
+	return f.flexString2
+}
+
+// The label field is a string and describes the purpose of the flex field.
+func (f *extensionFields) FlexString2Label() string {
+	return f.flexString2Label
+}
+
+// Name of the file only (without its path).
+func (f *extensionFields) Fname() string {
+	return f.fname
+}
+
+// Size of the file.
+func (f *extensionFields) Fsize() int64 {
+	return f.fsize
+}
+
+// Number of bytes transferred inbound, relative to the source to destination relationship, meaning that data was flowing from source to destination.
+func (f *extensionFields) In() int64 {
+	return f.in
+}
+
+// An arbitrary message giving more details about the event. Multi-line entries can be produced by using \n as the new line separator.
+func (f *extensionFields) Msg() string {
+	return f.msg
+}
+
+// Time when old file was created.
+func (f *extensionFields) OldFileCreateTime() string {
+	return f.oldFileCreateTime
+}
+
+// Hash of the old file
+func (f *extensionFields) OldFileHash() string {
+	return f.oldFileHash
+}
+
+// An ID associated with the old file could be the inode.
+func (f *extensionFields) OldFileId() string {
+	return f.oldFileId
+}
+
+// Time when old file was last modified.
+func (f *extensionFields) OldFileModificationTime() string {
+	return f.oldFileModificationTime
+}
+
+// Name of the old file.
+func (f *extensionFields) OldFileName() string {
+	return f.oldFileName
+}
+
+// Full path to the old file, including the file name itself. Examples: c:\Program Files\ WindowsNT\Accesso ries \wordpad.exe or /usr/bin/zip
+func (f *extensionFields) OldFilePath() string {
+	return f.oldFilePath
+}
+
+// Permissions of the old file.
+func (f *extensionFields) OldFilePermission() string {
+	return f.oldFilePermission
+}
+
+// Size of the old file.
+func (f *extensionFields) OldFileSize() int64 {
+	return f.oldFileSize
+}
+
+// Type of the old file (pipe, socket, etc.)
+func (f *extensionFields) OldFileType() string {
+	return f.oldFileType
+}
+
+// Number of bytes transferred outbound relative to the source to destination relationship. For example, the byte number of data flowing from the destination to the source.
+func (f *extensionFields) Out() int {
+	return f.out
+}
+
+// Displays the outcome, usually as ‘success’ or ‘failure’.
+func (f *extensionFields) Outcome() string {
+	return f.outcome
+}
+
+// Identifies the Layer-4 protocol used. The possible values are protocols such as TCP or UDP
+func (f *extensionFields) Proto() string {
+	return f.proto
+}
+
+// The reason an audit event was generated. For example “badd password” or “unknown user”. This could also be an error or return code. Example: “0x1234”
+func (f *extensionFields) Reason() string {
+	return f.reason
+}
+
+// In the case of an HTTP request, this field contains the URL accessed. The URL should contain the protocol as well. Example: “http://www/secure. com”
+func (f *extensionFields) Request() string {
+	return f.request
+}
+
+// The User-Agent associated with the request.
+func (f *extensionFields) RequestClientApplication() string {
+	return f.requestClientApplication
+}
+
+// Description of the content from which the request originated (for example, HTTP Referrer)
+func (f *extensionFields) RequestContext() string {
+	return f.requestContext
+}
+
+// Cookies associated with the request.
+func (f *extensionFields) RequestCookies() string {
+	return f.requestCookies
+}
+
+// The method used to access a URL. Possible values: “POST”, “GET”, etc.
+func (f *extensionFields) RequestMethod() string {
+	return f.requestMethod
+}
+
+// The time at which the event related to the activity was received. The format is MMM dd yyyy HH:mm:ss or milliseconds since epoch (Jan 1st 1970)
+func (f *extensionFields) Rt() string {
+	return f.rt
+}
+
+// Identifies the source that an event refers to in an IP network. The format should be a fully qualified domain name (FQDN) associated with the source node, when a mode is available. Examples: “host” or “host.domain.com”.
+func (f *extensionFields) Shost() string {
+	return f.shost
+}
+
+// Six colon-separated hexadecimal numbers. Example: “00:0D:60:AF:1B:61”
+func (f *extensionFields) Smac() net.HardwareAddr {
+	return f.smac
+}
+
+// The Windows domain name for the source address.
+func (f *extensionFields) Sntdom() string {
+	return f.sntdom
+}
+
+// The DNS domain part of the complete fully qualified domain name (FQDN).
+func (f *extensionFields) SourceDnsDomain() string {
+	return f.sourceDnsDomain
+}
+
+// The service that is responsible for generating this event.
+func (f *extensionFields) SourceServiceName() string {
+	return f.sourceServiceName
+}
+
+// Identifies the translated source that the event refers to in an IP network. The format is an IPv4 address. Example: “192.168.10.1”.
+func (f *extensionFields) SourceTranslatedAddress() net.IP {
+	return f.sourceTranslatedAddress
+}
+
+// A port number after being translated by, for example, a firewall. Valid port numbers are 0 to 65535.
+func (f *extensionFields) SourceTranslatedPort() int {
+	return f.sourceTranslatedPort
+}
+
+// The ID of the source process associated with the event
+func (f *extensionFields) Spid() int {
+	return f.spid
+}
+
+// The typical values are “Administrator”, “User”, and “Guest”. It identifies the source user’s privileges. In UNIX, for example, activity executed by the root user would be identified with “Administrator”.
+func (f *extensionFields) Spriv() string {
+	return f.spriv
+}
+
+// The name of the event’s source process.
+func (f *extensionFields) Sproc() string {
+	return f.sproc
+}
+
+// The valid port numbers are 0 to 65535.
+func (f *extensionFields) Spt() int {
+	return f.spt
+}
+
+// Identifies the source that an event refers to in an IP network. The format is an IPv4 address. Example: “192.168.10.1”.
+func (f *extensionFields) Src() net.IP {
+	return f.src
+}
+
+// The time when the activity the event referred to started. The format is MMM dd yyyy HH:mm:ss or milliseconds since epoch (Jan 1st 1970)
+func (f *extensionFields) Start() string {
+	return f.start
+}
+
+// Identifies the source user by ID. This is the user associated with the source of the event. For example, in UNIX, the root user is generally associated with user ID 0.
+func (f *extensionFields) Suid() string {
+	return f.suid
+}
+
+// Identifies the source user by name. Email addresses are also mapped into the UserName fields. The sender is a candidate to put into this field.
+func (f *extensionFields) Suser() string {
+	return f.suser
+}
+
+// 0 means base event, 1 means aggregated, 2 means correlation, and 3 means action. This field can be omitted for base events (type 0)
+func (f *extensionFields) Type() int {
+	return f.typ
+}
+
+// The DNS domain name of the ArcSight connector that processed the event.
+func (f *extensionFields) AgentDnsDomain() string {
+	return f.agentDnsDomain
+}
+
+func (f *extensionFields) AgentNtDomain() string {
+	return f.agentNtDomain
+}
+
+func (f *extensionFields) AgentTranslatedAddress() net.IP {
+	return f.agentTranslatedAddress
+}
+
+func (f *extensionFields) AgentTranslatedZoneExternalID() string {
+	return f.agentTranslatedZoneExternalID
+}
+
+func (f *extensionFields) AgentTranslatedZoneURI() string {
+	return f.agentTranslatedZoneURI
+}
+
+func (f *extensionFields) AgentZoneExternalID() string {
+	return f.agentZoneExternalID
+}
+
+func (f *extensionFields) AgentZoneURI() string {
+	return f.agentZoneURI
+}
+
+// The IP address of the ArcSight connector that processed the event.
+func (f *extensionFields) Agt() net.IP {
+	return f.agt
+}
+
+// The hostname of the ArcSight connector that processed the event.
+func (f *extensionFields) Ahost() string {
+	return f.ahost
+}
+
+// The agent ID of the ArcSight connector that processed the event.
+func (f *extensionFields) Aid() string {
+	return f.aid
+}
+
+// The MAC address of the ArcSight connector that processed the event.
+func (f *extensionFields) Amac() net.HardwareAddr {
+	return f.amac
+}
+
+// The time at which information about the event was received by the ArcSight connector.
+func (f *extensionFields) Art() string {
+	return f.art
+}
+
+// The agent type of the ArcSight connector that processed the event
+func (f *extensionFields) At() string {
+	return f.at
+}
+
+// The agent time zone of the ArcSight connector that processed the event.
+func (f *extensionFields) Atz() string {
+	return f.atz
+}
+
+// The version of the ArcSight connector that processed the event.
+func (f *extensionFields) Av() string {
+	return f.av
+}
+
+func (f *extensionFields) CustomerExternalID() string {
+	return f.customerExternalID
+}
+
+func (f *extensionFields) CustomerURI() string {
+	return f.customerURI
+}
+
+func (f *extensionFields) DestinatioTranslatedZoneExternalID() string {
+	return f.destinatioTranslatedZoneExternalID
+}
+
+// The URI for the Translated Zone that the destination asset has been assigned to in ArcSight.
+func (f *extensionFields) DestinationTranslatedZoneURI() string {
+	return f.destinationTranslatedZoneURI
+}
+
+func (f *extensionFields) DestinationZoneExternalID() string {
+	return f.destinationZoneExternalID
+}
+
+// The URI for the Zone that the destination asset has been assigned to in ArcSight.
+func (f *extensionFields) DestinationZoneURI() string {
+	return f.destinationZoneURI
+}
+
+func (f *extensionFields) DeviceTranslatedZoneExternalID() string {
+	return f.deviceTranslatedZoneExternalID
+}
+
+// The URI for the Translated Zone that the device asset has been assigned to in ArcSight.
+func (f *extensionFields) DeviceTranslatedZoneURI() string {
+	return f.deviceTranslatedZoneURI
+}
+
+func (f *extensionFields) DeviceZoneExternalID() string {
+	return f.deviceZoneExternalID
+}
+
+// Thee URI for the Zone that the device asset has been assigned to in ArcSight.
+func (f *extensionFields) DeviceZoneURI() string {
+	return f.deviceZoneURI
+}
+
+// The latitudinal value from which the destination’s IP address belongs.
+func (f *extensionFields) Dlat() float64 {
+	return f.dlat
+}
+
+// The longitudinal value from which the destination’s IP address belongs.
+func (f *extensionFields) Dlong() float64 {
+	return f.dlong
+}
+
+// This is a unique ID that ArcSight assigns to each event.
+func (f *extensionFields) EventId() int64 {
+	return f.eventId
+}
+
+func (f *extensionFields) RawEvent() string {
+	return f.rawEvent
+}
+
+func (f *extensionFields) Slat() float64 {
+	return f.slat
+}
+
+func (f *extensionFields) Slong() float64 {
+	return f.slong
+}
+
+func (f *extensionFields) SourceTranslatedZoneExternalID() string {
+	return f.sourceTranslatedZoneExternalID
+}
+
+// The URI for the Translated Zone that the destination asset has been assigned to in ArcSight.
+func (f *extensionFields) SourceTranslatedZoneURI() string {
+	return f.sourceTranslatedZoneURI
+}
+
+func (f *extensionFields) SourceZoneExternalID() string {
+	return f.sourceZoneExternalID
 }

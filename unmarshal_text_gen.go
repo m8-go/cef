@@ -98,45 +98,45 @@ func (cef *CEF) set(key string, val string) error {
 		cef.SetCat(val)
 
 	case "cfp1":
-		cfp1, err := strconv.ParseFloat(val, 64)
+		cfp1, err := strconv.ParseFloat(val, 32)
 		if err != nil {
 			return err
 		}
 
-		cef.SetCfp1(cfp1)
+		cef.SetCfp1(float32(cfp1))
 
 	case "cfp1Label":
 		cef.SetCfp1Label(val)
 
 	case "cfp2":
-		cfp2, err := strconv.ParseFloat(val, 64)
+		cfp2, err := strconv.ParseFloat(val, 32)
 		if err != nil {
 			return err
 		}
 
-		cef.SetCfp2(cfp2)
+		cef.SetCfp2(float32(cfp2))
 
 	case "cfp2Label":
 		cef.SetCfp2Label(val)
 
 	case "cfp3":
-		cfp3, err := strconv.ParseFloat(val, 64)
+		cfp3, err := strconv.ParseFloat(val, 32)
 		if err != nil {
 			return err
 		}
 
-		cef.SetCfp3(cfp3)
+		cef.SetCfp3(float32(cfp3))
 
 	case "cfp3Label":
 		cef.SetCfp3Label(val)
 
 	case "cfp4":
-		cfp4, err := strconv.ParseFloat(val, 64)
+		cfp4, err := strconv.ParseFloat(val, 32)
 		if err != nil {
 			return err
 		}
 
-		cef.SetCfp4(cfp4)
+		cef.SetCfp4(float32(cfp4))
 
 	case "cfp4Label":
 		cef.SetCfp4Label(val)
@@ -343,6 +343,345 @@ func (cef *CEF) set(key string, val string) error {
 		}
 
 		cef.SetDvcpid(dvcpid)
+
+	case "end":
+		cef.SetEnd(val)
+
+	case "externalId":
+		cef.SetExternalId(val)
+
+	case "fileCreateTime":
+		cef.SetFileCreateTime(val)
+
+	case "fileHash":
+		cef.SetFileHash(val)
+
+	case "fileId":
+		cef.SetFileId(val)
+
+	case "fileModificationTime":
+		cef.SetFileModificationTime(val)
+
+	case "filePath":
+		cef.SetFilePath(val)
+
+	case "filePermission":
+		cef.SetFilePermission(val)
+
+	case "fileType":
+		cef.SetFileType(val)
+
+	case "flexDate1":
+		cef.SetFlexDate1(val)
+
+	case "flexDate1Label":
+		cef.SetFlexDate1Label(val)
+
+	case "flexString1":
+		cef.SetFlexString1(val)
+
+	case "flexString1Label":
+		cef.SetFlexString1Label(val)
+
+	case "flexString2":
+		cef.SetFlexString2(val)
+
+	case "flexString2Label":
+		cef.SetFlexString2Label(val)
+
+	case "fname":
+		cef.SetFname(val)
+
+	case "fsize":
+		fsize, err := strconv.ParseInt(val, 10, 64)
+		if err != nil {
+			return err
+		}
+
+		cef.SetFsize(fsize)
+
+	case "in":
+		in, err := strconv.ParseInt(val, 10, 64)
+		if err != nil {
+			return err
+		}
+
+		cef.SetIn(in)
+
+	case "msg":
+		cef.SetMsg(val)
+
+	case "oldFileCreateTime":
+		cef.SetOldFileCreateTime(val)
+
+	case "oldFileHash":
+		cef.SetOldFileHash(val)
+
+	case "oldFileId":
+		cef.SetOldFileId(val)
+
+	case "oldFileModificationTime":
+		cef.SetOldFileModificationTime(val)
+
+	case "oldFileName":
+		cef.SetOldFileName(val)
+
+	case "oldFilePath":
+		cef.SetOldFilePath(val)
+
+	case "oldFilePermission":
+		cef.SetOldFilePermission(val)
+
+	case "oldFileSize":
+		oldFileSize, err := strconv.ParseInt(val, 10, 64)
+		if err != nil {
+			return err
+		}
+
+		cef.SetOldFileSize(oldFileSize)
+
+	case "oldFileType":
+		cef.SetOldFileType(val)
+
+	case "out":
+		out, err := strconv.Atoi(val)
+		if err != nil {
+			return err
+		}
+
+		cef.SetOut(out)
+
+	case "outcome":
+		cef.SetOutcome(val)
+
+	case "proto":
+		cef.SetProto(val)
+
+	case "reason":
+		cef.SetReason(val)
+
+	case "request":
+		cef.SetRequest(val)
+
+	case "requestClientApplication":
+		cef.SetRequestClientApplication(val)
+
+	case "requestContext":
+		cef.SetRequestContext(val)
+
+	case "requestCookies":
+		cef.SetRequestCookies(val)
+
+	case "requestMethod":
+		cef.SetRequestMethod(val)
+
+	case "rt":
+		cef.SetRt(val)
+
+	case "shost":
+		cef.SetShost(val)
+
+	case "smac":
+		smac, err := net.ParseMAC(val)
+		if err != nil {
+			return err
+		}
+
+		cef.SetSmac(smac)
+
+	case "sntdom":
+		cef.SetSntdom(val)
+
+	case "sourceDnsDomain":
+		cef.SetSourceDnsDomain(val)
+
+	case "sourceServiceName":
+		cef.SetSourceServiceName(val)
+
+	case "sourceTranslatedAddress":
+		cef.SetSourceTranslatedAddress(net.ParseIP(val))
+
+	case "sourceTranslatedPort":
+		sourceTranslatedPort, err := strconv.Atoi(val)
+		if err != nil {
+			return err
+		}
+
+		cef.SetSourceTranslatedPort(sourceTranslatedPort)
+
+	case "spid":
+		spid, err := strconv.Atoi(val)
+		if err != nil {
+			return err
+		}
+
+		cef.SetSpid(spid)
+
+	case "spriv":
+		cef.SetSpriv(val)
+
+	case "sproc":
+		cef.SetSproc(val)
+
+	case "spt":
+		spt, err := strconv.Atoi(val)
+		if err != nil {
+			return err
+		}
+
+		cef.SetSpt(spt)
+
+	case "src":
+		cef.SetSrc(net.ParseIP(val))
+
+	case "start":
+		cef.SetStart(val)
+
+	case "suid":
+		cef.SetSuid(val)
+
+	case "suser":
+		cef.SetSuser(val)
+
+	case "type":
+		typ, err := strconv.Atoi(val)
+		if err != nil {
+			return err
+		}
+
+		cef.SetType(typ)
+
+	case "agentDnsDomain":
+		cef.SetAgentDnsDomain(val)
+
+	case "agentNtDomain":
+		cef.SetAgentNtDomain(val)
+
+	case "agentTranslatedAddress":
+		cef.SetAgentTranslatedAddress(net.ParseIP(val))
+
+	case "agentTranslatedZoneExternalID":
+		cef.SetAgentTranslatedZoneExternalID(val)
+
+	case "agentTranslatedZoneURI":
+		cef.SetAgentTranslatedZoneURI(val)
+
+	case "agentZoneExternalID":
+		cef.SetAgentZoneExternalID(val)
+
+	case "agentZoneURI":
+		cef.SetAgentZoneURI(val)
+
+	case "agt":
+		cef.SetAgt(net.ParseIP(val))
+
+	case "ahost":
+		cef.SetAhost(val)
+
+	case "aid":
+		cef.SetAid(val)
+
+	case "amac":
+		amac, err := net.ParseMAC(val)
+		if err != nil {
+			return err
+		}
+
+		cef.SetAmac(amac)
+
+	case "art":
+		cef.SetArt(val)
+
+	case "at":
+		cef.SetAt(val)
+
+	case "atz":
+		cef.SetAtz(val)
+
+	case "av":
+		cef.SetAv(val)
+
+	case "customerExternalID":
+		cef.SetCustomerExternalID(val)
+
+	case "customerURI":
+		cef.SetCustomerURI(val)
+
+	case "destinatioTranslatedZoneExternalID":
+		cef.SetDestinatioTranslatedZoneExternalID(val)
+
+	case "destinationTranslatedZoneURI":
+		cef.SetDestinationTranslatedZoneURI(val)
+
+	case "destinationZoneExternalID":
+		cef.SetDestinationZoneExternalID(val)
+
+	case "destinationZoneURI":
+		cef.SetDestinationZoneURI(val)
+
+	case "deviceTranslatedZoneExternalID":
+		cef.SetDeviceTranslatedZoneExternalID(val)
+
+	case "deviceTranslatedZoneURI":
+		cef.SetDeviceTranslatedZoneURI(val)
+
+	case "deviceZoneExternalID":
+		cef.SetDeviceZoneExternalID(val)
+
+	case "deviceZoneURI":
+		cef.SetDeviceZoneURI(val)
+
+	case "dlat":
+		dlat, err := strconv.ParseFloat(val, 64)
+		if err != nil {
+			return err
+		}
+
+		cef.SetDlat(dlat)
+
+	case "dlong":
+		dlong, err := strconv.ParseFloat(val, 64)
+		if err != nil {
+			return err
+		}
+
+		cef.SetDlong(dlong)
+
+	case "eventId":
+		eventId, err := strconv.ParseInt(val, 10, 64)
+		if err != nil {
+			return err
+		}
+
+		cef.SetEventId(eventId)
+
+	case "rawEvent":
+		cef.SetRawEvent(val)
+
+	case "slat":
+		slat, err := strconv.ParseFloat(val, 64)
+		if err != nil {
+			return err
+		}
+
+		cef.SetSlat(slat)
+
+	case "slong":
+		slong, err := strconv.ParseFloat(val, 64)
+		if err != nil {
+			return err
+		}
+
+		cef.SetSlong(slong)
+
+	case "sourceTranslatedZoneExternalID":
+		cef.SetSourceTranslatedZoneExternalID(val)
+
+	case "sourceTranslatedZoneURI":
+		cef.SetSourceTranslatedZoneURI(val)
+
+	case "sourceZoneExternalID":
+		cef.SetSourceZoneExternalID(val)
 
 	default:
 	}

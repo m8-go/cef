@@ -79,12 +79,12 @@ func (cef *CEF) set(key string, val string) error {
     {{ else if eq .DataType "IPv6 Address" }}
     cef.Set{{ .CEFKeyName | trimAllSpaces | title }}(net.ParseIP(val))
     {{ else if eq .DataType "Floating Point" }}
-    {{ .CEFKeyName | trimAllSpaces }}, err := strconv.ParseFloat(val, 64)
+    {{ .CEFKeyName | trimAllSpaces }}, err := strconv.ParseFloat(val, 32)
     if err != nil {
         return err
     }
 
-    cef.Set{{ .CEFKeyName | trimAllSpaces | title }}({{ .CEFKeyName | trimAllSpaces }})
+    cef.Set{{ .CEFKeyName | trimAllSpaces | title }}(float32({{ .CEFKeyName | trimAllSpaces }}))
     {{ else if eq .DataType "Long" }}
     {{ .CEFKeyName | trimAllSpaces }}, err := strconv.ParseInt(val, 10, 64)
     if err != nil {
@@ -93,16 +93,23 @@ func (cef *CEF) set(key string, val string) error {
 
     cef.Set{{ .CEFKeyName | trimAllSpaces | title }}({{ .CEFKeyName | trimAllSpaces }})
     {{ else if eq .DataType "Integer" }}
-    {{ .CEFKeyName | trimAllSpaces }}, err := strconv.Atoi(val)
+    {{ .CEFKeyName | trimAllSpaces | renameKeyWord }}, err := strconv.Atoi(val)
+    if err != nil {
+        return err
+    }
+
+    cef.Set{{ .CEFKeyName | trimAllSpaces | title }}({{ .CEFKeyName | trimAllSpaces | renameKeyWord }})
+    {{ else if eq .DataType "Time Stamp" }}
+    cef.Set{{ .CEFKeyName | trimAllSpaces | title }}(val)
+    {{ else if eq .DataType "MAC Address" }}
+    {{ .CEFKeyName | trimAllSpaces }}, err := net.ParseMAC(val)
     if err != nil {
         return err
     }
 
     cef.Set{{ .CEFKeyName | trimAllSpaces | title }}({{ .CEFKeyName | trimAllSpaces }})
-    {{ else if eq .DataType "Time Stamp" }}
-    cef.Set{{ .CEFKeyName | trimAllSpaces | title }}(val)
-    {{ else if eq .DataType "MAC Address" }}
-    {{ .CEFKeyName | trimAllSpaces }}, err := net.ParseMAC(val)
+    {{ else if eq .DataType "Double" }}
+    {{ .CEFKeyName | trimAllSpaces }}, err := strconv.ParseFloat(val, 64)
     if err != nil {
         return err
     }

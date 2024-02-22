@@ -5,7 +5,7 @@ import "net"
 type extensionFields struct{
 {{- range . }}
 // {{ .Meaning }}
-{{ .CEFKeyName | unexported | trimAllSpaces }} {{ typeMapping .DataType }}
+{{ .CEFKeyName | unexported | trimAllSpaces | renameKeyWord }} {{ typeMapping .DataType }}
 {{- end }}
 }
 
@@ -18,7 +18,7 @@ func (f *extensionFields) Set{{ .CEFKeyName | trimAllSpaces | title }}(v {{ type
         v = v[:{{ .Length }}]
     }
 {{ end }}
-    f.{{ .CEFKeyName | unexported | trimAllSpaces }} = v
+    f.{{ .CEFKeyName | unexported | trimAllSpaces | renameKeyWord }} = v
 
     return f
 }
@@ -27,6 +27,6 @@ func (f *extensionFields) Set{{ .CEFKeyName | trimAllSpaces | title }}(v {{ type
 {{ range . }}
 // {{ .Meaning }}
 func (f *extensionFields) {{ .CEFKeyName | trimAllSpaces | title }}() {{ typeMapping .DataType }} {
-    return f.{{ .CEFKeyName | unexported | trimAllSpaces }}
+    return f.{{ .CEFKeyName | unexported | trimAllSpaces | renameKeyWord }}
 }
 {{ end }}

@@ -34,6 +34,7 @@ func run() error {
 			"trimAllSpaces": trimAllSpaces,
 			"unexported":    unexported,
 			"add":           add,
+			"renameKeyWord": renameKeyWord,
 		}).
 		ParseFS(templateDir, "template/*.tmpl")
 	if err != nil {
@@ -223,11 +224,12 @@ var _typeMapping = map[string]string{
 	"IP Address":               "net.IP",
 	"IPv6 address":             "net.IP",
 	"IPv6 Address":             "net.IP",
-	"Floating Point":           "float64",
+	"Floating Point":           "float32",
 	"Long":                     "int64",
 	"Integer":                  "int",
 	"Time Stamp":               "string",
 	"MAC Address":              "net.HardwareAddr",
+	"Double":                   "float64",
 }
 
 func trimAllSpaces(s string) string {
@@ -251,4 +253,14 @@ func unexported(s string) string {
 
 func add(a, b int) int {
 	return a + b
+}
+
+func renameKeyWord(s string) string {
+	switch s {
+	case "type":
+		return "typ"
+
+	default:
+		return s
+	}
 }
