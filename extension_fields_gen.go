@@ -91,6 +91,22 @@ type extensionFields struct {
 	deviceCustomDate1Label string
 	// One of the two timestamp fields available to map fields that do not apply to any other in this dictionary. Use sparingly and seek a more specific, dictionary supplied field when possible. TIP: For tips on using these fields, see the guidelines defined under User-Defined Extensions
 	deviceCustomDate2 string
+	// All custom fields have a corresponding label field. Each of these fields is a string and describes the purpose of the custom field.
+	deviceCustomDate2Label string
+	// Any information about what direction the observed communication has taken. The following values are supported: “0” for inbound or “1” for outbound
+	deviceDirection int
+	// The DNS domain part of the complete fully qualified domain name (FQDN).
+	deviceDnsDomain string
+	// A name that uniquely identifies the device generating this event.
+	deviceExternalId string
+	// The facility generating this event. For example, Syslog has an explicit facility associated with every event.
+	deviceFacility string
+	// Interface on which the packet or data entered the device.
+	deviceInboundInterface string
+	// The Windows domain name of the device address.
+	deviceNtDomain string
+	// Interface on which the packet or data left the device
+	deviceOutboundInterface string
 }
 
 func (f *extensionFields) SetAct(v string) *extensionFields {
@@ -463,6 +479,82 @@ func (f *extensionFields) SetDeviceCustomDate2(v string) *extensionFields {
 	return f
 }
 
+func (f *extensionFields) SetDeviceCustomDate2Label(v string) *extensionFields {
+	if len(v) > 1023 {
+		v = v[:1023]
+	}
+
+	f.deviceCustomDate2Label = v
+
+	return f
+}
+
+func (f *extensionFields) SetDeviceDirection(v int) *extensionFields {
+	f.deviceDirection = v
+
+	return f
+}
+
+func (f *extensionFields) SetDeviceDnsDomain(v string) *extensionFields {
+	if len(v) > 255 {
+		v = v[:255]
+	}
+
+	f.deviceDnsDomain = v
+
+	return f
+}
+
+func (f *extensionFields) SetDeviceExternalId(v string) *extensionFields {
+	if len(v) > 255 {
+		v = v[:255]
+	}
+
+	f.deviceExternalId = v
+
+	return f
+}
+
+func (f *extensionFields) SetDeviceFacility(v string) *extensionFields {
+	if len(v) > 1023 {
+		v = v[:1023]
+	}
+
+	f.deviceFacility = v
+
+	return f
+}
+
+func (f *extensionFields) SetDeviceInboundInterface(v string) *extensionFields {
+	if len(v) > 128 {
+		v = v[:128]
+	}
+
+	f.deviceInboundInterface = v
+
+	return f
+}
+
+func (f *extensionFields) SetDeviceNtDomain(v string) *extensionFields {
+	if len(v) > 255 {
+		v = v[:255]
+	}
+
+	f.deviceNtDomain = v
+
+	return f
+}
+
+func (f *extensionFields) SetDeviceOutboundInterface(v string) *extensionFields {
+	if len(v) > 128 {
+		v = v[:128]
+	}
+
+	f.deviceOutboundInterface = v
+
+	return f
+}
+
 func (f *extensionFields) Act() string {
 	return f.act
 }
@@ -633,4 +725,36 @@ func (f *extensionFields) DeviceCustomDate1Label() string {
 
 func (f *extensionFields) DeviceCustomDate2() string {
 	return f.deviceCustomDate2
+}
+
+func (f *extensionFields) DeviceCustomDate2Label() string {
+	return f.deviceCustomDate2Label
+}
+
+func (f *extensionFields) DeviceDirection() int {
+	return f.deviceDirection
+}
+
+func (f *extensionFields) DeviceDnsDomain() string {
+	return f.deviceDnsDomain
+}
+
+func (f *extensionFields) DeviceExternalId() string {
+	return f.deviceExternalId
+}
+
+func (f *extensionFields) DeviceFacility() string {
+	return f.deviceFacility
+}
+
+func (f *extensionFields) DeviceInboundInterface() string {
+	return f.deviceInboundInterface
+}
+
+func (f *extensionFields) DeviceNtDomain() string {
+	return f.deviceNtDomain
+}
+
+func (f *extensionFields) DeviceOutboundInterface() string {
+	return f.deviceOutboundInterface
 }

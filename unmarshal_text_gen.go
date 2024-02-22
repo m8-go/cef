@@ -235,6 +235,34 @@ func (cef *CEF) set(key string, val string) error {
 	case "deviceCustomDate2":
 		cef.SetDeviceCustomDate2(val)
 
+	case "deviceCustomDate2Label":
+		cef.SetDeviceCustomDate2Label(val)
+
+	case "deviceDirection":
+		deviceDirection, err := strconv.Atoi(val)
+		if err != nil {
+			return err
+		}
+		cef.SetDeviceDirection(deviceDirection)
+
+	case "deviceDnsDomain":
+		cef.SetDeviceDnsDomain(val)
+
+	case "deviceExternalId":
+		cef.SetDeviceExternalId(val)
+
+	case "deviceFacility":
+		cef.SetDeviceFacility(val)
+
+	case "deviceInboundInterface":
+		cef.SetDeviceInboundInterface(val)
+
+	case "deviceNtDomain":
+		cef.SetDeviceNtDomain(val)
+
+	case "deviceOutboundInterface":
+		cef.SetDeviceOutboundInterface(val)
+
 	default:
 	}
 
