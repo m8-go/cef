@@ -53,6 +53,10 @@ func run() error {
 		return err
 	}
 
+	if err := executeExtension(t); err != nil {
+		return err
+	}
+
 	return nil
 }
 
@@ -194,6 +198,32 @@ func executeUnmarshalText(t *template.Template) error {
 		"HeaderFieldsNum": len(headerFields),
 		"ExtensionFields": extensionFields,
 	}, "unmarshal_text_gen.go")
+}
+
+func executeExtension(t *template.Template) error {
+	records, err := csvRecords("extension_fields.csv")
+	if err != nil {
+		return err
+	}
+
+	var extensionFields []extensionField
+
+	for i, v := range records {
+		if i == 0 {
+			continue
+		}
+
+		extensionFields = append(extensionFields, extensionField{
+			CEFSpecificationVersion: v[0],
+			CEFKeyName:              v[1],
+			FullName:                v[2],
+			DataType:                v[3],
+			Length:                  v[4],
+			Meaning:                 v[5],
+		})
+	}
+
+	return execute(t, "extension.tmpl", extensionFields, "extension_gen.go")
 }
 
 func execute(t *template.Template, templateName string, data any, fileName string) error {

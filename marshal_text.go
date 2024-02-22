@@ -16,6 +16,7 @@ func (cef *CEF) MarshalText() (text []byte, err error) {
 		cef.DeviceEventClassId(),
 		cef.Name(),
 		strconv.Itoa(int(cef.AgentSeverity())),
+		cef.extension(),
 	}
 
 	b := new(bytes.Buffer)
