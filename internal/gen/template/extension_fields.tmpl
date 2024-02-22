@@ -25,5 +25,7 @@ func (f *extensionFields) Set{{ .CEFKeyName | trimAllSpaces | title }}(v {{ type
 {{ end }}
 
 {{ range . }}
-func (f *extensionFields) {{ .CEFKeyName | trimAllSpaces | title }}() {{ typeMapping .DataType }} { return f.{{ .CEFKeyName | unexported | trimAllSpaces }} }
-{{- end }}
+func (f *extensionFields) {{ .CEFKeyName | trimAllSpaces | title }}() {{ typeMapping .DataType }} {
+    return f.{{ .CEFKeyName | unexported | trimAllSpaces }}
+}
+{{ end }}

@@ -463,48 +463,174 @@ func (f *extensionFields) SetDeviceCustomDate2(v string) *extensionFields {
 	return f
 }
 
-func (f *extensionFields) Act() string                    { return f.act }
-func (f *extensionFields) App() string                    { return f.app }
-func (f *extensionFields) C6a1() net.IP                   { return f.c6a1 }
-func (f *extensionFields) C6a1Label() string              { return f.c6a1Label }
-func (f *extensionFields) C6a3() net.IP                   { return f.c6a3 }
-func (f *extensionFields) C6a3Label() string              { return f.c6a3Label }
-func (f *extensionFields) C6a4() net.IP                   { return f.c6a4 }
-func (f *extensionFields) C6a4Label() string              { return f.c6a4Label }
-func (f *extensionFields) Cat() string                    { return f.cat }
-func (f *extensionFields) Cfp1() float64                  { return f.cfp1 }
-func (f *extensionFields) Cfp1Label() string              { return f.cfp1Label }
-func (f *extensionFields) Cfp2() float64                  { return f.cfp2 }
-func (f *extensionFields) Cfp2Label() string              { return f.cfp2Label }
-func (f *extensionFields) Cfp3() float64                  { return f.cfp3 }
-func (f *extensionFields) Cfp3Label() string              { return f.cfp3Label }
-func (f *extensionFields) Cfp4() float64                  { return f.cfp4 }
-func (f *extensionFields) Cfp4Label() string              { return f.cfp4Label }
-func (f *extensionFields) Cn1() int64                     { return f.cn1 }
-func (f *extensionFields) Cn1Label() string               { return f.cn1Label }
-func (f *extensionFields) Cn2() int64                     { return f.cn2 }
-func (f *extensionFields) Cn2Label() string               { return f.cn2Label }
-func (f *extensionFields) Cn3() int64                     { return f.cn3 }
-func (f *extensionFields) Cn3Label() string               { return f.cn3Label }
-func (f *extensionFields) Cnt() int                       { return f.cnt }
-func (f *extensionFields) Cs1() string                    { return f.cs1 }
-func (f *extensionFields) Cs1Label() string               { return f.cs1Label }
-func (f *extensionFields) Cs2() string                    { return f.cs2 }
-func (f *extensionFields) Cs2Label() string               { return f.cs2Label }
-func (f *extensionFields) Cs3() string                    { return f.cs3 }
-func (f *extensionFields) Cs3Label() string               { return f.cs3Label }
-func (f *extensionFields) Cs4() string                    { return f.cs4 }
-func (f *extensionFields) Cs4Label() string               { return f.cs4Label }
-func (f *extensionFields) Cs5() string                    { return f.cs5 }
-func (f *extensionFields) Cs5Label() string               { return f.cs5Label }
-func (f *extensionFields) Cs6() string                    { return f.cs6 }
-func (f *extensionFields) Cs6Label() string               { return f.cs6Label }
-func (f *extensionFields) DestinationDnsDomain() string   { return f.destinationDnsDomain }
-func (f *extensionFields) DestinationServiceName() string { return f.destinationServiceName }
+func (f *extensionFields) Act() string {
+	return f.act
+}
+
+func (f *extensionFields) App() string {
+	return f.app
+}
+
+func (f *extensionFields) C6a1() net.IP {
+	return f.c6a1
+}
+
+func (f *extensionFields) C6a1Label() string {
+	return f.c6a1Label
+}
+
+func (f *extensionFields) C6a3() net.IP {
+	return f.c6a3
+}
+
+func (f *extensionFields) C6a3Label() string {
+	return f.c6a3Label
+}
+
+func (f *extensionFields) C6a4() net.IP {
+	return f.c6a4
+}
+
+func (f *extensionFields) C6a4Label() string {
+	return f.c6a4Label
+}
+
+func (f *extensionFields) Cat() string {
+	return f.cat
+}
+
+func (f *extensionFields) Cfp1() float64 {
+	return f.cfp1
+}
+
+func (f *extensionFields) Cfp1Label() string {
+	return f.cfp1Label
+}
+
+func (f *extensionFields) Cfp2() float64 {
+	return f.cfp2
+}
+
+func (f *extensionFields) Cfp2Label() string {
+	return f.cfp2Label
+}
+
+func (f *extensionFields) Cfp3() float64 {
+	return f.cfp3
+}
+
+func (f *extensionFields) Cfp3Label() string {
+	return f.cfp3Label
+}
+
+func (f *extensionFields) Cfp4() float64 {
+	return f.cfp4
+}
+
+func (f *extensionFields) Cfp4Label() string {
+	return f.cfp4Label
+}
+
+func (f *extensionFields) Cn1() int64 {
+	return f.cn1
+}
+
+func (f *extensionFields) Cn1Label() string {
+	return f.cn1Label
+}
+
+func (f *extensionFields) Cn2() int64 {
+	return f.cn2
+}
+
+func (f *extensionFields) Cn2Label() string {
+	return f.cn2Label
+}
+
+func (f *extensionFields) Cn3() int64 {
+	return f.cn3
+}
+
+func (f *extensionFields) Cn3Label() string {
+	return f.cn3Label
+}
+
+func (f *extensionFields) Cnt() int {
+	return f.cnt
+}
+
+func (f *extensionFields) Cs1() string {
+	return f.cs1
+}
+
+func (f *extensionFields) Cs1Label() string {
+	return f.cs1Label
+}
+
+func (f *extensionFields) Cs2() string {
+	return f.cs2
+}
+
+func (f *extensionFields) Cs2Label() string {
+	return f.cs2Label
+}
+
+func (f *extensionFields) Cs3() string {
+	return f.cs3
+}
+
+func (f *extensionFields) Cs3Label() string {
+	return f.cs3Label
+}
+
+func (f *extensionFields) Cs4() string {
+	return f.cs4
+}
+
+func (f *extensionFields) Cs4Label() string {
+	return f.cs4Label
+}
+
+func (f *extensionFields) Cs5() string {
+	return f.cs5
+}
+
+func (f *extensionFields) Cs5Label() string {
+	return f.cs5Label
+}
+
+func (f *extensionFields) Cs6() string {
+	return f.cs6
+}
+
+func (f *extensionFields) Cs6Label() string {
+	return f.cs6Label
+}
+
+func (f *extensionFields) DestinationDnsDomain() string {
+	return f.destinationDnsDomain
+}
+
+func (f *extensionFields) DestinationServiceName() string {
+	return f.destinationServiceName
+}
+
 func (f *extensionFields) DestinationTranslatedAddress() net.IP {
 	return f.destinationTranslatedAddress
 }
-func (f *extensionFields) DestinationTranslatedPort() int { return f.destinationTranslatedPort }
-func (f *extensionFields) DeviceCustomDate1() string      { return f.deviceCustomDate1 }
-func (f *extensionFields) DeviceCustomDate1Label() string { return f.deviceCustomDate1Label }
-func (f *extensionFields) DeviceCustomDate2() string      { return f.deviceCustomDate2 }
+
+func (f *extensionFields) DestinationTranslatedPort() int {
+	return f.destinationTranslatedPort
+}
+
+func (f *extensionFields) DeviceCustomDate1() string {
+	return f.deviceCustomDate1
+}
+
+func (f *extensionFields) DeviceCustomDate1Label() string {
+	return f.deviceCustomDate1Label
+}
+
+func (f *extensionFields) DeviceCustomDate2() string {
+	return f.deviceCustomDate2
+}

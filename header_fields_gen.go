@@ -83,10 +83,30 @@ func (f *headerFields) SetName(v string) *headerFields {
 	return f
 }
 
-func (f *headerFields) CEFVersion() int              { return f.cefVersion }
-func (f *headerFields) AgentSeverity() AgentSeverity { return f.agentSeverity }
-func (f *headerFields) DeviceEventClassId() string   { return f.deviceEventClassId }
-func (f *headerFields) DeviceProduct() string        { return f.deviceProduct }
-func (f *headerFields) DeviceVendor() string         { return f.deviceVendor }
-func (f *headerFields) DeviceVersion() string        { return f.deviceVersion }
-func (f *headerFields) Name() string                 { return f.name }
+func (f *headerFields) CEFVersion() int {
+	return f.cefVersion
+}
+
+func (f *headerFields) AgentSeverity() AgentSeverity {
+	return f.agentSeverity
+}
+
+func (f *headerFields) DeviceEventClassId() string {
+	return f.deviceEventClassId
+}
+
+func (f *headerFields) DeviceProduct() string {
+	return f.deviceProduct
+}
+
+func (f *headerFields) DeviceVendor() string {
+	return f.deviceVendor
+}
+
+func (f *headerFields) DeviceVersion() string {
+	return f.deviceVersion
+}
+
+func (f *headerFields) Name() string {
+	return f.name
+}
