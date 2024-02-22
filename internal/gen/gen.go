@@ -53,7 +53,7 @@ func run() error {
 		return err
 	}
 
-	if err := executeExtension(t); err != nil {
+	if err := executeMarshalText(t); err != nil {
 		return err
 	}
 
@@ -200,7 +200,7 @@ func executeUnmarshalText(t *template.Template) error {
 	}, "unmarshal_text_gen.go")
 }
 
-func executeExtension(t *template.Template) error {
+func executeMarshalText(t *template.Template) error {
 	records, err := csvRecords("extension_fields.csv")
 	if err != nil {
 		return err
@@ -223,7 +223,7 @@ func executeExtension(t *template.Template) error {
 		})
 	}
 
-	return execute(t, "extension.tmpl", extensionFields, "extension_gen.go")
+	return execute(t, "marshal_text.tmpl", extensionFields, "marshal_text_gen.go")
 }
 
 func execute(t *template.Template, templateName string, data any, fileName string) error {
