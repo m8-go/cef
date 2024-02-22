@@ -285,6 +285,28 @@ func (cef *CEF) set(key string, val string) error {
 		}
 		cef.SetDpid(dpid)
 
+	case "dpriv":
+		cef.SetDpriv(val)
+
+	case "dproc":
+		cef.SetDproc(val)
+
+	case "dpt":
+		dpt, err := strconv.Atoi(val)
+		if err != nil {
+			return err
+		}
+		cef.SetDpt(dpt)
+
+	case "dst":
+		cef.SetDst(net.ParseIP(val))
+
+	case "dtz":
+		cef.SetDtz(val)
+
+	case "duid":
+		cef.SetDuid(val)
+
 	default:
 	}
 

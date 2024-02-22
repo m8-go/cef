@@ -119,6 +119,18 @@ type extensionFields struct {
 	dntdom string
 	// Provides the ID of the destination process associated with the event. For example, if an event contains process ID 105, “105” is the process ID
 	dpid int
+	// The typical values are “Administrator”, “User”, and “Guest”. This identifies the destination user’s privileges. In UNIX, for example, activity executed on the root user would be identified with destinationUser Privileges of “Administrator”.
+	dpriv string
+	// The name of the event’s destination process. Example: “telnetd” or “sshd”.
+	dproc string
+	// The valid port numbers are between 0 and 65535.
+	dpt int
+	// Identifies the destination address that the event refers to in an IP network. The format is an IPv4 address. Example: “192.168.10.1”
+	dst net.IP
+	// The timezone for the device generating the event.
+	dtz string
+	// Identifies the destination user by ID. For example, in UNIX, the root user is generally associated with user ID 0
+	duid string
 }
 
 func (f *extensionFields) SetAct(v string) *extensionFields {
@@ -619,6 +631,58 @@ func (f *extensionFields) SetDpid(v int) *extensionFields {
 	return f
 }
 
+func (f *extensionFields) SetDpriv(v string) *extensionFields {
+	if len(v) > 1023 {
+		v = v[:1023]
+	}
+
+	f.dpriv = v
+
+	return f
+}
+
+func (f *extensionFields) SetDproc(v string) *extensionFields {
+	if len(v) > 1023 {
+		v = v[:1023]
+	}
+
+	f.dproc = v
+
+	return f
+}
+
+func (f *extensionFields) SetDpt(v int) *extensionFields {
+	f.dpt = v
+
+	return f
+}
+
+func (f *extensionFields) SetDst(v net.IP) *extensionFields {
+	f.dst = v
+
+	return f
+}
+
+func (f *extensionFields) SetDtz(v string) *extensionFields {
+	if len(v) > 255 {
+		v = v[:255]
+	}
+
+	f.dtz = v
+
+	return f
+}
+
+func (f *extensionFields) SetDuid(v string) *extensionFields {
+	if len(v) > 1023 {
+		v = v[:1023]
+	}
+
+	f.duid = v
+
+	return f
+}
+
 func (f *extensionFields) Act() string {
 	return f.act
 }
@@ -845,4 +909,28 @@ func (f *extensionFields) Dntdom() string {
 
 func (f *extensionFields) Dpid() int {
 	return f.dpid
+}
+
+func (f *extensionFields) Dpriv() string {
+	return f.dpriv
+}
+
+func (f *extensionFields) Dproc() string {
+	return f.dproc
+}
+
+func (f *extensionFields) Dpt() int {
+	return f.dpt
+}
+
+func (f *extensionFields) Dst() net.IP {
+	return f.dst
+}
+
+func (f *extensionFields) Dtz() string {
+	return f.dtz
+}
+
+func (f *extensionFields) Duid() string {
+	return f.duid
 }
