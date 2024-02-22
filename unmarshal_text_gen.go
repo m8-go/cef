@@ -683,6 +683,81 @@ func (cef *CEF) set(key string, val string) error {
 	case "sourceZoneExternalID":
 		cef.SetSourceZoneExternalID(val)
 
+	case "sourceZoneURI":
+		cef.SetSourceZoneURI(val)
+
+	case "agentTranslatedZoneKey":
+		agentTranslatedZoneKey, err := strconv.ParseInt(val, 10, 64)
+		if err != nil {
+			return err
+		}
+
+		cef.SetAgentTranslatedZoneKey(agentTranslatedZoneKey)
+
+	case "agentZoneKey":
+		agentZoneKey, err := strconv.ParseInt(val, 10, 64)
+		if err != nil {
+			return err
+		}
+
+		cef.SetAgentZoneKey(agentZoneKey)
+
+	case "customerKey":
+		customerKey, err := strconv.ParseInt(val, 10, 64)
+		if err != nil {
+			return err
+		}
+
+		cef.SetCustomerKey(customerKey)
+
+	case "destinationTranslatedZoneKey":
+		destinationTranslatedZoneKey, err := strconv.ParseInt(val, 10, 64)
+		if err != nil {
+			return err
+		}
+
+		cef.SetDestinationTranslatedZoneKey(destinationTranslatedZoneKey)
+
+	case "dZoneKey":
+		dZoneKey, err := strconv.ParseInt(val, 10, 64)
+		if err != nil {
+			return err
+		}
+
+		cef.SetDZoneKey(dZoneKey)
+
+	case "deviceTranslatedZoneKey":
+		deviceTranslatedZoneKey, err := strconv.ParseInt(val, 10, 64)
+		if err != nil {
+			return err
+		}
+
+		cef.SetDeviceTranslatedZoneKey(deviceTranslatedZoneKey)
+
+	case "deviceZoneKey":
+		deviceZoneKey, err := strconv.ParseInt(val, 10, 64)
+		if err != nil {
+			return err
+		}
+
+		cef.SetDeviceZoneKey(deviceZoneKey)
+
+	case "sTranslatedZoneKey":
+		sTranslatedZoneKey, err := strconv.ParseInt(val, 10, 64)
+		if err != nil {
+			return err
+		}
+
+		cef.SetSTranslatedZoneKey(sTranslatedZoneKey)
+
+	case "sZoneKey":
+		sZoneKey, err := strconv.ParseInt(val, 10, 64)
+		if err != nil {
+			return err
+		}
+
+		cef.SetSZoneKey(sZoneKey)
+
 	default:
 	}
 

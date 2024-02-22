@@ -300,6 +300,26 @@ type extensionFields struct {
 	// The URI for the Translated Zone that the destination asset has been assigned to in ArcSight.
 	sourceTranslatedZoneURI string
 	sourceZoneExternalID string
+	// The URI for the Zone that the source asset has been assigned to in ArcSight.
+	sourceZoneURI string
+	// ID of an agentTranslatedZone resource reference.
+	agentTranslatedZoneKey int64
+	// ID of an agentZone resource reference.
+	agentZoneKey int64
+	// ID of a customer resource reference.
+	customerKey int64
+	// ID of a destinationTranslate dZone resource reference.
+	destinationTranslatedZoneKey int64
+	// ID of a destinationZone resource reference.
+	dZoneKey int64
+	// ID of a deviceTranslatedZone resource reference.
+	deviceTranslatedZoneKey int64
+	// ID of a deviceZone resource reference.
+	deviceZoneKey int64
+	// ID of a sourceTranslatedZon e resource reference.
+	sTranslatedZoneKey int64
+	// ID of a sourceZone resource reference
+	sZoneKey int64
 }
 
 func (f *extensionFields) SetAct(v string) *extensionFields {
@@ -1658,6 +1678,70 @@ func (f *extensionFields) SetSourceZoneExternalID(v string) *extensionFields {
 	return f
 }
 
+func (f *extensionFields) SetSourceZoneURI(v string) *extensionFields {
+	if len(v) > 2048 {
+		v = v[:2048]
+	}
+
+	f.sourceZoneURI = v
+
+	return f
+}
+
+func (f *extensionFields) SetAgentTranslatedZoneKey(v int64) *extensionFields {
+	f.agentTranslatedZoneKey = v
+
+	return f
+}
+
+func (f *extensionFields) SetAgentZoneKey(v int64) *extensionFields {
+	f.agentZoneKey = v
+
+	return f
+}
+
+func (f *extensionFields) SetCustomerKey(v int64) *extensionFields {
+	f.customerKey = v
+
+	return f
+}
+
+func (f *extensionFields) SetDestinationTranslatedZoneKey(v int64) *extensionFields {
+	f.destinationTranslatedZoneKey = v
+
+	return f
+}
+
+func (f *extensionFields) SetDZoneKey(v int64) *extensionFields {
+	f.dZoneKey = v
+
+	return f
+}
+
+func (f *extensionFields) SetDeviceTranslatedZoneKey(v int64) *extensionFields {
+	f.deviceTranslatedZoneKey = v
+
+	return f
+}
+
+func (f *extensionFields) SetDeviceZoneKey(v int64) *extensionFields {
+	f.deviceZoneKey = v
+
+	return f
+}
+
+func (f *extensionFields) SetSTranslatedZoneKey(v int64) *extensionFields {
+	f.sTranslatedZoneKey = v
+
+	return f
+}
+
+func (f *extensionFields) SetSZoneKey(v int64) *extensionFields {
+	f.sZoneKey = v
+
+	return f
+}
+
 // Action taken by the device.
 func (f *extensionFields) Act() string {
 	return f.act
@@ -2419,4 +2503,54 @@ func (f *extensionFields) SourceTranslatedZoneURI() string {
 
 func (f *extensionFields) SourceZoneExternalID() string {
 	return f.sourceZoneExternalID
+}
+
+// The URI for the Zone that the source asset has been assigned to in ArcSight.
+func (f *extensionFields) SourceZoneURI() string {
+	return f.sourceZoneURI
+}
+
+// ID of an agentTranslatedZone resource reference.
+func (f *extensionFields) AgentTranslatedZoneKey() int64 {
+	return f.agentTranslatedZoneKey
+}
+
+// ID of an agentZone resource reference.
+func (f *extensionFields) AgentZoneKey() int64 {
+	return f.agentZoneKey
+}
+
+// ID of a customer resource reference.
+func (f *extensionFields) CustomerKey() int64 {
+	return f.customerKey
+}
+
+// ID of a destinationTranslate dZone resource reference.
+func (f *extensionFields) DestinationTranslatedZoneKey() int64 {
+	return f.destinationTranslatedZoneKey
+}
+
+// ID of a destinationZone resource reference.
+func (f *extensionFields) DZoneKey() int64 {
+	return f.dZoneKey
+}
+
+// ID of a deviceTranslatedZone resource reference.
+func (f *extensionFields) DeviceTranslatedZoneKey() int64 {
+	return f.deviceTranslatedZoneKey
+}
+
+// ID of a deviceZone resource reference.
+func (f *extensionFields) DeviceZoneKey() int64 {
+	return f.deviceZoneKey
+}
+
+// ID of a sourceTranslatedZon e resource reference.
+func (f *extensionFields) STranslatedZoneKey() int64 {
+	return f.sTranslatedZoneKey
+}
+
+// ID of a sourceZone resource reference
+func (f *extensionFields) SZoneKey() int64 {
+	return f.sZoneKey
 }

@@ -13,6 +13,7 @@ type extensionFields struct{
 func (f *extensionFields) Set{{ .CEFKeyName | trimAllSpaces | title }}(v {{ typeMapping .DataType }}) *extensionFields {
 {{- if not .Length }}
 {{- else if eq .Length "N/A" }}
+{{- else if eq .Length "64-bit" }}
 {{- else }}
     if len(v) > {{ .Length }} {
         v = v[:{{ .Length }}]
