@@ -263,6 +263,28 @@ func (cef *CEF) set(key string, val string) error {
 	case "deviceOutboundInterface":
 		cef.SetDeviceOutboundInterface(val)
 
+	case "DevicePayloadId":
+		cef.SetDevicePayloadId(val)
+
+	case "deviceProcessName":
+		cef.SetDeviceProcessName(val)
+
+	case "deviceTranslatedAddress":
+		cef.SetDeviceTranslatedAddress(net.ParseIP(val))
+
+	case "dhost":
+		cef.SetDhost(val)
+
+	case "dntdom":
+		cef.SetDntdom(val)
+
+	case "dpid":
+		dpid, err := strconv.Atoi(val)
+		if err != nil {
+			return err
+		}
+		cef.SetDpid(dpid)
+
 	default:
 	}
 

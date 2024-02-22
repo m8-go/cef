@@ -107,6 +107,18 @@ type extensionFields struct {
 	deviceNtDomain string
 	// Interface on which the packet or data left the device
 	deviceOutboundInterface string
+	// Unique identifier for the payload associated with the event.
+	devicepayloadid string
+	// Process name associated with the event. An example might be the process generating the syslog entry in UNIX.
+	deviceProcessName string
+	// Identifies the translated device address that the event refers to in an IP network. The format is an IPv4 address. Example: “192.168.10.1”
+	deviceTranslatedAddress net.IP
+	// Identifies the destination that an event refers to in an IP network. The format must be a fully qualified domain name (FQDN) associated with the destination node, when a node is available. Examples: “host.domain.com” or “host”.
+	dhost string
+	// The Windows domain name of the destination address.
+	dntdom string
+	// Provides the ID of the destination process associated with the event. For example, if an event contains process ID 105, “105” is the process ID
+	dpid int
 }
 
 func (f *extensionFields) SetAct(v string) *extensionFields {
@@ -555,6 +567,58 @@ func (f *extensionFields) SetDeviceOutboundInterface(v string) *extensionFields 
 	return f
 }
 
+func (f *extensionFields) SetDevicePayloadId(v string) *extensionFields {
+	if len(v) > 128 {
+		v = v[:128]
+	}
+
+	f.devicepayloadid = v
+
+	return f
+}
+
+func (f *extensionFields) SetDeviceProcessName(v string) *extensionFields {
+	if len(v) > 1023 {
+		v = v[:1023]
+	}
+
+	f.deviceProcessName = v
+
+	return f
+}
+
+func (f *extensionFields) SetDeviceTranslatedAddress(v net.IP) *extensionFields {
+	f.deviceTranslatedAddress = v
+
+	return f
+}
+
+func (f *extensionFields) SetDhost(v string) *extensionFields {
+	if len(v) > 1023 {
+		v = v[:1023]
+	}
+
+	f.dhost = v
+
+	return f
+}
+
+func (f *extensionFields) SetDntdom(v string) *extensionFields {
+	if len(v) > 255 {
+		v = v[:255]
+	}
+
+	f.dntdom = v
+
+	return f
+}
+
+func (f *extensionFields) SetDpid(v int) *extensionFields {
+	f.dpid = v
+
+	return f
+}
+
 func (f *extensionFields) Act() string {
 	return f.act
 }
@@ -757,4 +821,28 @@ func (f *extensionFields) DeviceNtDomain() string {
 
 func (f *extensionFields) DeviceOutboundInterface() string {
 	return f.deviceOutboundInterface
+}
+
+func (f *extensionFields) DevicePayloadId() string {
+	return f.devicepayloadid
+}
+
+func (f *extensionFields) DeviceProcessName() string {
+	return f.deviceProcessName
+}
+
+func (f *extensionFields) DeviceTranslatedAddress() net.IP {
+	return f.deviceTranslatedAddress
+}
+
+func (f *extensionFields) Dhost() string {
+	return f.dhost
+}
+
+func (f *extensionFields) Dntdom() string {
+	return f.dntdom
+}
+
+func (f *extensionFields) Dpid() int {
+	return f.dpid
 }
