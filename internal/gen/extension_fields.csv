@@ -62,3 +62,8 @@ CEF Specification Version,CEF Key Name,Full Name,Data Type,Length,Meaning
 0.1,dst,destinationAddress,IP Address,,"Identifies the destination address that the event refers to in an IP network. The format is an IPv4 address. Example: “192.168.10.1”"
 0.1,dtz,deviceTimeZone,String,255,"The timezone for the device generating the event."
 0.1,duid,destinationUserId,String,1023,"Identifies the destination user by ID. For example, in UNIX, the root user is generally associated with user ID 0"
+0.1,duser,destinationUserName,String,1023,"Identifies the destination user by name. This is the user associated with the event’s destination. Email addresses are often mapped into the UserName fields. The recipient is a candidate to put into this field."
+0.1,dvc,deviceAddress,IP Address,,"Identifies the device address that an event refers to in an IP network. The format is an IPv4 address. Example: “192.168.10.1”."
+0.1,dvchost,deviceHostName,String,100,"The format should be a fully qualified domain name (FQDN) associated with the device node, when a node is available. Example: “host.domain.com” or “host”."
+0.1,dvcmac,destinationMacAddress,MAC Address,,"Six colon-separated hexadecimal numbers. Example: “00:0D:60:AF:1B:61”"
+0.1,dvcpid,deviceProcessId,Integer,,"Provides the ID of the process on the device generating the event."

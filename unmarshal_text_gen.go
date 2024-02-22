@@ -102,6 +102,7 @@ func (cef *CEF) set(key string, val string) error {
 		if err != nil {
 			return err
 		}
+
 		cef.SetCfp1(cfp1)
 
 	case "cfp1Label":
@@ -112,6 +113,7 @@ func (cef *CEF) set(key string, val string) error {
 		if err != nil {
 			return err
 		}
+
 		cef.SetCfp2(cfp2)
 
 	case "cfp2Label":
@@ -122,6 +124,7 @@ func (cef *CEF) set(key string, val string) error {
 		if err != nil {
 			return err
 		}
+
 		cef.SetCfp3(cfp3)
 
 	case "cfp3Label":
@@ -132,6 +135,7 @@ func (cef *CEF) set(key string, val string) error {
 		if err != nil {
 			return err
 		}
+
 		cef.SetCfp4(cfp4)
 
 	case "cfp4Label":
@@ -142,6 +146,7 @@ func (cef *CEF) set(key string, val string) error {
 		if err != nil {
 			return err
 		}
+
 		cef.SetCn1(cn1)
 
 	case "cn1Label":
@@ -152,6 +157,7 @@ func (cef *CEF) set(key string, val string) error {
 		if err != nil {
 			return err
 		}
+
 		cef.SetCn2(cn2)
 
 	case "cn2Label":
@@ -162,6 +168,7 @@ func (cef *CEF) set(key string, val string) error {
 		if err != nil {
 			return err
 		}
+
 		cef.SetCn3(cn3)
 
 	case "cn3Label":
@@ -172,6 +179,7 @@ func (cef *CEF) set(key string, val string) error {
 		if err != nil {
 			return err
 		}
+
 		cef.SetCnt(cnt)
 
 	case "cs1":
@@ -224,6 +232,7 @@ func (cef *CEF) set(key string, val string) error {
 		if err != nil {
 			return err
 		}
+
 		cef.SetDestinationTranslatedPort(destinationTranslatedPort)
 
 	case "deviceCustomDate1":
@@ -243,6 +252,7 @@ func (cef *CEF) set(key string, val string) error {
 		if err != nil {
 			return err
 		}
+
 		cef.SetDeviceDirection(deviceDirection)
 
 	case "deviceDnsDomain":
@@ -283,6 +293,7 @@ func (cef *CEF) set(key string, val string) error {
 		if err != nil {
 			return err
 		}
+
 		cef.SetDpid(dpid)
 
 	case "dpriv":
@@ -296,6 +307,7 @@ func (cef *CEF) set(key string, val string) error {
 		if err != nil {
 			return err
 		}
+
 		cef.SetDpt(dpt)
 
 	case "dst":
@@ -306,6 +318,31 @@ func (cef *CEF) set(key string, val string) error {
 
 	case "duid":
 		cef.SetDuid(val)
+
+	case "duser":
+		cef.SetDuser(val)
+
+	case "dvc":
+		cef.SetDvc(net.ParseIP(val))
+
+	case "dvchost":
+		cef.SetDvchost(val)
+
+	case "dvcmac":
+		dvcmac, err := net.ParseMAC(val)
+		if err != nil {
+			return err
+		}
+
+		cef.SetDvcmac(dvcmac)
+
+	case "dvcpid":
+		dvcpid, err := strconv.Atoi(val)
+		if err != nil {
+			return err
+		}
+
+		cef.SetDvcpid(dvcpid)
 
 	default:
 	}

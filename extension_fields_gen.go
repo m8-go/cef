@@ -131,6 +131,16 @@ type extensionFields struct {
 	dtz string
 	// Identifies the destination user by ID. For example, in UNIX, the root user is generally associated with user ID 0
 	duid string
+	// Identifies the destination user by name. This is the user associated with the event’s destination. Email addresses are often mapped into the UserName fields. The recipient is a candidate to put into this field.
+	duser string
+	// Identifies the device address that an event refers to in an IP network. The format is an IPv4 address. Example: “192.168.10.1”.
+	dvc net.IP
+	// The format should be a fully qualified domain name (FQDN) associated with the device node, when a node is available. Example: “host.domain.com” or “host”.
+	dvchost string
+	// Six colon-separated hexadecimal numbers. Example: “00:0D:60:AF:1B:61”
+	dvcmac net.HardwareAddr
+	// Provides the ID of the process on the device generating the event.
+	dvcpid int
 }
 
 func (f *extensionFields) SetAct(v string) *extensionFields {
@@ -683,6 +693,44 @@ func (f *extensionFields) SetDuid(v string) *extensionFields {
 	return f
 }
 
+func (f *extensionFields) SetDuser(v string) *extensionFields {
+	if len(v) > 1023 {
+		v = v[:1023]
+	}
+
+	f.duser = v
+
+	return f
+}
+
+func (f *extensionFields) SetDvc(v net.IP) *extensionFields {
+	f.dvc = v
+
+	return f
+}
+
+func (f *extensionFields) SetDvchost(v string) *extensionFields {
+	if len(v) > 100 {
+		v = v[:100]
+	}
+
+	f.dvchost = v
+
+	return f
+}
+
+func (f *extensionFields) SetDvcmac(v net.HardwareAddr) *extensionFields {
+	f.dvcmac = v
+
+	return f
+}
+
+func (f *extensionFields) SetDvcpid(v int) *extensionFields {
+	f.dvcpid = v
+
+	return f
+}
+
 // Action taken by the device.
 func (f *extensionFields) Act() string {
 	return f.act
@@ -996,4 +1044,29 @@ func (f *extensionFields) Dtz() string {
 // Identifies the destination user by ID. For example, in UNIX, the root user is generally associated with user ID 0
 func (f *extensionFields) Duid() string {
 	return f.duid
+}
+
+// Identifies the destination user by name. This is the user associated with the event’s destination. Email addresses are often mapped into the UserName fields. The recipient is a candidate to put into this field.
+func (f *extensionFields) Duser() string {
+	return f.duser
+}
+
+// Identifies the device address that an event refers to in an IP network. The format is an IPv4 address. Example: “192.168.10.1”.
+func (f *extensionFields) Dvc() net.IP {
+	return f.dvc
+}
+
+// The format should be a fully qualified domain name (FQDN) associated with the device node, when a node is available. Example: “host.domain.com” or “host”.
+func (f *extensionFields) Dvchost() string {
+	return f.dvchost
+}
+
+// Six colon-separated hexadecimal numbers. Example: “00:0D:60:AF:1B:61”
+func (f *extensionFields) Dvcmac() net.HardwareAddr {
+	return f.dvcmac
+}
+
+// Provides the ID of the process on the device generating the event.
+func (f *extensionFields) Dvcpid() int {
+	return f.dvcpid
 }

@@ -83,21 +83,31 @@ func (cef *CEF) set(key string, val string) error {
     if err != nil {
         return err
     }
+
     cef.Set{{ .CEFKeyName | trimAllSpaces | title }}({{ .CEFKeyName | trimAllSpaces }})
     {{ else if eq .DataType "Long" }}
     {{ .CEFKeyName | trimAllSpaces }}, err := strconv.ParseInt(val, 10, 64)
     if err != nil {
         return err
     }
+
     cef.Set{{ .CEFKeyName | trimAllSpaces | title }}({{ .CEFKeyName | trimAllSpaces }})
     {{ else if eq .DataType "Integer" }}
     {{ .CEFKeyName | trimAllSpaces }}, err := strconv.Atoi(val)
     if err != nil {
         return err
     }
+
     cef.Set{{ .CEFKeyName | trimAllSpaces | title }}({{ .CEFKeyName | trimAllSpaces }})
     {{ else if eq .DataType "Time Stamp" }}
     cef.Set{{ .CEFKeyName | trimAllSpaces | title }}(val)
+    {{ else if eq .DataType "MAC Address" }}
+    {{ .CEFKeyName | trimAllSpaces }}, err := net.ParseMAC(val)
+    if err != nil {
+        return err
+    }
+
+    cef.Set{{ .CEFKeyName | trimAllSpaces | title }}({{ .CEFKeyName | trimAllSpaces }})
     {{ end }}
 {{- end }}
     default:

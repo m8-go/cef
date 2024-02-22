@@ -227,6 +227,7 @@ var _typeMapping = map[string]string{
 	"Long":                     "int64",
 	"Integer":                  "int",
 	"Time Stamp":               "string",
+	"MAC Address":              "net.HardwareAddr",
 }
 
 func trimAllSpaces(s string) string {
