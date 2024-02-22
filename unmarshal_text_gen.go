@@ -237,5 +237,6 @@ func (cef *CEF) set(key string, val string) error {
 
 	default:
 	}
+
 	return nil
 }
