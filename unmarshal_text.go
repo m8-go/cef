@@ -7,7 +7,12 @@ import (
 	"strings"
 )
 
-var ErrNumHeaderFields = errors.New("number of header fields less than 7")
+var (
+	ErrNumHeaderFields  = errors.New("cef: number of header fields less than 7")
+	ErrBadCEFVersion    = errors.New("cef: bad CEF version")
+	ErrBadAgentSeverity = errors.New("cef: bad agent severity")
+	ErrBadExtension     = errors.New("cef: bad extension")
+)
 
 func (cef *CEF) UnmarshalText(text []byte) (err error) {
 	defer func() {
@@ -48,7 +53,7 @@ func (cef *CEF) UnmarshalText(text []byte) (err error) {
 
 	agentSeverity, err := strconv.Atoi(string(ss[6]))
 	if err != nil {
-		return err
+		return errors.Join(err, ErrBadAgentSeverity)
 	}
 
 	cef.SetAgentSeverity(AgentSeverity(agentSeverity))
@@ -77,12 +82,12 @@ func mkCEFVersion(v []byte) (int, error) {
 	ss := bytes.Split(v, []byte(":"))
 
 	if len(ss) != 2 {
-		return 0, errors.New("")
+		return 0, ErrBadCEFVersion
 	}
 
 	ver, err := strconv.Atoi(string(ss[1]))
 	if err != nil {
-		return 0, err
+		return 0, errors.Join(err, ErrBadCEFVersion)
 	}
 
 	return ver, nil
@@ -96,7 +101,7 @@ func mkCollection(b []byte) []string {
 
 	for _, s := range ss {
 		if !strings.ContainsRune(s, '=') {
-			collection[len(collection)-1] = collection[len(collection)-1] + s
+			collection[len(collection)-1] = collection[len(collection)-1] + " " + s
 
 			continue
 		}

@@ -3,6 +3,7 @@
 package cef
 
 import (
+	"errors"
 	"net"
 	"strconv"
 )
@@ -39,7 +40,7 @@ func (cef *CEF) set(key string, val string) error {
 	case "cfp1":
 		cfp1, err := strconv.ParseFloat(val, 32)
 		if err != nil {
-			return err
+			return errors.Join(err, ErrBadExtension)
 		}
 
 		cef.SetCfp1(float32(cfp1))
@@ -50,7 +51,7 @@ func (cef *CEF) set(key string, val string) error {
 	case "cfp2":
 		cfp2, err := strconv.ParseFloat(val, 32)
 		if err != nil {
-			return err
+			return errors.Join(err, ErrBadExtension)
 		}
 
 		cef.SetCfp2(float32(cfp2))
@@ -61,7 +62,7 @@ func (cef *CEF) set(key string, val string) error {
 	case "cfp3":
 		cfp3, err := strconv.ParseFloat(val, 32)
 		if err != nil {
-			return err
+			return errors.Join(err, ErrBadExtension)
 		}
 
 		cef.SetCfp3(float32(cfp3))
@@ -72,7 +73,7 @@ func (cef *CEF) set(key string, val string) error {
 	case "cfp4":
 		cfp4, err := strconv.ParseFloat(val, 32)
 		if err != nil {
-			return err
+			return errors.Join(err, ErrBadExtension)
 		}
 
 		cef.SetCfp4(float32(cfp4))
@@ -83,7 +84,7 @@ func (cef *CEF) set(key string, val string) error {
 	case "cn1":
 		cn1, err := strconv.ParseInt(val, 10, 64)
 		if err != nil {
-			return err
+			return errors.Join(err, ErrBadExtension)
 		}
 
 		cef.SetCn1(cn1)
@@ -94,7 +95,7 @@ func (cef *CEF) set(key string, val string) error {
 	case "cn2":
 		cn2, err := strconv.ParseInt(val, 10, 64)
 		if err != nil {
-			return err
+			return errors.Join(err, ErrBadExtension)
 		}
 
 		cef.SetCn2(cn2)
@@ -105,7 +106,7 @@ func (cef *CEF) set(key string, val string) error {
 	case "cn3":
 		cn3, err := strconv.ParseInt(val, 10, 64)
 		if err != nil {
-			return err
+			return errors.Join(err, ErrBadExtension)
 		}
 
 		cef.SetCn3(cn3)
@@ -116,7 +117,7 @@ func (cef *CEF) set(key string, val string) error {
 	case "cnt":
 		cnt, err := strconv.Atoi(val)
 		if err != nil {
-			return err
+			return errors.Join(err, ErrBadExtension)
 		}
 
 		cef.SetCnt(cnt)
@@ -169,7 +170,7 @@ func (cef *CEF) set(key string, val string) error {
 	case "destinationTranslatedPort":
 		destinationTranslatedPort, err := strconv.Atoi(val)
 		if err != nil {
-			return err
+			return errors.Join(err, ErrBadExtension)
 		}
 
 		cef.SetDestinationTranslatedPort(destinationTranslatedPort)
@@ -189,7 +190,7 @@ func (cef *CEF) set(key string, val string) error {
 	case "deviceDirection":
 		deviceDirection, err := strconv.Atoi(val)
 		if err != nil {
-			return err
+			return errors.Join(err, ErrBadExtension)
 		}
 
 		cef.SetDeviceDirection(deviceDirection)
@@ -230,7 +231,7 @@ func (cef *CEF) set(key string, val string) error {
 	case "dpid":
 		dpid, err := strconv.Atoi(val)
 		if err != nil {
-			return err
+			return errors.Join(err, ErrBadExtension)
 		}
 
 		cef.SetDpid(dpid)
@@ -244,7 +245,7 @@ func (cef *CEF) set(key string, val string) error {
 	case "dpt":
 		dpt, err := strconv.Atoi(val)
 		if err != nil {
-			return err
+			return errors.Join(err, ErrBadExtension)
 		}
 
 		cef.SetDpt(dpt)
@@ -270,7 +271,7 @@ func (cef *CEF) set(key string, val string) error {
 	case "dvcmac":
 		dvcmac, err := net.ParseMAC(val)
 		if err != nil {
-			return err
+			return errors.Join(err, ErrBadExtension)
 		}
 
 		cef.SetDvcmac(dvcmac)
@@ -278,7 +279,7 @@ func (cef *CEF) set(key string, val string) error {
 	case "dvcpid":
 		dvcpid, err := strconv.Atoi(val)
 		if err != nil {
-			return err
+			return errors.Join(err, ErrBadExtension)
 		}
 
 		cef.SetDvcpid(dvcpid)
@@ -334,7 +335,7 @@ func (cef *CEF) set(key string, val string) error {
 	case "fsize":
 		fsize, err := strconv.ParseInt(val, 10, 64)
 		if err != nil {
-			return err
+			return errors.Join(err, ErrBadExtension)
 		}
 
 		cef.SetFsize(fsize)
@@ -342,7 +343,7 @@ func (cef *CEF) set(key string, val string) error {
 	case "in":
 		in, err := strconv.ParseInt(val, 10, 64)
 		if err != nil {
-			return err
+			return errors.Join(err, ErrBadExtension)
 		}
 
 		cef.SetIn(in)
@@ -374,7 +375,7 @@ func (cef *CEF) set(key string, val string) error {
 	case "oldFileSize":
 		oldFileSize, err := strconv.ParseInt(val, 10, 64)
 		if err != nil {
-			return err
+			return errors.Join(err, ErrBadExtension)
 		}
 
 		cef.SetOldFileSize(oldFileSize)
@@ -385,7 +386,7 @@ func (cef *CEF) set(key string, val string) error {
 	case "out":
 		out, err := strconv.Atoi(val)
 		if err != nil {
-			return err
+			return errors.Join(err, ErrBadExtension)
 		}
 
 		cef.SetOut(out)
@@ -423,7 +424,7 @@ func (cef *CEF) set(key string, val string) error {
 	case "smac":
 		smac, err := net.ParseMAC(val)
 		if err != nil {
-			return err
+			return errors.Join(err, ErrBadExtension)
 		}
 
 		cef.SetSmac(smac)
@@ -443,7 +444,7 @@ func (cef *CEF) set(key string, val string) error {
 	case "sourceTranslatedPort":
 		sourceTranslatedPort, err := strconv.Atoi(val)
 		if err != nil {
-			return err
+			return errors.Join(err, ErrBadExtension)
 		}
 
 		cef.SetSourceTranslatedPort(sourceTranslatedPort)
@@ -451,7 +452,7 @@ func (cef *CEF) set(key string, val string) error {
 	case "spid":
 		spid, err := strconv.Atoi(val)
 		if err != nil {
-			return err
+			return errors.Join(err, ErrBadExtension)
 		}
 
 		cef.SetSpid(spid)
@@ -465,7 +466,7 @@ func (cef *CEF) set(key string, val string) error {
 	case "spt":
 		spt, err := strconv.Atoi(val)
 		if err != nil {
-			return err
+			return errors.Join(err, ErrBadExtension)
 		}
 
 		cef.SetSpt(spt)
@@ -485,7 +486,7 @@ func (cef *CEF) set(key string, val string) error {
 	case "type":
 		typ, err := strconv.Atoi(val)
 		if err != nil {
-			return err
+			return errors.Join(err, ErrBadExtension)
 		}
 
 		cef.SetType(typ)
@@ -523,7 +524,7 @@ func (cef *CEF) set(key string, val string) error {
 	case "amac":
 		amac, err := net.ParseMAC(val)
 		if err != nil {
-			return err
+			return errors.Join(err, ErrBadExtension)
 		}
 
 		cef.SetAmac(amac)
@@ -573,7 +574,7 @@ func (cef *CEF) set(key string, val string) error {
 	case "dlat":
 		dlat, err := strconv.ParseFloat(val, 64)
 		if err != nil {
-			return err
+			return errors.Join(err, ErrBadExtension)
 		}
 
 		cef.SetDlat(dlat)
@@ -581,7 +582,7 @@ func (cef *CEF) set(key string, val string) error {
 	case "dlong":
 		dlong, err := strconv.ParseFloat(val, 64)
 		if err != nil {
-			return err
+			return errors.Join(err, ErrBadExtension)
 		}
 
 		cef.SetDlong(dlong)
@@ -589,7 +590,7 @@ func (cef *CEF) set(key string, val string) error {
 	case "eventId":
 		eventID, err := strconv.ParseInt(val, 10, 64)
 		if err != nil {
-			return err
+			return errors.Join(err, ErrBadExtension)
 		}
 
 		cef.SetEventID(eventID)
@@ -600,7 +601,7 @@ func (cef *CEF) set(key string, val string) error {
 	case "slat":
 		slat, err := strconv.ParseFloat(val, 64)
 		if err != nil {
-			return err
+			return errors.Join(err, ErrBadExtension)
 		}
 
 		cef.SetSlat(slat)
@@ -608,7 +609,7 @@ func (cef *CEF) set(key string, val string) error {
 	case "slong":
 		slong, err := strconv.ParseFloat(val, 64)
 		if err != nil {
-			return err
+			return errors.Join(err, ErrBadExtension)
 		}
 
 		cef.SetSlong(slong)
@@ -628,7 +629,7 @@ func (cef *CEF) set(key string, val string) error {
 	case "agentTranslatedZoneKey":
 		agentTranslatedZoneKey, err := strconv.ParseInt(val, 10, 64)
 		if err != nil {
-			return err
+			return errors.Join(err, ErrBadExtension)
 		}
 
 		cef.SetAgentTranslatedZoneKey(agentTranslatedZoneKey)
@@ -636,7 +637,7 @@ func (cef *CEF) set(key string, val string) error {
 	case "agentZoneKey":
 		agentZoneKey, err := strconv.ParseInt(val, 10, 64)
 		if err != nil {
-			return err
+			return errors.Join(err, ErrBadExtension)
 		}
 
 		cef.SetAgentZoneKey(agentZoneKey)
@@ -644,7 +645,7 @@ func (cef *CEF) set(key string, val string) error {
 	case "customerKey":
 		customerKey, err := strconv.ParseInt(val, 10, 64)
 		if err != nil {
-			return err
+			return errors.Join(err, ErrBadExtension)
 		}
 
 		cef.SetCustomerKey(customerKey)
@@ -652,7 +653,7 @@ func (cef *CEF) set(key string, val string) error {
 	case "destinationTranslatedZoneKey":
 		destinationTranslatedZoneKey, err := strconv.ParseInt(val, 10, 64)
 		if err != nil {
-			return err
+			return errors.Join(err, ErrBadExtension)
 		}
 
 		cef.SetDestinationTranslatedZoneKey(destinationTranslatedZoneKey)
@@ -660,7 +661,7 @@ func (cef *CEF) set(key string, val string) error {
 	case "dZoneKey":
 		dZoneKey, err := strconv.ParseInt(val, 10, 64)
 		if err != nil {
-			return err
+			return errors.Join(err, ErrBadExtension)
 		}
 
 		cef.SetDZoneKey(dZoneKey)
@@ -668,7 +669,7 @@ func (cef *CEF) set(key string, val string) error {
 	case "deviceTranslatedZoneKey":
 		deviceTranslatedZoneKey, err := strconv.ParseInt(val, 10, 64)
 		if err != nil {
-			return err
+			return errors.Join(err, ErrBadExtension)
 		}
 
 		cef.SetDeviceTranslatedZoneKey(deviceTranslatedZoneKey)
@@ -676,7 +677,7 @@ func (cef *CEF) set(key string, val string) error {
 	case "deviceZoneKey":
 		deviceZoneKey, err := strconv.ParseInt(val, 10, 64)
 		if err != nil {
-			return err
+			return errors.Join(err, ErrBadExtension)
 		}
 
 		cef.SetDeviceZoneKey(deviceZoneKey)
@@ -684,7 +685,7 @@ func (cef *CEF) set(key string, val string) error {
 	case "sTranslatedZoneKey":
 		sTranslatedZoneKey, err := strconv.ParseInt(val, 10, 64)
 		if err != nil {
-			return err
+			return errors.Join(err, ErrBadExtension)
 		}
 
 		cef.SetSTranslatedZoneKey(sTranslatedZoneKey)
@@ -692,7 +693,7 @@ func (cef *CEF) set(key string, val string) error {
 	case "sZoneKey":
 		sZoneKey, err := strconv.ParseInt(val, 10, 64)
 		if err != nil {
-			return err
+			return errors.Join(err, ErrBadExtension)
 		}
 
 		cef.SetSZoneKey(sZoneKey)

@@ -1,6 +1,7 @@
 {{ template "header" $ }}
 
 import (
+	"errors"
 	"net"
 	"strconv"
 )
@@ -20,21 +21,21 @@ func (cef *CEF) set(key string, val string) error {
     {{ else if eq .DataType "Floating Point" }}
     {{ .CEFKeyName }}, err := strconv.ParseFloat(val, 32)
     if err != nil {
-        return err
+        return errors.Join(err, ErrBadExtension)
     }
 
     cef.Set{{ .CEFKeyName | title }}(float32({{ .CEFKeyName }}))
     {{ else if eq .DataType "Long" }}
     {{ .CEFKeyName | pretty }}, err := strconv.ParseInt(val, 10, 64)
     if err != nil {
-        return err
+        return errors.Join(err, ErrBadExtension)
     }
 
     cef.Set{{ .CEFKeyName | title | pretty }}({{ .CEFKeyName | pretty }})
     {{ else if eq .DataType "Integer" }}
     {{ .CEFKeyName | renameKeyWord }}, err := strconv.Atoi(val)
     if err != nil {
-        return err
+        return errors.Join(err, ErrBadExtension)
     }
 
     cef.Set{{ .CEFKeyName | title }}({{ .CEFKeyName | renameKeyWord }})
@@ -43,14 +44,14 @@ func (cef *CEF) set(key string, val string) error {
     {{ else if eq .DataType "MAC Address" }}
     {{ .CEFKeyName }}, err := net.ParseMAC(val)
     if err != nil {
-        return err
+        return errors.Join(err, ErrBadExtension)
     }
 
     cef.Set{{ .CEFKeyName | title }}({{ .CEFKeyName }})
     {{ else if eq .DataType "Double" }}
     {{ .CEFKeyName }}, err := strconv.ParseFloat(val, 64)
     if err != nil {
-        return err
+        return errors.Join(err, ErrBadExtension)
     }
 
     cef.Set{{ .CEFKeyName | title }}({{ .CEFKeyName }})
