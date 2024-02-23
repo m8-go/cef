@@ -10,7 +10,7 @@ import (
 func ExampleCEF() {
 	const veryHigh cef.AgentSeverity = 10
 
-	c := new(cef.CEF)
+	c := cef.New()
 	c.SetCEFVersion(0)
 	c.SetDeviceVendor("Security")
 	c.SetDeviceProduct("threatmanager")
