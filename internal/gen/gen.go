@@ -8,7 +8,6 @@ import (
 	"go/format"
 	"os"
 	"path/filepath"
-	"regexp"
 	"strconv"
 	"strings"
 	"text/template"
@@ -29,11 +28,8 @@ func main() {
 func run() error {
 	t, err := template.New("template").
 		Funcs(map[string]any{
-			"quoteMeta":     regexp.QuoteMeta,
-			"toLower":       strings.ToLower,
 			"typeMapping":   typeMapping,
 			"title":         strings.Title,
-			"trimAllSpaces": trimAllSpaces,
 			"unexported":    unexported,
 			"add":           add,
 			"renameKeyWord": renameKeyWord,
@@ -45,19 +41,19 @@ func run() error {
 		return err
 	}
 
-	if err := executeHeaderFieldDefinitions(t); err != nil {
+	if err := executeHeaderFields(t); err != nil {
 		return err
 	}
 
-	if err := executeExtensionField(t); err != nil {
-		return err
-	}
-
-	if err := executeUnmarshalText(t); err != nil {
+	if err := executeExtensionFields(t); err != nil {
 		return err
 	}
 
 	if err := executeMarshalText(t); err != nil {
+		return err
+	}
+
+	if err := executeUnmarshalText(t); err != nil {
 		return err
 	}
 
@@ -71,7 +67,7 @@ type headerField struct {
 	Description string
 }
 
-func executeHeaderFieldDefinitions(t *template.Template) error {
+func executeHeaderFields(t *template.Template) error {
 	records, err := csvRecords("header_fields.csv")
 	if err != nil {
 		return err
@@ -128,7 +124,7 @@ func csvRecords(fileName string) ([][]string, error) {
 	return records, nil
 }
 
-func executeExtensionField(t *template.Template) error {
+func executeExtensionFields(t *template.Template) error {
 	var fields []extensionField
 
 	records, err := csvRecords("extension_fields.csv")
@@ -152,6 +148,32 @@ func executeExtensionField(t *template.Template) error {
 	}
 
 	return execute(t, "extension_fields.tmpl", fields, "extension_fields_gen.go")
+}
+
+func executeMarshalText(t *template.Template) error {
+	records, err := csvRecords("extension_fields.csv")
+	if err != nil {
+		return err
+	}
+
+	var extensionFields []extensionField
+
+	for i, v := range records {
+		if i == 0 {
+			continue
+		}
+
+		extensionFields = append(extensionFields, extensionField{
+			CEFSpecificationVersion: v[0],
+			CEFKeyName:              v[1],
+			FullName:                v[2],
+			DataType:                v[3],
+			Length:                  v[4],
+			Meaning:                 v[5],
+		})
+	}
+
+	return execute(t, "marshal_text.tmpl", extensionFields, "marshal_text_gen.go")
 }
 
 func executeUnmarshalText(t *template.Template) error {
@@ -204,32 +226,6 @@ func executeUnmarshalText(t *template.Template) error {
 	}, "unmarshal_text_gen.go")
 }
 
-func executeMarshalText(t *template.Template) error {
-	records, err := csvRecords("extension_fields.csv")
-	if err != nil {
-		return err
-	}
-
-	var extensionFields []extensionField
-
-	for i, v := range records {
-		if i == 0 {
-			continue
-		}
-
-		extensionFields = append(extensionFields, extensionField{
-			CEFSpecificationVersion: v[0],
-			CEFKeyName:              v[1],
-			FullName:                v[2],
-			DataType:                v[3],
-			Length:                  v[4],
-			Meaning:                 v[5],
-		})
-	}
-
-	return execute(t, "marshal_text.tmpl", extensionFields, "marshal_text_gen.go")
-}
-
 func execute(t *template.Template, templateName string, data any, fileName string) error {
 	var b bytes.Buffer
 
@@ -264,11 +260,6 @@ var _typeMapping = map[string]string{
 	"Time Stamp":               "string",
 	"MAC Address":              "net.HardwareAddr",
 	"Double":                   "float64",
-}
-
-func trimAllSpaces(s string) string {
-	ss := strings.Split(s, " ")
-	return strings.Join(ss, "")
 }
 
 func unexported(str string) string {
