@@ -15,7 +15,7 @@ import (
 	"go.m8.ru/cef/internal/gen/naming"
 )
 
-//go:embed template/*
+//go:embed _template/*
 var templateDir embed.FS
 
 func main() {
@@ -26,7 +26,7 @@ func main() {
 }
 
 func run() error {
-	t, err := template.New("template").
+	t, err := template.New("templates").
 		Funcs(map[string]any{
 			"typeMapping":   typeMapping,
 			"title":         strings.Title,
@@ -36,7 +36,7 @@ func run() error {
 			"pretty":        naming.Pretty,
 			"quote":         strconv.Quote,
 		}).
-		ParseFS(templateDir, "template/*.tmpl")
+		ParseFS(templateDir, "_template/*.tmpl")
 	if err != nil {
 		return err
 	}
