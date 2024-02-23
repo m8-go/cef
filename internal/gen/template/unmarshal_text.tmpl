@@ -10,7 +10,7 @@ func (cef *CEF) set(key string, val string) error {
 {{- range .ExtensionFields }}
     case "{{ .CEFKeyName }}":
     {{- if eq .DataType "String" }}
-    cef.Set{{ .CEFKeyName | title }}(val)
+    cef.Set{{ .CEFKeyName | title | pretty }}(val)
     {{ else if eq .DataType "IP Address" }}
     cef.Set{{ .CEFKeyName | title }}(net.ParseIP(val))
     {{ else if eq .DataType "IPv6 address" }}
@@ -25,12 +25,12 @@ func (cef *CEF) set(key string, val string) error {
 
     cef.Set{{ .CEFKeyName | title }}(float32({{ .CEFKeyName }}))
     {{ else if eq .DataType "Long" }}
-    {{ .CEFKeyName }}, err := strconv.ParseInt(val, 10, 64)
+    {{ .CEFKeyName | pretty }}, err := strconv.ParseInt(val, 10, 64)
     if err != nil {
         return err
     }
 
-    cef.Set{{ .CEFKeyName | title }}({{ .CEFKeyName }})
+    cef.Set{{ .CEFKeyName | title | pretty }}({{ .CEFKeyName | pretty }})
     {{ else if eq .DataType "Integer" }}
     {{ .CEFKeyName | renameKeyWord }}, err := strconv.Atoi(val)
     if err != nil {

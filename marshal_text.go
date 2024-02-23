@@ -13,7 +13,7 @@ func (cef *CEF) MarshalText() (text []byte, err error) {
 		cef.DeviceVendor(),
 		cef.DeviceProduct(),
 		cef.DeviceVersion(),
-		cef.DeviceEventClassId(),
+		cef.DeviceEventClassID(),
 		cef.Name(),
 		strconv.Itoa(int(cef.AgentSeverity())),
 		cef.extension(),

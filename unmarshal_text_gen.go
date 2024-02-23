@@ -158,7 +158,7 @@ func (cef *CEF) set(key string, val string) error {
 		cef.SetCs6Label(val)
 
 	case "destinationDnsDomain":
-		cef.SetDestinationDnsDomain(val)
+		cef.SetDestinationDNSDomain(val)
 
 	case "destinationServiceName":
 		cef.SetDestinationServiceName(val)
@@ -195,10 +195,10 @@ func (cef *CEF) set(key string, val string) error {
 		cef.SetDeviceDirection(deviceDirection)
 
 	case "deviceDnsDomain":
-		cef.SetDeviceDnsDomain(val)
+		cef.SetDeviceDNSDomain(val)
 
 	case "deviceExternalId":
-		cef.SetDeviceExternalId(val)
+		cef.SetDeviceExternalID(val)
 
 	case "deviceFacility":
 		cef.SetDeviceFacility(val)
@@ -213,7 +213,7 @@ func (cef *CEF) set(key string, val string) error {
 		cef.SetDeviceOutboundInterface(val)
 
 	case "DevicePayloadId":
-		cef.SetDevicePayloadId(val)
+		cef.SetDevicePayloadID(val)
 
 	case "deviceProcessName":
 		cef.SetDeviceProcessName(val)
@@ -287,7 +287,7 @@ func (cef *CEF) set(key string, val string) error {
 		cef.SetEnd(val)
 
 	case "externalId":
-		cef.SetExternalId(val)
+		cef.SetExternalID(val)
 
 	case "fileCreateTime":
 		cef.SetFileCreateTime(val)
@@ -296,7 +296,7 @@ func (cef *CEF) set(key string, val string) error {
 		cef.SetFileHash(val)
 
 	case "fileId":
-		cef.SetFileId(val)
+		cef.SetFileID(val)
 
 	case "fileModificationTime":
 		cef.SetFileModificationTime(val)
@@ -357,7 +357,7 @@ func (cef *CEF) set(key string, val string) error {
 		cef.SetOldFileHash(val)
 
 	case "oldFileId":
-		cef.SetOldFileId(val)
+		cef.SetOldFileID(val)
 
 	case "oldFileModificationTime":
 		cef.SetOldFileModificationTime(val)
@@ -432,7 +432,7 @@ func (cef *CEF) set(key string, val string) error {
 		cef.SetSntdom(val)
 
 	case "sourceDnsDomain":
-		cef.SetSourceDnsDomain(val)
+		cef.SetSourceDNSDomain(val)
 
 	case "sourceServiceName":
 		cef.SetSourceServiceName(val)
@@ -491,7 +491,7 @@ func (cef *CEF) set(key string, val string) error {
 		cef.SetType(typ)
 
 	case "agentDnsDomain":
-		cef.SetAgentDnsDomain(val)
+		cef.SetAgentDNSDomain(val)
 
 	case "agentNtDomain":
 		cef.SetAgentNtDomain(val)
@@ -587,12 +587,12 @@ func (cef *CEF) set(key string, val string) error {
 		cef.SetDlong(dlong)
 
 	case "eventId":
-		eventId, err := strconv.ParseInt(val, 10, 64)
+		eventID, err := strconv.ParseInt(val, 10, 64)
 		if err != nil {
 			return err
 		}
 
-		cef.SetEventId(eventId)
+		cef.SetEventID(eventID)
 
 	case "rawEvent":
 		cef.SetRawEvent(val)

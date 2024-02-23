@@ -41,7 +41,7 @@ func (cef *CEF) UnmarshalText(text []byte) (err error) {
 	cef.SetDeviceVersion(deviceVersion)
 
 	deviceEventClassID := string(ss[4])
-	cef.SetDeviceEventClassId(deviceEventClassID)
+	cef.SetDeviceEventClassID(deviceEventClassID)
 
 	name := string(ss[5])
 	cef.SetName(name)
