@@ -10,48 +10,48 @@ func (cef *CEF) extension() string {
 
     {{ range . }}
     {{ if eq .DataType "String" }}
-    if {{ .CEFKeyName | trimAllSpaces | renameKeyWord }} := cef.{{ .CEFKeyName | trimAllSpaces | title | renameKeyWord }}(); {{ .CEFKeyName | trimAllSpaces | renameKeyWord }} != "" {
-        extension = append(extension, fmt.Sprintf("{{ .CEFKeyName | trimAllSpaces | renameKeyWord }}=%v", {{ .CEFKeyName | trimAllSpaces | renameKeyWord }}))
+    if {{ .CEFKeyName | renameKeyWord | unexported }} := cef.{{ .CEFKeyName | title | renameKeyWord }}(); {{ .CEFKeyName | renameKeyWord | unexported }} != "" {
+        extension = append(extension, fmt.Sprintf("{{ .CEFKeyName | renameKeyWord }}=%v", {{ .CEFKeyName | renameKeyWord | unexported }}))
     }
     {{ else if eq .DataType "IP Address" }}
-    if {{ .CEFKeyName | trimAllSpaces | renameKeyWord }} := cef.{{ .CEFKeyName | trimAllSpaces | title | renameKeyWord }}(); len({{ .CEFKeyName | trimAllSpaces | renameKeyWord }}) > 0 {
-        extension = append(extension, fmt.Sprintf("{{ .CEFKeyName | trimAllSpaces | renameKeyWord }}=%v", {{ .CEFKeyName | trimAllSpaces | renameKeyWord }}))
+    if {{ .CEFKeyName | renameKeyWord }} := cef.{{ .CEFKeyName | title | renameKeyWord }}(); len({{ .CEFKeyName | renameKeyWord }}) > 0 {
+        extension = append(extension, fmt.Sprintf("{{ .CEFKeyName | renameKeyWord }}=%v", {{ .CEFKeyName | renameKeyWord }}))
     }
     {{ else if eq .DataType "IPv6 address" }}
-    if {{ .CEFKeyName | trimAllSpaces | renameKeyWord }} := cef.{{ .CEFKeyName | trimAllSpaces | title | renameKeyWord }}(); len({{ .CEFKeyName | trimAllSpaces | renameKeyWord }}) > 0 {
-        extension = append(extension, fmt.Sprintf("{{ .CEFKeyName | trimAllSpaces | renameKeyWord }}=%v", {{ .CEFKeyName | trimAllSpaces | renameKeyWord }}))
+    if {{ .CEFKeyName | renameKeyWord }} := cef.{{ .CEFKeyName | title | renameKeyWord }}(); len({{ .CEFKeyName | renameKeyWord }}) > 0 {
+        extension = append(extension, fmt.Sprintf("{{ .CEFKeyName | renameKeyWord }}=%v", {{ .CEFKeyName | renameKeyWord }}))
     }
     {{ else if eq .DataType "IPv6 Address" }}
-    if {{ .CEFKeyName | trimAllSpaces | renameKeyWord }} := cef.{{ .CEFKeyName | trimAllSpaces | title | renameKeyWord }}(); len({{ .CEFKeyName | trimAllSpaces | renameKeyWord }}) > 0 {
-        extension = append(extension, fmt.Sprintf("{{ .CEFKeyName | trimAllSpaces | renameKeyWord }}=%v", {{ .CEFKeyName | trimAllSpaces | renameKeyWord }}))
+    if {{ .CEFKeyName | renameKeyWord }} := cef.{{ .CEFKeyName | title | renameKeyWord }}(); len({{ .CEFKeyName | renameKeyWord }}) > 0 {
+        extension = append(extension, fmt.Sprintf("{{ .CEFKeyName | renameKeyWord }}=%v", {{ .CEFKeyName | renameKeyWord }}))
     }
     {{ else if eq .DataType "Floating Point" }}
-    if {{ .CEFKeyName | trimAllSpaces | renameKeyWord }} := cef.{{ .CEFKeyName | trimAllSpaces | title | renameKeyWord }}(); {{ .CEFKeyName | trimAllSpaces | renameKeyWord }} != 0 {
-        extension = append(extension, fmt.Sprintf("{{ .CEFKeyName | trimAllSpaces | renameKeyWord }}=%v", {{ .CEFKeyName | trimAllSpaces | renameKeyWord }}))
+    if {{ .CEFKeyName | renameKeyWord }} := cef.{{ .CEFKeyName | title | renameKeyWord }}(); {{ .CEFKeyName | renameKeyWord }} != 0 {
+        extension = append(extension, fmt.Sprintf("{{ .CEFKeyName | renameKeyWord }}=%v", {{ .CEFKeyName | renameKeyWord }}))
     }
     {{ else if eq .DataType "Long" }}
-    if {{ .CEFKeyName | trimAllSpaces | renameKeyWord }} := cef.{{ .CEFKeyName | trimAllSpaces | title | renameKeyWord }}(); {{ .CEFKeyName | trimAllSpaces | renameKeyWord }} != 0 {
-        extension = append(extension, fmt.Sprintf("{{ .CEFKeyName | trimAllSpaces | renameKeyWord }}=%v", {{ .CEFKeyName | trimAllSpaces | renameKeyWord }}))
+    if {{ .CEFKeyName | renameKeyWord }} := cef.{{ .CEFKeyName | title | renameKeyWord }}(); {{ .CEFKeyName | renameKeyWord }} != 0 {
+        extension = append(extension, fmt.Sprintf("{{ .CEFKeyName | renameKeyWord }}=%v", {{ .CEFKeyName | renameKeyWord }}))
     }
     {{ else if eq .DataType "Integer" }}
-    if {{ .CEFKeyName | trimAllSpaces | renameKeyWord }} := cef.{{ .CEFKeyName | trimAllSpaces | title | renameKeyWord }}(); {{ .CEFKeyName | trimAllSpaces | renameKeyWord }} != 0 {
-        extension = append(extension, fmt.Sprintf("{{ .CEFKeyName | trimAllSpaces | renameKeyWord }}=%v", {{ .CEFKeyName | trimAllSpaces | renameKeyWord }}))
+    if {{ .CEFKeyName | renameKeyWord }} := cef.{{ .CEFKeyName | title | renameKeyWord }}(); {{ .CEFKeyName | renameKeyWord }} != 0 {
+        extension = append(extension, fmt.Sprintf("{{ .CEFKeyName | renameKeyWord }}=%v", {{ .CEFKeyName | renameKeyWord }}))
     }
     {{ else if eq .DataType "Time Stamp" }}
-    if {{ .CEFKeyName | trimAllSpaces | renameKeyWord }} := cef.{{ .CEFKeyName | trimAllSpaces | title | renameKeyWord }}(); {{ .CEFKeyName | trimAllSpaces | renameKeyWord }} != "" {
-        extension = append(extension, fmt.Sprintf("{{ .CEFKeyName | trimAllSpaces | renameKeyWord }}=%v", {{ .CEFKeyName | trimAllSpaces | renameKeyWord }}))
+    if {{ .CEFKeyName | renameKeyWord }} := cef.{{ .CEFKeyName | title | renameKeyWord }}(); {{ .CEFKeyName | renameKeyWord }} != "" {
+        extension = append(extension, fmt.Sprintf("{{ .CEFKeyName | renameKeyWord }}=%v", {{ .CEFKeyName | renameKeyWord }}))
     }
     {{ else if eq .DataType "MAC Address" }}
-    if {{ .CEFKeyName | trimAllSpaces | renameKeyWord }} := cef.{{ .CEFKeyName | trimAllSpaces | title | renameKeyWord }}(); len({{ .CEFKeyName | trimAllSpaces | renameKeyWord }}) > 0 {
-        extension = append(extension, fmt.Sprintf("{{ .CEFKeyName | trimAllSpaces | renameKeyWord }}=%v", {{ .CEFKeyName | trimAllSpaces | renameKeyWord }}))
+    if {{ .CEFKeyName | renameKeyWord }} := cef.{{ .CEFKeyName | title | renameKeyWord }}(); len({{ .CEFKeyName | renameKeyWord }}) > 0 {
+        extension = append(extension, fmt.Sprintf("{{ .CEFKeyName | renameKeyWord }}=%v", {{ .CEFKeyName | renameKeyWord }}))
     }
     {{ else if eq .DataType "Double" }}
-    if {{ .CEFKeyName | trimAllSpaces | renameKeyWord }} := cef.{{ .CEFKeyName | trimAllSpaces | title | renameKeyWord }}(); {{ .CEFKeyName | trimAllSpaces | renameKeyWord }} != 0 {
-        extension = append(extension, fmt.Sprintf("{{ .CEFKeyName | trimAllSpaces | renameKeyWord }}=%v", {{ .CEFKeyName | trimAllSpaces | renameKeyWord }}))
+    if {{ .CEFKeyName | renameKeyWord }} := cef.{{ .CEFKeyName | title | renameKeyWord }}(); {{ .CEFKeyName | renameKeyWord }} != 0 {
+        extension = append(extension, fmt.Sprintf("{{ .CEFKeyName | renameKeyWord }}=%v", {{ .CEFKeyName | renameKeyWord }}))
     }
     {{ else }}
-    if {{ .CEFKeyName | trimAllSpaces | renameKeyWord }} := cef.{{ .CEFKeyName | trimAllSpaces | title | renameKeyWord }}(); {{ .CEFKeyName | trimAllSpaces | renameKeyWord }} != "" {
-        extension = append(extension, fmt.Sprintf("{{ .CEFKeyName | trimAllSpaces | renameKeyWord }}=%v", {{ .CEFKeyName | trimAllSpaces | renameKeyWord }}))
+    if {{ .CEFKeyName | renameKeyWord }} := cef.{{ .CEFKeyName | title | renameKeyWord }}(); {{ .CEFKeyName | renameKeyWord }} != "" {
+        extension = append(extension, fmt.Sprintf("{{ .CEFKeyName | renameKeyWord }}=%v", {{ .CEFKeyName | renameKeyWord }}))
     }
     {{ end }}
 

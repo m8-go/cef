@@ -108,7 +108,7 @@ type extensionFields struct {
 	// Interface on which the packet or data left the device
 	deviceOutboundInterface string
 	// Unique identifier for the payload associated with the event.
-	devicepayloadid string
+	devicePayloadId string
 	// Process name associated with the event. An example might be the process generating the syslog entry in UNIX.
 	deviceProcessName string
 	// Identifies the translated device address that the event refers to in an IP network. The format is an IPv4 address. Example: “192.168.10.1”
@@ -773,7 +773,7 @@ func (f *extensionFields) SetDevicePayloadId(v string) *extensionFields {
 		v = v[:128]
 	}
 
-	f.devicepayloadid = v
+	f.devicePayloadId = v
 
 	return f
 }
@@ -1999,7 +1999,7 @@ func (f *extensionFields) DeviceOutboundInterface() string {
 
 // Unique identifier for the payload associated with the event.
 func (f *extensionFields) DevicePayloadId() string {
-	return f.devicepayloadid
+	return f.devicePayloadId
 }
 
 // Process name associated with the event. An example might be the process generating the syslog entry in UNIX.

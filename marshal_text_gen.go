@@ -214,8 +214,8 @@ func (cef *CEF) extension() string {
 		extension = append(extension, fmt.Sprintf("deviceOutboundInterface=%v", deviceOutboundInterface))
 	}
 
-	if DevicePayloadId := cef.DevicePayloadId(); DevicePayloadId != "" {
-		extension = append(extension, fmt.Sprintf("DevicePayloadId=%v", DevicePayloadId))
+	if devicePayloadId := cef.DevicePayloadId(); devicePayloadId != "" {
+		extension = append(extension, fmt.Sprintf("DevicePayloadId=%v", devicePayloadId))
 	}
 
 	if deviceProcessName := cef.DeviceProcessName(); deviceProcessName != "" {

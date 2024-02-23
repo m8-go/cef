@@ -5,12 +5,12 @@ import "net"
 type extensionFields struct{
 {{- range . }}
 // {{ .Meaning }}
-{{ .CEFKeyName | unexported | trimAllSpaces | renameKeyWord }} {{ typeMapping .DataType }}
+{{ .CEFKeyName | unexported | renameKeyWord }} {{ typeMapping .DataType }}
 {{- end }}
 }
 
 {{ range . }}
-func (f *extensionFields) Set{{ .CEFKeyName | trimAllSpaces | title }}(v {{ typeMapping .DataType }}) *extensionFields {
+func (f *extensionFields) Set{{ .CEFKeyName | title }}(v {{ typeMapping .DataType }}) *extensionFields {
 {{- if not .Length }}
 {{- else if eq .Length "N/A" }}
 {{- else if eq .Length "64-bit" }}
@@ -19,7 +19,7 @@ func (f *extensionFields) Set{{ .CEFKeyName | trimAllSpaces | title }}(v {{ type
         v = v[:{{ .Length }}]
     }
 {{ end }}
-    f.{{ .CEFKeyName | unexported | trimAllSpaces | renameKeyWord }} = v
+    f.{{ .CEFKeyName | unexported | renameKeyWord }} = v
 
     return f
 }
@@ -27,7 +27,7 @@ func (f *extensionFields) Set{{ .CEFKeyName | trimAllSpaces | title }}(v {{ type
 
 {{ range . }}
 // {{ .Meaning }}
-func (f *extensionFields) {{ .CEFKeyName | trimAllSpaces | title }}() {{ typeMapping .DataType }} {
-    return f.{{ .CEFKeyName | unexported | trimAllSpaces | renameKeyWord }}
+func (f *extensionFields) {{ .CEFKeyName | title }}() {{ typeMapping .DataType }} {
+    return f.{{ .CEFKeyName | unexported | renameKeyWord }}
 }
 {{ end }}

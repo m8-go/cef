@@ -272,11 +272,19 @@ func unexported(s string) string {
 		return s
 	}
 
-	ss := strings.Split(s, " ")
-
 	b := new(strings.Builder)
-	b.WriteString(strings.ToLower(ss[0]))
-	b.WriteString(strings.Join(ss[1:], ""))
+
+	for i, c := range s {
+		if i == 0 {
+			b.WriteRune(unicode.ToLower(c))
+
+			continue
+		} else if c == ' ' {
+			continue
+		}
+
+		b.WriteRune(c)
+	}
 
 	return b.String()
 }
