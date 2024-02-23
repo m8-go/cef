@@ -22,145 +22,145 @@ type headerFields struct {
 }
 
 // SetCEFVersion sets "cefVersion" field.
-func (f *headerFields) SetCEFVersion(v int) *headerFields {
+func (cef *CEF) SetCEFVersion(v int) *CEF {
 	if v < 0 {
 		v = 0
 	} else if v > 1 {
 		v = 1
 	}
 
-	if f.cefVersion != 0 {
-		return f
+	if cef.cefVersion != 0 {
+		return cef
 	}
 
-	f.cefVersion = v
+	cef.cefVersion = v
 
-	return f
+	return cef
 }
 
 // SetAgentSeverity sets "agentSeverity" field.
-func (f *headerFields) SetAgentSeverity(v AgentSeverity) *headerFields {
+func (cef *CEF) SetAgentSeverity(v AgentSeverity) *CEF {
 	if v < 0 {
 		v = 0
 	} else if v > 10 {
 		v = 10
 	}
 
-	if f.agentSeverity != 0 {
-		return f
+	if cef.agentSeverity != 0 {
+		return cef
 	}
 
-	f.agentSeverity = v
+	cef.agentSeverity = v
 
-	return f
+	return cef
 }
 
 // SetDeviceEventClassID sets "deviceEventClassID" field.
-func (f *headerFields) SetDeviceEventClassID(v string) *headerFields {
+func (cef *CEF) SetDeviceEventClassID(v string) *CEF {
 	if len(v) > 1023 {
 		v = v[:1023]
 	}
 
-	if f.deviceEventClassID != "" {
-		return f
+	if cef.deviceEventClassID != "" {
+		return cef
 	}
 
-	f.deviceEventClassID = escapeHeaderField(v)
+	cef.deviceEventClassID = escapeHeaderField(v)
 
-	return f
+	return cef
 }
 
 // SetDeviceProduct sets "deviceProduct" field.
-func (f *headerFields) SetDeviceProduct(v string) *headerFields {
+func (cef *CEF) SetDeviceProduct(v string) *CEF {
 	if len(v) > 63 {
 		v = v[:63]
 	}
 
-	if f.deviceProduct != "" {
-		return f
+	if cef.deviceProduct != "" {
+		return cef
 	}
 
-	f.deviceProduct = escapeHeaderField(v)
+	cef.deviceProduct = escapeHeaderField(v)
 
-	return f
+	return cef
 }
 
 // SetDeviceVendor sets "deviceVendor" field.
-func (f *headerFields) SetDeviceVendor(v string) *headerFields {
+func (cef *CEF) SetDeviceVendor(v string) *CEF {
 	if len(v) > 63 {
 		v = v[:63]
 	}
 
-	if f.deviceVendor != "" {
-		return f
+	if cef.deviceVendor != "" {
+		return cef
 	}
 
-	f.deviceVendor = escapeHeaderField(v)
+	cef.deviceVendor = escapeHeaderField(v)
 
-	return f
+	return cef
 }
 
 // SetDeviceVersion sets "deviceVersion" field.
-func (f *headerFields) SetDeviceVersion(v string) *headerFields {
+func (cef *CEF) SetDeviceVersion(v string) *CEF {
 	if len(v) > 31 {
 		v = v[:31]
 	}
 
-	if f.deviceVersion != "" {
-		return f
+	if cef.deviceVersion != "" {
+		return cef
 	}
 
-	f.deviceVersion = escapeHeaderField(v)
+	cef.deviceVersion = escapeHeaderField(v)
 
-	return f
+	return cef
 }
 
 // SetName sets "name" field.
-func (f *headerFields) SetName(v string) *headerFields {
+func (cef *CEF) SetName(v string) *CEF {
 	if len(v) > 512 {
 		v = v[:512]
 	}
 
-	if f.name != "" {
-		return f
+	if cef.name != "" {
+		return cef
 	}
 
-	f.name = escapeHeaderField(v)
+	cef.name = escapeHeaderField(v)
 
-	return f
+	return cef
 }
 
 // CEF Version is an integer and identifies the version of the CEF format. Event consumers use this information to determine what the following fields represent. The current CEF format versions are: l 0 (CEF:0) - for CEF Specification version 0.1 l 1 (CEF:1)- for CEF Specification version 1.x For example, for CEF Specification version 1.2, the value of the CEF Version header field will be "1".
-func (f *headerFields) CEFVersion() int {
-	return f.cefVersion
+func (cef *CEF) CEFVersion() int {
+	return cef.cefVersion
 }
 
 // agentSeverity is a string or integer and it reflects the importance of the event. l The valid string values are: Unknown, Low, Medium, High, and Very-High. l The valid integer values are: 0-3=Low, 4-6=Medium, 7- 8=High, and 9- 10=Very-High
-func (f *headerFields) AgentSeverity() AgentSeverity {
-	return f.agentSeverity
+func (cef *CEF) AgentSeverity() AgentSeverity {
+	return cef.agentSeverity
 }
 
 // deviceEventClassId is a unique identifier for each event-type. This can be a string or an integer. deviceEventClassId identifies the type of event reported. In the intrusion detection system (IDS) world, each signature or rule that detects certain activity has a unique deviceEventClassId assigned. This is a requirement for other types of devices as well, and helps correlation engines process the events. It is also known as Signature ID. Note: The ‘=’, ‘%’ , and ‘#’characters must be escaped in the vulnerability string that are mapped to deviceEventClassId , and if they are present in the description or name of the vulnerability. However, these characters must not be escaped when used as a delimiter
-func (f *headerFields) DeviceEventClassID() string {
-	return f.deviceEventClassID
+func (cef *CEF) DeviceEventClassID() string {
+	return cef.deviceEventClassID
 }
 
 // deviceProduct, deviceVendor, and deviceVersion are strings that uniquely identify the type of device that sent the message. No two products might use the same deviceVendor and deviceProduct pair. There is no central authority managing these pairs. Event producers must ensure that they assign unique name pairs.
-func (f *headerFields) DeviceProduct() string {
-	return f.deviceProduct
+func (cef *CEF) DeviceProduct() string {
+	return cef.deviceProduct
 }
 
 // deviceProduct, deviceVendor, and deviceVersion are strings that uniquely identify the type of device that sent the message. No two products might use the same deviceVendor and deviceProduct pair. There is no central authority managing these pairs. Event producers must ensure that they assign unique name pairs.
-func (f *headerFields) DeviceVendor() string {
-	return f.deviceVendor
+func (cef *CEF) DeviceVendor() string {
+	return cef.deviceVendor
 }
 
 // deviceProduct, deviceVendor, and deviceVersion are strings that uniquely identify the type of device that sent the message. No two products might use the same deviceVendor and deviceProduct pair. There is no central authority managing these pairs. Event producers must ensure that they assign unique name pairs.
-func (f *headerFields) DeviceVersion() string {
-	return f.deviceVersion
+func (cef *CEF) DeviceVersion() string {
+	return cef.deviceVersion
 }
 
 // name is a string representing a human- readable and understandable description of the event. The event name must not contain information that is specifically mentioned in other fields. For example: "Port scan from 10.0.0.1 targeting 20.1.1.1" is not a good event name. It must be: "Port scan". The other information is redundant and can be picked up from the rest of the fields
-func (f *headerFields) Name() string {
-	return f.name
+func (cef *CEF) Name() string {
+	return cef.name
 }

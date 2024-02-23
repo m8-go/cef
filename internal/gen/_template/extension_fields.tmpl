@@ -11,50 +11,50 @@ type extensionFields struct{
 
 {{ range . }}
 // Set{{ .CEFKeyName | title | pretty }} sets {{ .CEFKeyName | unexported | renameKeyWord | quote }} field.
-func (f *extensionFields) Set{{ .CEFKeyName | title | pretty }}(v {{ typeMapping .DataType }}) *extensionFields {
+func (cef *CEF) Set{{ .CEFKeyName | title | pretty }}(v {{ typeMapping .DataType }}) *CEF {
 {{- if eq .DataType "String" }}
-    if f.{{ .CEFKeyName | unexported | renameKeyWord }} != "" {
-        return f
+    if cef.{{ .CEFKeyName | unexported | renameKeyWord }} != "" {
+        return cef
     }
 {{ else if eq .DataType "IP Address" }}
-    if len(f.{{ .CEFKeyName | unexported | renameKeyWord }}) > 0 {
-        return f
+    if len(cef.{{ .CEFKeyName | unexported | renameKeyWord }}) > 0 {
+        return cef
     }
 {{ else if eq .DataType "IPv6 address" }}
-    if len(f.{{ .CEFKeyName | unexported | renameKeyWord }}) > 0 {
-        return f
+    if len(cef.{{ .CEFKeyName | unexported | renameKeyWord }}) > 0 {
+        return cef
     }
 {{ else if eq .DataType "IPv6 Address" }}
-    if len(f.{{ .CEFKeyName | unexported | renameKeyWord }}) > 0 {
-        return f
+    if len(cef.{{ .CEFKeyName | unexported | renameKeyWord }}) > 0 {
+        return cef
     }
 {{ else if eq .DataType "Floating Point" }}
-    if f.{{ .CEFKeyName | unexported | renameKeyWord }} != 0 {
-        return f
+    if cef.{{ .CEFKeyName | unexported | renameKeyWord }} != 0 {
+        return cef
     }
 {{ else if eq .DataType "Long" }}
-    if f.{{ .CEFKeyName | unexported | renameKeyWord }} != 0 {
-        return f
+    if cef.{{ .CEFKeyName | unexported | renameKeyWord }} != 0 {
+        return cef
     }
 {{ else if eq .DataType "Integer" }}
-    if f.{{ .CEFKeyName | unexported | renameKeyWord }} != 0 {
-        return f
+    if cef.{{ .CEFKeyName | unexported | renameKeyWord }} != 0 {
+        return cef
     }
 {{ else if eq .DataType "Time Stamp" }}
-    if f.{{ .CEFKeyName | unexported | renameKeyWord }} != "" {
-        return f
+    if cef.{{ .CEFKeyName | unexported | renameKeyWord }} != "" {
+        return cef
     }
 {{ else if eq .DataType "MAC Address" }}
-    if len(f.{{ .CEFKeyName | unexported | renameKeyWord }}) > 0 {
-        return f
+    if len(cef.{{ .CEFKeyName | unexported | renameKeyWord }}) > 0 {
+        return cef
     }
 {{ else if eq .DataType "Double" }}
-    if f.{{ .CEFKeyName | unexported | renameKeyWord }} != 0 {
-        return f
+    if cef.{{ .CEFKeyName | unexported | renameKeyWord }} != 0 {
+        return cef
     }
 {{ else }}
-    if f.{{ .CEFKeyName | unexported | renameKeyWord }} != "" {
-        return f
+    if cef.{{ .CEFKeyName | unexported | renameKeyWord }} != "" {
+        return cef
     }
 {{ end }}
 {{- if not .Length }}
@@ -65,15 +65,15 @@ func (f *extensionFields) Set{{ .CEFKeyName | title | pretty }}(v {{ typeMapping
         v = v[:{{ .Length }}]
     }
 {{ end }}
-    f.{{ .CEFKeyName | unexported | renameKeyWord }} = v
+    cef.{{ .CEFKeyName | unexported | renameKeyWord }} = v
 
-    return f
+    return cef
 }
 {{ end }}
 
 {{ range . }}
 // {{ .Meaning }}
-func (f *extensionFields) {{ .CEFKeyName | title | pretty }}() {{ typeMapping .DataType }} {
-    return f.{{ .CEFKeyName | unexported | renameKeyWord }}
+func (cef *CEF) {{ .CEFKeyName | title | pretty }}() {{ typeMapping .DataType }} {
+    return cef.{{ .CEFKeyName | unexported | renameKeyWord }}
 }
 {{ end }}

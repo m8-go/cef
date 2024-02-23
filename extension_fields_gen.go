@@ -323,3064 +323,3064 @@ type extensionFields struct {
 }
 
 // SetAct sets "act" field.
-func (f *extensionFields) SetAct(v string) *extensionFields {
-	if f.act != "" {
-		return f
+func (cef *CEF) SetAct(v string) *CEF {
+	if cef.act != "" {
+		return cef
 	}
 
 	if len(v) > 63 {
 		v = v[:63]
 	}
 
-	f.act = v
+	cef.act = v
 
-	return f
+	return cef
 }
 
 // SetApp sets "app" field.
-func (f *extensionFields) SetApp(v string) *extensionFields {
-	if f.app != "" {
-		return f
+func (cef *CEF) SetApp(v string) *CEF {
+	if cef.app != "" {
+		return cef
 	}
 
 	if len(v) > 31 {
 		v = v[:31]
 	}
 
-	f.app = v
+	cef.app = v
 
-	return f
+	return cef
 }
 
 // SetC6a1 sets "c6a1" field.
-func (f *extensionFields) SetC6a1(v net.IP) *extensionFields {
-	if len(f.c6a1) > 0 {
-		return f
+func (cef *CEF) SetC6a1(v net.IP) *CEF {
+	if len(cef.c6a1) > 0 {
+		return cef
 	}
 
-	f.c6a1 = v
+	cef.c6a1 = v
 
-	return f
+	return cef
 }
 
 // SetC6a1Label sets "c6a1Label" field.
-func (f *extensionFields) SetC6a1Label(v string) *extensionFields {
-	if f.c6a1Label != "" {
-		return f
+func (cef *CEF) SetC6a1Label(v string) *CEF {
+	if cef.c6a1Label != "" {
+		return cef
 	}
 
 	if len(v) > 1023 {
 		v = v[:1023]
 	}
 
-	f.c6a1Label = v
+	cef.c6a1Label = v
 
-	return f
+	return cef
 }
 
 // SetC6a3 sets "c6a3" field.
-func (f *extensionFields) SetC6a3(v net.IP) *extensionFields {
-	if len(f.c6a3) > 0 {
-		return f
+func (cef *CEF) SetC6a3(v net.IP) *CEF {
+	if len(cef.c6a3) > 0 {
+		return cef
 	}
 
-	f.c6a3 = v
+	cef.c6a3 = v
 
-	return f
+	return cef
 }
 
 // SetC6a3Label sets "c6a3Label" field.
-func (f *extensionFields) SetC6a3Label(v string) *extensionFields {
-	if f.c6a3Label != "" {
-		return f
+func (cef *CEF) SetC6a3Label(v string) *CEF {
+	if cef.c6a3Label != "" {
+		return cef
 	}
 
 	if len(v) > 1023 {
 		v = v[:1023]
 	}
 
-	f.c6a3Label = v
+	cef.c6a3Label = v
 
-	return f
+	return cef
 }
 
 // SetC6a4 sets "c6a4" field.
-func (f *extensionFields) SetC6a4(v net.IP) *extensionFields {
-	if len(f.c6a4) > 0 {
-		return f
+func (cef *CEF) SetC6a4(v net.IP) *CEF {
+	if len(cef.c6a4) > 0 {
+		return cef
 	}
 
-	f.c6a4 = v
+	cef.c6a4 = v
 
-	return f
+	return cef
 }
 
 // SetC6a4Label sets "c6a4Label" field.
-func (f *extensionFields) SetC6a4Label(v string) *extensionFields {
-	if f.c6a4Label != "" {
-		return f
+func (cef *CEF) SetC6a4Label(v string) *CEF {
+	if cef.c6a4Label != "" {
+		return cef
 	}
 
 	if len(v) > 1023 {
 		v = v[:1023]
 	}
 
-	f.c6a4Label = v
+	cef.c6a4Label = v
 
-	return f
+	return cef
 }
 
 // SetCat sets "cat" field.
-func (f *extensionFields) SetCat(v string) *extensionFields {
-	if f.cat != "" {
-		return f
+func (cef *CEF) SetCat(v string) *CEF {
+	if cef.cat != "" {
+		return cef
 	}
 
 	if len(v) > 1023 {
 		v = v[:1023]
 	}
 
-	f.cat = v
+	cef.cat = v
 
-	return f
+	return cef
 }
 
 // SetCfp1 sets "cfp1" field.
-func (f *extensionFields) SetCfp1(v float32) *extensionFields {
-	if f.cfp1 != 0 {
-		return f
+func (cef *CEF) SetCfp1(v float32) *CEF {
+	if cef.cfp1 != 0 {
+		return cef
 	}
 
-	f.cfp1 = v
+	cef.cfp1 = v
 
-	return f
+	return cef
 }
 
 // SetCfp1Label sets "cfp1Label" field.
-func (f *extensionFields) SetCfp1Label(v string) *extensionFields {
-	if f.cfp1Label != "" {
-		return f
+func (cef *CEF) SetCfp1Label(v string) *CEF {
+	if cef.cfp1Label != "" {
+		return cef
 	}
 
 	if len(v) > 1023 {
 		v = v[:1023]
 	}
 
-	f.cfp1Label = v
+	cef.cfp1Label = v
 
-	return f
+	return cef
 }
 
 // SetCfp2 sets "cfp2" field.
-func (f *extensionFields) SetCfp2(v float32) *extensionFields {
-	if f.cfp2 != 0 {
-		return f
+func (cef *CEF) SetCfp2(v float32) *CEF {
+	if cef.cfp2 != 0 {
+		return cef
 	}
 
-	f.cfp2 = v
+	cef.cfp2 = v
 
-	return f
+	return cef
 }
 
 // SetCfp2Label sets "cfp2Label" field.
-func (f *extensionFields) SetCfp2Label(v string) *extensionFields {
-	if f.cfp2Label != "" {
-		return f
+func (cef *CEF) SetCfp2Label(v string) *CEF {
+	if cef.cfp2Label != "" {
+		return cef
 	}
 
 	if len(v) > 1023 {
 		v = v[:1023]
 	}
 
-	f.cfp2Label = v
+	cef.cfp2Label = v
 
-	return f
+	return cef
 }
 
 // SetCfp3 sets "cfp3" field.
-func (f *extensionFields) SetCfp3(v float32) *extensionFields {
-	if f.cfp3 != 0 {
-		return f
+func (cef *CEF) SetCfp3(v float32) *CEF {
+	if cef.cfp3 != 0 {
+		return cef
 	}
 
-	f.cfp3 = v
+	cef.cfp3 = v
 
-	return f
+	return cef
 }
 
 // SetCfp3Label sets "cfp3Label" field.
-func (f *extensionFields) SetCfp3Label(v string) *extensionFields {
-	if f.cfp3Label != "" {
-		return f
+func (cef *CEF) SetCfp3Label(v string) *CEF {
+	if cef.cfp3Label != "" {
+		return cef
 	}
 
 	if len(v) > 1023 {
 		v = v[:1023]
 	}
 
-	f.cfp3Label = v
+	cef.cfp3Label = v
 
-	return f
+	return cef
 }
 
 // SetCfp4 sets "cfp4" field.
-func (f *extensionFields) SetCfp4(v float32) *extensionFields {
-	if f.cfp4 != 0 {
-		return f
+func (cef *CEF) SetCfp4(v float32) *CEF {
+	if cef.cfp4 != 0 {
+		return cef
 	}
 
-	f.cfp4 = v
+	cef.cfp4 = v
 
-	return f
+	return cef
 }
 
 // SetCfp4Label sets "cfp4Label" field.
-func (f *extensionFields) SetCfp4Label(v string) *extensionFields {
-	if f.cfp4Label != "" {
-		return f
+func (cef *CEF) SetCfp4Label(v string) *CEF {
+	if cef.cfp4Label != "" {
+		return cef
 	}
 
 	if len(v) > 1023 {
 		v = v[:1023]
 	}
 
-	f.cfp4Label = v
+	cef.cfp4Label = v
 
-	return f
+	return cef
 }
 
 // SetCn1 sets "cn1" field.
-func (f *extensionFields) SetCn1(v int64) *extensionFields {
-	if f.cn1 != 0 {
-		return f
+func (cef *CEF) SetCn1(v int64) *CEF {
+	if cef.cn1 != 0 {
+		return cef
 	}
 
-	f.cn1 = v
+	cef.cn1 = v
 
-	return f
+	return cef
 }
 
 // SetCn1Label sets "cn1Label" field.
-func (f *extensionFields) SetCn1Label(v string) *extensionFields {
-	if f.cn1Label != "" {
-		return f
+func (cef *CEF) SetCn1Label(v string) *CEF {
+	if cef.cn1Label != "" {
+		return cef
 	}
 
 	if len(v) > 1023 {
 		v = v[:1023]
 	}
 
-	f.cn1Label = v
+	cef.cn1Label = v
 
-	return f
+	return cef
 }
 
 // SetCn2 sets "cn2" field.
-func (f *extensionFields) SetCn2(v int64) *extensionFields {
-	if f.cn2 != 0 {
-		return f
+func (cef *CEF) SetCn2(v int64) *CEF {
+	if cef.cn2 != 0 {
+		return cef
 	}
 
-	f.cn2 = v
+	cef.cn2 = v
 
-	return f
+	return cef
 }
 
 // SetCn2Label sets "cn2Label" field.
-func (f *extensionFields) SetCn2Label(v string) *extensionFields {
-	if f.cn2Label != "" {
-		return f
+func (cef *CEF) SetCn2Label(v string) *CEF {
+	if cef.cn2Label != "" {
+		return cef
 	}
 
 	if len(v) > 1023 {
 		v = v[:1023]
 	}
 
-	f.cn2Label = v
+	cef.cn2Label = v
 
-	return f
+	return cef
 }
 
 // SetCn3 sets "cn3" field.
-func (f *extensionFields) SetCn3(v int64) *extensionFields {
-	if f.cn3 != 0 {
-		return f
+func (cef *CEF) SetCn3(v int64) *CEF {
+	if cef.cn3 != 0 {
+		return cef
 	}
 
-	f.cn3 = v
+	cef.cn3 = v
 
-	return f
+	return cef
 }
 
 // SetCn3Label sets "cn3Label" field.
-func (f *extensionFields) SetCn3Label(v string) *extensionFields {
-	if f.cn3Label != "" {
-		return f
+func (cef *CEF) SetCn3Label(v string) *CEF {
+	if cef.cn3Label != "" {
+		return cef
 	}
 
 	if len(v) > 1023 {
 		v = v[:1023]
 	}
 
-	f.cn3Label = v
+	cef.cn3Label = v
 
-	return f
+	return cef
 }
 
 // SetCnt sets "cnt" field.
-func (f *extensionFields) SetCnt(v int) *extensionFields {
-	if f.cnt != 0 {
-		return f
+func (cef *CEF) SetCnt(v int) *CEF {
+	if cef.cnt != 0 {
+		return cef
 	}
 
-	f.cnt = v
+	cef.cnt = v
 
-	return f
+	return cef
 }
 
 // SetCs1 sets "cs1" field.
-func (f *extensionFields) SetCs1(v string) *extensionFields {
-	if f.cs1 != "" {
-		return f
+func (cef *CEF) SetCs1(v string) *CEF {
+	if cef.cs1 != "" {
+		return cef
 	}
 
 	if len(v) > 4000 {
 		v = v[:4000]
 	}
 
-	f.cs1 = v
+	cef.cs1 = v
 
-	return f
+	return cef
 }
 
 // SetCs1Label sets "cs1Label" field.
-func (f *extensionFields) SetCs1Label(v string) *extensionFields {
-	if f.cs1Label != "" {
-		return f
+func (cef *CEF) SetCs1Label(v string) *CEF {
+	if cef.cs1Label != "" {
+		return cef
 	}
 
 	if len(v) > 1023 {
 		v = v[:1023]
 	}
 
-	f.cs1Label = v
+	cef.cs1Label = v
 
-	return f
+	return cef
 }
 
 // SetCs2 sets "cs2" field.
-func (f *extensionFields) SetCs2(v string) *extensionFields {
-	if f.cs2 != "" {
-		return f
+func (cef *CEF) SetCs2(v string) *CEF {
+	if cef.cs2 != "" {
+		return cef
 	}
 
 	if len(v) > 4000 {
 		v = v[:4000]
 	}
 
-	f.cs2 = v
+	cef.cs2 = v
 
-	return f
+	return cef
 }
 
 // SetCs2Label sets "cs2Label" field.
-func (f *extensionFields) SetCs2Label(v string) *extensionFields {
-	if f.cs2Label != "" {
-		return f
+func (cef *CEF) SetCs2Label(v string) *CEF {
+	if cef.cs2Label != "" {
+		return cef
 	}
 
 	if len(v) > 1023 {
 		v = v[:1023]
 	}
 
-	f.cs2Label = v
+	cef.cs2Label = v
 
-	return f
+	return cef
 }
 
 // SetCs3 sets "cs3" field.
-func (f *extensionFields) SetCs3(v string) *extensionFields {
-	if f.cs3 != "" {
-		return f
+func (cef *CEF) SetCs3(v string) *CEF {
+	if cef.cs3 != "" {
+		return cef
 	}
 
 	if len(v) > 4000 {
 		v = v[:4000]
 	}
 
-	f.cs3 = v
+	cef.cs3 = v
 
-	return f
+	return cef
 }
 
 // SetCs3Label sets "cs3Label" field.
-func (f *extensionFields) SetCs3Label(v string) *extensionFields {
-	if f.cs3Label != "" {
-		return f
+func (cef *CEF) SetCs3Label(v string) *CEF {
+	if cef.cs3Label != "" {
+		return cef
 	}
 
 	if len(v) > 1023 {
 		v = v[:1023]
 	}
 
-	f.cs3Label = v
+	cef.cs3Label = v
 
-	return f
+	return cef
 }
 
 // SetCs4 sets "cs4" field.
-func (f *extensionFields) SetCs4(v string) *extensionFields {
-	if f.cs4 != "" {
-		return f
+func (cef *CEF) SetCs4(v string) *CEF {
+	if cef.cs4 != "" {
+		return cef
 	}
 
 	if len(v) > 4000 {
 		v = v[:4000]
 	}
 
-	f.cs4 = v
+	cef.cs4 = v
 
-	return f
+	return cef
 }
 
 // SetCs4Label sets "cs4Label" field.
-func (f *extensionFields) SetCs4Label(v string) *extensionFields {
-	if f.cs4Label != "" {
-		return f
+func (cef *CEF) SetCs4Label(v string) *CEF {
+	if cef.cs4Label != "" {
+		return cef
 	}
 
 	if len(v) > 1023 {
 		v = v[:1023]
 	}
 
-	f.cs4Label = v
+	cef.cs4Label = v
 
-	return f
+	return cef
 }
 
 // SetCs5 sets "cs5" field.
-func (f *extensionFields) SetCs5(v string) *extensionFields {
-	if f.cs5 != "" {
-		return f
+func (cef *CEF) SetCs5(v string) *CEF {
+	if cef.cs5 != "" {
+		return cef
 	}
 
 	if len(v) > 4000 {
 		v = v[:4000]
 	}
 
-	f.cs5 = v
+	cef.cs5 = v
 
-	return f
+	return cef
 }
 
 // SetCs5Label sets "cs5Label" field.
-func (f *extensionFields) SetCs5Label(v string) *extensionFields {
-	if f.cs5Label != "" {
-		return f
+func (cef *CEF) SetCs5Label(v string) *CEF {
+	if cef.cs5Label != "" {
+		return cef
 	}
 
 	if len(v) > 1023 {
 		v = v[:1023]
 	}
 
-	f.cs5Label = v
+	cef.cs5Label = v
 
-	return f
+	return cef
 }
 
 // SetCs6 sets "cs6" field.
-func (f *extensionFields) SetCs6(v string) *extensionFields {
-	if f.cs6 != "" {
-		return f
+func (cef *CEF) SetCs6(v string) *CEF {
+	if cef.cs6 != "" {
+		return cef
 	}
 
 	if len(v) > 4000 {
 		v = v[:4000]
 	}
 
-	f.cs6 = v
+	cef.cs6 = v
 
-	return f
+	return cef
 }
 
 // SetCs6Label sets "cs6Label" field.
-func (f *extensionFields) SetCs6Label(v string) *extensionFields {
-	if f.cs6Label != "" {
-		return f
+func (cef *CEF) SetCs6Label(v string) *CEF {
+	if cef.cs6Label != "" {
+		return cef
 	}
 
 	if len(v) > 1023 {
 		v = v[:1023]
 	}
 
-	f.cs6Label = v
+	cef.cs6Label = v
 
-	return f
+	return cef
 }
 
 // SetDestinationDNSDomain sets "destinationDNSDomain" field.
-func (f *extensionFields) SetDestinationDNSDomain(v string) *extensionFields {
-	if f.destinationDNSDomain != "" {
-		return f
+func (cef *CEF) SetDestinationDNSDomain(v string) *CEF {
+	if cef.destinationDNSDomain != "" {
+		return cef
 	}
 
 	if len(v) > 255 {
 		v = v[:255]
 	}
 
-	f.destinationDNSDomain = v
+	cef.destinationDNSDomain = v
 
-	return f
+	return cef
 }
 
 // SetDestinationServiceName sets "destinationServiceName" field.
-func (f *extensionFields) SetDestinationServiceName(v string) *extensionFields {
-	if f.destinationServiceName != "" {
-		return f
+func (cef *CEF) SetDestinationServiceName(v string) *CEF {
+	if cef.destinationServiceName != "" {
+		return cef
 	}
 
 	if len(v) > 1023 {
 		v = v[:1023]
 	}
 
-	f.destinationServiceName = v
+	cef.destinationServiceName = v
 
-	return f
+	return cef
 }
 
 // SetDestinationTranslatedAddress sets "destinationTranslatedAddress" field.
-func (f *extensionFields) SetDestinationTranslatedAddress(v net.IP) *extensionFields {
-	if len(f.destinationTranslatedAddress) > 0 {
-		return f
+func (cef *CEF) SetDestinationTranslatedAddress(v net.IP) *CEF {
+	if len(cef.destinationTranslatedAddress) > 0 {
+		return cef
 	}
 
-	f.destinationTranslatedAddress = v
+	cef.destinationTranslatedAddress = v
 
-	return f
+	return cef
 }
 
 // SetDestinationTranslatedPort sets "destinationTranslatedPort" field.
-func (f *extensionFields) SetDestinationTranslatedPort(v int) *extensionFields {
-	if f.destinationTranslatedPort != 0 {
-		return f
+func (cef *CEF) SetDestinationTranslatedPort(v int) *CEF {
+	if cef.destinationTranslatedPort != 0 {
+		return cef
 	}
 
-	f.destinationTranslatedPort = v
+	cef.destinationTranslatedPort = v
 
-	return f
+	return cef
 }
 
 // SetDeviceCustomDate1 sets "deviceCustomDate1" field.
-func (f *extensionFields) SetDeviceCustomDate1(v string) *extensionFields {
-	if f.deviceCustomDate1 != "" {
-		return f
+func (cef *CEF) SetDeviceCustomDate1(v string) *CEF {
+	if cef.deviceCustomDate1 != "" {
+		return cef
 	}
 
-	f.deviceCustomDate1 = v
+	cef.deviceCustomDate1 = v
 
-	return f
+	return cef
 }
 
 // SetDeviceCustomDate1Label sets "deviceCustomDate1Label" field.
-func (f *extensionFields) SetDeviceCustomDate1Label(v string) *extensionFields {
-	if f.deviceCustomDate1Label != "" {
-		return f
+func (cef *CEF) SetDeviceCustomDate1Label(v string) *CEF {
+	if cef.deviceCustomDate1Label != "" {
+		return cef
 	}
 
 	if len(v) > 1023 {
 		v = v[:1023]
 	}
 
-	f.deviceCustomDate1Label = v
+	cef.deviceCustomDate1Label = v
 
-	return f
+	return cef
 }
 
 // SetDeviceCustomDate2 sets "deviceCustomDate2" field.
-func (f *extensionFields) SetDeviceCustomDate2(v string) *extensionFields {
-	if f.deviceCustomDate2 != "" {
-		return f
+func (cef *CEF) SetDeviceCustomDate2(v string) *CEF {
+	if cef.deviceCustomDate2 != "" {
+		return cef
 	}
 
-	f.deviceCustomDate2 = v
+	cef.deviceCustomDate2 = v
 
-	return f
+	return cef
 }
 
 // SetDeviceCustomDate2Label sets "deviceCustomDate2Label" field.
-func (f *extensionFields) SetDeviceCustomDate2Label(v string) *extensionFields {
-	if f.deviceCustomDate2Label != "" {
-		return f
+func (cef *CEF) SetDeviceCustomDate2Label(v string) *CEF {
+	if cef.deviceCustomDate2Label != "" {
+		return cef
 	}
 
 	if len(v) > 1023 {
 		v = v[:1023]
 	}
 
-	f.deviceCustomDate2Label = v
+	cef.deviceCustomDate2Label = v
 
-	return f
+	return cef
 }
 
 // SetDeviceDirection sets "deviceDirection" field.
-func (f *extensionFields) SetDeviceDirection(v int) *extensionFields {
-	if f.deviceDirection != 0 {
-		return f
+func (cef *CEF) SetDeviceDirection(v int) *CEF {
+	if cef.deviceDirection != 0 {
+		return cef
 	}
 
-	f.deviceDirection = v
+	cef.deviceDirection = v
 
-	return f
+	return cef
 }
 
 // SetDeviceDNSDomain sets "deviceDNSDomain" field.
-func (f *extensionFields) SetDeviceDNSDomain(v string) *extensionFields {
-	if f.deviceDNSDomain != "" {
-		return f
+func (cef *CEF) SetDeviceDNSDomain(v string) *CEF {
+	if cef.deviceDNSDomain != "" {
+		return cef
 	}
 
 	if len(v) > 255 {
 		v = v[:255]
 	}
 
-	f.deviceDNSDomain = v
+	cef.deviceDNSDomain = v
 
-	return f
+	return cef
 }
 
 // SetDeviceExternalID sets "deviceExternalID" field.
-func (f *extensionFields) SetDeviceExternalID(v string) *extensionFields {
-	if f.deviceExternalID != "" {
-		return f
+func (cef *CEF) SetDeviceExternalID(v string) *CEF {
+	if cef.deviceExternalID != "" {
+		return cef
 	}
 
 	if len(v) > 255 {
 		v = v[:255]
 	}
 
-	f.deviceExternalID = v
+	cef.deviceExternalID = v
 
-	return f
+	return cef
 }
 
 // SetDeviceFacility sets "deviceFacility" field.
-func (f *extensionFields) SetDeviceFacility(v string) *extensionFields {
-	if f.deviceFacility != "" {
-		return f
+func (cef *CEF) SetDeviceFacility(v string) *CEF {
+	if cef.deviceFacility != "" {
+		return cef
 	}
 
 	if len(v) > 1023 {
 		v = v[:1023]
 	}
 
-	f.deviceFacility = v
+	cef.deviceFacility = v
 
-	return f
+	return cef
 }
 
 // SetDeviceInboundInterface sets "deviceInboundInterface" field.
-func (f *extensionFields) SetDeviceInboundInterface(v string) *extensionFields {
-	if f.deviceInboundInterface != "" {
-		return f
+func (cef *CEF) SetDeviceInboundInterface(v string) *CEF {
+	if cef.deviceInboundInterface != "" {
+		return cef
 	}
 
 	if len(v) > 128 {
 		v = v[:128]
 	}
 
-	f.deviceInboundInterface = v
+	cef.deviceInboundInterface = v
 
-	return f
+	return cef
 }
 
 // SetDeviceNtDomain sets "deviceNtDomain" field.
-func (f *extensionFields) SetDeviceNtDomain(v string) *extensionFields {
-	if f.deviceNtDomain != "" {
-		return f
+func (cef *CEF) SetDeviceNtDomain(v string) *CEF {
+	if cef.deviceNtDomain != "" {
+		return cef
 	}
 
 	if len(v) > 255 {
 		v = v[:255]
 	}
 
-	f.deviceNtDomain = v
+	cef.deviceNtDomain = v
 
-	return f
+	return cef
 }
 
 // SetDeviceOutboundInterface sets "deviceOutboundInterface" field.
-func (f *extensionFields) SetDeviceOutboundInterface(v string) *extensionFields {
-	if f.deviceOutboundInterface != "" {
-		return f
+func (cef *CEF) SetDeviceOutboundInterface(v string) *CEF {
+	if cef.deviceOutboundInterface != "" {
+		return cef
 	}
 
 	if len(v) > 128 {
 		v = v[:128]
 	}
 
-	f.deviceOutboundInterface = v
+	cef.deviceOutboundInterface = v
 
-	return f
+	return cef
 }
 
 // SetDevicePayloadID sets "devicePayloadID" field.
-func (f *extensionFields) SetDevicePayloadID(v string) *extensionFields {
-	if f.devicePayloadID != "" {
-		return f
+func (cef *CEF) SetDevicePayloadID(v string) *CEF {
+	if cef.devicePayloadID != "" {
+		return cef
 	}
 
 	if len(v) > 128 {
 		v = v[:128]
 	}
 
-	f.devicePayloadID = v
+	cef.devicePayloadID = v
 
-	return f
+	return cef
 }
 
 // SetDeviceProcessName sets "deviceProcessName" field.
-func (f *extensionFields) SetDeviceProcessName(v string) *extensionFields {
-	if f.deviceProcessName != "" {
-		return f
+func (cef *CEF) SetDeviceProcessName(v string) *CEF {
+	if cef.deviceProcessName != "" {
+		return cef
 	}
 
 	if len(v) > 1023 {
 		v = v[:1023]
 	}
 
-	f.deviceProcessName = v
+	cef.deviceProcessName = v
 
-	return f
+	return cef
 }
 
 // SetDeviceTranslatedAddress sets "deviceTranslatedAddress" field.
-func (f *extensionFields) SetDeviceTranslatedAddress(v net.IP) *extensionFields {
-	if len(f.deviceTranslatedAddress) > 0 {
-		return f
+func (cef *CEF) SetDeviceTranslatedAddress(v net.IP) *CEF {
+	if len(cef.deviceTranslatedAddress) > 0 {
+		return cef
 	}
 
-	f.deviceTranslatedAddress = v
+	cef.deviceTranslatedAddress = v
 
-	return f
+	return cef
 }
 
 // SetDhost sets "dhost" field.
-func (f *extensionFields) SetDhost(v string) *extensionFields {
-	if f.dhost != "" {
-		return f
+func (cef *CEF) SetDhost(v string) *CEF {
+	if cef.dhost != "" {
+		return cef
 	}
 
 	if len(v) > 1023 {
 		v = v[:1023]
 	}
 
-	f.dhost = v
+	cef.dhost = v
 
-	return f
+	return cef
 }
 
 // SetDntdom sets "dntdom" field.
-func (f *extensionFields) SetDntdom(v string) *extensionFields {
-	if f.dntdom != "" {
-		return f
+func (cef *CEF) SetDntdom(v string) *CEF {
+	if cef.dntdom != "" {
+		return cef
 	}
 
 	if len(v) > 255 {
 		v = v[:255]
 	}
 
-	f.dntdom = v
+	cef.dntdom = v
 
-	return f
+	return cef
 }
 
 // SetDpid sets "dpid" field.
-func (f *extensionFields) SetDpid(v int) *extensionFields {
-	if f.dpid != 0 {
-		return f
+func (cef *CEF) SetDpid(v int) *CEF {
+	if cef.dpid != 0 {
+		return cef
 	}
 
-	f.dpid = v
+	cef.dpid = v
 
-	return f
+	return cef
 }
 
 // SetDpriv sets "dpriv" field.
-func (f *extensionFields) SetDpriv(v string) *extensionFields {
-	if f.dpriv != "" {
-		return f
+func (cef *CEF) SetDpriv(v string) *CEF {
+	if cef.dpriv != "" {
+		return cef
 	}
 
 	if len(v) > 1023 {
 		v = v[:1023]
 	}
 
-	f.dpriv = v
+	cef.dpriv = v
 
-	return f
+	return cef
 }
 
 // SetDproc sets "dproc" field.
-func (f *extensionFields) SetDproc(v string) *extensionFields {
-	if f.dproc != "" {
-		return f
+func (cef *CEF) SetDproc(v string) *CEF {
+	if cef.dproc != "" {
+		return cef
 	}
 
 	if len(v) > 1023 {
 		v = v[:1023]
 	}
 
-	f.dproc = v
+	cef.dproc = v
 
-	return f
+	return cef
 }
 
 // SetDpt sets "dpt" field.
-func (f *extensionFields) SetDpt(v int) *extensionFields {
-	if f.dpt != 0 {
-		return f
+func (cef *CEF) SetDpt(v int) *CEF {
+	if cef.dpt != 0 {
+		return cef
 	}
 
-	f.dpt = v
+	cef.dpt = v
 
-	return f
+	return cef
 }
 
 // SetDst sets "dst" field.
-func (f *extensionFields) SetDst(v net.IP) *extensionFields {
-	if len(f.dst) > 0 {
-		return f
+func (cef *CEF) SetDst(v net.IP) *CEF {
+	if len(cef.dst) > 0 {
+		return cef
 	}
 
-	f.dst = v
+	cef.dst = v
 
-	return f
+	return cef
 }
 
 // SetDtz sets "dtz" field.
-func (f *extensionFields) SetDtz(v string) *extensionFields {
-	if f.dtz != "" {
-		return f
+func (cef *CEF) SetDtz(v string) *CEF {
+	if cef.dtz != "" {
+		return cef
 	}
 
 	if len(v) > 255 {
 		v = v[:255]
 	}
 
-	f.dtz = v
+	cef.dtz = v
 
-	return f
+	return cef
 }
 
 // SetDuid sets "duid" field.
-func (f *extensionFields) SetDuid(v string) *extensionFields {
-	if f.duid != "" {
-		return f
+func (cef *CEF) SetDuid(v string) *CEF {
+	if cef.duid != "" {
+		return cef
 	}
 
 	if len(v) > 1023 {
 		v = v[:1023]
 	}
 
-	f.duid = v
+	cef.duid = v
 
-	return f
+	return cef
 }
 
 // SetDuser sets "duser" field.
-func (f *extensionFields) SetDuser(v string) *extensionFields {
-	if f.duser != "" {
-		return f
+func (cef *CEF) SetDuser(v string) *CEF {
+	if cef.duser != "" {
+		return cef
 	}
 
 	if len(v) > 1023 {
 		v = v[:1023]
 	}
 
-	f.duser = v
+	cef.duser = v
 
-	return f
+	return cef
 }
 
 // SetDvc sets "dvc" field.
-func (f *extensionFields) SetDvc(v net.IP) *extensionFields {
-	if len(f.dvc) > 0 {
-		return f
+func (cef *CEF) SetDvc(v net.IP) *CEF {
+	if len(cef.dvc) > 0 {
+		return cef
 	}
 
-	f.dvc = v
+	cef.dvc = v
 
-	return f
+	return cef
 }
 
 // SetDvchost sets "dvchost" field.
-func (f *extensionFields) SetDvchost(v string) *extensionFields {
-	if f.dvchost != "" {
-		return f
+func (cef *CEF) SetDvchost(v string) *CEF {
+	if cef.dvchost != "" {
+		return cef
 	}
 
 	if len(v) > 100 {
 		v = v[:100]
 	}
 
-	f.dvchost = v
+	cef.dvchost = v
 
-	return f
+	return cef
 }
 
 // SetDvcmac sets "dvcmac" field.
-func (f *extensionFields) SetDvcmac(v net.HardwareAddr) *extensionFields {
-	if len(f.dvcmac) > 0 {
-		return f
+func (cef *CEF) SetDvcmac(v net.HardwareAddr) *CEF {
+	if len(cef.dvcmac) > 0 {
+		return cef
 	}
 
-	f.dvcmac = v
+	cef.dvcmac = v
 
-	return f
+	return cef
 }
 
 // SetDvcpid sets "dvcpid" field.
-func (f *extensionFields) SetDvcpid(v int) *extensionFields {
-	if f.dvcpid != 0 {
-		return f
+func (cef *CEF) SetDvcpid(v int) *CEF {
+	if cef.dvcpid != 0 {
+		return cef
 	}
 
-	f.dvcpid = v
+	cef.dvcpid = v
 
-	return f
+	return cef
 }
 
 // SetEnd sets "end" field.
-func (f *extensionFields) SetEnd(v string) *extensionFields {
-	if f.end != "" {
-		return f
+func (cef *CEF) SetEnd(v string) *CEF {
+	if cef.end != "" {
+		return cef
 	}
 
-	f.end = v
+	cef.end = v
 
-	return f
+	return cef
 }
 
 // SetExternalID sets "externalID" field.
-func (f *extensionFields) SetExternalID(v string) *extensionFields {
-	if f.externalID != "" {
-		return f
+func (cef *CEF) SetExternalID(v string) *CEF {
+	if cef.externalID != "" {
+		return cef
 	}
 
 	if len(v) > 40 {
 		v = v[:40]
 	}
 
-	f.externalID = v
+	cef.externalID = v
 
-	return f
+	return cef
 }
 
 // SetFileCreateTime sets "fileCreateTime" field.
-func (f *extensionFields) SetFileCreateTime(v string) *extensionFields {
-	if f.fileCreateTime != "" {
-		return f
+func (cef *CEF) SetFileCreateTime(v string) *CEF {
+	if cef.fileCreateTime != "" {
+		return cef
 	}
 
-	f.fileCreateTime = v
+	cef.fileCreateTime = v
 
-	return f
+	return cef
 }
 
 // SetFileHash sets "fileHash" field.
-func (f *extensionFields) SetFileHash(v string) *extensionFields {
-	if f.fileHash != "" {
-		return f
+func (cef *CEF) SetFileHash(v string) *CEF {
+	if cef.fileHash != "" {
+		return cef
 	}
 
 	if len(v) > 255 {
 		v = v[:255]
 	}
 
-	f.fileHash = v
+	cef.fileHash = v
 
-	return f
+	return cef
 }
 
 // SetFileID sets "fileID" field.
-func (f *extensionFields) SetFileID(v string) *extensionFields {
-	if f.fileID != "" {
-		return f
+func (cef *CEF) SetFileID(v string) *CEF {
+	if cef.fileID != "" {
+		return cef
 	}
 
 	if len(v) > 1023 {
 		v = v[:1023]
 	}
 
-	f.fileID = v
+	cef.fileID = v
 
-	return f
+	return cef
 }
 
 // SetFileModificationTime sets "fileModificationTime" field.
-func (f *extensionFields) SetFileModificationTime(v string) *extensionFields {
-	if f.fileModificationTime != "" {
-		return f
+func (cef *CEF) SetFileModificationTime(v string) *CEF {
+	if cef.fileModificationTime != "" {
+		return cef
 	}
 
-	f.fileModificationTime = v
+	cef.fileModificationTime = v
 
-	return f
+	return cef
 }
 
 // SetFilePath sets "filePath" field.
-func (f *extensionFields) SetFilePath(v string) *extensionFields {
-	if f.filePath != "" {
-		return f
+func (cef *CEF) SetFilePath(v string) *CEF {
+	if cef.filePath != "" {
+		return cef
 	}
 
 	if len(v) > 1023 {
 		v = v[:1023]
 	}
 
-	f.filePath = v
+	cef.filePath = v
 
-	return f
+	return cef
 }
 
 // SetFilePermission sets "filePermission" field.
-func (f *extensionFields) SetFilePermission(v string) *extensionFields {
-	if f.filePermission != "" {
-		return f
+func (cef *CEF) SetFilePermission(v string) *CEF {
+	if cef.filePermission != "" {
+		return cef
 	}
 
 	if len(v) > 1023 {
 		v = v[:1023]
 	}
 
-	f.filePermission = v
+	cef.filePermission = v
 
-	return f
+	return cef
 }
 
 // SetFileType sets "fileType" field.
-func (f *extensionFields) SetFileType(v string) *extensionFields {
-	if f.fileType != "" {
-		return f
+func (cef *CEF) SetFileType(v string) *CEF {
+	if cef.fileType != "" {
+		return cef
 	}
 
 	if len(v) > 1023 {
 		v = v[:1023]
 	}
 
-	f.fileType = v
+	cef.fileType = v
 
-	return f
+	return cef
 }
 
 // SetFlexDate1 sets "flexDate1" field.
-func (f *extensionFields) SetFlexDate1(v string) *extensionFields {
-	if f.flexDate1 != "" {
-		return f
+func (cef *CEF) SetFlexDate1(v string) *CEF {
+	if cef.flexDate1 != "" {
+		return cef
 	}
 
-	f.flexDate1 = v
+	cef.flexDate1 = v
 
-	return f
+	return cef
 }
 
 // SetFlexDate1Label sets "flexDate1Label" field.
-func (f *extensionFields) SetFlexDate1Label(v string) *extensionFields {
-	if f.flexDate1Label != "" {
-		return f
+func (cef *CEF) SetFlexDate1Label(v string) *CEF {
+	if cef.flexDate1Label != "" {
+		return cef
 	}
 
 	if len(v) > 128 {
 		v = v[:128]
 	}
 
-	f.flexDate1Label = v
+	cef.flexDate1Label = v
 
-	return f
+	return cef
 }
 
 // SetFlexString1 sets "flexString1" field.
-func (f *extensionFields) SetFlexString1(v string) *extensionFields {
-	if f.flexString1 != "" {
-		return f
+func (cef *CEF) SetFlexString1(v string) *CEF {
+	if cef.flexString1 != "" {
+		return cef
 	}
 
 	if len(v) > 1023 {
 		v = v[:1023]
 	}
 
-	f.flexString1 = v
+	cef.flexString1 = v
 
-	return f
+	return cef
 }
 
 // SetFlexString1Label sets "flexString1Label" field.
-func (f *extensionFields) SetFlexString1Label(v string) *extensionFields {
-	if f.flexString1Label != "" {
-		return f
+func (cef *CEF) SetFlexString1Label(v string) *CEF {
+	if cef.flexString1Label != "" {
+		return cef
 	}
 
 	if len(v) > 128 {
 		v = v[:128]
 	}
 
-	f.flexString1Label = v
+	cef.flexString1Label = v
 
-	return f
+	return cef
 }
 
 // SetFlexString2 sets "flexString2" field.
-func (f *extensionFields) SetFlexString2(v string) *extensionFields {
-	if f.flexString2 != "" {
-		return f
+func (cef *CEF) SetFlexString2(v string) *CEF {
+	if cef.flexString2 != "" {
+		return cef
 	}
 
 	if len(v) > 1023 {
 		v = v[:1023]
 	}
 
-	f.flexString2 = v
+	cef.flexString2 = v
 
-	return f
+	return cef
 }
 
 // SetFlexString2Label sets "flexString2Label" field.
-func (f *extensionFields) SetFlexString2Label(v string) *extensionFields {
-	if f.flexString2Label != "" {
-		return f
+func (cef *CEF) SetFlexString2Label(v string) *CEF {
+	if cef.flexString2Label != "" {
+		return cef
 	}
 
 	if len(v) > 128 {
 		v = v[:128]
 	}
 
-	f.flexString2Label = v
+	cef.flexString2Label = v
 
-	return f
+	return cef
 }
 
 // SetFname sets "fname" field.
-func (f *extensionFields) SetFname(v string) *extensionFields {
-	if f.fname != "" {
-		return f
+func (cef *CEF) SetFname(v string) *CEF {
+	if cef.fname != "" {
+		return cef
 	}
 
 	if len(v) > 1023 {
 		v = v[:1023]
 	}
 
-	f.fname = v
+	cef.fname = v
 
-	return f
+	return cef
 }
 
 // SetFsize sets "fsize" field.
-func (f *extensionFields) SetFsize(v int64) *extensionFields {
-	if f.fsize != 0 {
-		return f
+func (cef *CEF) SetFsize(v int64) *CEF {
+	if cef.fsize != 0 {
+		return cef
 	}
 
-	f.fsize = v
+	cef.fsize = v
 
-	return f
+	return cef
 }
 
 // SetIn sets "in" field.
-func (f *extensionFields) SetIn(v int64) *extensionFields {
-	if f.in != 0 {
-		return f
+func (cef *CEF) SetIn(v int64) *CEF {
+	if cef.in != 0 {
+		return cef
 	}
 
-	f.in = v
+	cef.in = v
 
-	return f
+	return cef
 }
 
 // SetMsg sets "msg" field.
-func (f *extensionFields) SetMsg(v string) *extensionFields {
-	if f.msg != "" {
-		return f
+func (cef *CEF) SetMsg(v string) *CEF {
+	if cef.msg != "" {
+		return cef
 	}
 
 	if len(v) > 1023 {
 		v = v[:1023]
 	}
 
-	f.msg = v
+	cef.msg = v
 
-	return f
+	return cef
 }
 
 // SetOldFileCreateTime sets "oldFileCreateTime" field.
-func (f *extensionFields) SetOldFileCreateTime(v string) *extensionFields {
-	if f.oldFileCreateTime != "" {
-		return f
+func (cef *CEF) SetOldFileCreateTime(v string) *CEF {
+	if cef.oldFileCreateTime != "" {
+		return cef
 	}
 
-	f.oldFileCreateTime = v
+	cef.oldFileCreateTime = v
 
-	return f
+	return cef
 }
 
 // SetOldFileHash sets "oldFileHash" field.
-func (f *extensionFields) SetOldFileHash(v string) *extensionFields {
-	if f.oldFileHash != "" {
-		return f
+func (cef *CEF) SetOldFileHash(v string) *CEF {
+	if cef.oldFileHash != "" {
+		return cef
 	}
 
 	if len(v) > 255 {
 		v = v[:255]
 	}
 
-	f.oldFileHash = v
+	cef.oldFileHash = v
 
-	return f
+	return cef
 }
 
 // SetOldFileID sets "oldFileID" field.
-func (f *extensionFields) SetOldFileID(v string) *extensionFields {
-	if f.oldFileID != "" {
-		return f
+func (cef *CEF) SetOldFileID(v string) *CEF {
+	if cef.oldFileID != "" {
+		return cef
 	}
 
 	if len(v) > 1023 {
 		v = v[:1023]
 	}
 
-	f.oldFileID = v
+	cef.oldFileID = v
 
-	return f
+	return cef
 }
 
 // SetOldFileModificationTime sets "oldFileModificationTime" field.
-func (f *extensionFields) SetOldFileModificationTime(v string) *extensionFields {
-	if f.oldFileModificationTime != "" {
-		return f
+func (cef *CEF) SetOldFileModificationTime(v string) *CEF {
+	if cef.oldFileModificationTime != "" {
+		return cef
 	}
 
-	f.oldFileModificationTime = v
+	cef.oldFileModificationTime = v
 
-	return f
+	return cef
 }
 
 // SetOldFileName sets "oldFileName" field.
-func (f *extensionFields) SetOldFileName(v string) *extensionFields {
-	if f.oldFileName != "" {
-		return f
+func (cef *CEF) SetOldFileName(v string) *CEF {
+	if cef.oldFileName != "" {
+		return cef
 	}
 
 	if len(v) > 1023 {
 		v = v[:1023]
 	}
 
-	f.oldFileName = v
+	cef.oldFileName = v
 
-	return f
+	return cef
 }
 
 // SetOldFilePath sets "oldFilePath" field.
-func (f *extensionFields) SetOldFilePath(v string) *extensionFields {
-	if f.oldFilePath != "" {
-		return f
+func (cef *CEF) SetOldFilePath(v string) *CEF {
+	if cef.oldFilePath != "" {
+		return cef
 	}
 
 	if len(v) > 1023 {
 		v = v[:1023]
 	}
 
-	f.oldFilePath = v
+	cef.oldFilePath = v
 
-	return f
+	return cef
 }
 
 // SetOldFilePermission sets "oldFilePermission" field.
-func (f *extensionFields) SetOldFilePermission(v string) *extensionFields {
-	if f.oldFilePermission != "" {
-		return f
+func (cef *CEF) SetOldFilePermission(v string) *CEF {
+	if cef.oldFilePermission != "" {
+		return cef
 	}
 
 	if len(v) > 1023 {
 		v = v[:1023]
 	}
 
-	f.oldFilePermission = v
+	cef.oldFilePermission = v
 
-	return f
+	return cef
 }
 
 // SetOldFileSize sets "oldFileSize" field.
-func (f *extensionFields) SetOldFileSize(v int64) *extensionFields {
-	if f.oldFileSize != 0 {
-		return f
+func (cef *CEF) SetOldFileSize(v int64) *CEF {
+	if cef.oldFileSize != 0 {
+		return cef
 	}
 
-	f.oldFileSize = v
+	cef.oldFileSize = v
 
-	return f
+	return cef
 }
 
 // SetOldFileType sets "oldFileType" field.
-func (f *extensionFields) SetOldFileType(v string) *extensionFields {
-	if f.oldFileType != "" {
-		return f
+func (cef *CEF) SetOldFileType(v string) *CEF {
+	if cef.oldFileType != "" {
+		return cef
 	}
 
 	if len(v) > 1023 {
 		v = v[:1023]
 	}
 
-	f.oldFileType = v
+	cef.oldFileType = v
 
-	return f
+	return cef
 }
 
 // SetOut sets "out" field.
-func (f *extensionFields) SetOut(v int) *extensionFields {
-	if f.out != 0 {
-		return f
+func (cef *CEF) SetOut(v int) *CEF {
+	if cef.out != 0 {
+		return cef
 	}
 
-	f.out = v
+	cef.out = v
 
-	return f
+	return cef
 }
 
 // SetOutcome sets "outcome" field.
-func (f *extensionFields) SetOutcome(v string) *extensionFields {
-	if f.outcome != "" {
-		return f
+func (cef *CEF) SetOutcome(v string) *CEF {
+	if cef.outcome != "" {
+		return cef
 	}
 
 	if len(v) > 63 {
 		v = v[:63]
 	}
 
-	f.outcome = v
+	cef.outcome = v
 
-	return f
+	return cef
 }
 
 // SetProto sets "proto" field.
-func (f *extensionFields) SetProto(v string) *extensionFields {
-	if f.proto != "" {
-		return f
+func (cef *CEF) SetProto(v string) *CEF {
+	if cef.proto != "" {
+		return cef
 	}
 
 	if len(v) > 31 {
 		v = v[:31]
 	}
 
-	f.proto = v
+	cef.proto = v
 
-	return f
+	return cef
 }
 
 // SetReason sets "reason" field.
-func (f *extensionFields) SetReason(v string) *extensionFields {
-	if f.reason != "" {
-		return f
+func (cef *CEF) SetReason(v string) *CEF {
+	if cef.reason != "" {
+		return cef
 	}
 
 	if len(v) > 1023 {
 		v = v[:1023]
 	}
 
-	f.reason = v
+	cef.reason = v
 
-	return f
+	return cef
 }
 
 // SetRequest sets "request" field.
-func (f *extensionFields) SetRequest(v string) *extensionFields {
-	if f.request != "" {
-		return f
+func (cef *CEF) SetRequest(v string) *CEF {
+	if cef.request != "" {
+		return cef
 	}
 
 	if len(v) > 1023 {
 		v = v[:1023]
 	}
 
-	f.request = v
+	cef.request = v
 
-	return f
+	return cef
 }
 
 // SetRequestClientApplication sets "requestClientApplication" field.
-func (f *extensionFields) SetRequestClientApplication(v string) *extensionFields {
-	if f.requestClientApplication != "" {
-		return f
+func (cef *CEF) SetRequestClientApplication(v string) *CEF {
+	if cef.requestClientApplication != "" {
+		return cef
 	}
 
 	if len(v) > 1023 {
 		v = v[:1023]
 	}
 
-	f.requestClientApplication = v
+	cef.requestClientApplication = v
 
-	return f
+	return cef
 }
 
 // SetRequestContext sets "requestContext" field.
-func (f *extensionFields) SetRequestContext(v string) *extensionFields {
-	if f.requestContext != "" {
-		return f
+func (cef *CEF) SetRequestContext(v string) *CEF {
+	if cef.requestContext != "" {
+		return cef
 	}
 
 	if len(v) > 2048 {
 		v = v[:2048]
 	}
 
-	f.requestContext = v
+	cef.requestContext = v
 
-	return f
+	return cef
 }
 
 // SetRequestCookies sets "requestCookies" field.
-func (f *extensionFields) SetRequestCookies(v string) *extensionFields {
-	if f.requestCookies != "" {
-		return f
+func (cef *CEF) SetRequestCookies(v string) *CEF {
+	if cef.requestCookies != "" {
+		return cef
 	}
 
 	if len(v) > 1023 {
 		v = v[:1023]
 	}
 
-	f.requestCookies = v
+	cef.requestCookies = v
 
-	return f
+	return cef
 }
 
 // SetRequestMethod sets "requestMethod" field.
-func (f *extensionFields) SetRequestMethod(v string) *extensionFields {
-	if f.requestMethod != "" {
-		return f
+func (cef *CEF) SetRequestMethod(v string) *CEF {
+	if cef.requestMethod != "" {
+		return cef
 	}
 
 	if len(v) > 1023 {
 		v = v[:1023]
 	}
 
-	f.requestMethod = v
+	cef.requestMethod = v
 
-	return f
+	return cef
 }
 
 // SetRt sets "rt" field.
-func (f *extensionFields) SetRt(v string) *extensionFields {
-	if f.rt != "" {
-		return f
+func (cef *CEF) SetRt(v string) *CEF {
+	if cef.rt != "" {
+		return cef
 	}
 
-	f.rt = v
+	cef.rt = v
 
-	return f
+	return cef
 }
 
 // SetShost sets "shost" field.
-func (f *extensionFields) SetShost(v string) *extensionFields {
-	if f.shost != "" {
-		return f
+func (cef *CEF) SetShost(v string) *CEF {
+	if cef.shost != "" {
+		return cef
 	}
 
 	if len(v) > 1023 {
 		v = v[:1023]
 	}
 
-	f.shost = v
+	cef.shost = v
 
-	return f
+	return cef
 }
 
 // SetSmac sets "smac" field.
-func (f *extensionFields) SetSmac(v net.HardwareAddr) *extensionFields {
-	if len(f.smac) > 0 {
-		return f
+func (cef *CEF) SetSmac(v net.HardwareAddr) *CEF {
+	if len(cef.smac) > 0 {
+		return cef
 	}
 
-	f.smac = v
+	cef.smac = v
 
-	return f
+	return cef
 }
 
 // SetSntdom sets "sntdom" field.
-func (f *extensionFields) SetSntdom(v string) *extensionFields {
-	if f.sntdom != "" {
-		return f
+func (cef *CEF) SetSntdom(v string) *CEF {
+	if cef.sntdom != "" {
+		return cef
 	}
 
 	if len(v) > 255 {
 		v = v[:255]
 	}
 
-	f.sntdom = v
+	cef.sntdom = v
 
-	return f
+	return cef
 }
 
 // SetSourceDNSDomain sets "sourceDNSDomain" field.
-func (f *extensionFields) SetSourceDNSDomain(v string) *extensionFields {
-	if f.sourceDNSDomain != "" {
-		return f
+func (cef *CEF) SetSourceDNSDomain(v string) *CEF {
+	if cef.sourceDNSDomain != "" {
+		return cef
 	}
 
 	if len(v) > 255 {
 		v = v[:255]
 	}
 
-	f.sourceDNSDomain = v
+	cef.sourceDNSDomain = v
 
-	return f
+	return cef
 }
 
 // SetSourceServiceName sets "sourceServiceName" field.
-func (f *extensionFields) SetSourceServiceName(v string) *extensionFields {
-	if f.sourceServiceName != "" {
-		return f
+func (cef *CEF) SetSourceServiceName(v string) *CEF {
+	if cef.sourceServiceName != "" {
+		return cef
 	}
 
 	if len(v) > 1023 {
 		v = v[:1023]
 	}
 
-	f.sourceServiceName = v
+	cef.sourceServiceName = v
 
-	return f
+	return cef
 }
 
 // SetSourceTranslatedAddress sets "sourceTranslatedAddress" field.
-func (f *extensionFields) SetSourceTranslatedAddress(v net.IP) *extensionFields {
-	if len(f.sourceTranslatedAddress) > 0 {
-		return f
+func (cef *CEF) SetSourceTranslatedAddress(v net.IP) *CEF {
+	if len(cef.sourceTranslatedAddress) > 0 {
+		return cef
 	}
 
-	f.sourceTranslatedAddress = v
+	cef.sourceTranslatedAddress = v
 
-	return f
+	return cef
 }
 
 // SetSourceTranslatedPort sets "sourceTranslatedPort" field.
-func (f *extensionFields) SetSourceTranslatedPort(v int) *extensionFields {
-	if f.sourceTranslatedPort != 0 {
-		return f
+func (cef *CEF) SetSourceTranslatedPort(v int) *CEF {
+	if cef.sourceTranslatedPort != 0 {
+		return cef
 	}
 
-	f.sourceTranslatedPort = v
+	cef.sourceTranslatedPort = v
 
-	return f
+	return cef
 }
 
 // SetSpid sets "spid" field.
-func (f *extensionFields) SetSpid(v int) *extensionFields {
-	if f.spid != 0 {
-		return f
+func (cef *CEF) SetSpid(v int) *CEF {
+	if cef.spid != 0 {
+		return cef
 	}
 
-	f.spid = v
+	cef.spid = v
 
-	return f
+	return cef
 }
 
 // SetSpriv sets "spriv" field.
-func (f *extensionFields) SetSpriv(v string) *extensionFields {
-	if f.spriv != "" {
-		return f
+func (cef *CEF) SetSpriv(v string) *CEF {
+	if cef.spriv != "" {
+		return cef
 	}
 
 	if len(v) > 1023 {
 		v = v[:1023]
 	}
 
-	f.spriv = v
+	cef.spriv = v
 
-	return f
+	return cef
 }
 
 // SetSproc sets "sproc" field.
-func (f *extensionFields) SetSproc(v string) *extensionFields {
-	if f.sproc != "" {
-		return f
+func (cef *CEF) SetSproc(v string) *CEF {
+	if cef.sproc != "" {
+		return cef
 	}
 
 	if len(v) > 1023 {
 		v = v[:1023]
 	}
 
-	f.sproc = v
+	cef.sproc = v
 
-	return f
+	return cef
 }
 
 // SetSpt sets "spt" field.
-func (f *extensionFields) SetSpt(v int) *extensionFields {
-	if f.spt != 0 {
-		return f
+func (cef *CEF) SetSpt(v int) *CEF {
+	if cef.spt != 0 {
+		return cef
 	}
 
-	f.spt = v
+	cef.spt = v
 
-	return f
+	return cef
 }
 
 // SetSrc sets "src" field.
-func (f *extensionFields) SetSrc(v net.IP) *extensionFields {
-	if len(f.src) > 0 {
-		return f
+func (cef *CEF) SetSrc(v net.IP) *CEF {
+	if len(cef.src) > 0 {
+		return cef
 	}
 
-	f.src = v
+	cef.src = v
 
-	return f
+	return cef
 }
 
 // SetStart sets "start" field.
-func (f *extensionFields) SetStart(v string) *extensionFields {
-	if f.start != "" {
-		return f
+func (cef *CEF) SetStart(v string) *CEF {
+	if cef.start != "" {
+		return cef
 	}
 
-	f.start = v
+	cef.start = v
 
-	return f
+	return cef
 }
 
 // SetSuid sets "suid" field.
-func (f *extensionFields) SetSuid(v string) *extensionFields {
-	if f.suid != "" {
-		return f
+func (cef *CEF) SetSuid(v string) *CEF {
+	if cef.suid != "" {
+		return cef
 	}
 
 	if len(v) > 1023 {
 		v = v[:1023]
 	}
 
-	f.suid = v
+	cef.suid = v
 
-	return f
+	return cef
 }
 
 // SetSuser sets "suser" field.
-func (f *extensionFields) SetSuser(v string) *extensionFields {
-	if f.suser != "" {
-		return f
+func (cef *CEF) SetSuser(v string) *CEF {
+	if cef.suser != "" {
+		return cef
 	}
 
 	if len(v) > 1023 {
 		v = v[:1023]
 	}
 
-	f.suser = v
+	cef.suser = v
 
-	return f
+	return cef
 }
 
 // SetType sets "typ" field.
-func (f *extensionFields) SetType(v int) *extensionFields {
-	if f.typ != 0 {
-		return f
+func (cef *CEF) SetType(v int) *CEF {
+	if cef.typ != 0 {
+		return cef
 	}
 
-	f.typ = v
+	cef.typ = v
 
-	return f
+	return cef
 }
 
 // SetAgentDNSDomain sets "agentDNSDomain" field.
-func (f *extensionFields) SetAgentDNSDomain(v string) *extensionFields {
-	if f.agentDNSDomain != "" {
-		return f
+func (cef *CEF) SetAgentDNSDomain(v string) *CEF {
+	if cef.agentDNSDomain != "" {
+		return cef
 	}
 
 	if len(v) > 255 {
 		v = v[:255]
 	}
 
-	f.agentDNSDomain = v
+	cef.agentDNSDomain = v
 
-	return f
+	return cef
 }
 
 // SetAgentNtDomain sets "agentNtDomain" field.
-func (f *extensionFields) SetAgentNtDomain(v string) *extensionFields {
-	if f.agentNtDomain != "" {
-		return f
+func (cef *CEF) SetAgentNtDomain(v string) *CEF {
+	if cef.agentNtDomain != "" {
+		return cef
 	}
 
 	if len(v) > 255 {
 		v = v[:255]
 	}
 
-	f.agentNtDomain = v
+	cef.agentNtDomain = v
 
-	return f
+	return cef
 }
 
 // SetAgentTranslatedAddress sets "agentTranslatedAddress" field.
-func (f *extensionFields) SetAgentTranslatedAddress(v net.IP) *extensionFields {
-	if len(f.agentTranslatedAddress) > 0 {
-		return f
+func (cef *CEF) SetAgentTranslatedAddress(v net.IP) *CEF {
+	if len(cef.agentTranslatedAddress) > 0 {
+		return cef
 	}
 
-	f.agentTranslatedAddress = v
+	cef.agentTranslatedAddress = v
 
-	return f
+	return cef
 }
 
 // SetAgentTranslatedZoneExternalID sets "agentTranslatedZoneExternalID" field.
-func (f *extensionFields) SetAgentTranslatedZoneExternalID(v string) *extensionFields {
-	if f.agentTranslatedZoneExternalID != "" {
-		return f
+func (cef *CEF) SetAgentTranslatedZoneExternalID(v string) *CEF {
+	if cef.agentTranslatedZoneExternalID != "" {
+		return cef
 	}
 
 	if len(v) > 200 {
 		v = v[:200]
 	}
 
-	f.agentTranslatedZoneExternalID = v
+	cef.agentTranslatedZoneExternalID = v
 
-	return f
+	return cef
 }
 
 // SetAgentTranslatedZoneURI sets "agentTranslatedZoneURI" field.
-func (f *extensionFields) SetAgentTranslatedZoneURI(v string) *extensionFields {
-	if f.agentTranslatedZoneURI != "" {
-		return f
+func (cef *CEF) SetAgentTranslatedZoneURI(v string) *CEF {
+	if cef.agentTranslatedZoneURI != "" {
+		return cef
 	}
 
 	if len(v) > 2048 {
 		v = v[:2048]
 	}
 
-	f.agentTranslatedZoneURI = v
+	cef.agentTranslatedZoneURI = v
 
-	return f
+	return cef
 }
 
 // SetAgentZoneExternalID sets "agentZoneExternalID" field.
-func (f *extensionFields) SetAgentZoneExternalID(v string) *extensionFields {
-	if f.agentZoneExternalID != "" {
-		return f
+func (cef *CEF) SetAgentZoneExternalID(v string) *CEF {
+	if cef.agentZoneExternalID != "" {
+		return cef
 	}
 
 	if len(v) > 200 {
 		v = v[:200]
 	}
 
-	f.agentZoneExternalID = v
+	cef.agentZoneExternalID = v
 
-	return f
+	return cef
 }
 
 // SetAgentZoneURI sets "agentZoneURI" field.
-func (f *extensionFields) SetAgentZoneURI(v string) *extensionFields {
-	if f.agentZoneURI != "" {
-		return f
+func (cef *CEF) SetAgentZoneURI(v string) *CEF {
+	if cef.agentZoneURI != "" {
+		return cef
 	}
 
 	if len(v) > 2048 {
 		v = v[:2048]
 	}
 
-	f.agentZoneURI = v
+	cef.agentZoneURI = v
 
-	return f
+	return cef
 }
 
 // SetAgt sets "agt" field.
-func (f *extensionFields) SetAgt(v net.IP) *extensionFields {
-	if len(f.agt) > 0 {
-		return f
+func (cef *CEF) SetAgt(v net.IP) *CEF {
+	if len(cef.agt) > 0 {
+		return cef
 	}
 
-	f.agt = v
+	cef.agt = v
 
-	return f
+	return cef
 }
 
 // SetAhost sets "ahost" field.
-func (f *extensionFields) SetAhost(v string) *extensionFields {
-	if f.ahost != "" {
-		return f
+func (cef *CEF) SetAhost(v string) *CEF {
+	if cef.ahost != "" {
+		return cef
 	}
 
 	if len(v) > 1023 {
 		v = v[:1023]
 	}
 
-	f.ahost = v
+	cef.ahost = v
 
-	return f
+	return cef
 }
 
 // SetAid sets "aid" field.
-func (f *extensionFields) SetAid(v string) *extensionFields {
-	if f.aid != "" {
-		return f
+func (cef *CEF) SetAid(v string) *CEF {
+	if cef.aid != "" {
+		return cef
 	}
 
 	if len(v) > 40 {
 		v = v[:40]
 	}
 
-	f.aid = v
+	cef.aid = v
 
-	return f
+	return cef
 }
 
 // SetAmac sets "amac" field.
-func (f *extensionFields) SetAmac(v net.HardwareAddr) *extensionFields {
-	if len(f.amac) > 0 {
-		return f
+func (cef *CEF) SetAmac(v net.HardwareAddr) *CEF {
+	if len(cef.amac) > 0 {
+		return cef
 	}
 
-	f.amac = v
+	cef.amac = v
 
-	return f
+	return cef
 }
 
 // SetArt sets "art" field.
-func (f *extensionFields) SetArt(v string) *extensionFields {
-	if f.art != "" {
-		return f
+func (cef *CEF) SetArt(v string) *CEF {
+	if cef.art != "" {
+		return cef
 	}
 
-	f.art = v
+	cef.art = v
 
-	return f
+	return cef
 }
 
 // SetAt sets "at" field.
-func (f *extensionFields) SetAt(v string) *extensionFields {
-	if f.at != "" {
-		return f
+func (cef *CEF) SetAt(v string) *CEF {
+	if cef.at != "" {
+		return cef
 	}
 
 	if len(v) > 63 {
 		v = v[:63]
 	}
 
-	f.at = v
+	cef.at = v
 
-	return f
+	return cef
 }
 
 // SetAtz sets "atz" field.
-func (f *extensionFields) SetAtz(v string) *extensionFields {
-	if f.atz != "" {
-		return f
+func (cef *CEF) SetAtz(v string) *CEF {
+	if cef.atz != "" {
+		return cef
 	}
 
 	if len(v) > 255 {
 		v = v[:255]
 	}
 
-	f.atz = v
+	cef.atz = v
 
-	return f
+	return cef
 }
 
 // SetAv sets "av" field.
-func (f *extensionFields) SetAv(v string) *extensionFields {
-	if f.av != "" {
-		return f
+func (cef *CEF) SetAv(v string) *CEF {
+	if cef.av != "" {
+		return cef
 	}
 
 	if len(v) > 31 {
 		v = v[:31]
 	}
 
-	f.av = v
+	cef.av = v
 
-	return f
+	return cef
 }
 
 // SetCustomerExternalID sets "customerExternalID" field.
-func (f *extensionFields) SetCustomerExternalID(v string) *extensionFields {
-	if f.customerExternalID != "" {
-		return f
+func (cef *CEF) SetCustomerExternalID(v string) *CEF {
+	if cef.customerExternalID != "" {
+		return cef
 	}
 
 	if len(v) > 200 {
 		v = v[:200]
 	}
 
-	f.customerExternalID = v
+	cef.customerExternalID = v
 
-	return f
+	return cef
 }
 
 // SetCustomerURI sets "customerURI" field.
-func (f *extensionFields) SetCustomerURI(v string) *extensionFields {
-	if f.customerURI != "" {
-		return f
+func (cef *CEF) SetCustomerURI(v string) *CEF {
+	if cef.customerURI != "" {
+		return cef
 	}
 
 	if len(v) > 2048 {
 		v = v[:2048]
 	}
 
-	f.customerURI = v
+	cef.customerURI = v
 
-	return f
+	return cef
 }
 
 // SetDestinatioTranslatedZoneExternalID sets "destinatioTranslatedZoneExternalID" field.
-func (f *extensionFields) SetDestinatioTranslatedZoneExternalID(v string) *extensionFields {
-	if f.destinatioTranslatedZoneExternalID != "" {
-		return f
+func (cef *CEF) SetDestinatioTranslatedZoneExternalID(v string) *CEF {
+	if cef.destinatioTranslatedZoneExternalID != "" {
+		return cef
 	}
 
 	if len(v) > 200 {
 		v = v[:200]
 	}
 
-	f.destinatioTranslatedZoneExternalID = v
+	cef.destinatioTranslatedZoneExternalID = v
 
-	return f
+	return cef
 }
 
 // SetDestinationTranslatedZoneURI sets "destinationTranslatedZoneURI" field.
-func (f *extensionFields) SetDestinationTranslatedZoneURI(v string) *extensionFields {
-	if f.destinationTranslatedZoneURI != "" {
-		return f
+func (cef *CEF) SetDestinationTranslatedZoneURI(v string) *CEF {
+	if cef.destinationTranslatedZoneURI != "" {
+		return cef
 	}
 
 	if len(v) > 2048 {
 		v = v[:2048]
 	}
 
-	f.destinationTranslatedZoneURI = v
+	cef.destinationTranslatedZoneURI = v
 
-	return f
+	return cef
 }
 
 // SetDestinationZoneExternalID sets "destinationZoneExternalID" field.
-func (f *extensionFields) SetDestinationZoneExternalID(v string) *extensionFields {
-	if f.destinationZoneExternalID != "" {
-		return f
+func (cef *CEF) SetDestinationZoneExternalID(v string) *CEF {
+	if cef.destinationZoneExternalID != "" {
+		return cef
 	}
 
 	if len(v) > 200 {
 		v = v[:200]
 	}
 
-	f.destinationZoneExternalID = v
+	cef.destinationZoneExternalID = v
 
-	return f
+	return cef
 }
 
 // SetDestinationZoneURI sets "destinationZoneURI" field.
-func (f *extensionFields) SetDestinationZoneURI(v string) *extensionFields {
-	if f.destinationZoneURI != "" {
-		return f
+func (cef *CEF) SetDestinationZoneURI(v string) *CEF {
+	if cef.destinationZoneURI != "" {
+		return cef
 	}
 
 	if len(v) > 2048 {
 		v = v[:2048]
 	}
 
-	f.destinationZoneURI = v
+	cef.destinationZoneURI = v
 
-	return f
+	return cef
 }
 
 // SetDeviceTranslatedZoneExternalID sets "deviceTranslatedZoneExternalID" field.
-func (f *extensionFields) SetDeviceTranslatedZoneExternalID(v string) *extensionFields {
-	if f.deviceTranslatedZoneExternalID != "" {
-		return f
+func (cef *CEF) SetDeviceTranslatedZoneExternalID(v string) *CEF {
+	if cef.deviceTranslatedZoneExternalID != "" {
+		return cef
 	}
 
 	if len(v) > 200 {
 		v = v[:200]
 	}
 
-	f.deviceTranslatedZoneExternalID = v
+	cef.deviceTranslatedZoneExternalID = v
 
-	return f
+	return cef
 }
 
 // SetDeviceTranslatedZoneURI sets "deviceTranslatedZoneURI" field.
-func (f *extensionFields) SetDeviceTranslatedZoneURI(v string) *extensionFields {
-	if f.deviceTranslatedZoneURI != "" {
-		return f
+func (cef *CEF) SetDeviceTranslatedZoneURI(v string) *CEF {
+	if cef.deviceTranslatedZoneURI != "" {
+		return cef
 	}
 
 	if len(v) > 2048 {
 		v = v[:2048]
 	}
 
-	f.deviceTranslatedZoneURI = v
+	cef.deviceTranslatedZoneURI = v
 
-	return f
+	return cef
 }
 
 // SetDeviceZoneExternalID sets "deviceZoneExternalID" field.
-func (f *extensionFields) SetDeviceZoneExternalID(v string) *extensionFields {
-	if f.deviceZoneExternalID != "" {
-		return f
+func (cef *CEF) SetDeviceZoneExternalID(v string) *CEF {
+	if cef.deviceZoneExternalID != "" {
+		return cef
 	}
 
 	if len(v) > 200 {
 		v = v[:200]
 	}
 
-	f.deviceZoneExternalID = v
+	cef.deviceZoneExternalID = v
 
-	return f
+	return cef
 }
 
 // SetDeviceZoneURI sets "deviceZoneURI" field.
-func (f *extensionFields) SetDeviceZoneURI(v string) *extensionFields {
-	if f.deviceZoneURI != "" {
-		return f
+func (cef *CEF) SetDeviceZoneURI(v string) *CEF {
+	if cef.deviceZoneURI != "" {
+		return cef
 	}
 
 	if len(v) > 2048 {
 		v = v[:2048]
 	}
 
-	f.deviceZoneURI = v
+	cef.deviceZoneURI = v
 
-	return f
+	return cef
 }
 
 // SetDlat sets "dlat" field.
-func (f *extensionFields) SetDlat(v float64) *extensionFields {
-	if f.dlat != 0 {
-		return f
+func (cef *CEF) SetDlat(v float64) *CEF {
+	if cef.dlat != 0 {
+		return cef
 	}
 
-	f.dlat = v
+	cef.dlat = v
 
-	return f
+	return cef
 }
 
 // SetDlong sets "dlong" field.
-func (f *extensionFields) SetDlong(v float64) *extensionFields {
-	if f.dlong != 0 {
-		return f
+func (cef *CEF) SetDlong(v float64) *CEF {
+	if cef.dlong != 0 {
+		return cef
 	}
 
-	f.dlong = v
+	cef.dlong = v
 
-	return f
+	return cef
 }
 
 // SetEventID sets "eventID" field.
-func (f *extensionFields) SetEventID(v int64) *extensionFields {
-	if f.eventID != 0 {
-		return f
+func (cef *CEF) SetEventID(v int64) *CEF {
+	if cef.eventID != 0 {
+		return cef
 	}
 
-	f.eventID = v
+	cef.eventID = v
 
-	return f
+	return cef
 }
 
 // SetRawEvent sets "rawEvent" field.
-func (f *extensionFields) SetRawEvent(v string) *extensionFields {
-	if f.rawEvent != "" {
-		return f
+func (cef *CEF) SetRawEvent(v string) *CEF {
+	if cef.rawEvent != "" {
+		return cef
 	}
 
 	if len(v) > 4000 {
 		v = v[:4000]
 	}
 
-	f.rawEvent = v
+	cef.rawEvent = v
 
-	return f
+	return cef
 }
 
 // SetSlat sets "slat" field.
-func (f *extensionFields) SetSlat(v float64) *extensionFields {
-	if f.slat != 0 {
-		return f
+func (cef *CEF) SetSlat(v float64) *CEF {
+	if cef.slat != 0 {
+		return cef
 	}
 
-	f.slat = v
+	cef.slat = v
 
-	return f
+	return cef
 }
 
 // SetSlong sets "slong" field.
-func (f *extensionFields) SetSlong(v float64) *extensionFields {
-	if f.slong != 0 {
-		return f
+func (cef *CEF) SetSlong(v float64) *CEF {
+	if cef.slong != 0 {
+		return cef
 	}
 
-	f.slong = v
+	cef.slong = v
 
-	return f
+	return cef
 }
 
 // SetSourceTranslatedZoneExternalID sets "sourceTranslatedZoneExternalID" field.
-func (f *extensionFields) SetSourceTranslatedZoneExternalID(v string) *extensionFields {
-	if f.sourceTranslatedZoneExternalID != "" {
-		return f
+func (cef *CEF) SetSourceTranslatedZoneExternalID(v string) *CEF {
+	if cef.sourceTranslatedZoneExternalID != "" {
+		return cef
 	}
 
 	if len(v) > 200 {
 		v = v[:200]
 	}
 
-	f.sourceTranslatedZoneExternalID = v
+	cef.sourceTranslatedZoneExternalID = v
 
-	return f
+	return cef
 }
 
 // SetSourceTranslatedZoneURI sets "sourceTranslatedZoneURI" field.
-func (f *extensionFields) SetSourceTranslatedZoneURI(v string) *extensionFields {
-	if f.sourceTranslatedZoneURI != "" {
-		return f
+func (cef *CEF) SetSourceTranslatedZoneURI(v string) *CEF {
+	if cef.sourceTranslatedZoneURI != "" {
+		return cef
 	}
 
 	if len(v) > 2048 {
 		v = v[:2048]
 	}
 
-	f.sourceTranslatedZoneURI = v
+	cef.sourceTranslatedZoneURI = v
 
-	return f
+	return cef
 }
 
 // SetSourceZoneExternalID sets "sourceZoneExternalID" field.
-func (f *extensionFields) SetSourceZoneExternalID(v string) *extensionFields {
-	if f.sourceZoneExternalID != "" {
-		return f
+func (cef *CEF) SetSourceZoneExternalID(v string) *CEF {
+	if cef.sourceZoneExternalID != "" {
+		return cef
 	}
 
 	if len(v) > 200 {
 		v = v[:200]
 	}
 
-	f.sourceZoneExternalID = v
+	cef.sourceZoneExternalID = v
 
-	return f
+	return cef
 }
 
 // SetSourceZoneURI sets "sourceZoneURI" field.
-func (f *extensionFields) SetSourceZoneURI(v string) *extensionFields {
-	if f.sourceZoneURI != "" {
-		return f
+func (cef *CEF) SetSourceZoneURI(v string) *CEF {
+	if cef.sourceZoneURI != "" {
+		return cef
 	}
 
 	if len(v) > 2048 {
 		v = v[:2048]
 	}
 
-	f.sourceZoneURI = v
+	cef.sourceZoneURI = v
 
-	return f
+	return cef
 }
 
 // SetAgentTranslatedZoneKey sets "agentTranslatedZoneKey" field.
-func (f *extensionFields) SetAgentTranslatedZoneKey(v int64) *extensionFields {
-	if f.agentTranslatedZoneKey != 0 {
-		return f
+func (cef *CEF) SetAgentTranslatedZoneKey(v int64) *CEF {
+	if cef.agentTranslatedZoneKey != 0 {
+		return cef
 	}
 
-	f.agentTranslatedZoneKey = v
+	cef.agentTranslatedZoneKey = v
 
-	return f
+	return cef
 }
 
 // SetAgentZoneKey sets "agentZoneKey" field.
-func (f *extensionFields) SetAgentZoneKey(v int64) *extensionFields {
-	if f.agentZoneKey != 0 {
-		return f
+func (cef *CEF) SetAgentZoneKey(v int64) *CEF {
+	if cef.agentZoneKey != 0 {
+		return cef
 	}
 
-	f.agentZoneKey = v
+	cef.agentZoneKey = v
 
-	return f
+	return cef
 }
 
 // SetCustomerKey sets "customerKey" field.
-func (f *extensionFields) SetCustomerKey(v int64) *extensionFields {
-	if f.customerKey != 0 {
-		return f
+func (cef *CEF) SetCustomerKey(v int64) *CEF {
+	if cef.customerKey != 0 {
+		return cef
 	}
 
-	f.customerKey = v
+	cef.customerKey = v
 
-	return f
+	return cef
 }
 
 // SetDestinationTranslatedZoneKey sets "destinationTranslatedZoneKey" field.
-func (f *extensionFields) SetDestinationTranslatedZoneKey(v int64) *extensionFields {
-	if f.destinationTranslatedZoneKey != 0 {
-		return f
+func (cef *CEF) SetDestinationTranslatedZoneKey(v int64) *CEF {
+	if cef.destinationTranslatedZoneKey != 0 {
+		return cef
 	}
 
-	f.destinationTranslatedZoneKey = v
+	cef.destinationTranslatedZoneKey = v
 
-	return f
+	return cef
 }
 
 // SetDZoneKey sets "dZoneKey" field.
-func (f *extensionFields) SetDZoneKey(v int64) *extensionFields {
-	if f.dZoneKey != 0 {
-		return f
+func (cef *CEF) SetDZoneKey(v int64) *CEF {
+	if cef.dZoneKey != 0 {
+		return cef
 	}
 
-	f.dZoneKey = v
+	cef.dZoneKey = v
 
-	return f
+	return cef
 }
 
 // SetDeviceTranslatedZoneKey sets "deviceTranslatedZoneKey" field.
-func (f *extensionFields) SetDeviceTranslatedZoneKey(v int64) *extensionFields {
-	if f.deviceTranslatedZoneKey != 0 {
-		return f
+func (cef *CEF) SetDeviceTranslatedZoneKey(v int64) *CEF {
+	if cef.deviceTranslatedZoneKey != 0 {
+		return cef
 	}
 
-	f.deviceTranslatedZoneKey = v
+	cef.deviceTranslatedZoneKey = v
 
-	return f
+	return cef
 }
 
 // SetDeviceZoneKey sets "deviceZoneKey" field.
-func (f *extensionFields) SetDeviceZoneKey(v int64) *extensionFields {
-	if f.deviceZoneKey != 0 {
-		return f
+func (cef *CEF) SetDeviceZoneKey(v int64) *CEF {
+	if cef.deviceZoneKey != 0 {
+		return cef
 	}
 
-	f.deviceZoneKey = v
+	cef.deviceZoneKey = v
 
-	return f
+	return cef
 }
 
 // SetSTranslatedZoneKey sets "sTranslatedZoneKey" field.
-func (f *extensionFields) SetSTranslatedZoneKey(v int64) *extensionFields {
-	if f.sTranslatedZoneKey != 0 {
-		return f
+func (cef *CEF) SetSTranslatedZoneKey(v int64) *CEF {
+	if cef.sTranslatedZoneKey != 0 {
+		return cef
 	}
 
-	f.sTranslatedZoneKey = v
+	cef.sTranslatedZoneKey = v
 
-	return f
+	return cef
 }
 
 // SetSZoneKey sets "sZoneKey" field.
-func (f *extensionFields) SetSZoneKey(v int64) *extensionFields {
-	if f.sZoneKey != 0 {
-		return f
+func (cef *CEF) SetSZoneKey(v int64) *CEF {
+	if cef.sZoneKey != 0 {
+		return cef
 	}
 
-	f.sZoneKey = v
+	cef.sZoneKey = v
 
-	return f
+	return cef
 }
 
 // Action taken by the device.
-func (f *extensionFields) Act() string {
-	return f.act
+func (cef *CEF) Act() string {
+	return cef.act
 }
 
 // Application level protocol, example: HTTP, HTTPS, SSHv2, Telnet, POP, IMPA, IMAPS, and so on.
-func (f *extensionFields) App() string {
-	return f.app
+func (cef *CEF) App() string {
+	return cef.app
 }
 
 // One of the four IPv6 address fields available to map fields that do not apply to any other in this dictionary. TIP: For tips on using these fields, see the guidelines defined under User-Defined Extensions.
-func (f *extensionFields) C6a1() net.IP {
-	return f.c6a1
+func (cef *CEF) C6a1() net.IP {
+	return cef.c6a1
 }
 
 // All custom fields have a corresponding label field. Each of these fields is a string and describes the purpose of the custom field.
-func (f *extensionFields) C6a1Label() string {
-	return f.c6a1Label
+func (cef *CEF) C6a1Label() string {
+	return cef.c6a1Label
 }
 
 // One of the four IPv6 address fields available to map fields that do not apply to any other in this dictionary. TIP: For tips on using these fields, see the guidelines defined under User-Defined Extensions.
-func (f *extensionFields) C6a3() net.IP {
-	return f.c6a3
+func (cef *CEF) C6a3() net.IP {
+	return cef.c6a3
 }
 
 // All custom fields have a corresponding label field. Each of these fields is a string and describes the purpose of the custom field.
-func (f *extensionFields) C6a3Label() string {
-	return f.c6a3Label
+func (cef *CEF) C6a3Label() string {
+	return cef.c6a3Label
 }
 
 // One of the four IPv6 address fields available to map fields that do not apply to any other in this dictionary. TIP: For tips on using these fields, see the guidelines defined under User-Defined Extensions.
-func (f *extensionFields) C6a4() net.IP {
-	return f.c6a4
+func (cef *CEF) C6a4() net.IP {
+	return cef.c6a4
 }
 
 // All custom fields have a corresponding label field. Each of these fields is a string and describes the purpose of the custom field.
-func (f *extensionFields) C6a4Label() string {
-	return f.c6a4Label
+func (cef *CEF) C6a4Label() string {
+	return cef.c6a4Label
 }
 
 // Represents the category assigned by the originating device. Devices often use their own categorization schema to classify event. Example: “/Monitor/Disk/Read”
-func (f *extensionFields) Cat() string {
-	return f.cat
+func (cef *CEF) Cat() string {
+	return cef.cat
 }
 
 // One of our floating point fields available to map fields that do not apply to any other in this dictionary.
-func (f *extensionFields) Cfp1() float32 {
-	return f.cfp1
+func (cef *CEF) Cfp1() float32 {
+	return cef.cfp1
 }
 
 // All custom fields have a corresponding label field. Each of these fields is a string and describes the purpose of the custom field.
-func (f *extensionFields) Cfp1Label() string {
-	return f.cfp1Label
+func (cef *CEF) Cfp1Label() string {
+	return cef.cfp1Label
 }
 
 // One of the four floating point fields available to map fields that do not apply to any other in this dictionary.
-func (f *extensionFields) Cfp2() float32 {
-	return f.cfp2
+func (cef *CEF) Cfp2() float32 {
+	return cef.cfp2
 }
 
 // All custom fields have a corresponding label field. Each of these fields is a string and describes the purpose of the custom field.
-func (f *extensionFields) Cfp2Label() string {
-	return f.cfp2Label
+func (cef *CEF) Cfp2Label() string {
+	return cef.cfp2Label
 }
 
 // One of the four floating point fields available to map fields that do not apply to any other in this dictionary.
-func (f *extensionFields) Cfp3() float32 {
-	return f.cfp3
+func (cef *CEF) Cfp3() float32 {
+	return cef.cfp3
 }
 
 // All custom fields have a corresponding label field. Each of these fields is a string and describes the purpose of the custom field.
-func (f *extensionFields) Cfp3Label() string {
-	return f.cfp3Label
+func (cef *CEF) Cfp3Label() string {
+	return cef.cfp3Label
 }
 
 // One of the four floating point fields available to map fields that do not apply to any other in this dictionary.
-func (f *extensionFields) Cfp4() float32 {
-	return f.cfp4
+func (cef *CEF) Cfp4() float32 {
+	return cef.cfp4
 }
 
 // All custom fields have a corresponding label field. Each of these fields is a string and describes the purpose of the custom field.
-func (f *extensionFields) Cfp4Label() string {
-	return f.cfp4Label
+func (cef *CEF) Cfp4Label() string {
+	return cef.cfp4Label
 }
 
 // One of the three number fields available to map fields that do not apply to any other in this dictionary. Use sparingly and seek a more specific, dictionary supplied field when possible.
-func (f *extensionFields) Cn1() int64 {
-	return f.cn1
+func (cef *CEF) Cn1() int64 {
+	return cef.cn1
 }
 
 // All custom fields have a corresponding label field. Each of these fields is a string and describes the purpose of the custom field.
-func (f *extensionFields) Cn1Label() string {
-	return f.cn1Label
+func (cef *CEF) Cn1Label() string {
+	return cef.cn1Label
 }
 
 // One of the three number fields available to map fields that do not apply to any other in this dictionary. Use sparingly and seek a more specific, dictionary supplied field when possible.
-func (f *extensionFields) Cn2() int64 {
-	return f.cn2
+func (cef *CEF) Cn2() int64 {
+	return cef.cn2
 }
 
 // All custom fields have a corresponding label field. Each of these fields is a string and describes the purpose of the custom field. Implementing ArcSight Common Event Format (CEF) - Version 26 ArcS
-func (f *extensionFields) Cn2Label() string {
-	return f.cn2Label
+func (cef *CEF) Cn2Label() string {
+	return cef.cn2Label
 }
 
 // One of the three number fields available to map fields that do not apply to any other in this dictionary. Use sparingly and seek a more specific, dictionary supplied field when possible.
-func (f *extensionFields) Cn3() int64 {
-	return f.cn3
+func (cef *CEF) Cn3() int64 {
+	return cef.cn3
 }
 
 // All custom fields have a corresponding label field. Each of these fields is a string and describes the purpose of the custom field.
-func (f *extensionFields) Cn3Label() string {
-	return f.cn3Label
+func (cef *CEF) Cn3Label() string {
+	return cef.cn3Label
 }
 
 // A count associated with this event. How many times was this same event observed? Count can be omitted if it is 1.
-func (f *extensionFields) Cnt() int {
-	return f.cnt
+func (cef *CEF) Cnt() int {
+	return cef.cnt
 }
 
 // One of the six strings available to map fields that do not apply to any other in this dictionary. Use sparingly and seek a more specific, dictionary supplied field when possible. TIP : For tips on using these fields, see the guidelines defined under User- Defined Extensions
-func (f *extensionFields) Cs1() string {
-	return f.cs1
+func (cef *CEF) Cs1() string {
+	return cef.cs1
 }
 
 // All custom fields have a corresponding label field. Each of these fields is a string and describes the purpose of the custom field.
-func (f *extensionFields) Cs1Label() string {
-	return f.cs1Label
+func (cef *CEF) Cs1Label() string {
+	return cef.cs1Label
 }
 
 // One of the six strings available to map fields that do not apply to any other in this dictionary. Use sparingly and seek a more specific, dictionary supplied field when possible. TIP: For tips on using these fields, see the guidelines defined under User-Defined Extensions.
-func (f *extensionFields) Cs2() string {
-	return f.cs2
+func (cef *CEF) Cs2() string {
+	return cef.cs2
 }
 
 // All custom fields have a corresponding label field. Each of these fields is a string and describes the purpose of the custom field
-func (f *extensionFields) Cs2Label() string {
-	return f.cs2Label
+func (cef *CEF) Cs2Label() string {
+	return cef.cs2Label
 }
 
 // One of the six strings available to map fields that do not apply to any other in this dictionary. Use sparingly and seek a more specific, dictionary supplied field when possible. TIP: For tips on using these fields, see the guidelines defined under User-Defined Extensions.
-func (f *extensionFields) Cs3() string {
-	return f.cs3
+func (cef *CEF) Cs3() string {
+	return cef.cs3
 }
 
 // All custom fields have a corresponding label field. Each of these fields is a string and describes the purpose of the custom field.
-func (f *extensionFields) Cs3Label() string {
-	return f.cs3Label
+func (cef *CEF) Cs3Label() string {
+	return cef.cs3Label
 }
 
 // One of the six strings available to map fields that do not apply to any other in this dictionary. Use sparingly and seek a more specific, dictionary supplied field when possible. TIP : For tips on using these fields, see the guidelines defined under User- Defined Extensions
-func (f *extensionFields) Cs4() string {
-	return f.cs4
+func (cef *CEF) Cs4() string {
+	return cef.cs4
 }
 
 // All custom fields have a corresponding label field. Each of these fields is a string and describes the purpose of the custom field.
-func (f *extensionFields) Cs4Label() string {
-	return f.cs4Label
+func (cef *CEF) Cs4Label() string {
+	return cef.cs4Label
 }
 
 // One of six strings available to map fields that do not apply to any other in this dictionary. Use sparingly and seek a more specific, dictionary supplied field when possible. TIP : For tips on using these fields, see the guidelines defined under User- Defined Extensions.
-func (f *extensionFields) Cs5() string {
-	return f.cs5
+func (cef *CEF) Cs5() string {
+	return cef.cs5
 }
 
 // All custom fields have a corresponding label field. Each of these fields is a string and describes the purpose of the custom field
-func (f *extensionFields) Cs5Label() string {
-	return f.cs5Label
+func (cef *CEF) Cs5Label() string {
+	return cef.cs5Label
 }
 
 // One of six strings available to map fields that do not apply to any other in this dictionary. Use sparingly and seek a more specific, dictionary supplied field when possible. TIP : For tips on using these fields, see the guidelines defined under User- Defined Extensions.
-func (f *extensionFields) Cs6() string {
-	return f.cs6
+func (cef *CEF) Cs6() string {
+	return cef.cs6
 }
 
 // All custom fields have a corresponding label field. Each of these fields is a string and describes the purpose of the custom field.
-func (f *extensionFields) Cs6Label() string {
-	return f.cs6Label
+func (cef *CEF) Cs6Label() string {
+	return cef.cs6Label
 }
 
 // The DNS domain part of the complete fully qualified domain name (FQDN).
-func (f *extensionFields) DestinationDNSDomain() string {
-	return f.destinationDNSDomain
+func (cef *CEF) DestinationDNSDomain() string {
+	return cef.destinationDNSDomain
 }
 
 // The service targeted by this event. Example: “sshd”
-func (f *extensionFields) DestinationServiceName() string {
-	return f.destinationServiceName
+func (cef *CEF) DestinationServiceName() string {
+	return cef.destinationServiceName
 }
 
 // Identifies the translated destination that the event refers to in an IP network. The format is an IPv4 address. Example: “192.168.10.1”
-func (f *extensionFields) DestinationTranslatedAddress() net.IP {
-	return f.destinationTranslatedAddress
+func (cef *CEF) DestinationTranslatedAddress() net.IP {
+	return cef.destinationTranslatedAddress
 }
 
 // Port after it was translated; for example, a firewall. Valid port numbers are 0 to 65535
-func (f *extensionFields) DestinationTranslatedPort() int {
-	return f.destinationTranslatedPort
+func (cef *CEF) DestinationTranslatedPort() int {
+	return cef.destinationTranslatedPort
 }
 
 // One of two timestamp fields available to map fields that do not apply to any other in this dictionary. Use sparingly and seek a more specific, dictionary supplied field when possible. TIP : For tips on using these fields, see the guidelines defined under User- Defined Extensions.
-func (f *extensionFields) DeviceCustomDate1() string {
-	return f.deviceCustomDate1
+func (cef *CEF) DeviceCustomDate1() string {
+	return cef.deviceCustomDate1
 }
 
 // All custom fields have a corresponding label field. Each of these fields is a string and describes the purpose of the custom field.
-func (f *extensionFields) DeviceCustomDate1Label() string {
-	return f.deviceCustomDate1Label
+func (cef *CEF) DeviceCustomDate1Label() string {
+	return cef.deviceCustomDate1Label
 }
 
 // One of the two timestamp fields available to map fields that do not apply to any other in this dictionary. Use sparingly and seek a more specific, dictionary supplied field when possible. TIP: For tips on using these fields, see the guidelines defined under User-Defined Extensions
-func (f *extensionFields) DeviceCustomDate2() string {
-	return f.deviceCustomDate2
+func (cef *CEF) DeviceCustomDate2() string {
+	return cef.deviceCustomDate2
 }
 
 // All custom fields have a corresponding label field. Each of these fields is a string and describes the purpose of the custom field.
-func (f *extensionFields) DeviceCustomDate2Label() string {
-	return f.deviceCustomDate2Label
+func (cef *CEF) DeviceCustomDate2Label() string {
+	return cef.deviceCustomDate2Label
 }
 
 // Any information about what direction the observed communication has taken. The following values are supported: “0” for inbound or “1” for outbound
-func (f *extensionFields) DeviceDirection() int {
-	return f.deviceDirection
+func (cef *CEF) DeviceDirection() int {
+	return cef.deviceDirection
 }
 
 // The DNS domain part of the complete fully qualified domain name (FQDN).
-func (f *extensionFields) DeviceDNSDomain() string {
-	return f.deviceDNSDomain
+func (cef *CEF) DeviceDNSDomain() string {
+	return cef.deviceDNSDomain
 }
 
 // A name that uniquely identifies the device generating this event.
-func (f *extensionFields) DeviceExternalID() string {
-	return f.deviceExternalID
+func (cef *CEF) DeviceExternalID() string {
+	return cef.deviceExternalID
 }
 
 // The facility generating this event. For example, Syslog has an explicit facility associated with every event.
-func (f *extensionFields) DeviceFacility() string {
-	return f.deviceFacility
+func (cef *CEF) DeviceFacility() string {
+	return cef.deviceFacility
 }
 
 // Interface on which the packet or data entered the device.
-func (f *extensionFields) DeviceInboundInterface() string {
-	return f.deviceInboundInterface
+func (cef *CEF) DeviceInboundInterface() string {
+	return cef.deviceInboundInterface
 }
 
 // The Windows domain name of the device address.
-func (f *extensionFields) DeviceNtDomain() string {
-	return f.deviceNtDomain
+func (cef *CEF) DeviceNtDomain() string {
+	return cef.deviceNtDomain
 }
 
 // Interface on which the packet or data left the device
-func (f *extensionFields) DeviceOutboundInterface() string {
-	return f.deviceOutboundInterface
+func (cef *CEF) DeviceOutboundInterface() string {
+	return cef.deviceOutboundInterface
 }
 
 // Unique identifier for the payload associated with the event.
-func (f *extensionFields) DevicePayloadID() string {
-	return f.devicePayloadID
+func (cef *CEF) DevicePayloadID() string {
+	return cef.devicePayloadID
 }
 
 // Process name associated with the event. An example might be the process generating the syslog entry in UNIX.
-func (f *extensionFields) DeviceProcessName() string {
-	return f.deviceProcessName
+func (cef *CEF) DeviceProcessName() string {
+	return cef.deviceProcessName
 }
 
 // Identifies the translated device address that the event refers to in an IP network. The format is an IPv4 address. Example: “192.168.10.1”
-func (f *extensionFields) DeviceTranslatedAddress() net.IP {
-	return f.deviceTranslatedAddress
+func (cef *CEF) DeviceTranslatedAddress() net.IP {
+	return cef.deviceTranslatedAddress
 }
 
 // Identifies the destination that an event refers to in an IP network. The format must be a fully qualified domain name (FQDN) associated with the destination node, when a node is available. Examples: “host.domain.com” or “host”.
-func (f *extensionFields) Dhost() string {
-	return f.dhost
+func (cef *CEF) Dhost() string {
+	return cef.dhost
 }
 
 // The Windows domain name of the destination address.
-func (f *extensionFields) Dntdom() string {
-	return f.dntdom
+func (cef *CEF) Dntdom() string {
+	return cef.dntdom
 }
 
 // Provides the ID of the destination process associated with the event. For example, if an event contains process ID 105, “105” is the process ID
-func (f *extensionFields) Dpid() int {
-	return f.dpid
+func (cef *CEF) Dpid() int {
+	return cef.dpid
 }
 
 // The typical values are “Administrator”, “User”, and “Guest”. This identifies the destination user’s privileges. In UNIX, for example, activity executed on the root user would be identified with destinationUser Privileges of “Administrator”.
-func (f *extensionFields) Dpriv() string {
-	return f.dpriv
+func (cef *CEF) Dpriv() string {
+	return cef.dpriv
 }
 
 // The name of the event’s destination process. Example: “telnetd” or “sshd”.
-func (f *extensionFields) Dproc() string {
-	return f.dproc
+func (cef *CEF) Dproc() string {
+	return cef.dproc
 }
 
 // The valid port numbers are between 0 and 65535.
-func (f *extensionFields) Dpt() int {
-	return f.dpt
+func (cef *CEF) Dpt() int {
+	return cef.dpt
 }
 
 // Identifies the destination address that the event refers to in an IP network. The format is an IPv4 address. Example: “192.168.10.1”
-func (f *extensionFields) Dst() net.IP {
-	return f.dst
+func (cef *CEF) Dst() net.IP {
+	return cef.dst
 }
 
 // The timezone for the device generating the event.
-func (f *extensionFields) Dtz() string {
-	return f.dtz
+func (cef *CEF) Dtz() string {
+	return cef.dtz
 }
 
 // Identifies the destination user by ID. For example, in UNIX, the root user is generally associated with user ID 0
-func (f *extensionFields) Duid() string {
-	return f.duid
+func (cef *CEF) Duid() string {
+	return cef.duid
 }
 
 // Identifies the destination user by name. This is the user associated with the event’s destination. Email addresses are often mapped into the UserName fields. The recipient is a candidate to put into this field.
-func (f *extensionFields) Duser() string {
-	return f.duser
+func (cef *CEF) Duser() string {
+	return cef.duser
 }
 
 // Identifies the device address that an event refers to in an IP network. The format is an IPv4 address. Example: “192.168.10.1”.
-func (f *extensionFields) Dvc() net.IP {
-	return f.dvc
+func (cef *CEF) Dvc() net.IP {
+	return cef.dvc
 }
 
 // The format should be a fully qualified domain name (FQDN) associated with the device node, when a node is available. Example: “host.domain.com” or “host”.
-func (f *extensionFields) Dvchost() string {
-	return f.dvchost
+func (cef *CEF) Dvchost() string {
+	return cef.dvchost
 }
 
 // Six colon-separated hexadecimal numbers. Example: “00:0D:60:AF:1B:61”
-func (f *extensionFields) Dvcmac() net.HardwareAddr {
-	return f.dvcmac
+func (cef *CEF) Dvcmac() net.HardwareAddr {
+	return cef.dvcmac
 }
 
 // Provides the ID of the process on the device generating the event.
-func (f *extensionFields) Dvcpid() int {
-	return f.dvcpid
+func (cef *CEF) Dvcpid() int {
+	return cef.dvcpid
 }
 
 // The time at which the activity related to the event ended. The format is MMM dd yyyy HH:mm:ss or milliseconds since epoch (Jan 1st1970). An example would be reporting the end of a session.
-func (f *extensionFields) End() string {
-	return f.end
+func (cef *CEF) End() string {
+	return cef.end
 }
 
 // The ID used by an originating device. They are usually increasing numbers, associated with events.
-func (f *extensionFields) ExternalID() string {
-	return f.externalID
+func (cef *CEF) ExternalID() string {
+	return cef.externalID
 }
 
 // Time when the file was created.
-func (f *extensionFields) FileCreateTime() string {
-	return f.fileCreateTime
+func (cef *CEF) FileCreateTime() string {
+	return cef.fileCreateTime
 }
 
 // Hash of a file.
-func (f *extensionFields) FileHash() string {
-	return f.fileHash
+func (cef *CEF) FileHash() string {
+	return cef.fileHash
 }
 
 // An ID associated with a file could be the inode.
-func (f *extensionFields) FileID() string {
-	return f.fileID
+func (cef *CEF) FileID() string {
+	return cef.fileID
 }
 
 // Time when the file was last modified.
-func (f *extensionFields) FileModificationTime() string {
-	return f.fileModificationTime
+func (cef *CEF) FileModificationTime() string {
+	return cef.fileModificationTime
 }
 
 // Full path to the file, including file name itself. Example: C:\Program Files \WindowsNT\Access ories\ wordpad.exe or /usr/bin/zip
-func (f *extensionFields) FilePath() string {
-	return f.filePath
+func (cef *CEF) FilePath() string {
+	return cef.filePath
 }
 
 // Permissions of the file.
-func (f *extensionFields) FilePermission() string {
-	return f.filePermission
+func (cef *CEF) FilePermission() string {
+	return cef.filePermission
 }
 
 // Type of file (pipe, socket, etc.)
-func (f *extensionFields) FileType() string {
-	return f.fileType
+func (cef *CEF) FileType() string {
+	return cef.fileType
 }
 
 // A timestamp field available to map a timestamp that does not apply to any other defined timestamp field in this dictionary. Use all flex fields sparingly and seek a more specific, dictionary supplied field when possible. These fields are typically reserved for customer use and should not be set by vendors unless necessary.
-func (f *extensionFields) FlexDate1() string {
-	return f.flexDate1
+func (cef *CEF) FlexDate1() string {
+	return cef.flexDate1
 }
 
 // The label field is a string and describes the purpose of the flex field.
-func (f *extensionFields) FlexDate1Label() string {
-	return f.flexDate1Label
+func (cef *CEF) FlexDate1Label() string {
+	return cef.flexDate1Label
 }
 
 // One of four floating point fields available to map fields that do not apply to any other in this dictionary. Use sparingly and seek a more specific, dictionary supplied field when possible. These fields are typically reserved for customer use and should not be set by vendors unless necessary.
-func (f *extensionFields) FlexString1() string {
-	return f.flexString1
+func (cef *CEF) FlexString1() string {
+	return cef.flexString1
 }
 
 // The label field is a string and describes the purpose of the flex field
-func (f *extensionFields) FlexString1Label() string {
-	return f.flexString1Label
+func (cef *CEF) FlexString1Label() string {
+	return cef.flexString1Label
 }
 
 // One of four floating point fields available to map fields that do not apply to any other in this dictionary. Use sparingly and seek a more specific, dictionary supplied field when possible. These fields are typically reserved for customer use and should not be set by vendors unless necessary.
-func (f *extensionFields) FlexString2() string {
-	return f.flexString2
+func (cef *CEF) FlexString2() string {
+	return cef.flexString2
 }
 
 // The label field is a string and describes the purpose of the flex field.
-func (f *extensionFields) FlexString2Label() string {
-	return f.flexString2Label
+func (cef *CEF) FlexString2Label() string {
+	return cef.flexString2Label
 }
 
 // Name of the file only (without its path).
-func (f *extensionFields) Fname() string {
-	return f.fname
+func (cef *CEF) Fname() string {
+	return cef.fname
 }
 
 // Size of the file.
-func (f *extensionFields) Fsize() int64 {
-	return f.fsize
+func (cef *CEF) Fsize() int64 {
+	return cef.fsize
 }
 
 // Number of bytes transferred inbound, relative to the source to destination relationship, meaning that data was flowing from source to destination.
-func (f *extensionFields) In() int64 {
-	return f.in
+func (cef *CEF) In() int64 {
+	return cef.in
 }
 
 // An arbitrary message giving more details about the event. Multi-line entries can be produced by using \n as the new line separator.
-func (f *extensionFields) Msg() string {
-	return f.msg
+func (cef *CEF) Msg() string {
+	return cef.msg
 }
 
 // Time when old file was created.
-func (f *extensionFields) OldFileCreateTime() string {
-	return f.oldFileCreateTime
+func (cef *CEF) OldFileCreateTime() string {
+	return cef.oldFileCreateTime
 }
 
 // Hash of the old file
-func (f *extensionFields) OldFileHash() string {
-	return f.oldFileHash
+func (cef *CEF) OldFileHash() string {
+	return cef.oldFileHash
 }
 
 // An ID associated with the old file could be the inode.
-func (f *extensionFields) OldFileID() string {
-	return f.oldFileID
+func (cef *CEF) OldFileID() string {
+	return cef.oldFileID
 }
 
 // Time when old file was last modified.
-func (f *extensionFields) OldFileModificationTime() string {
-	return f.oldFileModificationTime
+func (cef *CEF) OldFileModificationTime() string {
+	return cef.oldFileModificationTime
 }
 
 // Name of the old file.
-func (f *extensionFields) OldFileName() string {
-	return f.oldFileName
+func (cef *CEF) OldFileName() string {
+	return cef.oldFileName
 }
 
 // Full path to the old file, including the file name itself. Examples: c:\Program Files\ WindowsNT\Accesso ries \wordpad.exe or /usr/bin/zip
-func (f *extensionFields) OldFilePath() string {
-	return f.oldFilePath
+func (cef *CEF) OldFilePath() string {
+	return cef.oldFilePath
 }
 
 // Permissions of the old file.
-func (f *extensionFields) OldFilePermission() string {
-	return f.oldFilePermission
+func (cef *CEF) OldFilePermission() string {
+	return cef.oldFilePermission
 }
 
 // Size of the old file.
-func (f *extensionFields) OldFileSize() int64 {
-	return f.oldFileSize
+func (cef *CEF) OldFileSize() int64 {
+	return cef.oldFileSize
 }
 
 // Type of the old file (pipe, socket, etc.)
-func (f *extensionFields) OldFileType() string {
-	return f.oldFileType
+func (cef *CEF) OldFileType() string {
+	return cef.oldFileType
 }
 
 // Number of bytes transferred outbound relative to the source to destination relationship. For example, the byte number of data flowing from the destination to the source.
-func (f *extensionFields) Out() int {
-	return f.out
+func (cef *CEF) Out() int {
+	return cef.out
 }
 
 // Displays the outcome, usually as ‘success’ or ‘failure’.
-func (f *extensionFields) Outcome() string {
-	return f.outcome
+func (cef *CEF) Outcome() string {
+	return cef.outcome
 }
 
 // Identifies the Layer-4 protocol used. The possible values are protocols such as TCP or UDP
-func (f *extensionFields) Proto() string {
-	return f.proto
+func (cef *CEF) Proto() string {
+	return cef.proto
 }
 
 // The reason an audit event was generated. For example “badd password” or “unknown user”. This could also be an error or return code. Example: “0x1234”
-func (f *extensionFields) Reason() string {
-	return f.reason
+func (cef *CEF) Reason() string {
+	return cef.reason
 }
 
 // In the case of an HTTP request, this field contains the URL accessed. The URL should contain the protocol as well. Example: “http://www/secure. com”
-func (f *extensionFields) Request() string {
-	return f.request
+func (cef *CEF) Request() string {
+	return cef.request
 }
 
 // The User-Agent associated with the request.
-func (f *extensionFields) RequestClientApplication() string {
-	return f.requestClientApplication
+func (cef *CEF) RequestClientApplication() string {
+	return cef.requestClientApplication
 }
 
 // Description of the content from which the request originated (for example, HTTP Referrer)
-func (f *extensionFields) RequestContext() string {
-	return f.requestContext
+func (cef *CEF) RequestContext() string {
+	return cef.requestContext
 }
 
 // Cookies associated with the request.
-func (f *extensionFields) RequestCookies() string {
-	return f.requestCookies
+func (cef *CEF) RequestCookies() string {
+	return cef.requestCookies
 }
 
 // The method used to access a URL. Possible values: “POST”, “GET”, etc.
-func (f *extensionFields) RequestMethod() string {
-	return f.requestMethod
+func (cef *CEF) RequestMethod() string {
+	return cef.requestMethod
 }
 
 // The time at which the event related to the activity was received. The format is MMM dd yyyy HH:mm:ss or milliseconds since epoch (Jan 1st 1970)
-func (f *extensionFields) Rt() string {
-	return f.rt
+func (cef *CEF) Rt() string {
+	return cef.rt
 }
 
 // Identifies the source that an event refers to in an IP network. The format should be a fully qualified domain name (FQDN) associated with the source node, when a mode is available. Examples: “host” or “host.domain.com”.
-func (f *extensionFields) Shost() string {
-	return f.shost
+func (cef *CEF) Shost() string {
+	return cef.shost
 }
 
 // Six colon-separated hexadecimal numbers. Example: “00:0D:60:AF:1B:61”
-func (f *extensionFields) Smac() net.HardwareAddr {
-	return f.smac
+func (cef *CEF) Smac() net.HardwareAddr {
+	return cef.smac
 }
 
 // The Windows domain name for the source address.
-func (f *extensionFields) Sntdom() string {
-	return f.sntdom
+func (cef *CEF) Sntdom() string {
+	return cef.sntdom
 }
 
 // The DNS domain part of the complete fully qualified domain name (FQDN).
-func (f *extensionFields) SourceDNSDomain() string {
-	return f.sourceDNSDomain
+func (cef *CEF) SourceDNSDomain() string {
+	return cef.sourceDNSDomain
 }
 
 // The service that is responsible for generating this event.
-func (f *extensionFields) SourceServiceName() string {
-	return f.sourceServiceName
+func (cef *CEF) SourceServiceName() string {
+	return cef.sourceServiceName
 }
 
 // Identifies the translated source that the event refers to in an IP network. The format is an IPv4 address. Example: “192.168.10.1”.
-func (f *extensionFields) SourceTranslatedAddress() net.IP {
-	return f.sourceTranslatedAddress
+func (cef *CEF) SourceTranslatedAddress() net.IP {
+	return cef.sourceTranslatedAddress
 }
 
 // A port number after being translated by, for example, a firewall. Valid port numbers are 0 to 65535.
-func (f *extensionFields) SourceTranslatedPort() int {
-	return f.sourceTranslatedPort
+func (cef *CEF) SourceTranslatedPort() int {
+	return cef.sourceTranslatedPort
 }
 
 // The ID of the source process associated with the event
-func (f *extensionFields) Spid() int {
-	return f.spid
+func (cef *CEF) Spid() int {
+	return cef.spid
 }
 
 // The typical values are “Administrator”, “User”, and “Guest”. It identifies the source user’s privileges. In UNIX, for example, activity executed by the root user would be identified with “Administrator”.
-func (f *extensionFields) Spriv() string {
-	return f.spriv
+func (cef *CEF) Spriv() string {
+	return cef.spriv
 }
 
 // The name of the event’s source process.
-func (f *extensionFields) Sproc() string {
-	return f.sproc
+func (cef *CEF) Sproc() string {
+	return cef.sproc
 }
 
 // The valid port numbers are 0 to 65535.
-func (f *extensionFields) Spt() int {
-	return f.spt
+func (cef *CEF) Spt() int {
+	return cef.spt
 }
 
 // Identifies the source that an event refers to in an IP network. The format is an IPv4 address. Example: “192.168.10.1”.
-func (f *extensionFields) Src() net.IP {
-	return f.src
+func (cef *CEF) Src() net.IP {
+	return cef.src
 }
 
 // The time when the activity the event referred to started. The format is MMM dd yyyy HH:mm:ss or milliseconds since epoch (Jan 1st 1970)
-func (f *extensionFields) Start() string {
-	return f.start
+func (cef *CEF) Start() string {
+	return cef.start
 }
 
 // Identifies the source user by ID. This is the user associated with the source of the event. For example, in UNIX, the root user is generally associated with user ID 0.
-func (f *extensionFields) Suid() string {
-	return f.suid
+func (cef *CEF) Suid() string {
+	return cef.suid
 }
 
 // Identifies the source user by name. Email addresses are also mapped into the UserName fields. The sender is a candidate to put into this field.
-func (f *extensionFields) Suser() string {
-	return f.suser
+func (cef *CEF) Suser() string {
+	return cef.suser
 }
 
 // 0 means base event, 1 means aggregated, 2 means correlation, and 3 means action. This field can be omitted for base events (type 0)
-func (f *extensionFields) Type() int {
-	return f.typ
+func (cef *CEF) Type() int {
+	return cef.typ
 }
 
 // The DNS domain name of the ArcSight connector that processed the event.
-func (f *extensionFields) AgentDNSDomain() string {
-	return f.agentDNSDomain
+func (cef *CEF) AgentDNSDomain() string {
+	return cef.agentDNSDomain
 }
 
-func (f *extensionFields) AgentNtDomain() string {
-	return f.agentNtDomain
+func (cef *CEF) AgentNtDomain() string {
+	return cef.agentNtDomain
 }
 
-func (f *extensionFields) AgentTranslatedAddress() net.IP {
-	return f.agentTranslatedAddress
+func (cef *CEF) AgentTranslatedAddress() net.IP {
+	return cef.agentTranslatedAddress
 }
 
-func (f *extensionFields) AgentTranslatedZoneExternalID() string {
-	return f.agentTranslatedZoneExternalID
+func (cef *CEF) AgentTranslatedZoneExternalID() string {
+	return cef.agentTranslatedZoneExternalID
 }
 
-func (f *extensionFields) AgentTranslatedZoneURI() string {
-	return f.agentTranslatedZoneURI
+func (cef *CEF) AgentTranslatedZoneURI() string {
+	return cef.agentTranslatedZoneURI
 }
 
-func (f *extensionFields) AgentZoneExternalID() string {
-	return f.agentZoneExternalID
+func (cef *CEF) AgentZoneExternalID() string {
+	return cef.agentZoneExternalID
 }
 
-func (f *extensionFields) AgentZoneURI() string {
-	return f.agentZoneURI
+func (cef *CEF) AgentZoneURI() string {
+	return cef.agentZoneURI
 }
 
 // The IP address of the ArcSight connector that processed the event.
-func (f *extensionFields) Agt() net.IP {
-	return f.agt
+func (cef *CEF) Agt() net.IP {
+	return cef.agt
 }
 
 // The hostname of the ArcSight connector that processed the event.
-func (f *extensionFields) Ahost() string {
-	return f.ahost
+func (cef *CEF) Ahost() string {
+	return cef.ahost
 }
 
 // The agent ID of the ArcSight connector that processed the event.
-func (f *extensionFields) Aid() string {
-	return f.aid
+func (cef *CEF) Aid() string {
+	return cef.aid
 }
 
 // The MAC address of the ArcSight connector that processed the event.
-func (f *extensionFields) Amac() net.HardwareAddr {
-	return f.amac
+func (cef *CEF) Amac() net.HardwareAddr {
+	return cef.amac
 }
 
 // The time at which information about the event was received by the ArcSight connector.
-func (f *extensionFields) Art() string {
-	return f.art
+func (cef *CEF) Art() string {
+	return cef.art
 }
 
 // The agent type of the ArcSight connector that processed the event
-func (f *extensionFields) At() string {
-	return f.at
+func (cef *CEF) At() string {
+	return cef.at
 }
 
 // The agent time zone of the ArcSight connector that processed the event.
-func (f *extensionFields) Atz() string {
-	return f.atz
+func (cef *CEF) Atz() string {
+	return cef.atz
 }
 
 // The version of the ArcSight connector that processed the event.
-func (f *extensionFields) Av() string {
-	return f.av
+func (cef *CEF) Av() string {
+	return cef.av
 }
 
-func (f *extensionFields) CustomerExternalID() string {
-	return f.customerExternalID
+func (cef *CEF) CustomerExternalID() string {
+	return cef.customerExternalID
 }
 
-func (f *extensionFields) CustomerURI() string {
-	return f.customerURI
+func (cef *CEF) CustomerURI() string {
+	return cef.customerURI
 }
 
-func (f *extensionFields) DestinatioTranslatedZoneExternalID() string {
-	return f.destinatioTranslatedZoneExternalID
+func (cef *CEF) DestinatioTranslatedZoneExternalID() string {
+	return cef.destinatioTranslatedZoneExternalID
 }
 
 // The URI for the Translated Zone that the destination asset has been assigned to in ArcSight.
-func (f *extensionFields) DestinationTranslatedZoneURI() string {
-	return f.destinationTranslatedZoneURI
+func (cef *CEF) DestinationTranslatedZoneURI() string {
+	return cef.destinationTranslatedZoneURI
 }
 
-func (f *extensionFields) DestinationZoneExternalID() string {
-	return f.destinationZoneExternalID
+func (cef *CEF) DestinationZoneExternalID() string {
+	return cef.destinationZoneExternalID
 }
 
 // The URI for the Zone that the destination asset has been assigned to in ArcSight.
-func (f *extensionFields) DestinationZoneURI() string {
-	return f.destinationZoneURI
+func (cef *CEF) DestinationZoneURI() string {
+	return cef.destinationZoneURI
 }
 
-func (f *extensionFields) DeviceTranslatedZoneExternalID() string {
-	return f.deviceTranslatedZoneExternalID
+func (cef *CEF) DeviceTranslatedZoneExternalID() string {
+	return cef.deviceTranslatedZoneExternalID
 }
 
 // The URI for the Translated Zone that the device asset has been assigned to in ArcSight.
-func (f *extensionFields) DeviceTranslatedZoneURI() string {
-	return f.deviceTranslatedZoneURI
+func (cef *CEF) DeviceTranslatedZoneURI() string {
+	return cef.deviceTranslatedZoneURI
 }
 
-func (f *extensionFields) DeviceZoneExternalID() string {
-	return f.deviceZoneExternalID
+func (cef *CEF) DeviceZoneExternalID() string {
+	return cef.deviceZoneExternalID
 }
 
 // Thee URI for the Zone that the device asset has been assigned to in ArcSight.
-func (f *extensionFields) DeviceZoneURI() string {
-	return f.deviceZoneURI
+func (cef *CEF) DeviceZoneURI() string {
+	return cef.deviceZoneURI
 }
 
 // The latitudinal value from which the destination’s IP address belongs.
-func (f *extensionFields) Dlat() float64 {
-	return f.dlat
+func (cef *CEF) Dlat() float64 {
+	return cef.dlat
 }
 
 // The longitudinal value from which the destination’s IP address belongs.
-func (f *extensionFields) Dlong() float64 {
-	return f.dlong
+func (cef *CEF) Dlong() float64 {
+	return cef.dlong
 }
 
 // This is a unique ID that ArcSight assigns to each event.
-func (f *extensionFields) EventID() int64 {
-	return f.eventID
+func (cef *CEF) EventID() int64 {
+	return cef.eventID
 }
 
-func (f *extensionFields) RawEvent() string {
-	return f.rawEvent
+func (cef *CEF) RawEvent() string {
+	return cef.rawEvent
 }
 
-func (f *extensionFields) Slat() float64 {
-	return f.slat
+func (cef *CEF) Slat() float64 {
+	return cef.slat
 }
 
-func (f *extensionFields) Slong() float64 {
-	return f.slong
+func (cef *CEF) Slong() float64 {
+	return cef.slong
 }
 
-func (f *extensionFields) SourceTranslatedZoneExternalID() string {
-	return f.sourceTranslatedZoneExternalID
+func (cef *CEF) SourceTranslatedZoneExternalID() string {
+	return cef.sourceTranslatedZoneExternalID
 }
 
 // The URI for the Translated Zone that the destination asset has been assigned to in ArcSight.
-func (f *extensionFields) SourceTranslatedZoneURI() string {
-	return f.sourceTranslatedZoneURI
+func (cef *CEF) SourceTranslatedZoneURI() string {
+	return cef.sourceTranslatedZoneURI
 }
 
-func (f *extensionFields) SourceZoneExternalID() string {
-	return f.sourceZoneExternalID
+func (cef *CEF) SourceZoneExternalID() string {
+	return cef.sourceZoneExternalID
 }
 
 // The URI for the Zone that the source asset has been assigned to in ArcSight.
-func (f *extensionFields) SourceZoneURI() string {
-	return f.sourceZoneURI
+func (cef *CEF) SourceZoneURI() string {
+	return cef.sourceZoneURI
 }
 
 // ID of an agentTranslatedZone resource reference.
-func (f *extensionFields) AgentTranslatedZoneKey() int64 {
-	return f.agentTranslatedZoneKey
+func (cef *CEF) AgentTranslatedZoneKey() int64 {
+	return cef.agentTranslatedZoneKey
 }
 
 // ID of an agentZone resource reference.
-func (f *extensionFields) AgentZoneKey() int64 {
-	return f.agentZoneKey
+func (cef *CEF) AgentZoneKey() int64 {
+	return cef.agentZoneKey
 }
 
 // ID of a customer resource reference.
-func (f *extensionFields) CustomerKey() int64 {
-	return f.customerKey
+func (cef *CEF) CustomerKey() int64 {
+	return cef.customerKey
 }
 
 // ID of a destinationTranslate dZone resource reference.
-func (f *extensionFields) DestinationTranslatedZoneKey() int64 {
-	return f.destinationTranslatedZoneKey
+func (cef *CEF) DestinationTranslatedZoneKey() int64 {
+	return cef.destinationTranslatedZoneKey
 }
 
 // ID of a destinationZone resource reference.
-func (f *extensionFields) DZoneKey() int64 {
-	return f.dZoneKey
+func (cef *CEF) DZoneKey() int64 {
+	return cef.dZoneKey
 }
 
 // ID of a deviceTranslatedZone resource reference.
-func (f *extensionFields) DeviceTranslatedZoneKey() int64 {
-	return f.deviceTranslatedZoneKey
+func (cef *CEF) DeviceTranslatedZoneKey() int64 {
+	return cef.deviceTranslatedZoneKey
 }
 
 // ID of a deviceZone resource reference.
-func (f *extensionFields) DeviceZoneKey() int64 {
-	return f.deviceZoneKey
+func (cef *CEF) DeviceZoneKey() int64 {
+	return cef.deviceZoneKey
 }
 
 // ID of a sourceTranslatedZon e resource reference.
-func (f *extensionFields) STranslatedZoneKey() int64 {
-	return f.sTranslatedZoneKey
+func (cef *CEF) STranslatedZoneKey() int64 {
+	return cef.sTranslatedZoneKey
 }
 
 // ID of a sourceZone resource reference
-func (f *extensionFields) SZoneKey() int64 {
-	return f.sZoneKey
+func (cef *CEF) SZoneKey() int64 {
+	return cef.sZoneKey
 }

@@ -64,7 +64,7 @@ func TestCEF_UnmarshalText(t *testing.T) {
 		t.Run(tc.name, func(t *testing.T) {
 			t.Parallel()
 
-			log := cef.New()
+			log := new(cef.CEF)
 
 			gotErr := log.UnmarshalText([]byte(tc.text))
 			t.Log(log.Fname())

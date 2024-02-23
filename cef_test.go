@@ -10,7 +10,7 @@ import (
 func ExampleCEF_MarshalText() {
 	const veryHigh cef.AgentSeverity = 10
 
-	log := cef.New()
+	log := new(cef.CEF)
 	log.SetCEFVersion(0)
 	log.SetDeviceVendor("Security")
 	log.SetDeviceProduct("threatmanager")
@@ -32,7 +32,7 @@ func ExampleCEF_MarshalText() {
 }
 
 func ExampleCEF_UnmarshalText() {
-	log := cef.New()
+	log := new(cef.CEF)
 
 	text := "CEF:0|Security|threatmanager|1.0|100|worm successfully stopped|10|dst=2.1.2.2 spt=1232 src=10.0.0.1"
 

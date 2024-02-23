@@ -11,7 +11,7 @@ type headerFields struct{
 
 {{ range .Fields }}
 // Set{{ .FieldName | title | pretty }} sets {{ .FieldName | unexported | quote }} field.
-func (f *headerFields) Set{{ .FieldName | title | pretty }}(v {{ typeMapping .Typ }}) *headerFields {
+func (cef *CEF) Set{{ .FieldName | title | pretty }}(v {{ typeMapping .Typ }}) *CEF {
 {{- if ne .Size "N/A" }}
     if len(v) > {{ .Size }} {
         v = v[:{{ .Size }}]
@@ -31,35 +31,35 @@ func (f *headerFields) Set{{ .FieldName | title | pretty }}(v {{ typeMapping .Ty
     }
 {{ end }}
 {{- if eq .Typ "Numeric" }}
-    if f.{{ .FieldName | unexported | renameKeyWord }} != 0 {
-        return f
+    if cef.{{ .FieldName | unexported | renameKeyWord }} != 0 {
+        return cef
     }
 {{ else if eq .Typ "AgentSeverityEnumeration" }}
-    if f.{{ .FieldName | unexported | renameKeyWord }} != 0 {
-        return f
+    if cef.{{ .FieldName | unexported | renameKeyWord }} != 0 {
+        return cef
     }
 {{ else if eq .Typ "String" }}
-    if f.{{ .FieldName | unexported | renameKeyWord }} != "" {
-        return f
+    if cef.{{ .FieldName | unexported | renameKeyWord }} != "" {
+        return cef
     }
 {{ else }}
-    if f.{{ .FieldName | unexported | renameKeyWord }} != "" {
-        return f
+    if cef.{{ .FieldName | unexported | renameKeyWord }} != "" {
+        return cef
     }
 {{ end }}
 {{ if eq .Typ "String" }}
-    f.{{ .FieldName | unexported }} = escapeHeaderField(v)
+    cef.{{ .FieldName | unexported }} = escapeHeaderField(v)
 {{ else }}
-    f.{{ .FieldName | unexported }} = v
+    cef.{{ .FieldName | unexported }} = v
 {{ end }}
 
-    return f
+    return cef
 }
 {{ end }}
 
 {{ range .Fields }}
 // {{ .Description }}
-func (f *headerFields) {{ .FieldName | title | pretty }}() {{ typeMapping .Typ }} {
-    return f.{{ .FieldName | unexported }}
+func (cef *CEF) {{ .FieldName | title | pretty }}() {{ typeMapping .Typ }} {
+    return cef.{{ .FieldName | unexported }}
 }
 {{ end }}

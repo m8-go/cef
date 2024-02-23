@@ -101,7 +101,7 @@ func TestCEF_MarshalText(t *testing.T) {
 		t.Run(tc.name, func(t *testing.T) {
 			t.Parallel()
 
-			log := cef.New()
+			log := new(cef.CEF)
 			log.SetCEFVersion(tc.cefVersion)
 			log.SetDeviceVendor(tc.deviceVendor)
 			log.SetDeviceProduct(tc.deviceProduct)
