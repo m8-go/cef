@@ -16,7 +16,9 @@ var (
 
 func (cef *CEF) UnmarshalText(text []byte) (err error) {
 	defer func() {
-		cef.err = err
+		if err != nil {
+			cef.err = err
+		}
 	}()
 
 	ss := bytes.Split(text, []byte("|"))
