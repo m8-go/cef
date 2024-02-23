@@ -6,7 +6,7 @@
 go get go.m8.ru/cef
 ```
 
-See [examples](cef_test.go) for more info.
+See [example](example_text_marshaling_test.go) for more info.
 
 ## Reference
 
