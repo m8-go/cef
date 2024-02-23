@@ -11,7 +11,8 @@ import (
 	"regexp"
 	"strings"
 	"text/template"
-	"unicode"
+
+	"go.m8.ru/cef/internal/gen/naming"
 )
 
 //go:embed template/*
@@ -35,6 +36,7 @@ func run() error {
 			"unexported":    unexported,
 			"add":           add,
 			"renameKeyWord": renameKeyWord,
+			"pretty":        naming.Pretty,
 		}).
 		ParseFS(templateDir, "template/*.tmpl")
 	if err != nil {
@@ -267,23 +269,24 @@ func trimAllSpaces(s string) string {
 	return strings.Join(ss, "")
 }
 
-func unexported(s string) string {
-	if unicode.IsLower(rune(s[0])) {
-		return s
-	}
+func unexported(str string) string {
+	var b strings.Builder
 
-	b := new(strings.Builder)
+	parts := naming.Split(str)
 
-	for i, c := range s {
-		if i == 0 {
-			b.WriteRune(unicode.ToLower(c))
-
-			continue
-		} else if c == ' ' {
-			continue
+	for i, part := range parts {
+		s, ok := naming.Rule(part)
+		if ok {
+			if i == 0 {
+				s = strings.ToLower(s)
+			}
+			b.WriteString(s)
+		} else {
+			if i == 0 {
+				part = strings.ToLower(part)
+			}
+			b.WriteString(part)
 		}
-
-		b.WriteRune(c)
 	}
 
 	return b.String()

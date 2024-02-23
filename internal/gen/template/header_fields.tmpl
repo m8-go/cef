@@ -10,7 +10,7 @@ type headerFields struct{
 }
 
 {{ range .Fields }}
-func (f *headerFields) Set{{ .FieldName | trimAllSpaces | title }}(v {{ typeMapping .Typ }}) *headerFields {
+func (f *headerFields) Set{{ .FieldName | trimAllSpaces | title | pretty }}(v {{ typeMapping .Typ }}) *headerFields {
 {{- if ne .Size "N/A" }}
     if len(v) > {{ .Size }} {
         v = v[:{{ .Size }}]
@@ -24,7 +24,7 @@ func (f *headerFields) Set{{ .FieldName | trimAllSpaces | title }}(v {{ typeMapp
 
 {{ range .Fields }}
 // {{ .Description }}
-func (f *headerFields) {{ .FieldName | trimAllSpaces | title }}() {{ typeMapping .Typ }} {
+func (f *headerFields) {{ .FieldName | trimAllSpaces | title | pretty }}() {{ typeMapping .Typ }} {
     return f.{{ .FieldName | unexported }}
 }
 {{ end }}

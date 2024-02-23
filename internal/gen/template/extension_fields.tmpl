@@ -10,7 +10,7 @@ type extensionFields struct{
 }
 
 {{ range . }}
-func (f *extensionFields) Set{{ .CEFKeyName | title }}(v {{ typeMapping .DataType }}) *extensionFields {
+func (f *extensionFields) Set{{ .CEFKeyName | title | pretty }}(v {{ typeMapping .DataType }}) *extensionFields {
 {{- if not .Length }}
 {{- else if eq .Length "N/A" }}
 {{- else if eq .Length "64-bit" }}
@@ -27,7 +27,7 @@ func (f *extensionFields) Set{{ .CEFKeyName | title }}(v {{ typeMapping .DataTyp
 
 {{ range . }}
 // {{ .Meaning }}
-func (f *extensionFields) {{ .CEFKeyName | title }}() {{ typeMapping .DataType }} {
+func (f *extensionFields) {{ .CEFKeyName | title | pretty }}() {{ typeMapping .DataType }} {
     return f.{{ .CEFKeyName | unexported | renameKeyWord }}
 }
 {{ end }}

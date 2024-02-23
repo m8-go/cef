@@ -98,7 +98,7 @@ type extensionFields struct {
 	// The DNS domain part of the complete fully qualified domain name (FQDN).
 	deviceDnsDomain string
 	// A name that uniquely identifies the device generating this event.
-	deviceExternalId string
+	deviceExternalID string
 	// The facility generating this event. For example, Syslog has an explicit facility associated with every event.
 	deviceFacility string
 	// Interface on which the packet or data entered the device.
@@ -108,7 +108,7 @@ type extensionFields struct {
 	// Interface on which the packet or data left the device
 	deviceOutboundInterface string
 	// Unique identifier for the payload associated with the event.
-	devicePayloadId string
+	devicePayloadID string
 	// Process name associated with the event. An example might be the process generating the syslog entry in UNIX.
 	deviceProcessName string
 	// Identifies the translated device address that the event refers to in an IP network. The format is an IPv4 address. Example: “192.168.10.1”
@@ -144,13 +144,13 @@ type extensionFields struct {
 	// The time at which the activity related to the event ended. The format is MMM dd yyyy HH:mm:ss or milliseconds since epoch (Jan 1st1970). An example would be reporting the end of a session.
 	end string
 	// The ID used by an originating device. They are usually increasing numbers, associated with events.
-	externalId string
+	externalID string
 	// Time when the file was created.
 	fileCreateTime string
 	// Hash of a file.
 	fileHash string
 	// An ID associated with a file could be the inode.
-	fileId string
+	fileID string
 	// Time when the file was last modified.
 	fileModificationTime string
 	// Full path to the file, including file name itself. Example: C:\Program Files \WindowsNT\Access ories\ wordpad.exe or /usr/bin/zip
@@ -184,7 +184,7 @@ type extensionFields struct {
 	// Hash of the old file
 	oldFileHash string
 	// An ID associated with the old file could be the inode.
-	oldFileId string
+	oldFileID string
 	// Time when old file was last modified.
 	oldFileModificationTime string
 	// Name of the old file.
@@ -292,7 +292,7 @@ type extensionFields struct {
 	// The longitudinal value from which the destination’s IP address belongs.
 	dlong float64
 	// This is a unique ID that ArcSight assigns to each event.
-	eventId int64
+	eventID int64
 	rawEvent string
 	slat float64
 	slong float64
@@ -718,12 +718,12 @@ func (f *extensionFields) SetDeviceDnsDomain(v string) *extensionFields {
 	return f
 }
 
-func (f *extensionFields) SetDeviceExternalId(v string) *extensionFields {
+func (f *extensionFields) SetDeviceExternalID(v string) *extensionFields {
 	if len(v) > 255 {
 		v = v[:255]
 	}
 
-	f.deviceExternalId = v
+	f.deviceExternalID = v
 
 	return f
 }
@@ -768,12 +768,12 @@ func (f *extensionFields) SetDeviceOutboundInterface(v string) *extensionFields 
 	return f
 }
 
-func (f *extensionFields) SetDevicePayloadId(v string) *extensionFields {
+func (f *extensionFields) SetDevicePayloadID(v string) *extensionFields {
 	if len(v) > 128 {
 		v = v[:128]
 	}
 
-	f.devicePayloadId = v
+	f.devicePayloadID = v
 
 	return f
 }
@@ -916,12 +916,12 @@ func (f *extensionFields) SetEnd(v string) *extensionFields {
 	return f
 }
 
-func (f *extensionFields) SetExternalId(v string) *extensionFields {
+func (f *extensionFields) SetExternalID(v string) *extensionFields {
 	if len(v) > 40 {
 		v = v[:40]
 	}
 
-	f.externalId = v
+	f.externalID = v
 
 	return f
 }
@@ -942,12 +942,12 @@ func (f *extensionFields) SetFileHash(v string) *extensionFields {
 	return f
 }
 
-func (f *extensionFields) SetFileId(v string) *extensionFields {
+func (f *extensionFields) SetFileID(v string) *extensionFields {
 	if len(v) > 1023 {
 		v = v[:1023]
 	}
 
-	f.fileId = v
+	f.fileID = v
 
 	return f
 }
@@ -1092,12 +1092,12 @@ func (f *extensionFields) SetOldFileHash(v string) *extensionFields {
 	return f
 }
 
-func (f *extensionFields) SetOldFileId(v string) *extensionFields {
+func (f *extensionFields) SetOldFileID(v string) *extensionFields {
 	if len(v) > 1023 {
 		v = v[:1023]
 	}
 
-	f.oldFileId = v
+	f.oldFileID = v
 
 	return f
 }
@@ -1620,8 +1620,8 @@ func (f *extensionFields) SetDlong(v float64) *extensionFields {
 	return f
 }
 
-func (f *extensionFields) SetEventId(v int64) *extensionFields {
-	f.eventId = v
+func (f *extensionFields) SetEventID(v int64) *extensionFields {
+	f.eventID = v
 
 	return f
 }
@@ -1973,8 +1973,8 @@ func (f *extensionFields) DeviceDnsDomain() string {
 }
 
 // A name that uniquely identifies the device generating this event.
-func (f *extensionFields) DeviceExternalId() string {
-	return f.deviceExternalId
+func (f *extensionFields) DeviceExternalID() string {
+	return f.deviceExternalID
 }
 
 // The facility generating this event. For example, Syslog has an explicit facility associated with every event.
@@ -1998,8 +1998,8 @@ func (f *extensionFields) DeviceOutboundInterface() string {
 }
 
 // Unique identifier for the payload associated with the event.
-func (f *extensionFields) DevicePayloadId() string {
-	return f.devicePayloadId
+func (f *extensionFields) DevicePayloadID() string {
+	return f.devicePayloadID
 }
 
 // Process name associated with the event. An example might be the process generating the syslog entry in UNIX.
@@ -2088,8 +2088,8 @@ func (f *extensionFields) End() string {
 }
 
 // The ID used by an originating device. They are usually increasing numbers, associated with events.
-func (f *extensionFields) ExternalId() string {
-	return f.externalId
+func (f *extensionFields) ExternalID() string {
+	return f.externalID
 }
 
 // Time when the file was created.
@@ -2103,8 +2103,8 @@ func (f *extensionFields) FileHash() string {
 }
 
 // An ID associated with a file could be the inode.
-func (f *extensionFields) FileId() string {
-	return f.fileId
+func (f *extensionFields) FileID() string {
+	return f.fileID
 }
 
 // Time when the file was last modified.
@@ -2188,8 +2188,8 @@ func (f *extensionFields) OldFileHash() string {
 }
 
 // An ID associated with the old file could be the inode.
-func (f *extensionFields) OldFileId() string {
-	return f.oldFileId
+func (f *extensionFields) OldFileID() string {
+	return f.oldFileID
 }
 
 // Time when old file was last modified.
@@ -2476,8 +2476,8 @@ func (f *extensionFields) Dlong() float64 {
 }
 
 // This is a unique ID that ArcSight assigns to each event.
-func (f *extensionFields) EventId() int64 {
-	return f.eventId
+func (f *extensionFields) EventID() int64 {
+	return f.eventID
 }
 
 func (f *extensionFields) RawEvent() string {

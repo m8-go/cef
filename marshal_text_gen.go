@@ -194,8 +194,8 @@ func (cef *CEF) extension() string {
 		extension = append(extension, fmt.Sprintf("deviceDnsDomain=%v", deviceDnsDomain))
 	}
 
-	if deviceExternalId := cef.DeviceExternalId(); deviceExternalId != "" {
-		extension = append(extension, fmt.Sprintf("deviceExternalId=%v", deviceExternalId))
+	if deviceExternalID := cef.DeviceExternalID(); deviceExternalID != "" {
+		extension = append(extension, fmt.Sprintf("deviceExternalId=%v", deviceExternalID))
 	}
 
 	if deviceFacility := cef.DeviceFacility(); deviceFacility != "" {
@@ -214,8 +214,8 @@ func (cef *CEF) extension() string {
 		extension = append(extension, fmt.Sprintf("deviceOutboundInterface=%v", deviceOutboundInterface))
 	}
 
-	if devicePayloadId := cef.DevicePayloadId(); devicePayloadId != "" {
-		extension = append(extension, fmt.Sprintf("DevicePayloadId=%v", devicePayloadId))
+	if devicePayloadID := cef.DevicePayloadID(); devicePayloadID != "" {
+		extension = append(extension, fmt.Sprintf("DevicePayloadId=%v", devicePayloadID))
 	}
 
 	if deviceProcessName := cef.DeviceProcessName(); deviceProcessName != "" {
@@ -286,8 +286,8 @@ func (cef *CEF) extension() string {
 		extension = append(extension, fmt.Sprintf("end=%v", end))
 	}
 
-	if externalId := cef.ExternalId(); externalId != "" {
-		extension = append(extension, fmt.Sprintf("externalId=%v", externalId))
+	if externalID := cef.ExternalID(); externalID != "" {
+		extension = append(extension, fmt.Sprintf("externalId=%v", externalID))
 	}
 
 	if fileCreateTime := cef.FileCreateTime(); fileCreateTime != "" {
@@ -298,8 +298,8 @@ func (cef *CEF) extension() string {
 		extension = append(extension, fmt.Sprintf("fileHash=%v", fileHash))
 	}
 
-	if fileId := cef.FileId(); fileId != "" {
-		extension = append(extension, fmt.Sprintf("fileId=%v", fileId))
+	if fileID := cef.FileID(); fileID != "" {
+		extension = append(extension, fmt.Sprintf("fileId=%v", fileID))
 	}
 
 	if fileModificationTime := cef.FileModificationTime(); fileModificationTime != "" {
@@ -366,8 +366,8 @@ func (cef *CEF) extension() string {
 		extension = append(extension, fmt.Sprintf("oldFileHash=%v", oldFileHash))
 	}
 
-	if oldFileId := cef.OldFileId(); oldFileId != "" {
-		extension = append(extension, fmt.Sprintf("oldFileId=%v", oldFileId))
+	if oldFileID := cef.OldFileID(); oldFileID != "" {
+		extension = append(extension, fmt.Sprintf("oldFileId=%v", oldFileID))
 	}
 
 	if oldFileModificationTime := cef.OldFileModificationTime(); oldFileModificationTime != "" {
@@ -606,8 +606,8 @@ func (cef *CEF) extension() string {
 		extension = append(extension, fmt.Sprintf("dlong=%v", dlong))
 	}
 
-	if eventId := cef.EventId(); eventId != 0 {
-		extension = append(extension, fmt.Sprintf("eventId=%v", eventId))
+	if eventID := cef.EventID(); eventID != 0 {
+		extension = append(extension, fmt.Sprintf("eventId=%v", eventID))
 	}
 
 	if rawEvent := cef.RawEvent(); rawEvent != "" {
