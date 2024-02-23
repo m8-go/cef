@@ -47,7 +47,11 @@ func (f *headerFields) Set{{ .FieldName | title | pretty }}(v {{ typeMapping .Ty
         return f
     }
 {{ end }}
+{{ if eq .Typ "String" }}
+    f.{{ .FieldName | unexported }} = escapeHeaderField(v)
+{{ else }}
     f.{{ .FieldName | unexported }} = v
+{{ end }}
 
     return f
 }

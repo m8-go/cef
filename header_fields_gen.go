@@ -65,7 +65,7 @@ func (f *headerFields) SetDeviceEventClassID(v string) *headerFields {
 		return f
 	}
 
-	f.deviceEventClassID = v
+	f.deviceEventClassID = escapeHeaderField(v)
 
 	return f
 }
@@ -80,7 +80,7 @@ func (f *headerFields) SetDeviceProduct(v string) *headerFields {
 		return f
 	}
 
-	f.deviceProduct = v
+	f.deviceProduct = escapeHeaderField(v)
 
 	return f
 }
@@ -95,7 +95,7 @@ func (f *headerFields) SetDeviceVendor(v string) *headerFields {
 		return f
 	}
 
-	f.deviceVendor = v
+	f.deviceVendor = escapeHeaderField(v)
 
 	return f
 }
@@ -110,7 +110,7 @@ func (f *headerFields) SetDeviceVersion(v string) *headerFields {
 		return f
 	}
 
-	f.deviceVersion = v
+	f.deviceVersion = escapeHeaderField(v)
 
 	return f
 }
@@ -125,7 +125,7 @@ func (f *headerFields) SetName(v string) *headerFields {
 		return f
 	}
 
-	f.name = v
+	f.name = escapeHeaderField(v)
 
 	return f
 }
