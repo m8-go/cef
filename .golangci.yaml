@@ -1,0 +1,33 @@
+run:
+  timeout: 5m
+
+linters:
+  disable-all: true
+  enable:
+    - bodyclose
+    - errcheck
+    - errname
+    - gocritic
+    - godot
+    - gofmt
+    - gofumpt
+    - goimports
+    - gosec
+    - gosimple
+    - govet
+    - ineffassign
+    - maintidx
+    - nolintlint
+    - perfsprint
+    - prealloc
+    - staticcheck
+    - typecheck
+    - unused
+    - wsl
+
+
+linters-settings:
+  gofmt:
+    simplify: true
+  govet:
+    enable-all: true
