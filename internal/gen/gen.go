@@ -9,6 +9,7 @@ import (
 	"os"
 	"path/filepath"
 	"regexp"
+	"strconv"
 	"strings"
 	"text/template"
 
@@ -37,6 +38,7 @@ func run() error {
 			"add":           add,
 			"renameKeyWord": renameKeyWord,
 			"pretty":        naming.Pretty,
+			"quote":         strconv.Quote,
 		}).
 		ParseFS(templateDir, "template/*.tmpl")
 	if err != nil {

@@ -322,6 +322,7 @@ type extensionFields struct {
 	sZoneKey int64
 }
 
+// SetAct sets "act" field.
 func (f *extensionFields) SetAct(v string) *extensionFields {
 	if len(v) > 63 {
 		v = v[:63]
@@ -332,6 +333,7 @@ func (f *extensionFields) SetAct(v string) *extensionFields {
 	return f
 }
 
+// SetApp sets "app" field.
 func (f *extensionFields) SetApp(v string) *extensionFields {
 	if len(v) > 31 {
 		v = v[:31]
@@ -342,12 +344,14 @@ func (f *extensionFields) SetApp(v string) *extensionFields {
 	return f
 }
 
+// SetC6a1 sets "c6a1" field.
 func (f *extensionFields) SetC6a1(v net.IP) *extensionFields {
 	f.c6a1 = v
 
 	return f
 }
 
+// SetC6a1Label sets "c6a1Label" field.
 func (f *extensionFields) SetC6a1Label(v string) *extensionFields {
 	if len(v) > 1023 {
 		v = v[:1023]
@@ -358,12 +362,14 @@ func (f *extensionFields) SetC6a1Label(v string) *extensionFields {
 	return f
 }
 
+// SetC6a3 sets "c6a3" field.
 func (f *extensionFields) SetC6a3(v net.IP) *extensionFields {
 	f.c6a3 = v
 
 	return f
 }
 
+// SetC6a3Label sets "c6a3Label" field.
 func (f *extensionFields) SetC6a3Label(v string) *extensionFields {
 	if len(v) > 1023 {
 		v = v[:1023]
@@ -374,12 +380,14 @@ func (f *extensionFields) SetC6a3Label(v string) *extensionFields {
 	return f
 }
 
+// SetC6a4 sets "c6a4" field.
 func (f *extensionFields) SetC6a4(v net.IP) *extensionFields {
 	f.c6a4 = v
 
 	return f
 }
 
+// SetC6a4Label sets "c6a4Label" field.
 func (f *extensionFields) SetC6a4Label(v string) *extensionFields {
 	if len(v) > 1023 {
 		v = v[:1023]
@@ -390,6 +398,7 @@ func (f *extensionFields) SetC6a4Label(v string) *extensionFields {
 	return f
 }
 
+// SetCat sets "cat" field.
 func (f *extensionFields) SetCat(v string) *extensionFields {
 	if len(v) > 1023 {
 		v = v[:1023]
@@ -400,12 +409,14 @@ func (f *extensionFields) SetCat(v string) *extensionFields {
 	return f
 }
 
+// SetCfp1 sets "cfp1" field.
 func (f *extensionFields) SetCfp1(v float32) *extensionFields {
 	f.cfp1 = v
 
 	return f
 }
 
+// SetCfp1Label sets "cfp1Label" field.
 func (f *extensionFields) SetCfp1Label(v string) *extensionFields {
 	if len(v) > 1023 {
 		v = v[:1023]
@@ -416,12 +427,14 @@ func (f *extensionFields) SetCfp1Label(v string) *extensionFields {
 	return f
 }
 
+// SetCfp2 sets "cfp2" field.
 func (f *extensionFields) SetCfp2(v float32) *extensionFields {
 	f.cfp2 = v
 
 	return f
 }
 
+// SetCfp2Label sets "cfp2Label" field.
 func (f *extensionFields) SetCfp2Label(v string) *extensionFields {
 	if len(v) > 1023 {
 		v = v[:1023]
@@ -432,12 +445,14 @@ func (f *extensionFields) SetCfp2Label(v string) *extensionFields {
 	return f
 }
 
+// SetCfp3 sets "cfp3" field.
 func (f *extensionFields) SetCfp3(v float32) *extensionFields {
 	f.cfp3 = v
 
 	return f
 }
 
+// SetCfp3Label sets "cfp3Label" field.
 func (f *extensionFields) SetCfp3Label(v string) *extensionFields {
 	if len(v) > 1023 {
 		v = v[:1023]
@@ -448,12 +463,14 @@ func (f *extensionFields) SetCfp3Label(v string) *extensionFields {
 	return f
 }
 
+// SetCfp4 sets "cfp4" field.
 func (f *extensionFields) SetCfp4(v float32) *extensionFields {
 	f.cfp4 = v
 
 	return f
 }
 
+// SetCfp4Label sets "cfp4Label" field.
 func (f *extensionFields) SetCfp4Label(v string) *extensionFields {
 	if len(v) > 1023 {
 		v = v[:1023]
@@ -464,12 +481,14 @@ func (f *extensionFields) SetCfp4Label(v string) *extensionFields {
 	return f
 }
 
+// SetCn1 sets "cn1" field.
 func (f *extensionFields) SetCn1(v int64) *extensionFields {
 	f.cn1 = v
 
 	return f
 }
 
+// SetCn1Label sets "cn1Label" field.
 func (f *extensionFields) SetCn1Label(v string) *extensionFields {
 	if len(v) > 1023 {
 		v = v[:1023]
@@ -480,12 +499,14 @@ func (f *extensionFields) SetCn1Label(v string) *extensionFields {
 	return f
 }
 
+// SetCn2 sets "cn2" field.
 func (f *extensionFields) SetCn2(v int64) *extensionFields {
 	f.cn2 = v
 
 	return f
 }
 
+// SetCn2Label sets "cn2Label" field.
 func (f *extensionFields) SetCn2Label(v string) *extensionFields {
 	if len(v) > 1023 {
 		v = v[:1023]
@@ -496,12 +517,14 @@ func (f *extensionFields) SetCn2Label(v string) *extensionFields {
 	return f
 }
 
+// SetCn3 sets "cn3" field.
 func (f *extensionFields) SetCn3(v int64) *extensionFields {
 	f.cn3 = v
 
 	return f
 }
 
+// SetCn3Label sets "cn3Label" field.
 func (f *extensionFields) SetCn3Label(v string) *extensionFields {
 	if len(v) > 1023 {
 		v = v[:1023]
@@ -512,12 +535,14 @@ func (f *extensionFields) SetCn3Label(v string) *extensionFields {
 	return f
 }
 
+// SetCnt sets "cnt" field.
 func (f *extensionFields) SetCnt(v int) *extensionFields {
 	f.cnt = v
 
 	return f
 }
 
+// SetCs1 sets "cs1" field.
 func (f *extensionFields) SetCs1(v string) *extensionFields {
 	if len(v) > 4000 {
 		v = v[:4000]
@@ -528,6 +553,7 @@ func (f *extensionFields) SetCs1(v string) *extensionFields {
 	return f
 }
 
+// SetCs1Label sets "cs1Label" field.
 func (f *extensionFields) SetCs1Label(v string) *extensionFields {
 	if len(v) > 1023 {
 		v = v[:1023]
@@ -538,6 +564,7 @@ func (f *extensionFields) SetCs1Label(v string) *extensionFields {
 	return f
 }
 
+// SetCs2 sets "cs2" field.
 func (f *extensionFields) SetCs2(v string) *extensionFields {
 	if len(v) > 4000 {
 		v = v[:4000]
@@ -548,6 +575,7 @@ func (f *extensionFields) SetCs2(v string) *extensionFields {
 	return f
 }
 
+// SetCs2Label sets "cs2Label" field.
 func (f *extensionFields) SetCs2Label(v string) *extensionFields {
 	if len(v) > 1023 {
 		v = v[:1023]
@@ -558,6 +586,7 @@ func (f *extensionFields) SetCs2Label(v string) *extensionFields {
 	return f
 }
 
+// SetCs3 sets "cs3" field.
 func (f *extensionFields) SetCs3(v string) *extensionFields {
 	if len(v) > 4000 {
 		v = v[:4000]
@@ -568,6 +597,7 @@ func (f *extensionFields) SetCs3(v string) *extensionFields {
 	return f
 }
 
+// SetCs3Label sets "cs3Label" field.
 func (f *extensionFields) SetCs3Label(v string) *extensionFields {
 	if len(v) > 1023 {
 		v = v[:1023]
@@ -578,6 +608,7 @@ func (f *extensionFields) SetCs3Label(v string) *extensionFields {
 	return f
 }
 
+// SetCs4 sets "cs4" field.
 func (f *extensionFields) SetCs4(v string) *extensionFields {
 	if len(v) > 4000 {
 		v = v[:4000]
@@ -588,6 +619,7 @@ func (f *extensionFields) SetCs4(v string) *extensionFields {
 	return f
 }
 
+// SetCs4Label sets "cs4Label" field.
 func (f *extensionFields) SetCs4Label(v string) *extensionFields {
 	if len(v) > 1023 {
 		v = v[:1023]
@@ -598,6 +630,7 @@ func (f *extensionFields) SetCs4Label(v string) *extensionFields {
 	return f
 }
 
+// SetCs5 sets "cs5" field.
 func (f *extensionFields) SetCs5(v string) *extensionFields {
 	if len(v) > 4000 {
 		v = v[:4000]
@@ -608,6 +641,7 @@ func (f *extensionFields) SetCs5(v string) *extensionFields {
 	return f
 }
 
+// SetCs5Label sets "cs5Label" field.
 func (f *extensionFields) SetCs5Label(v string) *extensionFields {
 	if len(v) > 1023 {
 		v = v[:1023]
@@ -618,6 +652,7 @@ func (f *extensionFields) SetCs5Label(v string) *extensionFields {
 	return f
 }
 
+// SetCs6 sets "cs6" field.
 func (f *extensionFields) SetCs6(v string) *extensionFields {
 	if len(v) > 4000 {
 		v = v[:4000]
@@ -628,6 +663,7 @@ func (f *extensionFields) SetCs6(v string) *extensionFields {
 	return f
 }
 
+// SetCs6Label sets "cs6Label" field.
 func (f *extensionFields) SetCs6Label(v string) *extensionFields {
 	if len(v) > 1023 {
 		v = v[:1023]
@@ -638,6 +674,7 @@ func (f *extensionFields) SetCs6Label(v string) *extensionFields {
 	return f
 }
 
+// SetDestinationDNSDomain sets "destinationDNSDomain" field.
 func (f *extensionFields) SetDestinationDNSDomain(v string) *extensionFields {
 	if len(v) > 255 {
 		v = v[:255]
@@ -648,6 +685,7 @@ func (f *extensionFields) SetDestinationDNSDomain(v string) *extensionFields {
 	return f
 }
 
+// SetDestinationServiceName sets "destinationServiceName" field.
 func (f *extensionFields) SetDestinationServiceName(v string) *extensionFields {
 	if len(v) > 1023 {
 		v = v[:1023]
@@ -658,24 +696,28 @@ func (f *extensionFields) SetDestinationServiceName(v string) *extensionFields {
 	return f
 }
 
+// SetDestinationTranslatedAddress sets "destinationTranslatedAddress" field.
 func (f *extensionFields) SetDestinationTranslatedAddress(v net.IP) *extensionFields {
 	f.destinationTranslatedAddress = v
 
 	return f
 }
 
+// SetDestinationTranslatedPort sets "destinationTranslatedPort" field.
 func (f *extensionFields) SetDestinationTranslatedPort(v int) *extensionFields {
 	f.destinationTranslatedPort = v
 
 	return f
 }
 
+// SetDeviceCustomDate1 sets "deviceCustomDate1" field.
 func (f *extensionFields) SetDeviceCustomDate1(v string) *extensionFields {
 	f.deviceCustomDate1 = v
 
 	return f
 }
 
+// SetDeviceCustomDate1Label sets "deviceCustomDate1Label" field.
 func (f *extensionFields) SetDeviceCustomDate1Label(v string) *extensionFields {
 	if len(v) > 1023 {
 		v = v[:1023]
@@ -686,12 +728,14 @@ func (f *extensionFields) SetDeviceCustomDate1Label(v string) *extensionFields {
 	return f
 }
 
+// SetDeviceCustomDate2 sets "deviceCustomDate2" field.
 func (f *extensionFields) SetDeviceCustomDate2(v string) *extensionFields {
 	f.deviceCustomDate2 = v
 
 	return f
 }
 
+// SetDeviceCustomDate2Label sets "deviceCustomDate2Label" field.
 func (f *extensionFields) SetDeviceCustomDate2Label(v string) *extensionFields {
 	if len(v) > 1023 {
 		v = v[:1023]
@@ -702,12 +746,14 @@ func (f *extensionFields) SetDeviceCustomDate2Label(v string) *extensionFields {
 	return f
 }
 
+// SetDeviceDirection sets "deviceDirection" field.
 func (f *extensionFields) SetDeviceDirection(v int) *extensionFields {
 	f.deviceDirection = v
 
 	return f
 }
 
+// SetDeviceDNSDomain sets "deviceDNSDomain" field.
 func (f *extensionFields) SetDeviceDNSDomain(v string) *extensionFields {
 	if len(v) > 255 {
 		v = v[:255]
@@ -718,6 +764,7 @@ func (f *extensionFields) SetDeviceDNSDomain(v string) *extensionFields {
 	return f
 }
 
+// SetDeviceExternalID sets "deviceExternalID" field.
 func (f *extensionFields) SetDeviceExternalID(v string) *extensionFields {
 	if len(v) > 255 {
 		v = v[:255]
@@ -728,6 +775,7 @@ func (f *extensionFields) SetDeviceExternalID(v string) *extensionFields {
 	return f
 }
 
+// SetDeviceFacility sets "deviceFacility" field.
 func (f *extensionFields) SetDeviceFacility(v string) *extensionFields {
 	if len(v) > 1023 {
 		v = v[:1023]
@@ -738,6 +786,7 @@ func (f *extensionFields) SetDeviceFacility(v string) *extensionFields {
 	return f
 }
 
+// SetDeviceInboundInterface sets "deviceInboundInterface" field.
 func (f *extensionFields) SetDeviceInboundInterface(v string) *extensionFields {
 	if len(v) > 128 {
 		v = v[:128]
@@ -748,6 +797,7 @@ func (f *extensionFields) SetDeviceInboundInterface(v string) *extensionFields {
 	return f
 }
 
+// SetDeviceNtDomain sets "deviceNtDomain" field.
 func (f *extensionFields) SetDeviceNtDomain(v string) *extensionFields {
 	if len(v) > 255 {
 		v = v[:255]
@@ -758,6 +808,7 @@ func (f *extensionFields) SetDeviceNtDomain(v string) *extensionFields {
 	return f
 }
 
+// SetDeviceOutboundInterface sets "deviceOutboundInterface" field.
 func (f *extensionFields) SetDeviceOutboundInterface(v string) *extensionFields {
 	if len(v) > 128 {
 		v = v[:128]
@@ -768,6 +819,7 @@ func (f *extensionFields) SetDeviceOutboundInterface(v string) *extensionFields 
 	return f
 }
 
+// SetDevicePayloadID sets "devicePayloadID" field.
 func (f *extensionFields) SetDevicePayloadID(v string) *extensionFields {
 	if len(v) > 128 {
 		v = v[:128]
@@ -778,6 +830,7 @@ func (f *extensionFields) SetDevicePayloadID(v string) *extensionFields {
 	return f
 }
 
+// SetDeviceProcessName sets "deviceProcessName" field.
 func (f *extensionFields) SetDeviceProcessName(v string) *extensionFields {
 	if len(v) > 1023 {
 		v = v[:1023]
@@ -788,12 +841,14 @@ func (f *extensionFields) SetDeviceProcessName(v string) *extensionFields {
 	return f
 }
 
+// SetDeviceTranslatedAddress sets "deviceTranslatedAddress" field.
 func (f *extensionFields) SetDeviceTranslatedAddress(v net.IP) *extensionFields {
 	f.deviceTranslatedAddress = v
 
 	return f
 }
 
+// SetDhost sets "dhost" field.
 func (f *extensionFields) SetDhost(v string) *extensionFields {
 	if len(v) > 1023 {
 		v = v[:1023]
@@ -804,6 +859,7 @@ func (f *extensionFields) SetDhost(v string) *extensionFields {
 	return f
 }
 
+// SetDntdom sets "dntdom" field.
 func (f *extensionFields) SetDntdom(v string) *extensionFields {
 	if len(v) > 255 {
 		v = v[:255]
@@ -814,12 +870,14 @@ func (f *extensionFields) SetDntdom(v string) *extensionFields {
 	return f
 }
 
+// SetDpid sets "dpid" field.
 func (f *extensionFields) SetDpid(v int) *extensionFields {
 	f.dpid = v
 
 	return f
 }
 
+// SetDpriv sets "dpriv" field.
 func (f *extensionFields) SetDpriv(v string) *extensionFields {
 	if len(v) > 1023 {
 		v = v[:1023]
@@ -830,6 +888,7 @@ func (f *extensionFields) SetDpriv(v string) *extensionFields {
 	return f
 }
 
+// SetDproc sets "dproc" field.
 func (f *extensionFields) SetDproc(v string) *extensionFields {
 	if len(v) > 1023 {
 		v = v[:1023]
@@ -840,18 +899,21 @@ func (f *extensionFields) SetDproc(v string) *extensionFields {
 	return f
 }
 
+// SetDpt sets "dpt" field.
 func (f *extensionFields) SetDpt(v int) *extensionFields {
 	f.dpt = v
 
 	return f
 }
 
+// SetDst sets "dst" field.
 func (f *extensionFields) SetDst(v net.IP) *extensionFields {
 	f.dst = v
 
 	return f
 }
 
+// SetDtz sets "dtz" field.
 func (f *extensionFields) SetDtz(v string) *extensionFields {
 	if len(v) > 255 {
 		v = v[:255]
@@ -862,6 +924,7 @@ func (f *extensionFields) SetDtz(v string) *extensionFields {
 	return f
 }
 
+// SetDuid sets "duid" field.
 func (f *extensionFields) SetDuid(v string) *extensionFields {
 	if len(v) > 1023 {
 		v = v[:1023]
@@ -872,6 +935,7 @@ func (f *extensionFields) SetDuid(v string) *extensionFields {
 	return f
 }
 
+// SetDuser sets "duser" field.
 func (f *extensionFields) SetDuser(v string) *extensionFields {
 	if len(v) > 1023 {
 		v = v[:1023]
@@ -882,12 +946,14 @@ func (f *extensionFields) SetDuser(v string) *extensionFields {
 	return f
 }
 
+// SetDvc sets "dvc" field.
 func (f *extensionFields) SetDvc(v net.IP) *extensionFields {
 	f.dvc = v
 
 	return f
 }
 
+// SetDvchost sets "dvchost" field.
 func (f *extensionFields) SetDvchost(v string) *extensionFields {
 	if len(v) > 100 {
 		v = v[:100]
@@ -898,24 +964,28 @@ func (f *extensionFields) SetDvchost(v string) *extensionFields {
 	return f
 }
 
+// SetDvcmac sets "dvcmac" field.
 func (f *extensionFields) SetDvcmac(v net.HardwareAddr) *extensionFields {
 	f.dvcmac = v
 
 	return f
 }
 
+// SetDvcpid sets "dvcpid" field.
 func (f *extensionFields) SetDvcpid(v int) *extensionFields {
 	f.dvcpid = v
 
 	return f
 }
 
+// SetEnd sets "end" field.
 func (f *extensionFields) SetEnd(v string) *extensionFields {
 	f.end = v
 
 	return f
 }
 
+// SetExternalID sets "externalID" field.
 func (f *extensionFields) SetExternalID(v string) *extensionFields {
 	if len(v) > 40 {
 		v = v[:40]
@@ -926,12 +996,14 @@ func (f *extensionFields) SetExternalID(v string) *extensionFields {
 	return f
 }
 
+// SetFileCreateTime sets "fileCreateTime" field.
 func (f *extensionFields) SetFileCreateTime(v string) *extensionFields {
 	f.fileCreateTime = v
 
 	return f
 }
 
+// SetFileHash sets "fileHash" field.
 func (f *extensionFields) SetFileHash(v string) *extensionFields {
 	if len(v) > 255 {
 		v = v[:255]
@@ -942,6 +1014,7 @@ func (f *extensionFields) SetFileHash(v string) *extensionFields {
 	return f
 }
 
+// SetFileID sets "fileID" field.
 func (f *extensionFields) SetFileID(v string) *extensionFields {
 	if len(v) > 1023 {
 		v = v[:1023]
@@ -952,12 +1025,14 @@ func (f *extensionFields) SetFileID(v string) *extensionFields {
 	return f
 }
 
+// SetFileModificationTime sets "fileModificationTime" field.
 func (f *extensionFields) SetFileModificationTime(v string) *extensionFields {
 	f.fileModificationTime = v
 
 	return f
 }
 
+// SetFilePath sets "filePath" field.
 func (f *extensionFields) SetFilePath(v string) *extensionFields {
 	if len(v) > 1023 {
 		v = v[:1023]
@@ -968,6 +1043,7 @@ func (f *extensionFields) SetFilePath(v string) *extensionFields {
 	return f
 }
 
+// SetFilePermission sets "filePermission" field.
 func (f *extensionFields) SetFilePermission(v string) *extensionFields {
 	if len(v) > 1023 {
 		v = v[:1023]
@@ -978,6 +1054,7 @@ func (f *extensionFields) SetFilePermission(v string) *extensionFields {
 	return f
 }
 
+// SetFileType sets "fileType" field.
 func (f *extensionFields) SetFileType(v string) *extensionFields {
 	if len(v) > 1023 {
 		v = v[:1023]
@@ -988,12 +1065,14 @@ func (f *extensionFields) SetFileType(v string) *extensionFields {
 	return f
 }
 
+// SetFlexDate1 sets "flexDate1" field.
 func (f *extensionFields) SetFlexDate1(v string) *extensionFields {
 	f.flexDate1 = v
 
 	return f
 }
 
+// SetFlexDate1Label sets "flexDate1Label" field.
 func (f *extensionFields) SetFlexDate1Label(v string) *extensionFields {
 	if len(v) > 128 {
 		v = v[:128]
@@ -1004,6 +1083,7 @@ func (f *extensionFields) SetFlexDate1Label(v string) *extensionFields {
 	return f
 }
 
+// SetFlexString1 sets "flexString1" field.
 func (f *extensionFields) SetFlexString1(v string) *extensionFields {
 	if len(v) > 1023 {
 		v = v[:1023]
@@ -1014,6 +1094,7 @@ func (f *extensionFields) SetFlexString1(v string) *extensionFields {
 	return f
 }
 
+// SetFlexString1Label sets "flexString1Label" field.
 func (f *extensionFields) SetFlexString1Label(v string) *extensionFields {
 	if len(v) > 128 {
 		v = v[:128]
@@ -1024,6 +1105,7 @@ func (f *extensionFields) SetFlexString1Label(v string) *extensionFields {
 	return f
 }
 
+// SetFlexString2 sets "flexString2" field.
 func (f *extensionFields) SetFlexString2(v string) *extensionFields {
 	if len(v) > 1023 {
 		v = v[:1023]
@@ -1034,6 +1116,7 @@ func (f *extensionFields) SetFlexString2(v string) *extensionFields {
 	return f
 }
 
+// SetFlexString2Label sets "flexString2Label" field.
 func (f *extensionFields) SetFlexString2Label(v string) *extensionFields {
 	if len(v) > 128 {
 		v = v[:128]
@@ -1044,6 +1127,7 @@ func (f *extensionFields) SetFlexString2Label(v string) *extensionFields {
 	return f
 }
 
+// SetFname sets "fname" field.
 func (f *extensionFields) SetFname(v string) *extensionFields {
 	if len(v) > 1023 {
 		v = v[:1023]
@@ -1054,18 +1138,21 @@ func (f *extensionFields) SetFname(v string) *extensionFields {
 	return f
 }
 
+// SetFsize sets "fsize" field.
 func (f *extensionFields) SetFsize(v int64) *extensionFields {
 	f.fsize = v
 
 	return f
 }
 
+// SetIn sets "in" field.
 func (f *extensionFields) SetIn(v int64) *extensionFields {
 	f.in = v
 
 	return f
 }
 
+// SetMsg sets "msg" field.
 func (f *extensionFields) SetMsg(v string) *extensionFields {
 	if len(v) > 1023 {
 		v = v[:1023]
@@ -1076,12 +1163,14 @@ func (f *extensionFields) SetMsg(v string) *extensionFields {
 	return f
 }
 
+// SetOldFileCreateTime sets "oldFileCreateTime" field.
 func (f *extensionFields) SetOldFileCreateTime(v string) *extensionFields {
 	f.oldFileCreateTime = v
 
 	return f
 }
 
+// SetOldFileHash sets "oldFileHash" field.
 func (f *extensionFields) SetOldFileHash(v string) *extensionFields {
 	if len(v) > 255 {
 		v = v[:255]
@@ -1092,6 +1181,7 @@ func (f *extensionFields) SetOldFileHash(v string) *extensionFields {
 	return f
 }
 
+// SetOldFileID sets "oldFileID" field.
 func (f *extensionFields) SetOldFileID(v string) *extensionFields {
 	if len(v) > 1023 {
 		v = v[:1023]
@@ -1102,12 +1192,14 @@ func (f *extensionFields) SetOldFileID(v string) *extensionFields {
 	return f
 }
 
+// SetOldFileModificationTime sets "oldFileModificationTime" field.
 func (f *extensionFields) SetOldFileModificationTime(v string) *extensionFields {
 	f.oldFileModificationTime = v
 
 	return f
 }
 
+// SetOldFileName sets "oldFileName" field.
 func (f *extensionFields) SetOldFileName(v string) *extensionFields {
 	if len(v) > 1023 {
 		v = v[:1023]
@@ -1118,6 +1210,7 @@ func (f *extensionFields) SetOldFileName(v string) *extensionFields {
 	return f
 }
 
+// SetOldFilePath sets "oldFilePath" field.
 func (f *extensionFields) SetOldFilePath(v string) *extensionFields {
 	if len(v) > 1023 {
 		v = v[:1023]
@@ -1128,6 +1221,7 @@ func (f *extensionFields) SetOldFilePath(v string) *extensionFields {
 	return f
 }
 
+// SetOldFilePermission sets "oldFilePermission" field.
 func (f *extensionFields) SetOldFilePermission(v string) *extensionFields {
 	if len(v) > 1023 {
 		v = v[:1023]
@@ -1138,12 +1232,14 @@ func (f *extensionFields) SetOldFilePermission(v string) *extensionFields {
 	return f
 }
 
+// SetOldFileSize sets "oldFileSize" field.
 func (f *extensionFields) SetOldFileSize(v int64) *extensionFields {
 	f.oldFileSize = v
 
 	return f
 }
 
+// SetOldFileType sets "oldFileType" field.
 func (f *extensionFields) SetOldFileType(v string) *extensionFields {
 	if len(v) > 1023 {
 		v = v[:1023]
@@ -1154,12 +1250,14 @@ func (f *extensionFields) SetOldFileType(v string) *extensionFields {
 	return f
 }
 
+// SetOut sets "out" field.
 func (f *extensionFields) SetOut(v int) *extensionFields {
 	f.out = v
 
 	return f
 }
 
+// SetOutcome sets "outcome" field.
 func (f *extensionFields) SetOutcome(v string) *extensionFields {
 	if len(v) > 63 {
 		v = v[:63]
@@ -1170,6 +1268,7 @@ func (f *extensionFields) SetOutcome(v string) *extensionFields {
 	return f
 }
 
+// SetProto sets "proto" field.
 func (f *extensionFields) SetProto(v string) *extensionFields {
 	if len(v) > 31 {
 		v = v[:31]
@@ -1180,6 +1279,7 @@ func (f *extensionFields) SetProto(v string) *extensionFields {
 	return f
 }
 
+// SetReason sets "reason" field.
 func (f *extensionFields) SetReason(v string) *extensionFields {
 	if len(v) > 1023 {
 		v = v[:1023]
@@ -1190,6 +1290,7 @@ func (f *extensionFields) SetReason(v string) *extensionFields {
 	return f
 }
 
+// SetRequest sets "request" field.
 func (f *extensionFields) SetRequest(v string) *extensionFields {
 	if len(v) > 1023 {
 		v = v[:1023]
@@ -1200,6 +1301,7 @@ func (f *extensionFields) SetRequest(v string) *extensionFields {
 	return f
 }
 
+// SetRequestClientApplication sets "requestClientApplication" field.
 func (f *extensionFields) SetRequestClientApplication(v string) *extensionFields {
 	if len(v) > 1023 {
 		v = v[:1023]
@@ -1210,6 +1312,7 @@ func (f *extensionFields) SetRequestClientApplication(v string) *extensionFields
 	return f
 }
 
+// SetRequestContext sets "requestContext" field.
 func (f *extensionFields) SetRequestContext(v string) *extensionFields {
 	if len(v) > 2048 {
 		v = v[:2048]
@@ -1220,6 +1323,7 @@ func (f *extensionFields) SetRequestContext(v string) *extensionFields {
 	return f
 }
 
+// SetRequestCookies sets "requestCookies" field.
 func (f *extensionFields) SetRequestCookies(v string) *extensionFields {
 	if len(v) > 1023 {
 		v = v[:1023]
@@ -1230,6 +1334,7 @@ func (f *extensionFields) SetRequestCookies(v string) *extensionFields {
 	return f
 }
 
+// SetRequestMethod sets "requestMethod" field.
 func (f *extensionFields) SetRequestMethod(v string) *extensionFields {
 	if len(v) > 1023 {
 		v = v[:1023]
@@ -1240,12 +1345,14 @@ func (f *extensionFields) SetRequestMethod(v string) *extensionFields {
 	return f
 }
 
+// SetRt sets "rt" field.
 func (f *extensionFields) SetRt(v string) *extensionFields {
 	f.rt = v
 
 	return f
 }
 
+// SetShost sets "shost" field.
 func (f *extensionFields) SetShost(v string) *extensionFields {
 	if len(v) > 1023 {
 		v = v[:1023]
@@ -1256,12 +1363,14 @@ func (f *extensionFields) SetShost(v string) *extensionFields {
 	return f
 }
 
+// SetSmac sets "smac" field.
 func (f *extensionFields) SetSmac(v net.HardwareAddr) *extensionFields {
 	f.smac = v
 
 	return f
 }
 
+// SetSntdom sets "sntdom" field.
 func (f *extensionFields) SetSntdom(v string) *extensionFields {
 	if len(v) > 255 {
 		v = v[:255]
@@ -1272,6 +1381,7 @@ func (f *extensionFields) SetSntdom(v string) *extensionFields {
 	return f
 }
 
+// SetSourceDNSDomain sets "sourceDNSDomain" field.
 func (f *extensionFields) SetSourceDNSDomain(v string) *extensionFields {
 	if len(v) > 255 {
 		v = v[:255]
@@ -1282,6 +1392,7 @@ func (f *extensionFields) SetSourceDNSDomain(v string) *extensionFields {
 	return f
 }
 
+// SetSourceServiceName sets "sourceServiceName" field.
 func (f *extensionFields) SetSourceServiceName(v string) *extensionFields {
 	if len(v) > 1023 {
 		v = v[:1023]
@@ -1292,24 +1403,28 @@ func (f *extensionFields) SetSourceServiceName(v string) *extensionFields {
 	return f
 }
 
+// SetSourceTranslatedAddress sets "sourceTranslatedAddress" field.
 func (f *extensionFields) SetSourceTranslatedAddress(v net.IP) *extensionFields {
 	f.sourceTranslatedAddress = v
 
 	return f
 }
 
+// SetSourceTranslatedPort sets "sourceTranslatedPort" field.
 func (f *extensionFields) SetSourceTranslatedPort(v int) *extensionFields {
 	f.sourceTranslatedPort = v
 
 	return f
 }
 
+// SetSpid sets "spid" field.
 func (f *extensionFields) SetSpid(v int) *extensionFields {
 	f.spid = v
 
 	return f
 }
 
+// SetSpriv sets "spriv" field.
 func (f *extensionFields) SetSpriv(v string) *extensionFields {
 	if len(v) > 1023 {
 		v = v[:1023]
@@ -1320,6 +1435,7 @@ func (f *extensionFields) SetSpriv(v string) *extensionFields {
 	return f
 }
 
+// SetSproc sets "sproc" field.
 func (f *extensionFields) SetSproc(v string) *extensionFields {
 	if len(v) > 1023 {
 		v = v[:1023]
@@ -1330,24 +1446,28 @@ func (f *extensionFields) SetSproc(v string) *extensionFields {
 	return f
 }
 
+// SetSpt sets "spt" field.
 func (f *extensionFields) SetSpt(v int) *extensionFields {
 	f.spt = v
 
 	return f
 }
 
+// SetSrc sets "src" field.
 func (f *extensionFields) SetSrc(v net.IP) *extensionFields {
 	f.src = v
 
 	return f
 }
 
+// SetStart sets "start" field.
 func (f *extensionFields) SetStart(v string) *extensionFields {
 	f.start = v
 
 	return f
 }
 
+// SetSuid sets "suid" field.
 func (f *extensionFields) SetSuid(v string) *extensionFields {
 	if len(v) > 1023 {
 		v = v[:1023]
@@ -1358,6 +1478,7 @@ func (f *extensionFields) SetSuid(v string) *extensionFields {
 	return f
 }
 
+// SetSuser sets "suser" field.
 func (f *extensionFields) SetSuser(v string) *extensionFields {
 	if len(v) > 1023 {
 		v = v[:1023]
@@ -1368,12 +1489,14 @@ func (f *extensionFields) SetSuser(v string) *extensionFields {
 	return f
 }
 
+// SetType sets "typ" field.
 func (f *extensionFields) SetType(v int) *extensionFields {
 	f.typ = v
 
 	return f
 }
 
+// SetAgentDNSDomain sets "agentDNSDomain" field.
 func (f *extensionFields) SetAgentDNSDomain(v string) *extensionFields {
 	if len(v) > 255 {
 		v = v[:255]
@@ -1384,6 +1507,7 @@ func (f *extensionFields) SetAgentDNSDomain(v string) *extensionFields {
 	return f
 }
 
+// SetAgentNtDomain sets "agentNtDomain" field.
 func (f *extensionFields) SetAgentNtDomain(v string) *extensionFields {
 	if len(v) > 255 {
 		v = v[:255]
@@ -1394,12 +1518,14 @@ func (f *extensionFields) SetAgentNtDomain(v string) *extensionFields {
 	return f
 }
 
+// SetAgentTranslatedAddress sets "agentTranslatedAddress" field.
 func (f *extensionFields) SetAgentTranslatedAddress(v net.IP) *extensionFields {
 	f.agentTranslatedAddress = v
 
 	return f
 }
 
+// SetAgentTranslatedZoneExternalID sets "agentTranslatedZoneExternalID" field.
 func (f *extensionFields) SetAgentTranslatedZoneExternalID(v string) *extensionFields {
 	if len(v) > 200 {
 		v = v[:200]
@@ -1410,6 +1536,7 @@ func (f *extensionFields) SetAgentTranslatedZoneExternalID(v string) *extensionF
 	return f
 }
 
+// SetAgentTranslatedZoneURI sets "agentTranslatedZoneURI" field.
 func (f *extensionFields) SetAgentTranslatedZoneURI(v string) *extensionFields {
 	if len(v) > 2048 {
 		v = v[:2048]
@@ -1420,6 +1547,7 @@ func (f *extensionFields) SetAgentTranslatedZoneURI(v string) *extensionFields {
 	return f
 }
 
+// SetAgentZoneExternalID sets "agentZoneExternalID" field.
 func (f *extensionFields) SetAgentZoneExternalID(v string) *extensionFields {
 	if len(v) > 200 {
 		v = v[:200]
@@ -1430,6 +1558,7 @@ func (f *extensionFields) SetAgentZoneExternalID(v string) *extensionFields {
 	return f
 }
 
+// SetAgentZoneURI sets "agentZoneURI" field.
 func (f *extensionFields) SetAgentZoneURI(v string) *extensionFields {
 	if len(v) > 2048 {
 		v = v[:2048]
@@ -1440,12 +1569,14 @@ func (f *extensionFields) SetAgentZoneURI(v string) *extensionFields {
 	return f
 }
 
+// SetAgt sets "agt" field.
 func (f *extensionFields) SetAgt(v net.IP) *extensionFields {
 	f.agt = v
 
 	return f
 }
 
+// SetAhost sets "ahost" field.
 func (f *extensionFields) SetAhost(v string) *extensionFields {
 	if len(v) > 1023 {
 		v = v[:1023]
@@ -1456,6 +1587,7 @@ func (f *extensionFields) SetAhost(v string) *extensionFields {
 	return f
 }
 
+// SetAid sets "aid" field.
 func (f *extensionFields) SetAid(v string) *extensionFields {
 	if len(v) > 40 {
 		v = v[:40]
@@ -1466,18 +1598,21 @@ func (f *extensionFields) SetAid(v string) *extensionFields {
 	return f
 }
 
+// SetAmac sets "amac" field.
 func (f *extensionFields) SetAmac(v net.HardwareAddr) *extensionFields {
 	f.amac = v
 
 	return f
 }
 
+// SetArt sets "art" field.
 func (f *extensionFields) SetArt(v string) *extensionFields {
 	f.art = v
 
 	return f
 }
 
+// SetAt sets "at" field.
 func (f *extensionFields) SetAt(v string) *extensionFields {
 	if len(v) > 63 {
 		v = v[:63]
@@ -1488,6 +1623,7 @@ func (f *extensionFields) SetAt(v string) *extensionFields {
 	return f
 }
 
+// SetAtz sets "atz" field.
 func (f *extensionFields) SetAtz(v string) *extensionFields {
 	if len(v) > 255 {
 		v = v[:255]
@@ -1498,6 +1634,7 @@ func (f *extensionFields) SetAtz(v string) *extensionFields {
 	return f
 }
 
+// SetAv sets "av" field.
 func (f *extensionFields) SetAv(v string) *extensionFields {
 	if len(v) > 31 {
 		v = v[:31]
@@ -1508,6 +1645,7 @@ func (f *extensionFields) SetAv(v string) *extensionFields {
 	return f
 }
 
+// SetCustomerExternalID sets "customerExternalID" field.
 func (f *extensionFields) SetCustomerExternalID(v string) *extensionFields {
 	if len(v) > 200 {
 		v = v[:200]
@@ -1518,6 +1656,7 @@ func (f *extensionFields) SetCustomerExternalID(v string) *extensionFields {
 	return f
 }
 
+// SetCustomerURI sets "customerURI" field.
 func (f *extensionFields) SetCustomerURI(v string) *extensionFields {
 	if len(v) > 2048 {
 		v = v[:2048]
@@ -1528,6 +1667,7 @@ func (f *extensionFields) SetCustomerURI(v string) *extensionFields {
 	return f
 }
 
+// SetDestinatioTranslatedZoneExternalID sets "destinatioTranslatedZoneExternalID" field.
 func (f *extensionFields) SetDestinatioTranslatedZoneExternalID(v string) *extensionFields {
 	if len(v) > 200 {
 		v = v[:200]
@@ -1538,6 +1678,7 @@ func (f *extensionFields) SetDestinatioTranslatedZoneExternalID(v string) *exten
 	return f
 }
 
+// SetDestinationTranslatedZoneURI sets "destinationTranslatedZoneURI" field.
 func (f *extensionFields) SetDestinationTranslatedZoneURI(v string) *extensionFields {
 	if len(v) > 2048 {
 		v = v[:2048]
@@ -1548,6 +1689,7 @@ func (f *extensionFields) SetDestinationTranslatedZoneURI(v string) *extensionFi
 	return f
 }
 
+// SetDestinationZoneExternalID sets "destinationZoneExternalID" field.
 func (f *extensionFields) SetDestinationZoneExternalID(v string) *extensionFields {
 	if len(v) > 200 {
 		v = v[:200]
@@ -1558,6 +1700,7 @@ func (f *extensionFields) SetDestinationZoneExternalID(v string) *extensionField
 	return f
 }
 
+// SetDestinationZoneURI sets "destinationZoneURI" field.
 func (f *extensionFields) SetDestinationZoneURI(v string) *extensionFields {
 	if len(v) > 2048 {
 		v = v[:2048]
@@ -1568,6 +1711,7 @@ func (f *extensionFields) SetDestinationZoneURI(v string) *extensionFields {
 	return f
 }
 
+// SetDeviceTranslatedZoneExternalID sets "deviceTranslatedZoneExternalID" field.
 func (f *extensionFields) SetDeviceTranslatedZoneExternalID(v string) *extensionFields {
 	if len(v) > 200 {
 		v = v[:200]
@@ -1578,6 +1722,7 @@ func (f *extensionFields) SetDeviceTranslatedZoneExternalID(v string) *extension
 	return f
 }
 
+// SetDeviceTranslatedZoneURI sets "deviceTranslatedZoneURI" field.
 func (f *extensionFields) SetDeviceTranslatedZoneURI(v string) *extensionFields {
 	if len(v) > 2048 {
 		v = v[:2048]
@@ -1588,6 +1733,7 @@ func (f *extensionFields) SetDeviceTranslatedZoneURI(v string) *extensionFields 
 	return f
 }
 
+// SetDeviceZoneExternalID sets "deviceZoneExternalID" field.
 func (f *extensionFields) SetDeviceZoneExternalID(v string) *extensionFields {
 	if len(v) > 200 {
 		v = v[:200]
@@ -1598,6 +1744,7 @@ func (f *extensionFields) SetDeviceZoneExternalID(v string) *extensionFields {
 	return f
 }
 
+// SetDeviceZoneURI sets "deviceZoneURI" field.
 func (f *extensionFields) SetDeviceZoneURI(v string) *extensionFields {
 	if len(v) > 2048 {
 		v = v[:2048]
@@ -1608,24 +1755,28 @@ func (f *extensionFields) SetDeviceZoneURI(v string) *extensionFields {
 	return f
 }
 
+// SetDlat sets "dlat" field.
 func (f *extensionFields) SetDlat(v float64) *extensionFields {
 	f.dlat = v
 
 	return f
 }
 
+// SetDlong sets "dlong" field.
 func (f *extensionFields) SetDlong(v float64) *extensionFields {
 	f.dlong = v
 
 	return f
 }
 
+// SetEventID sets "eventID" field.
 func (f *extensionFields) SetEventID(v int64) *extensionFields {
 	f.eventID = v
 
 	return f
 }
 
+// SetRawEvent sets "rawEvent" field.
 func (f *extensionFields) SetRawEvent(v string) *extensionFields {
 	if len(v) > 4000 {
 		v = v[:4000]
@@ -1636,18 +1787,21 @@ func (f *extensionFields) SetRawEvent(v string) *extensionFields {
 	return f
 }
 
+// SetSlat sets "slat" field.
 func (f *extensionFields) SetSlat(v float64) *extensionFields {
 	f.slat = v
 
 	return f
 }
 
+// SetSlong sets "slong" field.
 func (f *extensionFields) SetSlong(v float64) *extensionFields {
 	f.slong = v
 
 	return f
 }
 
+// SetSourceTranslatedZoneExternalID sets "sourceTranslatedZoneExternalID" field.
 func (f *extensionFields) SetSourceTranslatedZoneExternalID(v string) *extensionFields {
 	if len(v) > 200 {
 		v = v[:200]
@@ -1658,6 +1812,7 @@ func (f *extensionFields) SetSourceTranslatedZoneExternalID(v string) *extension
 	return f
 }
 
+// SetSourceTranslatedZoneURI sets "sourceTranslatedZoneURI" field.
 func (f *extensionFields) SetSourceTranslatedZoneURI(v string) *extensionFields {
 	if len(v) > 2048 {
 		v = v[:2048]
@@ -1668,6 +1823,7 @@ func (f *extensionFields) SetSourceTranslatedZoneURI(v string) *extensionFields 
 	return f
 }
 
+// SetSourceZoneExternalID sets "sourceZoneExternalID" field.
 func (f *extensionFields) SetSourceZoneExternalID(v string) *extensionFields {
 	if len(v) > 200 {
 		v = v[:200]
@@ -1678,6 +1834,7 @@ func (f *extensionFields) SetSourceZoneExternalID(v string) *extensionFields {
 	return f
 }
 
+// SetSourceZoneURI sets "sourceZoneURI" field.
 func (f *extensionFields) SetSourceZoneURI(v string) *extensionFields {
 	if len(v) > 2048 {
 		v = v[:2048]
@@ -1688,54 +1845,63 @@ func (f *extensionFields) SetSourceZoneURI(v string) *extensionFields {
 	return f
 }
 
+// SetAgentTranslatedZoneKey sets "agentTranslatedZoneKey" field.
 func (f *extensionFields) SetAgentTranslatedZoneKey(v int64) *extensionFields {
 	f.agentTranslatedZoneKey = v
 
 	return f
 }
 
+// SetAgentZoneKey sets "agentZoneKey" field.
 func (f *extensionFields) SetAgentZoneKey(v int64) *extensionFields {
 	f.agentZoneKey = v
 
 	return f
 }
 
+// SetCustomerKey sets "customerKey" field.
 func (f *extensionFields) SetCustomerKey(v int64) *extensionFields {
 	f.customerKey = v
 
 	return f
 }
 
+// SetDestinationTranslatedZoneKey sets "destinationTranslatedZoneKey" field.
 func (f *extensionFields) SetDestinationTranslatedZoneKey(v int64) *extensionFields {
 	f.destinationTranslatedZoneKey = v
 
 	return f
 }
 
+// SetDZoneKey sets "dZoneKey" field.
 func (f *extensionFields) SetDZoneKey(v int64) *extensionFields {
 	f.dZoneKey = v
 
 	return f
 }
 
+// SetDeviceTranslatedZoneKey sets "deviceTranslatedZoneKey" field.
 func (f *extensionFields) SetDeviceTranslatedZoneKey(v int64) *extensionFields {
 	f.deviceTranslatedZoneKey = v
 
 	return f
 }
 
+// SetDeviceZoneKey sets "deviceZoneKey" field.
 func (f *extensionFields) SetDeviceZoneKey(v int64) *extensionFields {
 	f.deviceZoneKey = v
 
 	return f
 }
 
+// SetSTranslatedZoneKey sets "sTranslatedZoneKey" field.
 func (f *extensionFields) SetSTranslatedZoneKey(v int64) *extensionFields {
 	f.sTranslatedZoneKey = v
 
 	return f
 }
 
+// SetSZoneKey sets "sZoneKey" field.
 func (f *extensionFields) SetSZoneKey(v int64) *extensionFields {
 	f.sZoneKey = v
 

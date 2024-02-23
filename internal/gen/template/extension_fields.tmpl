@@ -10,6 +10,7 @@ type extensionFields struct{
 }
 
 {{ range . }}
+// Set{{ .CEFKeyName | title | pretty }} sets {{ .CEFKeyName | unexported | renameKeyWord | quote }} field.
 func (f *extensionFields) Set{{ .CEFKeyName | title | pretty }}(v {{ typeMapping .DataType }}) *extensionFields {
 {{- if not .Length }}
 {{- else if eq .Length "N/A" }}

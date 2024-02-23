@@ -10,6 +10,7 @@ type headerFields struct{
 }
 
 {{ range .Fields }}
+// Set{{ .FieldName | title | pretty }} sets {{ .FieldName | unexported | quote }} field.
 func (f *headerFields) Set{{ .FieldName | title | pretty }}(v {{ typeMapping .Typ }}) *headerFields {
 {{- if ne .Size "N/A" }}
     if len(v) > {{ .Size }} {
