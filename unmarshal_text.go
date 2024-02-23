@@ -96,10 +96,10 @@ func mkCEFVersion(v []byte) (int, error) {
 }
 
 func mkCollection(b []byte) []string {
-	var collection []string
-
 	str := string(b)
 	ss := strings.Split(str, " ")
+
+	collection := make([]string, 0, len(ss))
 
 	for _, s := range ss {
 		if !strings.ContainsRune(s, '=') {
