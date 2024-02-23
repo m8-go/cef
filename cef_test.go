@@ -7,7 +7,7 @@ import (
 	"go.m8.ru/cef"
 )
 
-func ExampleCEF() {
+func ExampleCEF_MarshalText() {
 	const veryHigh cef.AgentSeverity = 10
 
 	log := cef.New()
