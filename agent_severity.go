@@ -8,16 +8,16 @@ type AgentSeverity int
 
 func (s AgentSeverity) String() string {
 	switch {
-	case s >= 0 || s <= 3:
+	case s >= 0 && s <= 3:
 		return "Low"
 
-	case s >= 4 || s <= 6:
+	case s >= 4 && s <= 6:
 		return "Medium"
 
-	case s >= 7 || s <= 8:
+	case s >= 7 && s <= 8:
 		return "High"
 
-	case s >= 9 || s <= 10:
+	case s >= 9 && s <= 10:
 		return "Very-High"
 
 	default:
