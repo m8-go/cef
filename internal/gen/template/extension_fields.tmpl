@@ -12,6 +12,51 @@ type extensionFields struct{
 {{ range . }}
 // Set{{ .CEFKeyName | title | pretty }} sets {{ .CEFKeyName | unexported | renameKeyWord | quote }} field.
 func (f *extensionFields) Set{{ .CEFKeyName | title | pretty }}(v {{ typeMapping .DataType }}) *extensionFields {
+{{- if eq .DataType "String" }}
+    if f.{{ .CEFKeyName | unexported | renameKeyWord }} != "" {
+        return f
+    }
+{{ else if eq .DataType "IP Address" }}
+    if len(f.{{ .CEFKeyName | unexported | renameKeyWord }}) > 0 {
+        return f
+    }
+{{ else if eq .DataType "IPv6 address" }}
+    if len(f.{{ .CEFKeyName | unexported | renameKeyWord }}) > 0 {
+        return f
+    }
+{{ else if eq .DataType "IPv6 Address" }}
+    if len(f.{{ .CEFKeyName | unexported | renameKeyWord }}) > 0 {
+        return f
+    }
+{{ else if eq .DataType "Floating Point" }}
+    if f.{{ .CEFKeyName | unexported | renameKeyWord }} != 0 {
+        return f
+    }
+{{ else if eq .DataType "Long" }}
+    if f.{{ .CEFKeyName | unexported | renameKeyWord }} != 0 {
+        return f
+    }
+{{ else if eq .DataType "Integer" }}
+    if f.{{ .CEFKeyName | unexported | renameKeyWord }} != 0 {
+        return f
+    }
+{{ else if eq .DataType "Time Stamp" }}
+    if f.{{ .CEFKeyName | unexported | renameKeyWord }} != "" {
+        return f
+    }
+{{ else if eq .DataType "MAC Address" }}
+    if len(f.{{ .CEFKeyName | unexported | renameKeyWord }}) > 0 {
+        return f
+    }
+{{ else if eq .DataType "Double" }}
+    if f.{{ .CEFKeyName | unexported | renameKeyWord }} != 0 {
+        return f
+    }
+{{ else }}
+    if f.{{ .CEFKeyName | unexported | renameKeyWord }} != "" {
+        return f
+    }
+{{ end }}
 {{- if not .Length }}
 {{- else if eq .Length "N/A" }}
 {{- else if eq .Length "64-bit" }}
