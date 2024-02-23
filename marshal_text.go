@@ -8,6 +8,10 @@ import (
 )
 
 func (cef *CEF) MarshalText() (text []byte, err error) {
+	if cef.err != nil {
+		return nil, err
+	}
+
 	fields := []string{
 		fmt.Sprintf("CEF:%d", cef.CEFVersion()),
 		cef.DeviceVendor(),
