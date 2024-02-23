@@ -15,7 +15,7 @@ func TestCEF_MarshalText(t *testing.T) {
 	deviceProduct := "threatmanager"
 	deviceVersion := "1.0"
 	deviceEventClassID := "100"
-	agentSeverity := cef.AgentSeverity(10)
+	agentSeverity := cef.AgentSeverityVeryHigh10
 
 	for _, tc := range []struct {
 		name               string

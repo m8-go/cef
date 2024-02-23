@@ -8,8 +8,6 @@ import (
 )
 
 func ExampleCEF_MarshalText() {
-	const veryHigh cef.AgentSeverity = 10
-
 	log := new(cef.CEF)
 	log.SetCEFVersion(0)
 	log.SetDeviceVendor("Security")
@@ -17,7 +15,7 @@ func ExampleCEF_MarshalText() {
 	log.SetDeviceVersion("1.0")
 	log.SetDeviceEventClassID("100")
 	log.SetName("worm successfully stopped")
-	log.SetAgentSeverity(veryHigh)
+	log.SetAgentSeverity(cef.AgentSeverityVeryHigh10)
 	log.SetSrc(net.ParseIP("10.0.0.1"))
 	log.SetDst(net.ParseIP("2.1.2.2"))
 	log.SetSpt(1232)

@@ -1,5 +1,19 @@
 package cef
 
+const (
+	AgentSeverityLow0 AgentSeverity = iota
+	AgentSeverityLow1
+	AgentSeverityLow2
+	AgentSeverityLow3
+	AgentSeverityMedium4
+	AgentSeverityMedium5
+	AgentSeverityMedium6
+	AgentSeverityHigh7
+	AgentSeverityHigh8
+	AgentSeverityVeryHigh9
+	AgentSeverityVeryHigh10
+)
+
 // AgentSeverity is a string or integer and it reflects the importance of the event.
 //
 //	The valid string values are: Unknown, Low, Medium, High, and Very-High.
