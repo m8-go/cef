@@ -23,11 +23,8 @@ linters:
     - staticcheck
     - typecheck
     - unused
-    - wsl
-
+    - whitespace
 
 linters-settings:
   gofmt:
     simplify: true
-  govet:
-    enable-all: true
