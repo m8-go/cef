@@ -154,8 +154,8 @@ func (cef *CEF) extension() string {
 		extension = append(extension, fmt.Sprintf("cs6Label=%v", cs6Label))
 	}
 
-	if destinationDnsDomain := cef.DestinationDnsDomain(); destinationDnsDomain != "" {
-		extension = append(extension, fmt.Sprintf("destinationDnsDomain=%v", destinationDnsDomain))
+	if destinationDNSDomain := cef.DestinationDNSDomain(); destinationDNSDomain != "" {
+		extension = append(extension, fmt.Sprintf("destinationDnsDomain=%v", destinationDNSDomain))
 	}
 
 	if destinationServiceName := cef.DestinationServiceName(); destinationServiceName != "" {
@@ -190,8 +190,8 @@ func (cef *CEF) extension() string {
 		extension = append(extension, fmt.Sprintf("deviceDirection=%v", deviceDirection))
 	}
 
-	if deviceDnsDomain := cef.DeviceDnsDomain(); deviceDnsDomain != "" {
-		extension = append(extension, fmt.Sprintf("deviceDnsDomain=%v", deviceDnsDomain))
+	if deviceDNSDomain := cef.DeviceDNSDomain(); deviceDNSDomain != "" {
+		extension = append(extension, fmt.Sprintf("deviceDnsDomain=%v", deviceDNSDomain))
 	}
 
 	if deviceExternalID := cef.DeviceExternalID(); deviceExternalID != "" {
@@ -446,8 +446,8 @@ func (cef *CEF) extension() string {
 		extension = append(extension, fmt.Sprintf("sntdom=%v", sntdom))
 	}
 
-	if sourceDnsDomain := cef.SourceDnsDomain(); sourceDnsDomain != "" {
-		extension = append(extension, fmt.Sprintf("sourceDnsDomain=%v", sourceDnsDomain))
+	if sourceDNSDomain := cef.SourceDNSDomain(); sourceDNSDomain != "" {
+		extension = append(extension, fmt.Sprintf("sourceDnsDomain=%v", sourceDNSDomain))
 	}
 
 	if sourceServiceName := cef.SourceServiceName(); sourceServiceName != "" {
@@ -498,8 +498,8 @@ func (cef *CEF) extension() string {
 		extension = append(extension, fmt.Sprintf("type=%v", typ))
 	}
 
-	if agentDnsDomain := cef.AgentDnsDomain(); agentDnsDomain != "" {
-		extension = append(extension, fmt.Sprintf("agentDnsDomain=%v", agentDnsDomain))
+	if agentDNSDomain := cef.AgentDNSDomain(); agentDNSDomain != "" {
+		extension = append(extension, fmt.Sprintf("agentDnsDomain=%v", agentDNSDomain))
 	}
 
 	if agentNtDomain := cef.AgentNtDomain(); agentNtDomain != "" {

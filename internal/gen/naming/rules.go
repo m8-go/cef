@@ -4,7 +4,7 @@ import "strings"
 
 var (
 	rules = [...]string{
-		"CEF", "ID",
+		"CEF", "ID", "DNS",
 	}
 
 	rulesMap = func() (r map[string]string) {

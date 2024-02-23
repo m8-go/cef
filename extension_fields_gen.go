@@ -78,7 +78,7 @@ type extensionFields struct {
 	// All custom fields have a corresponding label field. Each of these fields is a string and describes the purpose of the custom field.
 	cs6Label string
 	// The DNS domain part of the complete fully qualified domain name (FQDN).
-	destinationDnsDomain string
+	destinationDNSDomain string
 	// The service targeted by this event. Example: “sshd”
 	destinationServiceName string
 	// Identifies the translated destination that the event refers to in an IP network. The format is an IPv4 address. Example: “192.168.10.1”
@@ -96,7 +96,7 @@ type extensionFields struct {
 	// Any information about what direction the observed communication has taken. The following values are supported: “0” for inbound or “1” for outbound
 	deviceDirection int
 	// The DNS domain part of the complete fully qualified domain name (FQDN).
-	deviceDnsDomain string
+	deviceDNSDomain string
 	// A name that uniquely identifies the device generating this event.
 	deviceExternalID string
 	// The facility generating this event. For example, Syslog has an explicit facility associated with every event.
@@ -224,7 +224,7 @@ type extensionFields struct {
 	// The Windows domain name for the source address.
 	sntdom string
 	// The DNS domain part of the complete fully qualified domain name (FQDN).
-	sourceDnsDomain string
+	sourceDNSDomain string
 	// The service that is responsible for generating this event.
 	sourceServiceName string
 	// Identifies the translated source that the event refers to in an IP network. The format is an IPv4 address. Example: “192.168.10.1”.
@@ -250,7 +250,7 @@ type extensionFields struct {
 	// 0 means base event, 1 means aggregated, 2 means correlation, and 3 means action. This field can be omitted for base events (type 0)
 	typ int
 	// The DNS domain name of the ArcSight connector that processed the event.
-	agentDnsDomain string
+	agentDNSDomain string
 	agentNtDomain string
 	agentTranslatedAddress net.IP
 	agentTranslatedZoneExternalID string
@@ -638,12 +638,12 @@ func (f *extensionFields) SetCs6Label(v string) *extensionFields {
 	return f
 }
 
-func (f *extensionFields) SetDestinationDnsDomain(v string) *extensionFields {
+func (f *extensionFields) SetDestinationDNSDomain(v string) *extensionFields {
 	if len(v) > 255 {
 		v = v[:255]
 	}
 
-	f.destinationDnsDomain = v
+	f.destinationDNSDomain = v
 
 	return f
 }
@@ -708,12 +708,12 @@ func (f *extensionFields) SetDeviceDirection(v int) *extensionFields {
 	return f
 }
 
-func (f *extensionFields) SetDeviceDnsDomain(v string) *extensionFields {
+func (f *extensionFields) SetDeviceDNSDomain(v string) *extensionFields {
 	if len(v) > 255 {
 		v = v[:255]
 	}
 
-	f.deviceDnsDomain = v
+	f.deviceDNSDomain = v
 
 	return f
 }
@@ -1272,12 +1272,12 @@ func (f *extensionFields) SetSntdom(v string) *extensionFields {
 	return f
 }
 
-func (f *extensionFields) SetSourceDnsDomain(v string) *extensionFields {
+func (f *extensionFields) SetSourceDNSDomain(v string) *extensionFields {
 	if len(v) > 255 {
 		v = v[:255]
 	}
 
-	f.sourceDnsDomain = v
+	f.sourceDNSDomain = v
 
 	return f
 }
@@ -1374,12 +1374,12 @@ func (f *extensionFields) SetType(v int) *extensionFields {
 	return f
 }
 
-func (f *extensionFields) SetAgentDnsDomain(v string) *extensionFields {
+func (f *extensionFields) SetAgentDNSDomain(v string) *extensionFields {
 	if len(v) > 255 {
 		v = v[:255]
 	}
 
-	f.agentDnsDomain = v
+	f.agentDNSDomain = v
 
 	return f
 }
@@ -1923,8 +1923,8 @@ func (f *extensionFields) Cs6Label() string {
 }
 
 // The DNS domain part of the complete fully qualified domain name (FQDN).
-func (f *extensionFields) DestinationDnsDomain() string {
-	return f.destinationDnsDomain
+func (f *extensionFields) DestinationDNSDomain() string {
+	return f.destinationDNSDomain
 }
 
 // The service targeted by this event. Example: “sshd”
@@ -1968,8 +1968,8 @@ func (f *extensionFields) DeviceDirection() int {
 }
 
 // The DNS domain part of the complete fully qualified domain name (FQDN).
-func (f *extensionFields) DeviceDnsDomain() string {
-	return f.deviceDnsDomain
+func (f *extensionFields) DeviceDNSDomain() string {
+	return f.deviceDNSDomain
 }
 
 // A name that uniquely identifies the device generating this event.
@@ -2288,8 +2288,8 @@ func (f *extensionFields) Sntdom() string {
 }
 
 // The DNS domain part of the complete fully qualified domain name (FQDN).
-func (f *extensionFields) SourceDnsDomain() string {
-	return f.sourceDnsDomain
+func (f *extensionFields) SourceDNSDomain() string {
+	return f.sourceDNSDomain
 }
 
 // The service that is responsible for generating this event.
@@ -2353,8 +2353,8 @@ func (f *extensionFields) Type() int {
 }
 
 // The DNS domain name of the ArcSight connector that processed the event.
-func (f *extensionFields) AgentDnsDomain() string {
-	return f.agentDnsDomain
+func (f *extensionFields) AgentDNSDomain() string {
+	return f.agentDNSDomain
 }
 
 func (f *extensionFields) AgentNtDomain() string {
