@@ -17,6 +17,36 @@ func (f *headerFields) Set{{ .FieldName | title | pretty }}(v {{ typeMapping .Ty
         v = v[:{{ .Size }}]
     }
 {{ end }}
+{{- if eq .FieldName "CEF Version" }}
+    if v < 0 {
+        v = 0
+    } else if v > 1 {
+        v = 1
+    }
+{{ else if eq .FieldName "agentSeverity" }}
+    if v < 0 {
+        v = 0
+    } else if v > 10 {
+        v = 10
+    }
+{{ end }}
+{{- if eq .Typ "Numeric" }}
+    if f.{{ .FieldName | unexported | renameKeyWord }} != 0 {
+        return f
+    }
+{{ else if eq .Typ "AgentSeverityEnumeration" }}
+    if f.{{ .FieldName | unexported | renameKeyWord }} != 0 {
+        return f
+    }
+{{ else if eq .Typ "String" }}
+    if f.{{ .FieldName | unexported | renameKeyWord }} != "" {
+        return f
+    }
+{{ else }}
+    if f.{{ .FieldName | unexported | renameKeyWord }} != "" {
+        return f
+    }
+{{ end }}
     f.{{ .FieldName | unexported }} = v
 
     return f

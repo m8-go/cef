@@ -23,6 +23,16 @@ type headerFields struct {
 
 // SetCEFVersion sets "cefVersion" field.
 func (f *headerFields) SetCEFVersion(v int) *headerFields {
+	if v < 0 {
+		v = 0
+	} else if v > 1 {
+		v = 1
+	}
+
+	if f.cefVersion != 0 {
+		return f
+	}
+
 	f.cefVersion = v
 
 	return f
@@ -30,6 +40,16 @@ func (f *headerFields) SetCEFVersion(v int) *headerFields {
 
 // SetAgentSeverity sets "agentSeverity" field.
 func (f *headerFields) SetAgentSeverity(v AgentSeverity) *headerFields {
+	if v < 0 {
+		v = 0
+	} else if v > 10 {
+		v = 10
+	}
+
+	if f.agentSeverity != 0 {
+		return f
+	}
+
 	f.agentSeverity = v
 
 	return f
@@ -39,6 +59,10 @@ func (f *headerFields) SetAgentSeverity(v AgentSeverity) *headerFields {
 func (f *headerFields) SetDeviceEventClassID(v string) *headerFields {
 	if len(v) > 1023 {
 		v = v[:1023]
+	}
+
+	if f.deviceEventClassID != "" {
+		return f
 	}
 
 	f.deviceEventClassID = v
@@ -52,6 +76,10 @@ func (f *headerFields) SetDeviceProduct(v string) *headerFields {
 		v = v[:63]
 	}
 
+	if f.deviceProduct != "" {
+		return f
+	}
+
 	f.deviceProduct = v
 
 	return f
@@ -61,6 +89,10 @@ func (f *headerFields) SetDeviceProduct(v string) *headerFields {
 func (f *headerFields) SetDeviceVendor(v string) *headerFields {
 	if len(v) > 63 {
 		v = v[:63]
+	}
+
+	if f.deviceVendor != "" {
+		return f
 	}
 
 	f.deviceVendor = v
@@ -74,6 +106,10 @@ func (f *headerFields) SetDeviceVersion(v string) *headerFields {
 		v = v[:31]
 	}
 
+	if f.deviceVersion != "" {
+		return f
+	}
+
 	f.deviceVersion = v
 
 	return f
@@ -83,6 +119,10 @@ func (f *headerFields) SetDeviceVersion(v string) *headerFields {
 func (f *headerFields) SetName(v string) *headerFields {
 	if len(v) > 512 {
 		v = v[:512]
+	}
+
+	if f.name != "" {
+		return f
 	}
 
 	f.name = v
