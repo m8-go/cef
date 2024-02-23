@@ -495,7 +495,7 @@ func (cef *CEF) extension() string {
 	}
 
 	if typ := cef.Type(); typ != 0 {
-		extension = append(extension, fmt.Sprintf("typ=%v", typ))
+		extension = append(extension, fmt.Sprintf("type=%v", typ))
 	}
 
 	if agentDnsDomain := cef.AgentDnsDomain(); agentDnsDomain != "" {
