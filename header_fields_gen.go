@@ -2,6 +2,10 @@
 
 package cef
 
+import "errors"
+
+var ErrHeaderFieldsNum = errors.New("cef: number of header fields less than 7")
+
 const headerFieldsNum = 7
 
 type headerFields struct {

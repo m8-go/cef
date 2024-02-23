@@ -8,7 +8,6 @@ import (
 )
 
 var (
-	ErrNumHeaderFields  = errors.New("cef: number of header fields less than 7")
 	ErrBadCEFVersion    = errors.New("cef: bad CEF version")
 	ErrBadAgentSeverity = errors.New("cef: bad agent severity")
 	ErrBadExtension     = errors.New("cef: bad extension")
@@ -23,12 +22,12 @@ func (cef *CEF) UnmarshalText(text []byte) (err error) {
 
 	ss := bytes.Split(text, []byte("|"))
 	if len(ss) < headerFieldsNum {
-		return ErrNumHeaderFields
+		return ErrHeaderFieldsNum
 	}
 
 	hasExtension := bytes.ContainsRune(ss[len(ss)-1], '=')
 	if len(ss) == headerFieldsNum && hasExtension {
-		return ErrNumHeaderFields
+		return ErrHeaderFieldsNum
 	}
 
 	cefVer, err := mkCEFVersion(ss[0])

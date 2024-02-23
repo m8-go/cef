@@ -1,5 +1,9 @@
 {{ template "header" $ }}
 
+import "errors"
+
+var ErrHeaderFieldsNum  = errors.New("cef: number of header fields less than {{ .FieldsNum }}")
+
 const headerFieldsNum = {{ .FieldsNum }}
 
 type headerFields struct{

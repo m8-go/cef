@@ -18,12 +18,12 @@ func TestCEF_UnmarshalText(t *testing.T) {
 		{
 			name:    "number of header fields less than 7",
 			text:    "",
-			wantErr: cef.ErrNumHeaderFields,
+			wantErr: cef.ErrHeaderFieldsNum,
 		},
 		{
 			name:    "number of header fields with extension less than 7",
 			text:    "CEF:0|Security|threatmanager|1.0|100|worm successfully stopped|dst=2.1.2.2 spt=1232 src=10.0.0.1",
-			wantErr: cef.ErrNumHeaderFields,
+			wantErr: cef.ErrHeaderFieldsNum,
 		},
 		{
 			name:    "bad CEF version",
