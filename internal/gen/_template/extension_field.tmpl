@@ -5,55 +5,55 @@ import "net"
 type extensionFields struct{
 {{- range . }}
 // {{ .Meaning }}
-{{ .CEFKeyName | unexported | renameKeyWord }} {{ typeMapping .DataType }}
+{{ .CEFKeyName | pretty | unexported | renameKeyWord }} {{ typeMapping .DataType }}
 {{- end }}
 }
 
 {{ range . }}
-// Set{{ .CEFKeyName | exported | pretty }} sets {{ .CEFKeyName | unexported | renameKeyWord | quote }} field.
-func (cef *CEF) Set{{ .CEFKeyName | exported | pretty }}(v {{ typeMapping .DataType }}) *CEF {
+// Set{{ .CEFKeyName | pretty | exported }} sets {{ .CEFKeyName | unexported | renameKeyWord | quote }} field.
+func (cef *CEF) Set{{ .CEFKeyName | pretty | exported }}(v {{ typeMapping .DataType }}) *CEF {
 {{- if eq .DataType "String" }}
-    if cef.{{ .CEFKeyName | unexported | renameKeyWord }} != "" {
+    if cef.{{ .CEFKeyName | pretty | unexported | renameKeyWord }} != "" {
         return cef
     }
 {{ else if eq .DataType "IP Address" }}
-    if len(cef.{{ .CEFKeyName | unexported | renameKeyWord }}) > 0 {
+    if len(cef.{{ .CEFKeyName | pretty | unexported | renameKeyWord }}) > 0 {
         return cef
     }
 {{ else if eq .DataType "IPv6 address" }}
-    if len(cef.{{ .CEFKeyName | unexported | renameKeyWord }}) > 0 {
+    if len(cef.{{ .CEFKeyName | pretty | unexported | renameKeyWord }}) > 0 {
         return cef
     }
 {{ else if eq .DataType "IPv6 Address" }}
-    if len(cef.{{ .CEFKeyName | unexported | renameKeyWord }}) > 0 {
+    if len(cef.{{ .CEFKeyName | pretty | unexported | renameKeyWord }}) > 0 {
         return cef
     }
 {{ else if eq .DataType "Floating Point" }}
-    if cef.{{ .CEFKeyName | unexported | renameKeyWord }} != 0 {
+    if cef.{{ .CEFKeyName | pretty | unexported | renameKeyWord }} != 0 {
         return cef
     }
 {{ else if eq .DataType "Long" }}
-    if cef.{{ .CEFKeyName | unexported | renameKeyWord }} != 0 {
+    if cef.{{ .CEFKeyName | pretty | unexported | renameKeyWord }} != 0 {
         return cef
     }
 {{ else if eq .DataType "Integer" }}
-    if cef.{{ .CEFKeyName | unexported | renameKeyWord }} != 0 {
+    if cef.{{ .CEFKeyName | pretty | unexported | renameKeyWord }} != 0 {
         return cef
     }
 {{ else if eq .DataType "Time Stamp" }}
-    if cef.{{ .CEFKeyName | unexported | renameKeyWord }} != "" {
+    if cef.{{ .CEFKeyName | pretty | unexported | renameKeyWord }} != "" {
         return cef
     }
 {{ else if eq .DataType "MAC Address" }}
-    if len(cef.{{ .CEFKeyName | unexported | renameKeyWord }}) > 0 {
+    if len(cef.{{ .CEFKeyName | pretty | unexported | renameKeyWord }}) > 0 {
         return cef
     }
 {{ else if eq .DataType "Double" }}
-    if cef.{{ .CEFKeyName | unexported | renameKeyWord }} != 0 {
+    if cef.{{ .CEFKeyName | pretty | unexported | renameKeyWord }} != 0 {
         return cef
     }
 {{ else }}
-    if cef.{{ .CEFKeyName | unexported | renameKeyWord }} != "" {
+    if cef.{{ .CEFKeyName | pretty | unexported | renameKeyWord }} != "" {
         return cef
     }
 {{ end }}
@@ -65,7 +65,7 @@ func (cef *CEF) Set{{ .CEFKeyName | exported | pretty }}(v {{ typeMapping .DataT
         v = v[:{{ .Length }}]
     }
 {{ end }}
-    cef.{{ .CEFKeyName | unexported | renameKeyWord }} = v
+    cef.{{ .CEFKeyName | pretty | unexported | renameKeyWord }} = v
 
     return cef
 }
@@ -73,7 +73,7 @@ func (cef *CEF) Set{{ .CEFKeyName | exported | pretty }}(v {{ typeMapping .DataT
 
 {{ range . }}
 // {{ .Meaning }}
-func (cef *CEF) {{ .CEFKeyName | exported | pretty }}() {{ typeMapping .DataType }} {
-    return cef.{{ .CEFKeyName | unexported | renameKeyWord }}
+func (cef *CEF) {{ .CEFKeyName | pretty | exported }}() {{ typeMapping .DataType }} {
+    return cef.{{ .CEFKeyName | pretty | unexported | renameKeyWord }}
 }
 {{ end }}

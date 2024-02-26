@@ -10,47 +10,47 @@ func (cef *CEF) extension() string {
 
     {{ range . }}
     {{ if eq .DataType "String" }}
-    if {{ .CEFKeyName | unexported }} := cef.{{ .CEFKeyName | exported | pretty }}(); {{ .CEFKeyName | unexported }} != "" {
+    if {{ .CEFKeyName | unexported }} := cef.{{ .CEFKeyName | pretty | exported }}(); {{ .CEFKeyName | unexported }} != "" {
         extension = append(extension, fmt.Sprintf("{{ .CEFKeyName }}=%v", {{ .CEFKeyName | unexported }}))
     }
     {{ else if eq .DataType "IP Address" }}
-    if {{ .CEFKeyName }} := cef.{{ .CEFKeyName | exported }}(); len({{ .CEFKeyName }}) > 0 {
+    if {{ .CEFKeyName }} := cef.{{ .CEFKeyName | pretty | exported }}(); len({{ .CEFKeyName }}) > 0 {
         extension = append(extension, fmt.Sprintf("{{ .CEFKeyName }}=%v", {{ .CEFKeyName }}))
     }
     {{ else if eq .DataType "IPv6 address" }}
-    if {{ .CEFKeyName }} := cef.{{ .CEFKeyName | exported }}(); len({{ .CEFKeyName }}) > 0 {
+    if {{ .CEFKeyName }} := cef.{{ .CEFKeyName | pretty | exported }}(); len({{ .CEFKeyName }}) > 0 {
         extension = append(extension, fmt.Sprintf("{{ .CEFKeyName }}=%v", {{ .CEFKeyName }}))
     }
     {{ else if eq .DataType "IPv6 Address" }}
-    if {{ .CEFKeyName }} := cef.{{ .CEFKeyName | exported }}(); len({{ .CEFKeyName }}) > 0 {
+    if {{ .CEFKeyName }} := cef.{{ .CEFKeyName | pretty | exported }}(); len({{ .CEFKeyName }}) > 0 {
         extension = append(extension, fmt.Sprintf("{{ .CEFKeyName }}=%v", {{ .CEFKeyName }}))
     }
     {{ else if eq .DataType "Floating Point" }}
-    if {{ .CEFKeyName }} := cef.{{ .CEFKeyName | exported }}(); {{ .CEFKeyName }} != 0 {
+    if {{ .CEFKeyName }} := cef.{{ .CEFKeyName | pretty | exported }}(); {{ .CEFKeyName }} != 0 {
         extension = append(extension, fmt.Sprintf("{{ .CEFKeyName }}=%v", {{ .CEFKeyName }}))
     }
     {{ else if eq .DataType "Long" }}
-    if {{ .CEFKeyName | pretty }} := cef.{{ .CEFKeyName | exported | pretty }}(); {{ .CEFKeyName | pretty }} != 0 {
-        extension = append(extension, fmt.Sprintf("{{ .CEFKeyName }}=%v", {{ .CEFKeyName | pretty }}))
+    if {{ .CEFKeyName }} := cef.{{ .CEFKeyName | pretty | exported }}(); {{ .CEFKeyName }} != 0 {
+        extension = append(extension, fmt.Sprintf("{{ .CEFKeyName }}=%v", {{ .CEFKeyName }}))
     }
     {{ else if eq .DataType "Integer" }}
-    if {{ .CEFKeyName | renameKeyWord }} := cef.{{ .CEFKeyName | exported | renameKeyWord | pretty }}(); {{ .CEFKeyName | renameKeyWord }} != 0 {
+    if {{ .CEFKeyName | renameKeyWord }} := cef.{{ .CEFKeyName | pretty | exported | renameKeyWord }}(); {{ .CEFKeyName | renameKeyWord }} != 0 {
         extension = append(extension, fmt.Sprintf("{{ .CEFKeyName }}=%v", {{ .CEFKeyName | renameKeyWord }}))
     }
     {{ else if eq .DataType "Time Stamp" }}
-    if {{ .CEFKeyName }} := cef.{{ .CEFKeyName | exported }}(); {{ .CEFKeyName }} != "" {
+    if {{ .CEFKeyName }} := cef.{{ .CEFKeyName | pretty | exported }}(); {{ .CEFKeyName }} != "" {
         extension = append(extension, fmt.Sprintf("{{ .CEFKeyName }}=%v", {{ .CEFKeyName }}))
     }
     {{ else if eq .DataType "MAC Address" }}
-    if {{ .CEFKeyName }} := cef.{{ .CEFKeyName | exported }}(); len({{ .CEFKeyName }}) > 0 {
+    if {{ .CEFKeyName }} := cef.{{ .CEFKeyName | pretty | exported }}(); len({{ .CEFKeyName }}) > 0 {
         extension = append(extension, fmt.Sprintf("{{ .CEFKeyName }}=%v", {{ .CEFKeyName }}))
     }
     {{ else if eq .DataType "Double" }}
-    if {{ .CEFKeyName }} := cef.{{ .CEFKeyName | exported }}(); {{ .CEFKeyName }} != 0 {
+    if {{ .CEFKeyName }} := cef.{{ .CEFKeyName | pretty | exported }}(); {{ .CEFKeyName }} != 0 {
         extension = append(extension, fmt.Sprintf("{{ .CEFKeyName }}=%v", {{ .CEFKeyName }}))
     }
     {{ else }}
-    if {{ .CEFKeyName }} := cef.{{ .CEFKeyName | exported }}(); {{ .CEFKeyName }} != "" {
+    if {{ .CEFKeyName }} := cef.{{ .CEFKeyName | pretty | exported }}(); {{ .CEFKeyName }} != "" {
         extension = append(extension, fmt.Sprintf("{{ .CEFKeyName }}=%v", {{ .CEFKeyName }}))
     }
     {{ end }}

@@ -18,27 +18,27 @@ func (cef *CEF) extension() string {
 		extension = append(extension, fmt.Sprintf("app=%v", app))
 	}
 
-	if c6a1 := cef.C6a1(); len(c6a1) > 0 {
+	if c6a1 := cef.C6A1(); len(c6a1) > 0 {
 		extension = append(extension, fmt.Sprintf("c6a1=%v", c6a1))
 	}
 
-	if c6a1Label := cef.C6a1Label(); c6a1Label != "" {
+	if c6a1Label := cef.C6A1Label(); c6a1Label != "" {
 		extension = append(extension, fmt.Sprintf("c6a1Label=%v", c6a1Label))
 	}
 
-	if c6a3 := cef.C6a3(); len(c6a3) > 0 {
+	if c6a3 := cef.C6A3(); len(c6a3) > 0 {
 		extension = append(extension, fmt.Sprintf("c6a3=%v", c6a3))
 	}
 
-	if c6a3Label := cef.C6a3Label(); c6a3Label != "" {
+	if c6a3Label := cef.C6A3Label(); c6a3Label != "" {
 		extension = append(extension, fmt.Sprintf("c6a3Label=%v", c6a3Label))
 	}
 
-	if c6a4 := cef.C6a4(); len(c6a4) > 0 {
+	if c6a4 := cef.C6A4(); len(c6a4) > 0 {
 		extension = append(extension, fmt.Sprintf("c6a4=%v", c6a4))
 	}
 
-	if c6a4Label := cef.C6a4Label(); c6a4Label != "" {
+	if c6a4Label := cef.C6A4Label(); c6a4Label != "" {
 		extension = append(extension, fmt.Sprintf("c6a4Label=%v", c6a4Label))
 	}
 
@@ -46,59 +46,59 @@ func (cef *CEF) extension() string {
 		extension = append(extension, fmt.Sprintf("cat=%v", cat))
 	}
 
-	if cfp1 := cef.Cfp1(); cfp1 != 0 {
+	if cfp1 := cef.CFP1(); cfp1 != 0 {
 		extension = append(extension, fmt.Sprintf("cfp1=%v", cfp1))
 	}
 
-	if cfp1Label := cef.Cfp1Label(); cfp1Label != "" {
+	if cfp1Label := cef.CFP1Label(); cfp1Label != "" {
 		extension = append(extension, fmt.Sprintf("cfp1Label=%v", cfp1Label))
 	}
 
-	if cfp2 := cef.Cfp2(); cfp2 != 0 {
+	if cfp2 := cef.CFP2(); cfp2 != 0 {
 		extension = append(extension, fmt.Sprintf("cfp2=%v", cfp2))
 	}
 
-	if cfp2Label := cef.Cfp2Label(); cfp2Label != "" {
+	if cfp2Label := cef.CFP2Label(); cfp2Label != "" {
 		extension = append(extension, fmt.Sprintf("cfp2Label=%v", cfp2Label))
 	}
 
-	if cfp3 := cef.Cfp3(); cfp3 != 0 {
+	if cfp3 := cef.CFP3(); cfp3 != 0 {
 		extension = append(extension, fmt.Sprintf("cfp3=%v", cfp3))
 	}
 
-	if cfp3Label := cef.Cfp3Label(); cfp3Label != "" {
+	if cfp3Label := cef.CFP3Label(); cfp3Label != "" {
 		extension = append(extension, fmt.Sprintf("cfp3Label=%v", cfp3Label))
 	}
 
-	if cfp4 := cef.Cfp4(); cfp4 != 0 {
+	if cfp4 := cef.CFP4(); cfp4 != 0 {
 		extension = append(extension, fmt.Sprintf("cfp4=%v", cfp4))
 	}
 
-	if cfp4Label := cef.Cfp4Label(); cfp4Label != "" {
+	if cfp4Label := cef.CFP4Label(); cfp4Label != "" {
 		extension = append(extension, fmt.Sprintf("cfp4Label=%v", cfp4Label))
 	}
 
-	if cn1 := cef.Cn1(); cn1 != 0 {
+	if cn1 := cef.CN1(); cn1 != 0 {
 		extension = append(extension, fmt.Sprintf("cn1=%v", cn1))
 	}
 
-	if cn1Label := cef.Cn1Label(); cn1Label != "" {
+	if cn1Label := cef.CN1Label(); cn1Label != "" {
 		extension = append(extension, fmt.Sprintf("cn1Label=%v", cn1Label))
 	}
 
-	if cn2 := cef.Cn2(); cn2 != 0 {
+	if cn2 := cef.CN2(); cn2 != 0 {
 		extension = append(extension, fmt.Sprintf("cn2=%v", cn2))
 	}
 
-	if cn2Label := cef.Cn2Label(); cn2Label != "" {
+	if cn2Label := cef.CN2Label(); cn2Label != "" {
 		extension = append(extension, fmt.Sprintf("cn2Label=%v", cn2Label))
 	}
 
-	if cn3 := cef.Cn3(); cn3 != 0 {
+	if cn3 := cef.CN3(); cn3 != 0 {
 		extension = append(extension, fmt.Sprintf("cn3=%v", cn3))
 	}
 
-	if cn3Label := cef.Cn3Label(); cn3Label != "" {
+	if cn3Label := cef.CN3Label(); cn3Label != "" {
 		extension = append(extension, fmt.Sprintf("cn3Label=%v", cn3Label))
 	}
 
@@ -106,51 +106,51 @@ func (cef *CEF) extension() string {
 		extension = append(extension, fmt.Sprintf("cnt=%v", cnt))
 	}
 
-	if cs1 := cef.Cs1(); cs1 != "" {
+	if cs1 := cef.CS1(); cs1 != "" {
 		extension = append(extension, fmt.Sprintf("cs1=%v", cs1))
 	}
 
-	if cs1Label := cef.Cs1Label(); cs1Label != "" {
+	if cs1Label := cef.CS1Label(); cs1Label != "" {
 		extension = append(extension, fmt.Sprintf("cs1Label=%v", cs1Label))
 	}
 
-	if cs2 := cef.Cs2(); cs2 != "" {
+	if cs2 := cef.CS2(); cs2 != "" {
 		extension = append(extension, fmt.Sprintf("cs2=%v", cs2))
 	}
 
-	if cs2Label := cef.Cs2Label(); cs2Label != "" {
+	if cs2Label := cef.CS2Label(); cs2Label != "" {
 		extension = append(extension, fmt.Sprintf("cs2Label=%v", cs2Label))
 	}
 
-	if cs3 := cef.Cs3(); cs3 != "" {
+	if cs3 := cef.CS3(); cs3 != "" {
 		extension = append(extension, fmt.Sprintf("cs3=%v", cs3))
 	}
 
-	if cs3Label := cef.Cs3Label(); cs3Label != "" {
+	if cs3Label := cef.CS3Label(); cs3Label != "" {
 		extension = append(extension, fmt.Sprintf("cs3Label=%v", cs3Label))
 	}
 
-	if cs4 := cef.Cs4(); cs4 != "" {
+	if cs4 := cef.CS4(); cs4 != "" {
 		extension = append(extension, fmt.Sprintf("cs4=%v", cs4))
 	}
 
-	if cs4Label := cef.Cs4Label(); cs4Label != "" {
+	if cs4Label := cef.CS4Label(); cs4Label != "" {
 		extension = append(extension, fmt.Sprintf("cs4Label=%v", cs4Label))
 	}
 
-	if cs5 := cef.Cs5(); cs5 != "" {
+	if cs5 := cef.CS5(); cs5 != "" {
 		extension = append(extension, fmt.Sprintf("cs5=%v", cs5))
 	}
 
-	if cs5Label := cef.Cs5Label(); cs5Label != "" {
+	if cs5Label := cef.CS5Label(); cs5Label != "" {
 		extension = append(extension, fmt.Sprintf("cs5Label=%v", cs5Label))
 	}
 
-	if cs6 := cef.Cs6(); cs6 != "" {
+	if cs6 := cef.CS6(); cs6 != "" {
 		extension = append(extension, fmt.Sprintf("cs6=%v", cs6))
 	}
 
-	if cs6Label := cef.Cs6Label(); cs6Label != "" {
+	if cs6Label := cef.CS6Label(); cs6Label != "" {
 		extension = append(extension, fmt.Sprintf("cs6Label=%v", cs6Label))
 	}
 
@@ -238,15 +238,15 @@ func (cef *CEF) extension() string {
 		extension = append(extension, fmt.Sprintf("dpid=%v", dpid))
 	}
 
-	if dpriv := cef.Dpriv(); dpriv != "" {
+	if dpriv := cef.DPriv(); dpriv != "" {
 		extension = append(extension, fmt.Sprintf("dpriv=%v", dpriv))
 	}
 
-	if dproc := cef.Dproc(); dproc != "" {
+	if dproc := cef.DProc(); dproc != "" {
 		extension = append(extension, fmt.Sprintf("dproc=%v", dproc))
 	}
 
-	if dpt := cef.Dpt(); dpt != 0 {
+	if dpt := cef.DPt(); dpt != 0 {
 		extension = append(extension, fmt.Sprintf("dpt=%v", dpt))
 	}
 
@@ -254,15 +254,15 @@ func (cef *CEF) extension() string {
 		extension = append(extension, fmt.Sprintf("dst=%v", dst))
 	}
 
-	if dtz := cef.Dtz(); dtz != "" {
+	if dtz := cef.DTZ(); dtz != "" {
 		extension = append(extension, fmt.Sprintf("dtz=%v", dtz))
 	}
 
-	if duid := cef.Duid(); duid != "" {
+	if duid := cef.DUID(); duid != "" {
 		extension = append(extension, fmt.Sprintf("duid=%v", duid))
 	}
 
-	if duser := cef.Duser(); duser != "" {
+	if duser := cef.DUser(); duser != "" {
 		extension = append(extension, fmt.Sprintf("duser=%v", duser))
 	}
 
@@ -270,15 +270,15 @@ func (cef *CEF) extension() string {
 		extension = append(extension, fmt.Sprintf("dvc=%v", dvc))
 	}
 
-	if dvchost := cef.Dvchost(); dvchost != "" {
+	if dvchost := cef.DvcHost(); dvchost != "" {
 		extension = append(extension, fmt.Sprintf("dvchost=%v", dvchost))
 	}
 
-	if dvcmac := cef.Dvcmac(); len(dvcmac) > 0 {
+	if dvcmac := cef.DvcMAC(); len(dvcmac) > 0 {
 		extension = append(extension, fmt.Sprintf("dvcmac=%v", dvcmac))
 	}
 
-	if dvcpid := cef.Dvcpid(); dvcpid != 0 {
+	if dvcpid := cef.DvcPID(); dvcpid != 0 {
 		extension = append(extension, fmt.Sprintf("dvcpid=%v", dvcpid))
 	}
 
@@ -342,11 +342,11 @@ func (cef *CEF) extension() string {
 		extension = append(extension, fmt.Sprintf("flexString2Label=%v", flexString2Label))
 	}
 
-	if fname := cef.Fname(); fname != "" {
+	if fname := cef.FName(); fname != "" {
 		extension = append(extension, fmt.Sprintf("fname=%v", fname))
 	}
 
-	if fsize := cef.Fsize(); fsize != 0 {
+	if fsize := cef.FSize(); fsize != 0 {
 		extension = append(extension, fmt.Sprintf("fsize=%v", fsize))
 	}
 
@@ -434,15 +434,15 @@ func (cef *CEF) extension() string {
 		extension = append(extension, fmt.Sprintf("rt=%v", rt))
 	}
 
-	if shost := cef.Shost(); shost != "" {
+	if shost := cef.SHost(); shost != "" {
 		extension = append(extension, fmt.Sprintf("shost=%v", shost))
 	}
 
-	if smac := cef.Smac(); len(smac) > 0 {
+	if smac := cef.SMAC(); len(smac) > 0 {
 		extension = append(extension, fmt.Sprintf("smac=%v", smac))
 	}
 
-	if sntdom := cef.Sntdom(); sntdom != "" {
+	if sntdom := cef.SNtDom(); sntdom != "" {
 		extension = append(extension, fmt.Sprintf("sntdom=%v", sntdom))
 	}
 
@@ -462,19 +462,19 @@ func (cef *CEF) extension() string {
 		extension = append(extension, fmt.Sprintf("sourceTranslatedPort=%v", sourceTranslatedPort))
 	}
 
-	if spid := cef.Spid(); spid != 0 {
+	if spid := cef.SPID(); spid != 0 {
 		extension = append(extension, fmt.Sprintf("spid=%v", spid))
 	}
 
-	if spriv := cef.Spriv(); spriv != "" {
+	if spriv := cef.SPriv(); spriv != "" {
 		extension = append(extension, fmt.Sprintf("spriv=%v", spriv))
 	}
 
-	if sproc := cef.Sproc(); sproc != "" {
+	if sproc := cef.SProc(); sproc != "" {
 		extension = append(extension, fmt.Sprintf("sproc=%v", sproc))
 	}
 
-	if spt := cef.Spt(); spt != 0 {
+	if spt := cef.SPt(); spt != 0 {
 		extension = append(extension, fmt.Sprintf("spt=%v", spt))
 	}
 
@@ -486,11 +486,11 @@ func (cef *CEF) extension() string {
 		extension = append(extension, fmt.Sprintf("start=%v", start))
 	}
 
-	if suid := cef.Suid(); suid != "" {
+	if suid := cef.SUID(); suid != "" {
 		extension = append(extension, fmt.Sprintf("suid=%v", suid))
 	}
 
-	if suser := cef.Suser(); suser != "" {
+	if suser := cef.SUser(); suser != "" {
 		extension = append(extension, fmt.Sprintf("suser=%v", suser))
 	}
 
@@ -530,15 +530,15 @@ func (cef *CEF) extension() string {
 		extension = append(extension, fmt.Sprintf("agt=%v", agt))
 	}
 
-	if ahost := cef.Ahost(); ahost != "" {
+	if ahost := cef.AHost(); ahost != "" {
 		extension = append(extension, fmt.Sprintf("ahost=%v", ahost))
 	}
 
-	if aid := cef.Aid(); aid != "" {
+	if aid := cef.AID(); aid != "" {
 		extension = append(extension, fmt.Sprintf("aid=%v", aid))
 	}
 
-	if amac := cef.Amac(); len(amac) > 0 {
+	if amac := cef.AMAC(); len(amac) > 0 {
 		extension = append(extension, fmt.Sprintf("amac=%v", amac))
 	}
 
@@ -546,15 +546,15 @@ func (cef *CEF) extension() string {
 		extension = append(extension, fmt.Sprintf("art=%v", art))
 	}
 
-	if at := cef.At(); at != "" {
+	if at := cef.AT(); at != "" {
 		extension = append(extension, fmt.Sprintf("at=%v", at))
 	}
 
-	if atz := cef.Atz(); atz != "" {
+	if atz := cef.ATZ(); atz != "" {
 		extension = append(extension, fmt.Sprintf("atz=%v", atz))
 	}
 
-	if av := cef.Av(); av != "" {
+	if av := cef.AV(); av != "" {
 		extension = append(extension, fmt.Sprintf("av=%v", av))
 	}
 
@@ -598,27 +598,27 @@ func (cef *CEF) extension() string {
 		extension = append(extension, fmt.Sprintf("deviceZoneURI=%v", deviceZoneURI))
 	}
 
-	if dlat := cef.Dlat(); dlat != 0 {
+	if dlat := cef.DLat(); dlat != 0 {
 		extension = append(extension, fmt.Sprintf("dlat=%v", dlat))
 	}
 
-	if dlong := cef.Dlong(); dlong != 0 {
+	if dlong := cef.DLong(); dlong != 0 {
 		extension = append(extension, fmt.Sprintf("dlong=%v", dlong))
 	}
 
-	if eventID := cef.EventID(); eventID != 0 {
-		extension = append(extension, fmt.Sprintf("eventId=%v", eventID))
+	if eventId := cef.EventID(); eventId != 0 {
+		extension = append(extension, fmt.Sprintf("eventId=%v", eventId))
 	}
 
 	if rawEvent := cef.RawEvent(); rawEvent != "" {
 		extension = append(extension, fmt.Sprintf("rawEvent=%v", rawEvent))
 	}
 
-	if slat := cef.Slat(); slat != 0 {
+	if slat := cef.SLat(); slat != 0 {
 		extension = append(extension, fmt.Sprintf("slat=%v", slat))
 	}
 
-	if slong := cef.Slong(); slong != 0 {
+	if slong := cef.SLong(); slong != 0 {
 		extension = append(extension, fmt.Sprintf("slong=%v", slong))
 	}
 

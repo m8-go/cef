@@ -10,17 +10,17 @@ type extensionFields struct {
 	// Application level protocol, example: HTTP, HTTPS, SSHv2, Telnet, POP, IMPA, IMAPS, and so on.
 	app string
 	// One of the four IPv6 address fields available to map fields that do not apply to any other in this dictionary. TIP: For tips on using these fields, see the guidelines defined under User-Defined Extensions.
-	c6a1 net.IP
+	c6A1 net.IP
 	// All custom fields have a corresponding label field. Each of these fields is a string and describes the purpose of the custom field.
-	c6a1Label string
+	c6A1Label string
 	// One of the four IPv6 address fields available to map fields that do not apply to any other in this dictionary. TIP: For tips on using these fields, see the guidelines defined under User-Defined Extensions.
-	c6a3 net.IP
+	c6A3 net.IP
 	// All custom fields have a corresponding label field. Each of these fields is a string and describes the purpose of the custom field.
-	c6a3Label string
+	c6A3Label string
 	// One of the four IPv6 address fields available to map fields that do not apply to any other in this dictionary. TIP: For tips on using these fields, see the guidelines defined under User-Defined Extensions.
-	c6a4 net.IP
+	c6A4 net.IP
 	// All custom fields have a corresponding label field. Each of these fields is a string and describes the purpose of the custom field.
-	c6a4Label string
+	c6A4Label string
 	// Represents the category assigned by the originating device. Devices often use their own categorization schema to classify event. Example: “/Monitor/Disk/Read”
 	cat string
 	// One of our floating point fields available to map fields that do not apply to any other in this dictionary.
@@ -114,17 +114,17 @@ type extensionFields struct {
 	// Identifies the translated device address that the event refers to in an IP network. The format is an IPv4 address. Example: “192.168.10.1”
 	deviceTranslatedAddress net.IP
 	// Identifies the destination that an event refers to in an IP network. The format must be a fully qualified domain name (FQDN) associated with the destination node, when a node is available. Examples: “host.domain.com” or “host”.
-	dhost string
+	dHost string
 	// The Windows domain name of the destination address.
 	dntdom string
 	// Provides the ID of the destination process associated with the event. For example, if an event contains process ID 105, “105” is the process ID
 	dpid int
 	// The typical values are “Administrator”, “User”, and “Guest”. This identifies the destination user’s privileges. In UNIX, for example, activity executed on the root user would be identified with destinationUser Privileges of “Administrator”.
-	dpriv string
+	dPriv string
 	// The name of the event’s destination process. Example: “telnetd” or “sshd”.
-	dproc string
+	dProc string
 	// The valid port numbers are between 0 and 65535.
-	dpt int
+	dPt int
 	// Identifies the destination address that the event refers to in an IP network. The format is an IPv4 address. Example: “192.168.10.1”
 	dst net.IP
 	// The timezone for the device generating the event.
@@ -132,15 +132,15 @@ type extensionFields struct {
 	// Identifies the destination user by ID. For example, in UNIX, the root user is generally associated with user ID 0
 	duid string
 	// Identifies the destination user by name. This is the user associated with the event’s destination. Email addresses are often mapped into the UserName fields. The recipient is a candidate to put into this field.
-	duser string
+	dUser string
 	// Identifies the device address that an event refers to in an IP network. The format is an IPv4 address. Example: “192.168.10.1”.
 	dvc net.IP
 	// The format should be a fully qualified domain name (FQDN) associated with the device node, when a node is available. Example: “host.domain.com” or “host”.
-	dvchost string
+	dvcHost string
 	// Six colon-separated hexadecimal numbers. Example: “00:0D:60:AF:1B:61”
-	dvcmac net.HardwareAddr
+	dvcMAC net.HardwareAddr
 	// Provides the ID of the process on the device generating the event.
-	dvcpid int
+	dvcPID int
 	// The time at which the activity related to the event ended. The format is MMM dd yyyy HH:mm:ss or milliseconds since epoch (Jan 1st1970). An example would be reporting the end of a session.
 	end string
 	// The ID used by an originating device. They are usually increasing numbers, associated with events.
@@ -172,9 +172,9 @@ type extensionFields struct {
 	// The label field is a string and describes the purpose of the flex field.
 	flexString2Label string
 	// Name of the file only (without its path).
-	fname string
+	fName string
 	// Size of the file.
-	fsize int64
+	fSize int64
 	// Number of bytes transferred inbound, relative to the source to destination relationship, meaning that data was flowing from source to destination.
 	in int64
 	// An arbitrary message giving more details about the event. Multi-line entries can be produced by using \n as the new line separator.
@@ -218,11 +218,11 @@ type extensionFields struct {
 	// The time at which the event related to the activity was received. The format is MMM dd yyyy HH:mm:ss or milliseconds since epoch (Jan 1st 1970)
 	rt string
 	// Identifies the source that an event refers to in an IP network. The format should be a fully qualified domain name (FQDN) associated with the source node, when a mode is available. Examples: “host” or “host.domain.com”.
-	shost string
+	sHost string
 	// Six colon-separated hexadecimal numbers. Example: “00:0D:60:AF:1B:61”
 	smac net.HardwareAddr
 	// The Windows domain name for the source address.
-	sntdom string
+	sNtDom string
 	// The DNS domain part of the complete fully qualified domain name (FQDN).
 	sourceDNSDomain string
 	// The service that is responsible for generating this event.
@@ -234,11 +234,11 @@ type extensionFields struct {
 	// The ID of the source process associated with the event
 	spid int
 	// The typical values are “Administrator”, “User”, and “Guest”. It identifies the source user’s privileges. In UNIX, for example, activity executed by the root user would be identified with “Administrator”.
-	spriv string
+	sPriv string
 	// The name of the event’s source process.
-	sproc string
+	sProc string
 	// The valid port numbers are 0 to 65535.
-	spt int
+	sPt int
 	// Identifies the source that an event refers to in an IP network. The format is an IPv4 address. Example: “192.168.10.1”.
 	src net.IP
 	// The time when the activity the event referred to started. The format is MMM dd yyyy HH:mm:ss or milliseconds since epoch (Jan 1st 1970)
@@ -246,7 +246,7 @@ type extensionFields struct {
 	// Identifies the source user by ID. This is the user associated with the source of the event. For example, in UNIX, the root user is generally associated with user ID 0.
 	suid string
 	// Identifies the source user by name. Email addresses are also mapped into the UserName fields. The sender is a candidate to put into this field.
-	suser string
+	sUser string
 	// 0 means base event, 1 means aggregated, 2 means correlation, and 3 means action. This field can be omitted for base events (type 0)
 	typ int
 	// The DNS domain name of the ArcSight connector that processed the event.
@@ -260,7 +260,7 @@ type extensionFields struct {
 	// The IP address of the ArcSight connector that processed the event.
 	agt net.IP
 	// The hostname of the ArcSight connector that processed the event.
-	ahost string
+	aHost string
 	// The agent ID of the ArcSight connector that processed the event.
 	aid string
 	// The MAC address of the ArcSight connector that processed the event.
@@ -288,14 +288,14 @@ type extensionFields struct {
 	// Thee URI for the Zone that the device asset has been assigned to in ArcSight.
 	deviceZoneURI string
 	// The latitudinal value from which the destination’s IP address belongs.
-	dlat float64
+	dLat float64
 	// The longitudinal value from which the destination’s IP address belongs.
-	dlong float64
+	dLong float64
 	// This is a unique ID that ArcSight assigns to each event.
 	eventID int64
 	rawEvent string
-	slat float64
-	slong float64
+	sLat float64
+	sLong float64
 	sourceTranslatedZoneExternalID string
 	// The URI for the Translated Zone that the destination asset has been assigned to in ArcSight.
 	sourceTranslatedZoneURI string
@@ -352,20 +352,20 @@ func (cef *CEF) SetApp(v string) *CEF {
 	return cef
 }
 
-// SetC6a1 sets "c6a1" field.
-func (cef *CEF) SetC6a1(v net.IP) *CEF {
-	if len(cef.c6a1) > 0 {
+// SetC6A1 sets "c6a1" field.
+func (cef *CEF) SetC6A1(v net.IP) *CEF {
+	if len(cef.c6A1) > 0 {
 		return cef
 	}
 
-	cef.c6a1 = v
+	cef.c6A1 = v
 
 	return cef
 }
 
-// SetC6a1Label sets "c6a1Label" field.
-func (cef *CEF) SetC6a1Label(v string) *CEF {
-	if cef.c6a1Label != "" {
+// SetC6A1Label sets "c6a1Label" field.
+func (cef *CEF) SetC6A1Label(v string) *CEF {
+	if cef.c6A1Label != "" {
 		return cef
 	}
 
@@ -373,51 +373,25 @@ func (cef *CEF) SetC6a1Label(v string) *CEF {
 		v = v[:1023]
 	}
 
-	cef.c6a1Label = v
+	cef.c6A1Label = v
 
 	return cef
 }
 
-// SetC6a3 sets "c6a3" field.
-func (cef *CEF) SetC6a3(v net.IP) *CEF {
-	if len(cef.c6a3) > 0 {
+// SetC6A3 sets "c6a3" field.
+func (cef *CEF) SetC6A3(v net.IP) *CEF {
+	if len(cef.c6A3) > 0 {
 		return cef
 	}
 
-	cef.c6a3 = v
+	cef.c6A3 = v
 
 	return cef
 }
 
-// SetC6a3Label sets "c6a3Label" field.
-func (cef *CEF) SetC6a3Label(v string) *CEF {
-	if cef.c6a3Label != "" {
-		return cef
-	}
-
-	if len(v) > 1023 {
-		v = v[:1023]
-	}
-
-	cef.c6a3Label = v
-
-	return cef
-}
-
-// SetC6a4 sets "c6a4" field.
-func (cef *CEF) SetC6a4(v net.IP) *CEF {
-	if len(cef.c6a4) > 0 {
-		return cef
-	}
-
-	cef.c6a4 = v
-
-	return cef
-}
-
-// SetC6a4Label sets "c6a4Label" field.
-func (cef *CEF) SetC6a4Label(v string) *CEF {
-	if cef.c6a4Label != "" {
+// SetC6A3Label sets "c6a3Label" field.
+func (cef *CEF) SetC6A3Label(v string) *CEF {
+	if cef.c6A3Label != "" {
 		return cef
 	}
 
@@ -425,7 +399,33 @@ func (cef *CEF) SetC6a4Label(v string) *CEF {
 		v = v[:1023]
 	}
 
-	cef.c6a4Label = v
+	cef.c6A3Label = v
+
+	return cef
+}
+
+// SetC6A4 sets "c6a4" field.
+func (cef *CEF) SetC6A4(v net.IP) *CEF {
+	if len(cef.c6A4) > 0 {
+		return cef
+	}
+
+	cef.c6A4 = v
+
+	return cef
+}
+
+// SetC6A4Label sets "c6a4Label" field.
+func (cef *CEF) SetC6A4Label(v string) *CEF {
+	if cef.c6A4Label != "" {
+		return cef
+	}
+
+	if len(v) > 1023 {
+		v = v[:1023]
+	}
+
+	cef.c6A4Label = v
 
 	return cef
 }
@@ -445,8 +445,8 @@ func (cef *CEF) SetCat(v string) *CEF {
 	return cef
 }
 
-// SetCfp1 sets "cfp1" field.
-func (cef *CEF) SetCfp1(v float32) *CEF {
+// SetCFP1 sets "cfp1" field.
+func (cef *CEF) SetCFP1(v float32) *CEF {
 	if cef.cfp1 != 0 {
 		return cef
 	}
@@ -456,8 +456,8 @@ func (cef *CEF) SetCfp1(v float32) *CEF {
 	return cef
 }
 
-// SetCfp1Label sets "cfp1Label" field.
-func (cef *CEF) SetCfp1Label(v string) *CEF {
+// SetCFP1Label sets "cfp1Label" field.
+func (cef *CEF) SetCFP1Label(v string) *CEF {
 	if cef.cfp1Label != "" {
 		return cef
 	}
@@ -471,8 +471,8 @@ func (cef *CEF) SetCfp1Label(v string) *CEF {
 	return cef
 }
 
-// SetCfp2 sets "cfp2" field.
-func (cef *CEF) SetCfp2(v float32) *CEF {
+// SetCFP2 sets "cfp2" field.
+func (cef *CEF) SetCFP2(v float32) *CEF {
 	if cef.cfp2 != 0 {
 		return cef
 	}
@@ -482,8 +482,8 @@ func (cef *CEF) SetCfp2(v float32) *CEF {
 	return cef
 }
 
-// SetCfp2Label sets "cfp2Label" field.
-func (cef *CEF) SetCfp2Label(v string) *CEF {
+// SetCFP2Label sets "cfp2Label" field.
+func (cef *CEF) SetCFP2Label(v string) *CEF {
 	if cef.cfp2Label != "" {
 		return cef
 	}
@@ -497,8 +497,8 @@ func (cef *CEF) SetCfp2Label(v string) *CEF {
 	return cef
 }
 
-// SetCfp3 sets "cfp3" field.
-func (cef *CEF) SetCfp3(v float32) *CEF {
+// SetCFP3 sets "cfp3" field.
+func (cef *CEF) SetCFP3(v float32) *CEF {
 	if cef.cfp3 != 0 {
 		return cef
 	}
@@ -508,8 +508,8 @@ func (cef *CEF) SetCfp3(v float32) *CEF {
 	return cef
 }
 
-// SetCfp3Label sets "cfp3Label" field.
-func (cef *CEF) SetCfp3Label(v string) *CEF {
+// SetCFP3Label sets "cfp3Label" field.
+func (cef *CEF) SetCFP3Label(v string) *CEF {
 	if cef.cfp3Label != "" {
 		return cef
 	}
@@ -523,8 +523,8 @@ func (cef *CEF) SetCfp3Label(v string) *CEF {
 	return cef
 }
 
-// SetCfp4 sets "cfp4" field.
-func (cef *CEF) SetCfp4(v float32) *CEF {
+// SetCFP4 sets "cfp4" field.
+func (cef *CEF) SetCFP4(v float32) *CEF {
 	if cef.cfp4 != 0 {
 		return cef
 	}
@@ -534,8 +534,8 @@ func (cef *CEF) SetCfp4(v float32) *CEF {
 	return cef
 }
 
-// SetCfp4Label sets "cfp4Label" field.
-func (cef *CEF) SetCfp4Label(v string) *CEF {
+// SetCFP4Label sets "cfp4Label" field.
+func (cef *CEF) SetCFP4Label(v string) *CEF {
 	if cef.cfp4Label != "" {
 		return cef
 	}
@@ -549,8 +549,8 @@ func (cef *CEF) SetCfp4Label(v string) *CEF {
 	return cef
 }
 
-// SetCn1 sets "cn1" field.
-func (cef *CEF) SetCn1(v int64) *CEF {
+// SetCN1 sets "cn1" field.
+func (cef *CEF) SetCN1(v int64) *CEF {
 	if cef.cn1 != 0 {
 		return cef
 	}
@@ -560,8 +560,8 @@ func (cef *CEF) SetCn1(v int64) *CEF {
 	return cef
 }
 
-// SetCn1Label sets "cn1Label" field.
-func (cef *CEF) SetCn1Label(v string) *CEF {
+// SetCN1Label sets "cn1Label" field.
+func (cef *CEF) SetCN1Label(v string) *CEF {
 	if cef.cn1Label != "" {
 		return cef
 	}
@@ -575,8 +575,8 @@ func (cef *CEF) SetCn1Label(v string) *CEF {
 	return cef
 }
 
-// SetCn2 sets "cn2" field.
-func (cef *CEF) SetCn2(v int64) *CEF {
+// SetCN2 sets "cn2" field.
+func (cef *CEF) SetCN2(v int64) *CEF {
 	if cef.cn2 != 0 {
 		return cef
 	}
@@ -586,8 +586,8 @@ func (cef *CEF) SetCn2(v int64) *CEF {
 	return cef
 }
 
-// SetCn2Label sets "cn2Label" field.
-func (cef *CEF) SetCn2Label(v string) *CEF {
+// SetCN2Label sets "cn2Label" field.
+func (cef *CEF) SetCN2Label(v string) *CEF {
 	if cef.cn2Label != "" {
 		return cef
 	}
@@ -601,8 +601,8 @@ func (cef *CEF) SetCn2Label(v string) *CEF {
 	return cef
 }
 
-// SetCn3 sets "cn3" field.
-func (cef *CEF) SetCn3(v int64) *CEF {
+// SetCN3 sets "cn3" field.
+func (cef *CEF) SetCN3(v int64) *CEF {
 	if cef.cn3 != 0 {
 		return cef
 	}
@@ -612,8 +612,8 @@ func (cef *CEF) SetCn3(v int64) *CEF {
 	return cef
 }
 
-// SetCn3Label sets "cn3Label" field.
-func (cef *CEF) SetCn3Label(v string) *CEF {
+// SetCN3Label sets "cn3Label" field.
+func (cef *CEF) SetCN3Label(v string) *CEF {
 	if cef.cn3Label != "" {
 		return cef
 	}
@@ -638,8 +638,8 @@ func (cef *CEF) SetCnt(v int) *CEF {
 	return cef
 }
 
-// SetCs1 sets "cs1" field.
-func (cef *CEF) SetCs1(v string) *CEF {
+// SetCS1 sets "cs1" field.
+func (cef *CEF) SetCS1(v string) *CEF {
 	if cef.cs1 != "" {
 		return cef
 	}
@@ -653,8 +653,8 @@ func (cef *CEF) SetCs1(v string) *CEF {
 	return cef
 }
 
-// SetCs1Label sets "cs1Label" field.
-func (cef *CEF) SetCs1Label(v string) *CEF {
+// SetCS1Label sets "cs1Label" field.
+func (cef *CEF) SetCS1Label(v string) *CEF {
 	if cef.cs1Label != "" {
 		return cef
 	}
@@ -668,8 +668,8 @@ func (cef *CEF) SetCs1Label(v string) *CEF {
 	return cef
 }
 
-// SetCs2 sets "cs2" field.
-func (cef *CEF) SetCs2(v string) *CEF {
+// SetCS2 sets "cs2" field.
+func (cef *CEF) SetCS2(v string) *CEF {
 	if cef.cs2 != "" {
 		return cef
 	}
@@ -683,8 +683,8 @@ func (cef *CEF) SetCs2(v string) *CEF {
 	return cef
 }
 
-// SetCs2Label sets "cs2Label" field.
-func (cef *CEF) SetCs2Label(v string) *CEF {
+// SetCS2Label sets "cs2Label" field.
+func (cef *CEF) SetCS2Label(v string) *CEF {
 	if cef.cs2Label != "" {
 		return cef
 	}
@@ -698,8 +698,8 @@ func (cef *CEF) SetCs2Label(v string) *CEF {
 	return cef
 }
 
-// SetCs3 sets "cs3" field.
-func (cef *CEF) SetCs3(v string) *CEF {
+// SetCS3 sets "cs3" field.
+func (cef *CEF) SetCS3(v string) *CEF {
 	if cef.cs3 != "" {
 		return cef
 	}
@@ -713,8 +713,8 @@ func (cef *CEF) SetCs3(v string) *CEF {
 	return cef
 }
 
-// SetCs3Label sets "cs3Label" field.
-func (cef *CEF) SetCs3Label(v string) *CEF {
+// SetCS3Label sets "cs3Label" field.
+func (cef *CEF) SetCS3Label(v string) *CEF {
 	if cef.cs3Label != "" {
 		return cef
 	}
@@ -728,8 +728,8 @@ func (cef *CEF) SetCs3Label(v string) *CEF {
 	return cef
 }
 
-// SetCs4 sets "cs4" field.
-func (cef *CEF) SetCs4(v string) *CEF {
+// SetCS4 sets "cs4" field.
+func (cef *CEF) SetCS4(v string) *CEF {
 	if cef.cs4 != "" {
 		return cef
 	}
@@ -743,8 +743,8 @@ func (cef *CEF) SetCs4(v string) *CEF {
 	return cef
 }
 
-// SetCs4Label sets "cs4Label" field.
-func (cef *CEF) SetCs4Label(v string) *CEF {
+// SetCS4Label sets "cs4Label" field.
+func (cef *CEF) SetCS4Label(v string) *CEF {
 	if cef.cs4Label != "" {
 		return cef
 	}
@@ -758,8 +758,8 @@ func (cef *CEF) SetCs4Label(v string) *CEF {
 	return cef
 }
 
-// SetCs5 sets "cs5" field.
-func (cef *CEF) SetCs5(v string) *CEF {
+// SetCS5 sets "cs5" field.
+func (cef *CEF) SetCS5(v string) *CEF {
 	if cef.cs5 != "" {
 		return cef
 	}
@@ -773,8 +773,8 @@ func (cef *CEF) SetCs5(v string) *CEF {
 	return cef
 }
 
-// SetCs5Label sets "cs5Label" field.
-func (cef *CEF) SetCs5Label(v string) *CEF {
+// SetCS5Label sets "cs5Label" field.
+func (cef *CEF) SetCS5Label(v string) *CEF {
 	if cef.cs5Label != "" {
 		return cef
 	}
@@ -788,8 +788,8 @@ func (cef *CEF) SetCs5Label(v string) *CEF {
 	return cef
 }
 
-// SetCs6 sets "cs6" field.
-func (cef *CEF) SetCs6(v string) *CEF {
+// SetCS6 sets "cs6" field.
+func (cef *CEF) SetCS6(v string) *CEF {
 	if cef.cs6 != "" {
 		return cef
 	}
@@ -803,8 +803,8 @@ func (cef *CEF) SetCs6(v string) *CEF {
 	return cef
 }
 
-// SetCs6Label sets "cs6Label" field.
-func (cef *CEF) SetCs6Label(v string) *CEF {
+// SetCS6Label sets "cs6Label" field.
+func (cef *CEF) SetCS6Label(v string) *CEF {
 	if cef.cs6Label != "" {
 		return cef
 	}
@@ -1066,7 +1066,7 @@ func (cef *CEF) SetDeviceTranslatedAddress(v net.IP) *CEF {
 
 // SetDHost sets "dhost" field.
 func (cef *CEF) SetDHost(v string) *CEF {
-	if cef.dhost != "" {
+	if cef.dHost != "" {
 		return cef
 	}
 
@@ -1074,7 +1074,7 @@ func (cef *CEF) SetDHost(v string) *CEF {
 		v = v[:1023]
 	}
 
-	cef.dhost = v
+	cef.dHost = v
 
 	return cef
 }
@@ -1105,9 +1105,9 @@ func (cef *CEF) SetDPID(v int) *CEF {
 	return cef
 }
 
-// SetDpriv sets "dpriv" field.
-func (cef *CEF) SetDpriv(v string) *CEF {
-	if cef.dpriv != "" {
+// SetDPriv sets "dpriv" field.
+func (cef *CEF) SetDPriv(v string) *CEF {
+	if cef.dPriv != "" {
 		return cef
 	}
 
@@ -1115,14 +1115,14 @@ func (cef *CEF) SetDpriv(v string) *CEF {
 		v = v[:1023]
 	}
 
-	cef.dpriv = v
+	cef.dPriv = v
 
 	return cef
 }
 
-// SetDproc sets "dproc" field.
-func (cef *CEF) SetDproc(v string) *CEF {
-	if cef.dproc != "" {
+// SetDProc sets "dproc" field.
+func (cef *CEF) SetDProc(v string) *CEF {
+	if cef.dProc != "" {
 		return cef
 	}
 
@@ -1130,18 +1130,18 @@ func (cef *CEF) SetDproc(v string) *CEF {
 		v = v[:1023]
 	}
 
-	cef.dproc = v
+	cef.dProc = v
 
 	return cef
 }
 
-// SetDpt sets "dpt" field.
-func (cef *CEF) SetDpt(v int) *CEF {
-	if cef.dpt != 0 {
+// SetDPt sets "dpt" field.
+func (cef *CEF) SetDPt(v int) *CEF {
+	if cef.dPt != 0 {
 		return cef
 	}
 
-	cef.dpt = v
+	cef.dPt = v
 
 	return cef
 }
@@ -1157,8 +1157,8 @@ func (cef *CEF) SetDst(v net.IP) *CEF {
 	return cef
 }
 
-// SetDtz sets "dtz" field.
-func (cef *CEF) SetDtz(v string) *CEF {
+// SetDTZ sets "dtz" field.
+func (cef *CEF) SetDTZ(v string) *CEF {
 	if cef.dtz != "" {
 		return cef
 	}
@@ -1172,8 +1172,8 @@ func (cef *CEF) SetDtz(v string) *CEF {
 	return cef
 }
 
-// SetDuid sets "duid" field.
-func (cef *CEF) SetDuid(v string) *CEF {
+// SetDUID sets "duid" field.
+func (cef *CEF) SetDUID(v string) *CEF {
 	if cef.duid != "" {
 		return cef
 	}
@@ -1187,9 +1187,9 @@ func (cef *CEF) SetDuid(v string) *CEF {
 	return cef
 }
 
-// SetDuser sets "duser" field.
-func (cef *CEF) SetDuser(v string) *CEF {
-	if cef.duser != "" {
+// SetDUser sets "duser" field.
+func (cef *CEF) SetDUser(v string) *CEF {
+	if cef.dUser != "" {
 		return cef
 	}
 
@@ -1197,7 +1197,7 @@ func (cef *CEF) SetDuser(v string) *CEF {
 		v = v[:1023]
 	}
 
-	cef.duser = v
+	cef.dUser = v
 
 	return cef
 }
@@ -1213,9 +1213,9 @@ func (cef *CEF) SetDvc(v net.IP) *CEF {
 	return cef
 }
 
-// SetDvchost sets "dvchost" field.
-func (cef *CEF) SetDvchost(v string) *CEF {
-	if cef.dvchost != "" {
+// SetDvcHost sets "dvchost" field.
+func (cef *CEF) SetDvcHost(v string) *CEF {
+	if cef.dvcHost != "" {
 		return cef
 	}
 
@@ -1223,29 +1223,29 @@ func (cef *CEF) SetDvchost(v string) *CEF {
 		v = v[:100]
 	}
 
-	cef.dvchost = v
+	cef.dvcHost = v
 
 	return cef
 }
 
-// SetDvcmac sets "dvcmac" field.
-func (cef *CEF) SetDvcmac(v net.HardwareAddr) *CEF {
-	if len(cef.dvcmac) > 0 {
+// SetDvcMAC sets "dvcmac" field.
+func (cef *CEF) SetDvcMAC(v net.HardwareAddr) *CEF {
+	if len(cef.dvcMAC) > 0 {
 		return cef
 	}
 
-	cef.dvcmac = v
+	cef.dvcMAC = v
 
 	return cef
 }
 
-// SetDvcpid sets "dvcpid" field.
-func (cef *CEF) SetDvcpid(v int) *CEF {
-	if cef.dvcpid != 0 {
+// SetDvcPID sets "dvcpid" field.
+func (cef *CEF) SetDvcPID(v int) *CEF {
+	if cef.dvcPID != 0 {
 		return cef
 	}
 
-	cef.dvcpid = v
+	cef.dvcPID = v
 
 	return cef
 }
@@ -1459,9 +1459,9 @@ func (cef *CEF) SetFlexString2Label(v string) *CEF {
 	return cef
 }
 
-// SetFname sets "fname" field.
-func (cef *CEF) SetFname(v string) *CEF {
-	if cef.fname != "" {
+// SetFName sets "fname" field.
+func (cef *CEF) SetFName(v string) *CEF {
+	if cef.fName != "" {
 		return cef
 	}
 
@@ -1469,18 +1469,18 @@ func (cef *CEF) SetFname(v string) *CEF {
 		v = v[:1023]
 	}
 
-	cef.fname = v
+	cef.fName = v
 
 	return cef
 }
 
-// SetFsize sets "fsize" field.
-func (cef *CEF) SetFsize(v int64) *CEF {
-	if cef.fsize != 0 {
+// SetFSize sets "fsize" field.
+func (cef *CEF) SetFSize(v int64) *CEF {
+	if cef.fSize != 0 {
 		return cef
 	}
 
-	cef.fsize = v
+	cef.fSize = v
 
 	return cef
 }
@@ -1776,9 +1776,9 @@ func (cef *CEF) SetRt(v string) *CEF {
 	return cef
 }
 
-// SetShost sets "shost" field.
-func (cef *CEF) SetShost(v string) *CEF {
-	if cef.shost != "" {
+// SetSHost sets "shost" field.
+func (cef *CEF) SetSHost(v string) *CEF {
+	if cef.sHost != "" {
 		return cef
 	}
 
@@ -1786,13 +1786,13 @@ func (cef *CEF) SetShost(v string) *CEF {
 		v = v[:1023]
 	}
 
-	cef.shost = v
+	cef.sHost = v
 
 	return cef
 }
 
-// SetSmac sets "smac" field.
-func (cef *CEF) SetSmac(v net.HardwareAddr) *CEF {
+// SetSMAC sets "smac" field.
+func (cef *CEF) SetSMAC(v net.HardwareAddr) *CEF {
 	if len(cef.smac) > 0 {
 		return cef
 	}
@@ -1802,9 +1802,9 @@ func (cef *CEF) SetSmac(v net.HardwareAddr) *CEF {
 	return cef
 }
 
-// SetSntdom sets "sntdom" field.
-func (cef *CEF) SetSntdom(v string) *CEF {
-	if cef.sntdom != "" {
+// SetSNtDom sets "sntdom" field.
+func (cef *CEF) SetSNtDom(v string) *CEF {
+	if cef.sNtDom != "" {
 		return cef
 	}
 
@@ -1812,7 +1812,7 @@ func (cef *CEF) SetSntdom(v string) *CEF {
 		v = v[:255]
 	}
 
-	cef.sntdom = v
+	cef.sNtDom = v
 
 	return cef
 }
@@ -1869,8 +1869,8 @@ func (cef *CEF) SetSourceTranslatedPort(v int) *CEF {
 	return cef
 }
 
-// SetSpid sets "spid" field.
-func (cef *CEF) SetSpid(v int) *CEF {
+// SetSPID sets "spid" field.
+func (cef *CEF) SetSPID(v int) *CEF {
 	if cef.spid != 0 {
 		return cef
 	}
@@ -1880,9 +1880,9 @@ func (cef *CEF) SetSpid(v int) *CEF {
 	return cef
 }
 
-// SetSpriv sets "spriv" field.
-func (cef *CEF) SetSpriv(v string) *CEF {
-	if cef.spriv != "" {
+// SetSPriv sets "spriv" field.
+func (cef *CEF) SetSPriv(v string) *CEF {
+	if cef.sPriv != "" {
 		return cef
 	}
 
@@ -1890,14 +1890,14 @@ func (cef *CEF) SetSpriv(v string) *CEF {
 		v = v[:1023]
 	}
 
-	cef.spriv = v
+	cef.sPriv = v
 
 	return cef
 }
 
-// SetSproc sets "sproc" field.
-func (cef *CEF) SetSproc(v string) *CEF {
-	if cef.sproc != "" {
+// SetSProc sets "sproc" field.
+func (cef *CEF) SetSProc(v string) *CEF {
+	if cef.sProc != "" {
 		return cef
 	}
 
@@ -1905,18 +1905,18 @@ func (cef *CEF) SetSproc(v string) *CEF {
 		v = v[:1023]
 	}
 
-	cef.sproc = v
+	cef.sProc = v
 
 	return cef
 }
 
-// SetSpt sets "spt" field.
-func (cef *CEF) SetSpt(v int) *CEF {
-	if cef.spt != 0 {
+// SetSPt sets "spt" field.
+func (cef *CEF) SetSPt(v int) *CEF {
+	if cef.sPt != 0 {
 		return cef
 	}
 
-	cef.spt = v
+	cef.sPt = v
 
 	return cef
 }
@@ -1943,8 +1943,8 @@ func (cef *CEF) SetStart(v string) *CEF {
 	return cef
 }
 
-// SetSuid sets "suid" field.
-func (cef *CEF) SetSuid(v string) *CEF {
+// SetSUID sets "suid" field.
+func (cef *CEF) SetSUID(v string) *CEF {
 	if cef.suid != "" {
 		return cef
 	}
@@ -1958,9 +1958,9 @@ func (cef *CEF) SetSuid(v string) *CEF {
 	return cef
 }
 
-// SetSuser sets "suser" field.
-func (cef *CEF) SetSuser(v string) *CEF {
-	if cef.suser != "" {
+// SetSUser sets "suser" field.
+func (cef *CEF) SetSUser(v string) *CEF {
+	if cef.sUser != "" {
 		return cef
 	}
 
@@ -1968,7 +1968,7 @@ func (cef *CEF) SetSuser(v string) *CEF {
 		v = v[:1023]
 	}
 
-	cef.suser = v
+	cef.sUser = v
 
 	return cef
 }
@@ -2096,9 +2096,9 @@ func (cef *CEF) SetAgt(v net.IP) *CEF {
 	return cef
 }
 
-// SetAhost sets "ahost" field.
-func (cef *CEF) SetAhost(v string) *CEF {
-	if cef.ahost != "" {
+// SetAHost sets "ahost" field.
+func (cef *CEF) SetAHost(v string) *CEF {
+	if cef.aHost != "" {
 		return cef
 	}
 
@@ -2106,13 +2106,13 @@ func (cef *CEF) SetAhost(v string) *CEF {
 		v = v[:1023]
 	}
 
-	cef.ahost = v
+	cef.aHost = v
 
 	return cef
 }
 
-// SetAid sets "aid" field.
-func (cef *CEF) SetAid(v string) *CEF {
+// SetAID sets "aid" field.
+func (cef *CEF) SetAID(v string) *CEF {
 	if cef.aid != "" {
 		return cef
 	}
@@ -2126,8 +2126,8 @@ func (cef *CEF) SetAid(v string) *CEF {
 	return cef
 }
 
-// SetAmac sets "amac" field.
-func (cef *CEF) SetAmac(v net.HardwareAddr) *CEF {
+// SetAMAC sets "amac" field.
+func (cef *CEF) SetAMAC(v net.HardwareAddr) *CEF {
 	if len(cef.amac) > 0 {
 		return cef
 	}
@@ -2148,8 +2148,8 @@ func (cef *CEF) SetArt(v string) *CEF {
 	return cef
 }
 
-// SetAt sets "at" field.
-func (cef *CEF) SetAt(v string) *CEF {
+// SetAT sets "at" field.
+func (cef *CEF) SetAT(v string) *CEF {
 	if cef.at != "" {
 		return cef
 	}
@@ -2163,8 +2163,8 @@ func (cef *CEF) SetAt(v string) *CEF {
 	return cef
 }
 
-// SetAtz sets "atz" field.
-func (cef *CEF) SetAtz(v string) *CEF {
+// SetATZ sets "atz" field.
+func (cef *CEF) SetATZ(v string) *CEF {
 	if cef.atz != "" {
 		return cef
 	}
@@ -2178,8 +2178,8 @@ func (cef *CEF) SetAtz(v string) *CEF {
 	return cef
 }
 
-// SetAv sets "av" field.
-func (cef *CEF) SetAv(v string) *CEF {
+// SetAV sets "av" field.
+func (cef *CEF) SetAV(v string) *CEF {
 	if cef.av != "" {
 		return cef
 	}
@@ -2343,24 +2343,24 @@ func (cef *CEF) SetDeviceZoneURI(v string) *CEF {
 	return cef
 }
 
-// SetDlat sets "dlat" field.
-func (cef *CEF) SetDlat(v float64) *CEF {
-	if cef.dlat != 0 {
+// SetDLat sets "dlat" field.
+func (cef *CEF) SetDLat(v float64) *CEF {
+	if cef.dLat != 0 {
 		return cef
 	}
 
-	cef.dlat = v
+	cef.dLat = v
 
 	return cef
 }
 
-// SetDlong sets "dlong" field.
-func (cef *CEF) SetDlong(v float64) *CEF {
-	if cef.dlong != 0 {
+// SetDLong sets "dlong" field.
+func (cef *CEF) SetDLong(v float64) *CEF {
+	if cef.dLong != 0 {
 		return cef
 	}
 
-	cef.dlong = v
+	cef.dLong = v
 
 	return cef
 }
@@ -2391,24 +2391,24 @@ func (cef *CEF) SetRawEvent(v string) *CEF {
 	return cef
 }
 
-// SetSlat sets "slat" field.
-func (cef *CEF) SetSlat(v float64) *CEF {
-	if cef.slat != 0 {
+// SetSLat sets "slat" field.
+func (cef *CEF) SetSLat(v float64) *CEF {
+	if cef.sLat != 0 {
 		return cef
 	}
 
-	cef.slat = v
+	cef.sLat = v
 
 	return cef
 }
 
-// SetSlong sets "slong" field.
-func (cef *CEF) SetSlong(v float64) *CEF {
-	if cef.slong != 0 {
+// SetSLong sets "slong" field.
+func (cef *CEF) SetSLong(v float64) *CEF {
+	if cef.sLong != 0 {
 		return cef
 	}
 
-	cef.slong = v
+	cef.sLong = v
 
 	return cef
 }
@@ -2583,33 +2583,33 @@ func (cef *CEF) App() string {
 }
 
 // One of the four IPv6 address fields available to map fields that do not apply to any other in this dictionary. TIP: For tips on using these fields, see the guidelines defined under User-Defined Extensions.
-func (cef *CEF) C6a1() net.IP {
-	return cef.c6a1
+func (cef *CEF) C6A1() net.IP {
+	return cef.c6A1
 }
 
 // All custom fields have a corresponding label field. Each of these fields is a string and describes the purpose of the custom field.
-func (cef *CEF) C6a1Label() string {
-	return cef.c6a1Label
+func (cef *CEF) C6A1Label() string {
+	return cef.c6A1Label
 }
 
 // One of the four IPv6 address fields available to map fields that do not apply to any other in this dictionary. TIP: For tips on using these fields, see the guidelines defined under User-Defined Extensions.
-func (cef *CEF) C6a3() net.IP {
-	return cef.c6a3
+func (cef *CEF) C6A3() net.IP {
+	return cef.c6A3
 }
 
 // All custom fields have a corresponding label field. Each of these fields is a string and describes the purpose of the custom field.
-func (cef *CEF) C6a3Label() string {
-	return cef.c6a3Label
+func (cef *CEF) C6A3Label() string {
+	return cef.c6A3Label
 }
 
 // One of the four IPv6 address fields available to map fields that do not apply to any other in this dictionary. TIP: For tips on using these fields, see the guidelines defined under User-Defined Extensions.
-func (cef *CEF) C6a4() net.IP {
-	return cef.c6a4
+func (cef *CEF) C6A4() net.IP {
+	return cef.c6A4
 }
 
 // All custom fields have a corresponding label field. Each of these fields is a string and describes the purpose of the custom field.
-func (cef *CEF) C6a4Label() string {
-	return cef.c6a4Label
+func (cef *CEF) C6A4Label() string {
+	return cef.c6A4Label
 }
 
 // Represents the category assigned by the originating device. Devices often use their own categorization schema to classify event. Example: “/Monitor/Disk/Read”
@@ -2618,72 +2618,72 @@ func (cef *CEF) Cat() string {
 }
 
 // One of our floating point fields available to map fields that do not apply to any other in this dictionary.
-func (cef *CEF) Cfp1() float32 {
+func (cef *CEF) CFP1() float32 {
 	return cef.cfp1
 }
 
 // All custom fields have a corresponding label field. Each of these fields is a string and describes the purpose of the custom field.
-func (cef *CEF) Cfp1Label() string {
+func (cef *CEF) CFP1Label() string {
 	return cef.cfp1Label
 }
 
 // One of the four floating point fields available to map fields that do not apply to any other in this dictionary.
-func (cef *CEF) Cfp2() float32 {
+func (cef *CEF) CFP2() float32 {
 	return cef.cfp2
 }
 
 // All custom fields have a corresponding label field. Each of these fields is a string and describes the purpose of the custom field.
-func (cef *CEF) Cfp2Label() string {
+func (cef *CEF) CFP2Label() string {
 	return cef.cfp2Label
 }
 
 // One of the four floating point fields available to map fields that do not apply to any other in this dictionary.
-func (cef *CEF) Cfp3() float32 {
+func (cef *CEF) CFP3() float32 {
 	return cef.cfp3
 }
 
 // All custom fields have a corresponding label field. Each of these fields is a string and describes the purpose of the custom field.
-func (cef *CEF) Cfp3Label() string {
+func (cef *CEF) CFP3Label() string {
 	return cef.cfp3Label
 }
 
 // One of the four floating point fields available to map fields that do not apply to any other in this dictionary.
-func (cef *CEF) Cfp4() float32 {
+func (cef *CEF) CFP4() float32 {
 	return cef.cfp4
 }
 
 // All custom fields have a corresponding label field. Each of these fields is a string and describes the purpose of the custom field.
-func (cef *CEF) Cfp4Label() string {
+func (cef *CEF) CFP4Label() string {
 	return cef.cfp4Label
 }
 
 // One of the three number fields available to map fields that do not apply to any other in this dictionary. Use sparingly and seek a more specific, dictionary supplied field when possible.
-func (cef *CEF) Cn1() int64 {
+func (cef *CEF) CN1() int64 {
 	return cef.cn1
 }
 
 // All custom fields have a corresponding label field. Each of these fields is a string and describes the purpose of the custom field.
-func (cef *CEF) Cn1Label() string {
+func (cef *CEF) CN1Label() string {
 	return cef.cn1Label
 }
 
 // One of the three number fields available to map fields that do not apply to any other in this dictionary. Use sparingly and seek a more specific, dictionary supplied field when possible.
-func (cef *CEF) Cn2() int64 {
+func (cef *CEF) CN2() int64 {
 	return cef.cn2
 }
 
 // All custom fields have a corresponding label field. Each of these fields is a string and describes the purpose of the custom field. Implementing ArcSight Common Event Format (CEF) - Version 26 ArcS
-func (cef *CEF) Cn2Label() string {
+func (cef *CEF) CN2Label() string {
 	return cef.cn2Label
 }
 
 // One of the three number fields available to map fields that do not apply to any other in this dictionary. Use sparingly and seek a more specific, dictionary supplied field when possible.
-func (cef *CEF) Cn3() int64 {
+func (cef *CEF) CN3() int64 {
 	return cef.cn3
 }
 
 // All custom fields have a corresponding label field. Each of these fields is a string and describes the purpose of the custom field.
-func (cef *CEF) Cn3Label() string {
+func (cef *CEF) CN3Label() string {
 	return cef.cn3Label
 }
 
@@ -2693,62 +2693,62 @@ func (cef *CEF) Cnt() int {
 }
 
 // One of the six strings available to map fields that do not apply to any other in this dictionary. Use sparingly and seek a more specific, dictionary supplied field when possible. TIP : For tips on using these fields, see the guidelines defined under User- Defined Extensions
-func (cef *CEF) Cs1() string {
+func (cef *CEF) CS1() string {
 	return cef.cs1
 }
 
 // All custom fields have a corresponding label field. Each of these fields is a string and describes the purpose of the custom field.
-func (cef *CEF) Cs1Label() string {
+func (cef *CEF) CS1Label() string {
 	return cef.cs1Label
 }
 
 // One of the six strings available to map fields that do not apply to any other in this dictionary. Use sparingly and seek a more specific, dictionary supplied field when possible. TIP: For tips on using these fields, see the guidelines defined under User-Defined Extensions.
-func (cef *CEF) Cs2() string {
+func (cef *CEF) CS2() string {
 	return cef.cs2
 }
 
 // All custom fields have a corresponding label field. Each of these fields is a string and describes the purpose of the custom field
-func (cef *CEF) Cs2Label() string {
+func (cef *CEF) CS2Label() string {
 	return cef.cs2Label
 }
 
 // One of the six strings available to map fields that do not apply to any other in this dictionary. Use sparingly and seek a more specific, dictionary supplied field when possible. TIP: For tips on using these fields, see the guidelines defined under User-Defined Extensions.
-func (cef *CEF) Cs3() string {
+func (cef *CEF) CS3() string {
 	return cef.cs3
 }
 
 // All custom fields have a corresponding label field. Each of these fields is a string and describes the purpose of the custom field.
-func (cef *CEF) Cs3Label() string {
+func (cef *CEF) CS3Label() string {
 	return cef.cs3Label
 }
 
 // One of the six strings available to map fields that do not apply to any other in this dictionary. Use sparingly and seek a more specific, dictionary supplied field when possible. TIP : For tips on using these fields, see the guidelines defined under User- Defined Extensions
-func (cef *CEF) Cs4() string {
+func (cef *CEF) CS4() string {
 	return cef.cs4
 }
 
 // All custom fields have a corresponding label field. Each of these fields is a string and describes the purpose of the custom field.
-func (cef *CEF) Cs4Label() string {
+func (cef *CEF) CS4Label() string {
 	return cef.cs4Label
 }
 
 // One of six strings available to map fields that do not apply to any other in this dictionary. Use sparingly and seek a more specific, dictionary supplied field when possible. TIP : For tips on using these fields, see the guidelines defined under User- Defined Extensions.
-func (cef *CEF) Cs5() string {
+func (cef *CEF) CS5() string {
 	return cef.cs5
 }
 
 // All custom fields have a corresponding label field. Each of these fields is a string and describes the purpose of the custom field
-func (cef *CEF) Cs5Label() string {
+func (cef *CEF) CS5Label() string {
 	return cef.cs5Label
 }
 
 // One of six strings available to map fields that do not apply to any other in this dictionary. Use sparingly and seek a more specific, dictionary supplied field when possible. TIP : For tips on using these fields, see the guidelines defined under User- Defined Extensions.
-func (cef *CEF) Cs6() string {
+func (cef *CEF) CS6() string {
 	return cef.cs6
 }
 
 // All custom fields have a corresponding label field. Each of these fields is a string and describes the purpose of the custom field.
-func (cef *CEF) Cs6Label() string {
+func (cef *CEF) CS6Label() string {
 	return cef.cs6Label
 }
 
@@ -2844,7 +2844,7 @@ func (cef *CEF) DeviceTranslatedAddress() net.IP {
 
 // Identifies the destination that an event refers to in an IP network. The format must be a fully qualified domain name (FQDN) associated with the destination node, when a node is available. Examples: “host.domain.com” or “host”.
 func (cef *CEF) DHost() string {
-	return cef.dhost
+	return cef.dHost
 }
 
 // The Windows domain name of the destination address.
@@ -2858,18 +2858,18 @@ func (cef *CEF) DPID() int {
 }
 
 // The typical values are “Administrator”, “User”, and “Guest”. This identifies the destination user’s privileges. In UNIX, for example, activity executed on the root user would be identified with destinationUser Privileges of “Administrator”.
-func (cef *CEF) Dpriv() string {
-	return cef.dpriv
+func (cef *CEF) DPriv() string {
+	return cef.dPriv
 }
 
 // The name of the event’s destination process. Example: “telnetd” or “sshd”.
-func (cef *CEF) Dproc() string {
-	return cef.dproc
+func (cef *CEF) DProc() string {
+	return cef.dProc
 }
 
 // The valid port numbers are between 0 and 65535.
-func (cef *CEF) Dpt() int {
-	return cef.dpt
+func (cef *CEF) DPt() int {
+	return cef.dPt
 }
 
 // Identifies the destination address that the event refers to in an IP network. The format is an IPv4 address. Example: “192.168.10.1”
@@ -2878,18 +2878,18 @@ func (cef *CEF) Dst() net.IP {
 }
 
 // The timezone for the device generating the event.
-func (cef *CEF) Dtz() string {
+func (cef *CEF) DTZ() string {
 	return cef.dtz
 }
 
 // Identifies the destination user by ID. For example, in UNIX, the root user is generally associated with user ID 0
-func (cef *CEF) Duid() string {
+func (cef *CEF) DUID() string {
 	return cef.duid
 }
 
 // Identifies the destination user by name. This is the user associated with the event’s destination. Email addresses are often mapped into the UserName fields. The recipient is a candidate to put into this field.
-func (cef *CEF) Duser() string {
-	return cef.duser
+func (cef *CEF) DUser() string {
+	return cef.dUser
 }
 
 // Identifies the device address that an event refers to in an IP network. The format is an IPv4 address. Example: “192.168.10.1”.
@@ -2898,18 +2898,18 @@ func (cef *CEF) Dvc() net.IP {
 }
 
 // The format should be a fully qualified domain name (FQDN) associated with the device node, when a node is available. Example: “host.domain.com” or “host”.
-func (cef *CEF) Dvchost() string {
-	return cef.dvchost
+func (cef *CEF) DvcHost() string {
+	return cef.dvcHost
 }
 
 // Six colon-separated hexadecimal numbers. Example: “00:0D:60:AF:1B:61”
-func (cef *CEF) Dvcmac() net.HardwareAddr {
-	return cef.dvcmac
+func (cef *CEF) DvcMAC() net.HardwareAddr {
+	return cef.dvcMAC
 }
 
 // Provides the ID of the process on the device generating the event.
-func (cef *CEF) Dvcpid() int {
-	return cef.dvcpid
+func (cef *CEF) DvcPID() int {
+	return cef.dvcPID
 }
 
 // The time at which the activity related to the event ended. The format is MMM dd yyyy HH:mm:ss or milliseconds since epoch (Jan 1st1970). An example would be reporting the end of a session.
@@ -2988,13 +2988,13 @@ func (cef *CEF) FlexString2Label() string {
 }
 
 // Name of the file only (without its path).
-func (cef *CEF) Fname() string {
-	return cef.fname
+func (cef *CEF) FName() string {
+	return cef.fName
 }
 
 // Size of the file.
-func (cef *CEF) Fsize() int64 {
-	return cef.fsize
+func (cef *CEF) FSize() int64 {
+	return cef.fSize
 }
 
 // Number of bytes transferred inbound, relative to the source to destination relationship, meaning that data was flowing from source to destination.
@@ -3103,18 +3103,18 @@ func (cef *CEF) Rt() string {
 }
 
 // Identifies the source that an event refers to in an IP network. The format should be a fully qualified domain name (FQDN) associated with the source node, when a mode is available. Examples: “host” or “host.domain.com”.
-func (cef *CEF) Shost() string {
-	return cef.shost
+func (cef *CEF) SHost() string {
+	return cef.sHost
 }
 
 // Six colon-separated hexadecimal numbers. Example: “00:0D:60:AF:1B:61”
-func (cef *CEF) Smac() net.HardwareAddr {
+func (cef *CEF) SMAC() net.HardwareAddr {
 	return cef.smac
 }
 
 // The Windows domain name for the source address.
-func (cef *CEF) Sntdom() string {
-	return cef.sntdom
+func (cef *CEF) SNtDom() string {
+	return cef.sNtDom
 }
 
 // The DNS domain part of the complete fully qualified domain name (FQDN).
@@ -3138,23 +3138,23 @@ func (cef *CEF) SourceTranslatedPort() int {
 }
 
 // The ID of the source process associated with the event
-func (cef *CEF) Spid() int {
+func (cef *CEF) SPID() int {
 	return cef.spid
 }
 
 // The typical values are “Administrator”, “User”, and “Guest”. It identifies the source user’s privileges. In UNIX, for example, activity executed by the root user would be identified with “Administrator”.
-func (cef *CEF) Spriv() string {
-	return cef.spriv
+func (cef *CEF) SPriv() string {
+	return cef.sPriv
 }
 
 // The name of the event’s source process.
-func (cef *CEF) Sproc() string {
-	return cef.sproc
+func (cef *CEF) SProc() string {
+	return cef.sProc
 }
 
 // The valid port numbers are 0 to 65535.
-func (cef *CEF) Spt() int {
-	return cef.spt
+func (cef *CEF) SPt() int {
+	return cef.sPt
 }
 
 // Identifies the source that an event refers to in an IP network. The format is an IPv4 address. Example: “192.168.10.1”.
@@ -3168,13 +3168,13 @@ func (cef *CEF) Start() string {
 }
 
 // Identifies the source user by ID. This is the user associated with the source of the event. For example, in UNIX, the root user is generally associated with user ID 0.
-func (cef *CEF) Suid() string {
+func (cef *CEF) SUID() string {
 	return cef.suid
 }
 
 // Identifies the source user by name. Email addresses are also mapped into the UserName fields. The sender is a candidate to put into this field.
-func (cef *CEF) Suser() string {
-	return cef.suser
+func (cef *CEF) SUser() string {
+	return cef.sUser
 }
 
 // 0 means base event, 1 means aggregated, 2 means correlation, and 3 means action. This field can be omitted for base events (type 0)
@@ -3217,17 +3217,17 @@ func (cef *CEF) Agt() net.IP {
 }
 
 // The hostname of the ArcSight connector that processed the event.
-func (cef *CEF) Ahost() string {
-	return cef.ahost
+func (cef *CEF) AHost() string {
+	return cef.aHost
 }
 
 // The agent ID of the ArcSight connector that processed the event.
-func (cef *CEF) Aid() string {
+func (cef *CEF) AID() string {
 	return cef.aid
 }
 
 // The MAC address of the ArcSight connector that processed the event.
-func (cef *CEF) Amac() net.HardwareAddr {
+func (cef *CEF) AMAC() net.HardwareAddr {
 	return cef.amac
 }
 
@@ -3237,17 +3237,17 @@ func (cef *CEF) Art() string {
 }
 
 // The agent type of the ArcSight connector that processed the event
-func (cef *CEF) At() string {
+func (cef *CEF) AT() string {
 	return cef.at
 }
 
 // The agent time zone of the ArcSight connector that processed the event.
-func (cef *CEF) Atz() string {
+func (cef *CEF) ATZ() string {
 	return cef.atz
 }
 
 // The version of the ArcSight connector that processed the event.
-func (cef *CEF) Av() string {
+func (cef *CEF) AV() string {
 	return cef.av
 }
 
@@ -3296,13 +3296,13 @@ func (cef *CEF) DeviceZoneURI() string {
 }
 
 // The latitudinal value from which the destination’s IP address belongs.
-func (cef *CEF) Dlat() float64 {
-	return cef.dlat
+func (cef *CEF) DLat() float64 {
+	return cef.dLat
 }
 
 // The longitudinal value from which the destination’s IP address belongs.
-func (cef *CEF) Dlong() float64 {
-	return cef.dlong
+func (cef *CEF) DLong() float64 {
+	return cef.dLong
 }
 
 // This is a unique ID that ArcSight assigns to each event.
@@ -3314,12 +3314,12 @@ func (cef *CEF) RawEvent() string {
 	return cef.rawEvent
 }
 
-func (cef *CEF) Slat() float64 {
-	return cef.slat
+func (cef *CEF) SLat() float64 {
+	return cef.sLat
 }
 
-func (cef *CEF) Slong() float64 {
-	return cef.slong
+func (cef *CEF) SLong() float64 {
+	return cef.sLong
 }
 
 func (cef *CEF) SourceTranslatedZoneExternalID() string {

@@ -18,7 +18,7 @@ func ExampleCEF_MarshalText() {
 	log.SetAgentSeverity(cef.AgentSeverityVeryHigh10)
 	log.SetSrc(net.ParseIP("10.0.0.1"))
 	log.SetDst(net.ParseIP("2.1.2.2"))
-	log.SetSpt(1232)
+	log.SetSPt(1232)
 
 	text, err := log.MarshalText()
 
@@ -43,7 +43,7 @@ func ExampleCEF_UnmarshalText() {
 	fmt.Println(log.DeviceEventClassID())
 	fmt.Println(log.Name())
 	fmt.Println(log.AgentSeverity())
-	fmt.Printf("dst=%v spt=%v src=%v\n", log.Dst(), log.Spt(), log.Src())
+	fmt.Printf("dst=%v spt=%v src=%v\n", log.Dst(), log.SPt(), log.Src())
 	fmt.Println(err)
 	// Output:
 	// 0
