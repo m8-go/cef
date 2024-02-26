@@ -14,8 +14,8 @@ type headerFields struct{
 }
 
 {{ range .Fields }}
-// Set{{ .FieldName | title | pretty }} sets {{ .FieldName | unexported | quote }} field.
-func (cef *CEF) Set{{ .FieldName | title | pretty }}(v {{ typeMapping .Typ }}) *CEF {
+// Set{{ .FieldName | exported | pretty }} sets {{ .FieldName | unexported | quote }} field.
+func (cef *CEF) Set{{ .FieldName | exported | pretty }}(v {{ typeMapping .Typ }}) *CEF {
 {{- if ne .Size "N/A" }}
     if len(v) > {{ .Size }} {
         v = v[:{{ .Size }}]
@@ -63,7 +63,7 @@ func (cef *CEF) Set{{ .FieldName | title | pretty }}(v {{ typeMapping .Typ }}) *
 
 {{ range .Fields }}
 // {{ .Description }}
-func (cef *CEF) {{ .FieldName | title | pretty }}() {{ typeMapping .Typ }} {
+func (cef *CEF) {{ .FieldName | exported | pretty }}() {{ typeMapping .Typ }} {
     return cef.{{ .FieldName | unexported }}
 }
 {{ end }}

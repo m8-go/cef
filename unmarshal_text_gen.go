@@ -223,7 +223,7 @@ func (cef *CEF) set(key string, val string) error {
 		cef.SetDeviceTranslatedAddress(net.ParseIP(val))
 
 	case "dhost":
-		cef.SetDhost(val)
+		cef.SetDHost(val)
 
 	case "dntdom":
 		cef.SetDntdom(val)
@@ -234,7 +234,7 @@ func (cef *CEF) set(key string, val string) error {
 			return errors.Join(err, ErrBadExtension)
 		}
 
-		cef.SetDpid(dpid)
+		cef.SetDPID(dpid)
 
 	case "dpriv":
 		cef.SetDpriv(val)

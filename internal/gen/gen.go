@@ -11,6 +11,7 @@ import (
 	"strconv"
 	"strings"
 	"text/template"
+	"unicode"
 
 	"go.m8.ru/cef/internal/gen/naming"
 )
@@ -29,7 +30,7 @@ func run() error {
 	t, err := template.New("templates").
 		Funcs(map[string]any{
 			"typeMapping":   typeMapping,
-			"title":         strings.Title,
+			"exported":      exported,
 			"unexported":    unexported,
 			"add":           add,
 			"renameKeyWord": renameKeyWord,
@@ -260,6 +261,26 @@ var _typeMapping = map[string]string{
 	"Time Stamp":               "string",
 	"MAC Address":              "net.HardwareAddr",
 	"Double":                   "float64",
+}
+
+func exported(str string) string {
+	if unicode.IsUpper(rune(str[0])) {
+		return str
+	}
+
+	var b strings.Builder
+
+	for i, c := range str {
+		if i == 0 {
+			b.WriteRune(unicode.ToUpper(c))
+
+			continue
+		}
+
+		b.WriteRune(c)
+	}
+
+	return b.String()
 }
 
 func unexported(str string) string {

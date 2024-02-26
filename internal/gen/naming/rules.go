@@ -5,6 +5,10 @@ import "strings"
 var (
 	rules = [...]string{
 		"CEF", "ID", "DNS",
+		// Destination HostName.
+		"DHost",
+		// Destination Process ID.
+		"DPID",
 	}
 
 	rulesMap = func() (r map[string]string) {
