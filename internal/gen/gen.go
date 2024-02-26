@@ -42,11 +42,11 @@ func run() error {
 		return err
 	}
 
-	if err := executeHeaderFields(t); err != nil {
+	if err := executeHeaderField(t); err != nil {
 		return err
 	}
 
-	if err := executeExtensionFields(t); err != nil {
+	if err := executeExtensionField(t); err != nil {
 		return err
 	}
 
@@ -68,8 +68,8 @@ type headerField struct {
 	Description string
 }
 
-func executeHeaderFields(t *template.Template) error {
-	records, err := csvRecords("header_fields.csv")
+func executeHeaderField(t *template.Template) error {
+	records, err := csvRecords("header_field.csv")
 	if err != nil {
 		return err
 	}
@@ -89,10 +89,10 @@ func executeHeaderFields(t *template.Template) error {
 		})
 	}
 
-	return execute(t, "header_fields.tmpl", map[string]any{
+	return execute(t, "header_field.tmpl", map[string]any{
 		"Fields":    fields,
 		"FieldsNum": len(fields),
-	}, "header_fields_gen.go")
+	}, "header_field_gen.go")
 }
 
 type extensionField struct {
@@ -125,10 +125,10 @@ func csvRecords(fileName string) ([][]string, error) {
 	return records, nil
 }
 
-func executeExtensionFields(t *template.Template) error {
+func executeExtensionField(t *template.Template) error {
 	var fields []extensionField
 
-	records, err := csvRecords("extension_fields.csv")
+	records, err := csvRecords("extension_field.csv")
 	if err != nil {
 		return err
 	}
@@ -148,11 +148,11 @@ func executeExtensionFields(t *template.Template) error {
 		})
 	}
 
-	return execute(t, "extension_fields.tmpl", fields, "extension_fields_gen.go")
+	return execute(t, "extension_field.tmpl", fields, "extension_field_gen.go")
 }
 
 func executeMarshalText(t *template.Template) error {
-	records, err := csvRecords("extension_fields.csv")
+	records, err := csvRecords("extension_field.csv")
 	if err != nil {
 		return err
 	}
@@ -178,7 +178,7 @@ func executeMarshalText(t *template.Template) error {
 }
 
 func executeUnmarshalText(t *template.Template) error {
-	records, err := csvRecords("header_fields.csv")
+	records, err := csvRecords("header_field.csv")
 	if err != nil {
 		return err
 	}
@@ -198,7 +198,7 @@ func executeUnmarshalText(t *template.Template) error {
 		})
 	}
 
-	records, err = csvRecords("extension_fields.csv")
+	records, err = csvRecords("extension_field.csv")
 	if err != nil {
 		return err
 	}
