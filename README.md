@@ -1,4 +1,4 @@
-# CEF
+# CEF [![Go Report Card](https://goreportcard.com/badge/github.com/m8-go/cef)](https://goreportcard.com/report/github.com/m8-go/cef)
 
 CEF builder generated from CEF implementation standard.
 
