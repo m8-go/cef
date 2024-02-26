@@ -1,0 +1,6 @@
+ignore:
+  - "**/*_gen.go"
+coverage:
+  status:
+    project: false
+    patch: false
