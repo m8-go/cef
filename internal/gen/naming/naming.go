@@ -37,14 +37,12 @@ func Split(str string) []string {
 		}
 
 		switch {
-		case unicode.IsLower(r):
+		case unicode.IsLower(r), unicode.IsDigit(r):
 			class = 1
 		case unicode.IsUpper(r):
 			class = 2
-		case unicode.IsDigit(r):
-			class = 3
 		default:
-			class = 4
+			class = 3
 		}
 		if class == lastClass {
 			runes[len(runes)-1] = append(runes[len(runes)-1], r)

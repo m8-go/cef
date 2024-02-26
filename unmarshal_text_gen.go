@@ -17,22 +17,22 @@ func (cef *CEF) set(key string, val string) error {
 		cef.SetApp(val)
 
 	case "c6a1":
-		cef.SetC6a1(net.ParseIP(val))
+		cef.SetC6A1(net.ParseIP(val))
 
 	case "c6a1Label":
-		cef.SetC6a1Label(val)
+		cef.SetC6A1Label(val)
 
 	case "c6a3":
-		cef.SetC6a3(net.ParseIP(val))
+		cef.SetC6A3(net.ParseIP(val))
 
 	case "c6a3Label":
-		cef.SetC6a3Label(val)
+		cef.SetC6A3Label(val)
 
 	case "c6a4":
-		cef.SetC6a4(net.ParseIP(val))
+		cef.SetC6A4(net.ParseIP(val))
 
 	case "c6a4Label":
-		cef.SetC6a4Label(val)
+		cef.SetC6A4Label(val)
 
 	case "cat":
 		cef.SetCat(val)
@@ -43,10 +43,10 @@ func (cef *CEF) set(key string, val string) error {
 			return errors.Join(err, ErrBadExtension)
 		}
 
-		cef.SetCfp1(float32(cfp1))
+		cef.SetCFP1(float32(cfp1))
 
 	case "cfp1Label":
-		cef.SetCfp1Label(val)
+		cef.SetCFP1Label(val)
 
 	case "cfp2":
 		cfp2, err := strconv.ParseFloat(val, 32)
@@ -54,10 +54,10 @@ func (cef *CEF) set(key string, val string) error {
 			return errors.Join(err, ErrBadExtension)
 		}
 
-		cef.SetCfp2(float32(cfp2))
+		cef.SetCFP2(float32(cfp2))
 
 	case "cfp2Label":
-		cef.SetCfp2Label(val)
+		cef.SetCFP2Label(val)
 
 	case "cfp3":
 		cfp3, err := strconv.ParseFloat(val, 32)
@@ -65,10 +65,10 @@ func (cef *CEF) set(key string, val string) error {
 			return errors.Join(err, ErrBadExtension)
 		}
 
-		cef.SetCfp3(float32(cfp3))
+		cef.SetCFP3(float32(cfp3))
 
 	case "cfp3Label":
-		cef.SetCfp3Label(val)
+		cef.SetCFP3Label(val)
 
 	case "cfp4":
 		cfp4, err := strconv.ParseFloat(val, 32)
@@ -76,43 +76,43 @@ func (cef *CEF) set(key string, val string) error {
 			return errors.Join(err, ErrBadExtension)
 		}
 
-		cef.SetCfp4(float32(cfp4))
+		cef.SetCFP4(float32(cfp4))
 
 	case "cfp4Label":
-		cef.SetCfp4Label(val)
+		cef.SetCFP4Label(val)
 
 	case "cn1":
-		cn1, err := strconv.ParseInt(val, 10, 64)
+		CN1, err := strconv.ParseInt(val, 10, 64)
 		if err != nil {
 			return errors.Join(err, ErrBadExtension)
 		}
 
-		cef.SetCn1(cn1)
+		cef.SetCN1(CN1)
 
 	case "cn1Label":
-		cef.SetCn1Label(val)
+		cef.SetCN1Label(val)
 
 	case "cn2":
-		cn2, err := strconv.ParseInt(val, 10, 64)
+		CN2, err := strconv.ParseInt(val, 10, 64)
 		if err != nil {
 			return errors.Join(err, ErrBadExtension)
 		}
 
-		cef.SetCn2(cn2)
+		cef.SetCN2(CN2)
 
 	case "cn2Label":
-		cef.SetCn2Label(val)
+		cef.SetCN2Label(val)
 
 	case "cn3":
-		cn3, err := strconv.ParseInt(val, 10, 64)
+		CN3, err := strconv.ParseInt(val, 10, 64)
 		if err != nil {
 			return errors.Join(err, ErrBadExtension)
 		}
 
-		cef.SetCn3(cn3)
+		cef.SetCN3(CN3)
 
 	case "cn3Label":
-		cef.SetCn3Label(val)
+		cef.SetCN3Label(val)
 
 	case "cnt":
 		cnt, err := strconv.Atoi(val)
@@ -123,40 +123,40 @@ func (cef *CEF) set(key string, val string) error {
 		cef.SetCnt(cnt)
 
 	case "cs1":
-		cef.SetCs1(val)
+		cef.SetCS1(val)
 
 	case "cs1Label":
-		cef.SetCs1Label(val)
+		cef.SetCS1Label(val)
 
 	case "cs2":
-		cef.SetCs2(val)
+		cef.SetCS2(val)
 
 	case "cs2Label":
-		cef.SetCs2Label(val)
+		cef.SetCS2Label(val)
 
 	case "cs3":
-		cef.SetCs3(val)
+		cef.SetCS3(val)
 
 	case "cs3Label":
-		cef.SetCs3Label(val)
+		cef.SetCS3Label(val)
 
 	case "cs4":
-		cef.SetCs4(val)
+		cef.SetCS4(val)
 
 	case "cs4Label":
-		cef.SetCs4Label(val)
+		cef.SetCS4Label(val)
 
 	case "cs5":
-		cef.SetCs5(val)
+		cef.SetCS5(val)
 
 	case "cs5Label":
-		cef.SetCs5Label(val)
+		cef.SetCS5Label(val)
 
 	case "cs6":
-		cef.SetCs6(val)
+		cef.SetCS6(val)
 
 	case "cs6Label":
-		cef.SetCs6Label(val)
+		cef.SetCS6Label(val)
 
 	case "destinationDnsDomain":
 		cef.SetDestinationDNSDomain(val)
@@ -237,10 +237,10 @@ func (cef *CEF) set(key string, val string) error {
 		cef.SetDPID(dpid)
 
 	case "dpriv":
-		cef.SetDpriv(val)
+		cef.SetDPriv(val)
 
 	case "dproc":
-		cef.SetDproc(val)
+		cef.SetDProc(val)
 
 	case "dpt":
 		dpt, err := strconv.Atoi(val)
@@ -248,25 +248,25 @@ func (cef *CEF) set(key string, val string) error {
 			return errors.Join(err, ErrBadExtension)
 		}
 
-		cef.SetDpt(dpt)
+		cef.SetDPt(dpt)
 
 	case "dst":
 		cef.SetDst(net.ParseIP(val))
 
 	case "dtz":
-		cef.SetDtz(val)
+		cef.SetDTZ(val)
 
 	case "duid":
-		cef.SetDuid(val)
+		cef.SetDUID(val)
 
 	case "duser":
-		cef.SetDuser(val)
+		cef.SetDUser(val)
 
 	case "dvc":
 		cef.SetDvc(net.ParseIP(val))
 
 	case "dvchost":
-		cef.SetDvchost(val)
+		cef.SetDvcHost(val)
 
 	case "dvcmac":
 		dvcmac, err := net.ParseMAC(val)
@@ -274,7 +274,7 @@ func (cef *CEF) set(key string, val string) error {
 			return errors.Join(err, ErrBadExtension)
 		}
 
-		cef.SetDvcmac(dvcmac)
+		cef.SetDvcMAC(dvcmac)
 
 	case "dvcpid":
 		dvcpid, err := strconv.Atoi(val)
@@ -282,7 +282,7 @@ func (cef *CEF) set(key string, val string) error {
 			return errors.Join(err, ErrBadExtension)
 		}
 
-		cef.SetDvcpid(dvcpid)
+		cef.SetDvcPID(dvcpid)
 
 	case "end":
 		cef.SetEnd(val)
@@ -330,15 +330,15 @@ func (cef *CEF) set(key string, val string) error {
 		cef.SetFlexString2Label(val)
 
 	case "fname":
-		cef.SetFname(val)
+		cef.SetFName(val)
 
 	case "fsize":
-		fsize, err := strconv.ParseInt(val, 10, 64)
+		FSize, err := strconv.ParseInt(val, 10, 64)
 		if err != nil {
 			return errors.Join(err, ErrBadExtension)
 		}
 
-		cef.SetFsize(fsize)
+		cef.SetFSize(FSize)
 
 	case "in":
 		in, err := strconv.ParseInt(val, 10, 64)
@@ -419,7 +419,7 @@ func (cef *CEF) set(key string, val string) error {
 		cef.SetRt(val)
 
 	case "shost":
-		cef.SetShost(val)
+		cef.SetSHost(val)
 
 	case "smac":
 		smac, err := net.ParseMAC(val)
@@ -427,10 +427,10 @@ func (cef *CEF) set(key string, val string) error {
 			return errors.Join(err, ErrBadExtension)
 		}
 
-		cef.SetSmac(smac)
+		cef.SetSMAC(smac)
 
 	case "sntdom":
-		cef.SetSntdom(val)
+		cef.SetSNtDom(val)
 
 	case "sourceDnsDomain":
 		cef.SetSourceDNSDomain(val)
@@ -455,13 +455,13 @@ func (cef *CEF) set(key string, val string) error {
 			return errors.Join(err, ErrBadExtension)
 		}
 
-		cef.SetSpid(spid)
+		cef.SetSPID(spid)
 
 	case "spriv":
-		cef.SetSpriv(val)
+		cef.SetSPriv(val)
 
 	case "sproc":
-		cef.SetSproc(val)
+		cef.SetSProc(val)
 
 	case "spt":
 		spt, err := strconv.Atoi(val)
@@ -469,7 +469,7 @@ func (cef *CEF) set(key string, val string) error {
 			return errors.Join(err, ErrBadExtension)
 		}
 
-		cef.SetSpt(spt)
+		cef.SetSPt(spt)
 
 	case "src":
 		cef.SetSrc(net.ParseIP(val))
@@ -478,10 +478,10 @@ func (cef *CEF) set(key string, val string) error {
 		cef.SetStart(val)
 
 	case "suid":
-		cef.SetSuid(val)
+		cef.SetSUID(val)
 
 	case "suser":
-		cef.SetSuser(val)
+		cef.SetSUser(val)
 
 	case "type":
 		typ, err := strconv.Atoi(val)
@@ -516,10 +516,10 @@ func (cef *CEF) set(key string, val string) error {
 		cef.SetAgt(net.ParseIP(val))
 
 	case "ahost":
-		cef.SetAhost(val)
+		cef.SetAHost(val)
 
 	case "aid":
-		cef.SetAid(val)
+		cef.SetAID(val)
 
 	case "amac":
 		amac, err := net.ParseMAC(val)
@@ -527,19 +527,19 @@ func (cef *CEF) set(key string, val string) error {
 			return errors.Join(err, ErrBadExtension)
 		}
 
-		cef.SetAmac(amac)
+		cef.SetAMAC(amac)
 
 	case "art":
 		cef.SetArt(val)
 
 	case "at":
-		cef.SetAt(val)
+		cef.SetAT(val)
 
 	case "atz":
-		cef.SetAtz(val)
+		cef.SetATZ(val)
 
 	case "av":
-		cef.SetAv(val)
+		cef.SetAV(val)
 
 	case "customerExternalID":
 		cef.SetCustomerExternalID(val)
@@ -577,7 +577,7 @@ func (cef *CEF) set(key string, val string) error {
 			return errors.Join(err, ErrBadExtension)
 		}
 
-		cef.SetDlat(dlat)
+		cef.SetDLat(dlat)
 
 	case "dlong":
 		dlong, err := strconv.ParseFloat(val, 64)
@@ -585,7 +585,7 @@ func (cef *CEF) set(key string, val string) error {
 			return errors.Join(err, ErrBadExtension)
 		}
 
-		cef.SetDlong(dlong)
+		cef.SetDLong(dlong)
 
 	case "eventId":
 		eventID, err := strconv.ParseInt(val, 10, 64)
@@ -604,7 +604,7 @@ func (cef *CEF) set(key string, val string) error {
 			return errors.Join(err, ErrBadExtension)
 		}
 
-		cef.SetSlat(slat)
+		cef.SetSLat(slat)
 
 	case "slong":
 		slong, err := strconv.ParseFloat(val, 64)
@@ -612,7 +612,7 @@ func (cef *CEF) set(key string, val string) error {
 			return errors.Join(err, ErrBadExtension)
 		}
 
-		cef.SetSlong(slong)
+		cef.SetSLong(slong)
 
 	case "sourceTranslatedZoneExternalID":
 		cef.SetSourceTranslatedZoneExternalID(val)

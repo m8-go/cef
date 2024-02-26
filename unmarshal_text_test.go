@@ -67,7 +67,7 @@ func TestCEF_UnmarshalText(t *testing.T) {
 			log := new(cef.CEF)
 
 			gotErr := log.UnmarshalText([]byte(tc.text))
-			t.Log(log.Fname())
+			t.Log(log.FName())
 			if !errors.Is(gotErr, tc.wantErr) {
 				t.Fatalf("got error %v, want %v", gotErr, tc.wantErr)
 			}
