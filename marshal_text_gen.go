@@ -226,7 +226,7 @@ func (cef *CEF) extension() string {
 		extension = append(extension, fmt.Sprintf("deviceTranslatedAddress=%v", deviceTranslatedAddress))
 	}
 
-	if dhost := cef.Dhost(); dhost != "" {
+	if dhost := cef.DHost(); dhost != "" {
 		extension = append(extension, fmt.Sprintf("dhost=%v", dhost))
 	}
 
@@ -234,7 +234,7 @@ func (cef *CEF) extension() string {
 		extension = append(extension, fmt.Sprintf("dntdom=%v", dntdom))
 	}
 
-	if dpid := cef.Dpid(); dpid != 0 {
+	if dpid := cef.DPID(); dpid != 0 {
 		extension = append(extension, fmt.Sprintf("dpid=%v", dpid))
 	}
 

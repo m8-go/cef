@@ -10,8 +10,8 @@ type extensionFields struct{
 }
 
 {{ range . }}
-// Set{{ .CEFKeyName | title | pretty }} sets {{ .CEFKeyName | unexported | renameKeyWord | quote }} field.
-func (cef *CEF) Set{{ .CEFKeyName | title | pretty }}(v {{ typeMapping .DataType }}) *CEF {
+// Set{{ .CEFKeyName | exported | pretty }} sets {{ .CEFKeyName | unexported | renameKeyWord | quote }} field.
+func (cef *CEF) Set{{ .CEFKeyName | exported | pretty }}(v {{ typeMapping .DataType }}) *CEF {
 {{- if eq .DataType "String" }}
     if cef.{{ .CEFKeyName | unexported | renameKeyWord }} != "" {
         return cef
@@ -73,7 +73,7 @@ func (cef *CEF) Set{{ .CEFKeyName | title | pretty }}(v {{ typeMapping .DataType
 
 {{ range . }}
 // {{ .Meaning }}
-func (cef *CEF) {{ .CEFKeyName | title | pretty }}() {{ typeMapping .DataType }} {
+func (cef *CEF) {{ .CEFKeyName | exported | pretty }}() {{ typeMapping .DataType }} {
     return cef.{{ .CEFKeyName | unexported | renameKeyWord }}
 }
 {{ end }}

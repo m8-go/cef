@@ -36,7 +36,7 @@ func Split(str string) []string {
 			continue
 		}
 
-		switch true {
+		switch {
 		case unicode.IsLower(r):
 			class = 1
 		case unicode.IsUpper(r):

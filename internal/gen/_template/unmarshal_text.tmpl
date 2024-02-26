@@ -11,50 +11,50 @@ func (cef *CEF) set(key string, val string) error {
 {{- range .ExtensionFields }}
     case "{{ .CEFKeyName }}":
     {{- if eq .DataType "String" }}
-    cef.Set{{ .CEFKeyName | title | pretty }}(val)
+    cef.Set{{ .CEFKeyName | exported | pretty }}(val)
     {{ else if eq .DataType "IP Address" }}
-    cef.Set{{ .CEFKeyName | title }}(net.ParseIP(val))
+    cef.Set{{ .CEFKeyName | exported }}(net.ParseIP(val))
     {{ else if eq .DataType "IPv6 address" }}
-    cef.Set{{ .CEFKeyName | title }}(net.ParseIP(val))
+    cef.Set{{ .CEFKeyName | exported }}(net.ParseIP(val))
     {{ else if eq .DataType "IPv6 Address" }}
-    cef.Set{{ .CEFKeyName | title }}(net.ParseIP(val))
+    cef.Set{{ .CEFKeyName | exported }}(net.ParseIP(val))
     {{ else if eq .DataType "Floating Point" }}
     {{ .CEFKeyName }}, err := strconv.ParseFloat(val, 32)
     if err != nil {
         return errors.Join(err, ErrBadExtension)
     }
 
-    cef.Set{{ .CEFKeyName | title }}(float32({{ .CEFKeyName }}))
+    cef.Set{{ .CEFKeyName | exported }}(float32({{ .CEFKeyName }}))
     {{ else if eq .DataType "Long" }}
     {{ .CEFKeyName | pretty }}, err := strconv.ParseInt(val, 10, 64)
     if err != nil {
         return errors.Join(err, ErrBadExtension)
     }
 
-    cef.Set{{ .CEFKeyName | title | pretty }}({{ .CEFKeyName | pretty }})
+    cef.Set{{ .CEFKeyName | exported | pretty }}({{ .CEFKeyName | pretty }})
     {{ else if eq .DataType "Integer" }}
     {{ .CEFKeyName | renameKeyWord }}, err := strconv.Atoi(val)
     if err != nil {
         return errors.Join(err, ErrBadExtension)
     }
 
-    cef.Set{{ .CEFKeyName | title }}({{ .CEFKeyName | renameKeyWord }})
+    cef.Set{{ .CEFKeyName | exported | pretty }}({{ .CEFKeyName | renameKeyWord }})
     {{ else if eq .DataType "Time Stamp" }}
-    cef.Set{{ .CEFKeyName | title }}(val)
+    cef.Set{{ .CEFKeyName | exported }}(val)
     {{ else if eq .DataType "MAC Address" }}
     {{ .CEFKeyName }}, err := net.ParseMAC(val)
     if err != nil {
         return errors.Join(err, ErrBadExtension)
     }
 
-    cef.Set{{ .CEFKeyName | title }}({{ .CEFKeyName }})
+    cef.Set{{ .CEFKeyName | exported }}({{ .CEFKeyName }})
     {{ else if eq .DataType "Double" }}
     {{ .CEFKeyName }}, err := strconv.ParseFloat(val, 64)
     if err != nil {
         return errors.Join(err, ErrBadExtension)
     }
 
-    cef.Set{{ .CEFKeyName | title }}({{ .CEFKeyName }})
+    cef.Set{{ .CEFKeyName | exported }}({{ .CEFKeyName }})
     {{ end }}
 {{- end }}
     default:

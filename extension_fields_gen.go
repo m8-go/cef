@@ -1064,8 +1064,8 @@ func (cef *CEF) SetDeviceTranslatedAddress(v net.IP) *CEF {
 	return cef
 }
 
-// SetDhost sets "dhost" field.
-func (cef *CEF) SetDhost(v string) *CEF {
+// SetDHost sets "dhost" field.
+func (cef *CEF) SetDHost(v string) *CEF {
 	if cef.dhost != "" {
 		return cef
 	}
@@ -1094,8 +1094,8 @@ func (cef *CEF) SetDntdom(v string) *CEF {
 	return cef
 }
 
-// SetDpid sets "dpid" field.
-func (cef *CEF) SetDpid(v int) *CEF {
+// SetDPID sets "dpid" field.
+func (cef *CEF) SetDPID(v int) *CEF {
 	if cef.dpid != 0 {
 		return cef
 	}
@@ -2843,7 +2843,7 @@ func (cef *CEF) DeviceTranslatedAddress() net.IP {
 }
 
 // Identifies the destination that an event refers to in an IP network. The format must be a fully qualified domain name (FQDN) associated with the destination node, when a node is available. Examples: “host.domain.com” or “host”.
-func (cef *CEF) Dhost() string {
+func (cef *CEF) DHost() string {
 	return cef.dhost
 }
 
@@ -2853,7 +2853,7 @@ func (cef *CEF) Dntdom() string {
 }
 
 // Provides the ID of the destination process associated with the event. For example, if an event contains process ID 105, “105” is the process ID
-func (cef *CEF) Dpid() int {
+func (cef *CEF) DPID() int {
 	return cef.dpid
 }
 
